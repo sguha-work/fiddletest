@@ -2,4 +2,7 @@
  name: fusionchartscharts Demo 1
  authors:
    - Pallv Nadhani
+ resources:  
+ 	- https://static.fusioncharts.com/code/latest/fusioncharts.js
+	- https://static.fusioncharts.com/code/latest/fusioncharts.charts.js 
 ...
