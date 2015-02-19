@@ -160,16 +160,16 @@ FusionCharts.ready(function () {
                }
             },
             'BeforeLinkedItemOpen': function(evt, args){
- document.getElementById('eventmessages').innerHTML = " Event - &lt;b&gt;BeforeLinkedItemOpen&lt;/b&gt; invoked&lt;br&gt;" + document.getElementById('eventmessages').innerHTML;
+ document.getElementById('eventmessages').innerHTML = " Event - <b>BeforeLinkedItemOpen</b> invoked<br>" + document.getElementById('eventmessages').innerHTML;
             },
             'LinkedItemOpened': function(evt, args){
- document.getElementById('eventmessages').innerHTML = " Event - &lt;b&gt;LinkedItemOpened&lt;/b&gt; invoked&lt;br&gt;" + document.getElementById('eventmessages').innerHTML;
+ document.getElementById('eventmessages').innerHTML = " Event - <b>LinkedItemOpened</b> invoked<br>" + document.getElementById('eventmessages').innerHTML;
             },
             'BeforeLinkItemClose': function(evt, args){
- document.getElementById('eventmessages').innerHTML = " Event - &lt;b&gt;BeforeLinkItemClose&lt;/b&gt; invoked&lt;br&gt;" + document.getElementById('eventmessages').innerHTML;
+ document.getElementById('eventmessages').innerHTML = " Event - <b>BeforeLinkItemClose</b> invoked<br>" + document.getElementById('eventmessages').innerHTML;
             },
             'LinkedItemClosed': function(evt, args){
- document.getElementById('eventmessages').innerHTML = " Event - &lt;b&gt;LinkedItemClosed&lt;/b&gt; invoked&lt;br&gt;" + document.getElementById('eventmessages').innerHTML;
+ document.getElementById('eventmessages').innerHTML = " Event - <b>LinkedItemClosed</b> invoked<br>" + document.getElementById('eventmessages').innerHTML;
             }
         }
         

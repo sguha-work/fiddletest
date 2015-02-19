@@ -1,8 +1,7 @@
 ---
- name: fusionchartscharts Demo 1
- authors:
-   - Pallv Nadhani
- resources:  
- 	- https://static.fusioncharts.com/code/latest/fusioncharts.js
-	- https://static.fusioncharts.com/code/latest/fusioncharts.charts.js 
+name: FusionCharts -  Listening to drill down events
+description: Created using FusionCharts Suite XT - www.fusioncharts.com
+resources:
+-http://static.fusioncharts.com/code/latest/fusioncharts.js
+-http://static.fusioncharts.com/code/latest/fusioncharts.charts.js
 ...
