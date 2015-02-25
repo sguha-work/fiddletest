@@ -1,48 +1,52 @@
-FusionCharts.ready(function(){
-    var tickmarkCB = document.getElementById('tmCB'),
-        tickvalueCB = document.getElementById('tvCB'),
-        fuelWidget = new FusionCharts({
-            type: 'cylinder',
-            dataFormat: 'json',
-            id: 'fuelMeter',
-            renderAt: 'chart-container',
-            width: '150',
-            height: '350',
-            dataSource: {
-                "chart": {
-                    "theme": "fint",
-                    "caption": "Diesel Level in Generator",
-                    "subcaption": "Bakersfield Central",
-                    "lowerLimit": "0",
-                    "upperLimit": "120",
-                    "lowerLimitDisplay": "Empty",
-                    "upperLimitDisplay": "Full",
-                    "numberSuffix": " ltrs",
-                    "showValue": "1",
-                    "chartBottomMargin": "25",
-                    "showTickValues": "0",
-                    "showTickMarks": "0",
-                    "ticksOnRight": "1"
-                },
-                "value": "75"
-            }
-        }).render();
+FusionCharts.ready(function () {
+    var conversionChart = new FusionCharts({
+        type: 'funnel',
+        renderAt: 'chart-container',
+        width: '500',
+        height: '400',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "caption": "Website visits",
+                "subcaption": "Purchase - Conversion analysis for last year",
+                "decimals": "1",
+                "is2D": "1",
+                "plotTooltext": "Success : $percentOfPrevValue",
+                
+                //Show labels at center
+                "showLabelsAtCenter" : "1",
+                
+                "plotFillAlpha" : "70",
+                "theme" : "fint"
+            },
+            "data": [
+                {
+                    "label": "Unique Website Visits",
+                    "value": "1460000"
+                }, 
+                {
+                    "label": "Programme Details Section Visits",
+                    "value": "930000"
+                }, 
+                {
+                    "label": "Attempts to Register",
+                    "value": "540000"
+                }, 
+                {
+                    "label": "Successful Registrations",
+                    "value": "210000"
+                }, 
+                {
+                    "label": "Logged In",
+                    "value": "190000"
+                }, 
+                {
+                    "label": "Purchased on Introductory Offers",
+                    "value": "120000"
+                }
+            ]
+        }
+    });
     
-    //Function to show/hide tick mark
-    function showTickMark(evt, obj) {
-        //Using showTickMarks attribute to show/hide ticks
-        (tickmarkCB.checked) ? fuelWidget.setChartAttribute('showTickMarks', 1) : 
-        fuelWidget.setChartAttribute('showTickMarks', 0);
-        
-    }
-    //Function to show/hide tick value
-    function showTickValue(evt, obj) {
-        //Using showTickValues attribute to show/hide tick value 
-        (tickvalueCB.checked) ? fuelWidget.setChartAttribute('showTickValues', 1) :
-        fuelWidget.setChartAttribute('showTickValues', 0);
-    }
-    
-    //Set event listener for check boxes and radio buttons
-    tickmarkCB.addEventListener && tickmarkCB.addEventListener("click", showTickMark);
-    tickvalueCB.addEventListener && tickvalueCB.addEventListener("click", showTickValue);
+    conversionChart.render();
 });

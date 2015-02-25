@@ -1,70 +1,135 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var analysisChart = new FusionCharts({
+        type: 'bubble',
         renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
+        width: '600',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Sales Analysis of Shoe Brands",
+                "subcaption": "Last Quarter",
+                "xAxisMinValue": "0",
+                "xAxisMaxValue": "100",
+                "yAxisMinValue": "0",
+                "yAxisMaxValue": "30000",
+                "plotFillAlpha": "70",
+                "plotFillHoverColor": "#6baa01",
+                "showPlotBorder": "0",
+                "xAxisName": "Average Price",
+                "yAxisName": "Units Sold",
+                "numDivlines": "2",
+                "showValues":"1",
+                "showTrendlineLabels": "0",
+                //Dynamic tool-tips with HTML and macro variables
+                "plotTooltext": "<div id='nameDiv'>$name :</div>{br}Average Price : <b>$$xDataValue</b>{br}Units Sold : <b>$yDataValue</b>{br}Profit Contribution : <b>$zvalue%</b>",
+                "theme": "fint"
             },
-            "data": [
+            "categories": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
-                }, 
+                    "category": [
+                        {
+                            "label": "0",
+                            "x": "0"
+                        }, 
+                        {
+                            "label": "$20",
+                            "x": "20",
+                            "showverticalline": "1"
+                        },
+                        {
+                            "label": "$40",
+                            "x": "40",
+                            "showverticalline": "1"
+                        }, 
+                        {
+                            "label": "$60",
+                            "x": "60",
+                            "showverticalline": "1"
+                        }, 
+                        {
+                            "label": "$80",
+                            "x": "80",
+                            "showverticalline": "1"
+                        }, 
+                        {
+                            "label": "$100",
+                            "x": "100",
+                            "showverticalline": "1"
+                        }
+                    ]
+                }
+            ],
+            "dataset": [
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
-                }, 
+                    "color":"#00aee4",
+                    "data": [
+                        {
+                            "x": "80",
+                            "y": "15000",
+                            "z": "24",
+                            "name": "Nike"
+                        }, 
+                        {
+                            "x": "60",
+                            "y": "18500",
+                            "z": "26",
+                            "name": "Adidas"
+                        }, 
+                        {
+                            "x": "50",
+                            "y": "19450",
+                            "z": "19",
+                            "name": "Puma"
+                        }, 
+                        {
+                            "x": "65",
+                            "y": "10500",
+                            "z": "8",
+                            "name": "Fila"
+                        }, 
+                        {
+                            "x": "43",
+                            "y": "8750",
+                            "z": "5",
+                            "name": "Lotto"
+                        }, 
+                        {
+                            "x": "32",
+                            "y": "22000",
+                            "z": "10",
+                            "name": "Reebok"
+                        }, 
+                        {
+                            "x": "44",
+                            "y": "13000",
+                            "z": "9",
+                            "name": "Woodland"
+                        }
+                    ]
+                }
+            ],
+            "trendlines": [
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
-                }, 
-                {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "line": [
+                        {
+                            "startValue": "20000",
+                            "endValue": "30000",
+                            "isTrendZone": "1",
+                            "color": "#aaaaaa",
+                            "alpha": "14"
+                        }, 
+                        {
+                            "startValue": "10000",
+                            "endValue": "20000",
+                            "isTrendZone": "1",
+                            "color": "#aaaaaa",
+                            "alpha": "7"
+                        }
+                    ]
                 }
             ]
         }
-    }).render();
+    });
+    analysisChart.render();
 });

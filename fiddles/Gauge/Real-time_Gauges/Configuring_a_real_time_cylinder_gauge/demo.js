@@ -1,12 +1,11 @@
 FusionCharts.ready(function(){
-    var tickmarkCB = document.getElementById('tmCB'),
-        tickvalueCB = document.getElementById('tvCB'),
+    var fuelVolume = 110,
         fuelWidget = new FusionCharts({
             type: 'cylinder',
             dataFormat: 'json',
             id: 'fuelMeter',
             renderAt: 'chart-container',
-            width: '150',
+            width: '200',
             height: '350',
             dataSource: {
                 "chart": {
@@ -19,30 +18,19 @@ FusionCharts.ready(function(){
                     "upperLimitDisplay": "Full",
                     "numberSuffix": " ltrs",
                     "showValue": "1",
-                    "chartBottomMargin": "25",
-                    "showTickValues": "0",
-                    "showTickMarks": "0",
-                    "ticksOnRight": "1"
+                    "chartBottomMargin": "25" 
                 },
-                "value": "75"
+                "value": "110"
+            },
+            "events":{
+                "rendered": function(evtObj, argObj){
+                    setInterval(function () {
+                        (fuelVolume < 10) ? (fuelVolume = 110) : "";
+                        var consVolume = fuelVolume -(Math.floor(Math.random() * 3));
+                        FusionCharts("fuelMeter").feedData("&value=" + consVolume);
+                        fuelVolume = consVolume;
+                    }, 1000);
+                }
             }
         }).render();
-    
-    //Function to show/hide tick mark
-    function showTickMark(evt, obj) {
-        //Using showTickMarks attribute to show/hide ticks
-        (tickmarkCB.checked) ? fuelWidget.setChartAttribute('showTickMarks', 1) : 
-        fuelWidget.setChartAttribute('showTickMarks', 0);
-        
-    }
-    //Function to show/hide tick value
-    function showTickValue(evt, obj) {
-        //Using showTickValues attribute to show/hide tick value 
-        (tickvalueCB.checked) ? fuelWidget.setChartAttribute('showTickValues', 1) :
-        fuelWidget.setChartAttribute('showTickValues', 0);
-    }
-    
-    //Set event listener for check boxes and radio buttons
-    tickmarkCB.addEventListener && tickmarkCB.addEventListener("click", showTickMark);
-    tickvalueCB.addEventListener && tickvalueCB.addEventListener("click", showTickValue);
 });

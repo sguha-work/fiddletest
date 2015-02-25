@@ -1,89 +1,50 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'stackedcolumn3d',
+    var conversionChart = new FusionCharts({
+        type: 'funnel',
         renderAt: 'chart-container',
         width: '500',
-        height: '300',
+        height: '400',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Product-wise quarterly revenue in current year",
-                "subCaption": "Harry's SuperMart",
-                "xAxisname": "Quarter",
-                "yAxisName": "Revenue (In USD)",
-                "numberPrefix": "$",
-                "paletteColors": "#0075c2,#1aaf5d",
+                "caption": "Website - Harry's SuperMart",
+                "subcaption": "Visit to purchase - Conversion analysis for last year",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
                 "bgColor": "#ffffff",
-                "borderAlpha": "20",
-                "showCanvasBorder": "0",
-                "usePlotGradientColor": "0",
-                "plotBorderAlpha": "10",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
-                "valueFontColor": "#ffffff",                
-                "showXAxisLine": "1",
-                "xAxisLineColor": "#999999",
-                "divlineColor": "#999999",               
-                "divLineIsDashed": "1",
-                "showAlternateHGridColor": "0",
-                "subcaptionFontBold": "0",
-                "subcaptionFontSize": "14",
-                "showHoverEffect":"1"
+                "decimals": "1",
+                "showBorder": "0",
+                "isHollow": "1",
+                "labelDistance": "15",
+                "is2D": "1",
+                "plotTooltext": "Success : $percentOfPrevValue",
+                "showPercentValues": "1"
             },
-            "categories": [
+            "data": [
                 {
-                    "category": [
-                        {
-                            "label": "Q1"
-                        },
-                        {
-                            "label": "Q2"
-                        },
-                        {
-                            "label": "Q3"
-                        },
-                        {
-                            "label": "Q4"
-                        }
-                    ]
-                }
-            ],
-            "dataset": [
+                    "label": "Unique Website Visits",
+                    "value": "1460000"
+                }, 
                 {
-                    "seriesname": "Food Products",
-                    "data": [
-                        {
-                            "value": "121000"
-                        },
-                        {
-                            "value": "135000"
-                        },
-                        {
-                            "value": "123500"
-                        },
-                        {
-                            "value": "145000"
-                        }
-                    ]
-                },
+                    "label": "Programme Details Section Visits",
+                    "value": "930000"
+                }, 
                 {
-                    "seriesname": "Non-Food Products",
-                    "data": [
-                        {
-                            "value": "131400"
-                        },
-                        {
-                            "value": "154800"
-                        },
-                        {
-                            "value": "98300"
-                        },
-                        {
-                            "value": "131800"
-                        }
-                    ]
+                    "label": "Attempts to Register",
+                    "value": "540000"
+                }, 
+                {
+                    "label": "Successful Registrations",
+                    "value": "210000"
+                }, 
+                {
+                    "label": "Logged In",
+                    "value": "190000"
+                }, 
+                {
+                    "label": "Purchased on Introductory Offers",
+                    "value": "120000"
                 }
             ]
         }
-    }).render();    
+    }).render();
 });

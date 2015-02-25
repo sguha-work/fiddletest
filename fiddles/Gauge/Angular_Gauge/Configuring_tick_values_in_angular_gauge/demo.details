@@ -1,5 +1,5 @@
 ---
-name: Angular Gauge - Showing dial values and placing them
+name: Angular Gauge - Configuring tick value steps
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

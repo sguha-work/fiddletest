@@ -1,87 +1,105 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var revenueChart = new FusionCharts({
+        type: 'msbar3d',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '450',
+        height: '450',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Total footfall in Bakersfield Central",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "No. of Visitors",
-                
-                //Cosmetics
-                "lineThickness" : "2",
-                "paletteColors" : "#0075c2",
-                "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "captionFontSize" : "14",
-                "subcaptionFontSize" : "14",
-                "subcaptionFontBold" : "0",
-                "showBorder" : "0",
-                "bgColor" : "#ffffff",
-                "showShadow" : "0",
-                "canvasBgColor" : "#ffffff",
-                "canvasBorderAlpha" : "0",
-                "divlineAlpha" : "100",
-                "divlineColor" : "#999999",
-                "divlineThickness" : "1",
-                "divLineIsDashed" : "1",
-                "divLineDashLen" : "1",
-                "divLineGapLen" : "1",
-                "showXAxisLine" : "1",
-                "xAxisLineThickness" : "1",
-                "xAxisLineColor" : "#999999",
-                "showAlternateHGridColor" : "0",
-                
-            },
-            "data": [
+                "caption": "Split of Sales by Product Category",
+                "subCaption": "In top 5 stores last month",
+                "yAxisname": "Sales (In USD)",
+                "numberPrefix": "$",
+                "paletteColors": "#0075c2,#1aaf5d",
+                "bgColor": "#ffffff",
+                "legendBorderAlpha": "0",
+                "legendBgAlpha": "0",
+                "legendShadow": "0",
+                "placevaluesInside": "1",
+                "valueFontColor": "#ffffff",                
+                "alignCaptionWithCanvas": "1",
+                "showHoverEffect":"1",
+                "canvasBgColor": "#ffffff",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "divlineColor": "#999999",
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1",
+                "showAlternateHGridColor": "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5"
+            },            
+            "categories": [
                 {
-                    "label": "Mon",
-                    "value": "15123"
-                },
-                {
-                    "label": "Tue",
-                    "value": "14233"
-                },
-                {
-                    "label": "Wed",
-                    "value": "23507"
-                },
-                {
-                    "label": "Thu",
-                    "value": "9110"
-                },
-                {
-                    "label": "Fri",
-                    "value": "15529"
-                },
-                {
-                    "label": "Sat",
-                    "value": "20803"
-                },
-                {
-                    "label": "Sun",
-                    "value": "19202"
-                }
-            ],
-            "trendlines": [
-                {
-                    "line": [
+                    "category": [
                         {
-                            "startvalue": "18500",
-                            "color": "#1aaf5d",
-                            "displayvalue": "Average{br}weekly{br}footfall",
-                            "valueOnRight" : "1",
-                            "thickness" : "2"
+                            "label": "Bakersfield Central"
+                        }, 
+                        {
+                            "label": "Garden Groove harbour"
+                        }, 
+                        {
+                            "label": "Los Angeles Topanga"
+                        }, 
+                        {
+                            "label": "Compton-Rancho Dom"
+                        }, 
+                        {
+                            "label": "Daly City Serramonte"
+                        }
+                    ]
+                }
+            ],           
+            "dataset": [
+                {
+                    "seriesname": "Food Products",
+                    "data": [
+                        {
+                            "value": "17000"
+                        }, 
+                        {
+                            "value": "19500"
+                        }, 
+                        {
+                            "value": "12500"
+                        }, 
+                        {
+                            "value": "14500"
+                        }, 
+                        {
+                            "value": "17500"
+                        }
+                    ]
+                }, 
+                {
+                    "seriesname": "Non-Food Products",
+                    "data": [
+                        {
+                            "value": "25400"
+                        }, 
+                        {
+                            "value": "29800"
+                        }, 
+                        {
+                            "value": "21800"
+                        }, 
+                        {
+                            "value": "19500"
+                        }, 
+                        {
+                            "value": "11500"
                         }
                     ]
                 }
             ]
         }
-    });
-    
-    visitChart.render();
+    })
+    .render();
 });

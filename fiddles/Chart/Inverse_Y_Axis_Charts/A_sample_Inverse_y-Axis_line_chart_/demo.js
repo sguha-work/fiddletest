@@ -1,125 +1,78 @@
-FusionCharts.ready(function () {
-    var salesPrediction = new FusionCharts({
-        type: 'dragline',
+FusionCharts.ready(function(){
+    var myChart = new FusionCharts({
+        type: 'inversemsline',
+        dataFormat: 'json',
         renderAt: 'chart-container',
         width: '500',
-        height: '350',
-        dataFormat: 'json',
+        height: '300',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Sales Projections",
-                "subCaption": "iPhone vs Samsung Galaxy",
-                "xAxisName": "Quarter",
-                "yAxisName": "No. of Units",
-                "paletteColors": "#0075c2,#1aaf5d",
-                "showalternatehgridcolor": "0",
-                "bgAlpha": "0",
-                "borderAlpha": "20",
-                "usePlotGradientColor": "0",
-                "canvasBorderAlpha": "0",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
-                "showXAxisLine": "1",
-                "axisLineAlpha": "25",
-                "divLineAlpha": "25",
-                "showBorder": "0"                
-            },            
+                "caption": "Average Page Load Time (hsm.com)",
+                "subCaption": "Last Week",
+                "showBorder": "0",
+                "xAxisName": "Day",
+                "yAxisName": "Time (In Sec)",
+                "numberSuffix":"s",
+                
+                //Cosmetics
+                "lineThickness" : "2",
+                "paletteColors": "#008ee4,#6baa01",
+                "baseFontColor" : "#333333",
+                "baseFont" : "Helvetica Neue,Arial",
+                "captionFontSize" : "14",
+                "subcaptionFontSize" : "14",
+                "subcaptionFontBold" : "0",
+                "showBorder" : "0",
+                "bgColor" : "#ffffff",
+                "showShadow" : "0",
+                "showLegend": "0",
+                "canvasBgColor" : "#ffffff",
+                "canvasBorderAlpha" : "0",
+                "divlineAlpha" : "100",
+                "divlineColor" : "#999999",
+                "divlineThickness" : "1",
+                "divLineIsDashed" : "1",
+                "divLineDashLen" : "1",
+                "divLineGapLen" : "1",
+                "showXAxisLine" : "1",
+                "xAxisLineThickness" : "1",
+                "xAxisLineColor" : "#999999",
+                "showAlternateHGridColor" : "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5"
+            },
             "categories": [
                 {
-                    "category": [
-                        {
-                            "label": "Q1"
-                        }, 
-                        {
-                            "label": "Q2"
-                        }, 
-                        {
-                            "label": "Q3(E)"
-                        }, 
-                        {
-                            "label": "Q4(E)"
-                        }
+                   "category": [
+                        { "label": "Mon" },
+                        { "label": "Tue" },
+                        { "label": "Wed" },
+                        { "label": "Thu" },
+                        { "label": "Fri" },
+                        { "label": "Sat" },
+                        { "label": "Sun" }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Apple",
-                    "valuePosition": "ABOVE",
+                    "seriesname": "Loading Time",
                     "allowDrag": "0",
                     "data": [
-                        {
-                            "value": "1200"
-                        }, 
-                        {
-                            "value": "1500",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "1300",
-                            "allowDrag": "1",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "900",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
-                        }
-                    ]
-                },
-                {
-                    "seriesname": "Samsung",
-                    "allowDrag": "0",
-                    "data": [
-                        {
-                            "value": "600"
-                        }, 
-                        {
-                            "value": "850",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "1000",
-                            "allowDrag": "1",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "1200",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
-                        }
+                        { "value": "6" },
+                        { "value": "5.8" },
+                        { "value": "5" },
+                        { "value": "4.3" },
+                        { "value": "4.1" },
+                        { "value": "3.8" },
+                        { "value": "3.2" }
                     ]
                 }
             ]
-        },
-        events: {
-            'dataplotdragend': function(evt, arg){
-                var dsIndx = arg && arg.datasetIndex,
-                    dtIndx = arg && arg.dataIndex,
-                    val = arg && parseInt(arg.endValue, 10);
-                
-                document.getElementById(dsIndx+'-'+dtIndx).innerHTML = val;
-                
-            },
-            
-            'datarestored': function(evtObj){
-                var ds1Values = ["1200", "1500", "1300", "900"],
-                    ds2Values = ["600", "850", "1000", "1200"],
-                    
-                    update = function (arr, rowNum) {
-                        var i = 0,
-                            arrLen = arr.length;
-                        
-                        for (i; i < arrLen; i += 1) {
-                            val = arr[i];
-                            
-                            document.getElementById(rowNum+'-'+(i+1)).innerHTML = val;
-                        }
-                    };
-                
-                update(ds1Values, 1);
-                update(ds2Values, 2);
-            }
         }
     }).render();
 });

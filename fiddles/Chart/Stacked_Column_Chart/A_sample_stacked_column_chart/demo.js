@@ -1,139 +1,51 @@
-FusionCharts.ready(function () {
+FusionCharts.ready(function() {
     var revenueChart = new FusionCharts({
-        type: 'mscombidy2d',
+        type: 'stackedcolumn2d',
         renderAt: 'chart-container',
-        width: '600',
-        height: '350',
+        width: '500',
+        height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Revenues and Profits",
-                    "subCaption": "For last year",
-                    "xAxisname": "Month",
-                    "pYAxisName": "Amount (In USD)",
-                    "sYAxisName": "Profit %",
-                    "numberPrefix": "$",
-                    "sNumberSuffix" : "%",
-                    "sYAxisMaxValue" : "50",
-                    "primaryAxisOnLeft": "0",                                        
-                    "theme": "fint"
+                "theme": "fint",
+                "caption": "Revenue split by product category",
+                "subCaption": "For current year",
+                "xAxisname": "Quarter",
+                "yAxisName": "Revenues (In USD)",
+                //Showing the Cumulative Sum of stacked data
+                "showSum": "1",
+                "numberPrefix": "$"
             },
-            "categories": [{
-                "category": [{
-                    "label": "Jan"
-                }, {
-                    "label": "Feb"
-                }, {
-                    "label": "Mar"
-                }, {
-                    "label": "Apr"
-                }, {
-                    "label": "May"
-                }, {
-                    "label": "Jun"
-                }, {
-                    "label": "Jul"
-                }, {
-                    "label": "Aug"
-                }, {
-                    "label": "Sep"
-                }, {
-                    "label": "Oct"
-                }, {
-                    "label": "Nov"
-                }, {
-                    "label": "Dec"
-                }]
-            }],
-            "dataset": [{
-                "seriesName": "Revenues",
-                    "data": [{
-                    "value": "16000"
-                }, {
-                    "value": "20000"
-                }, {
-                    "value": "18000"
-                }, {
-                    "value": "19000"
-                }, {
-                    "value": "15000"
-                }, {
-                    "value": "21000"
-                }, {
-                    "value": "16000"
-                }, {
-                    "value": "20000"
-                }, {
-                    "value": "17000"
-                }, {
-                    "value": "22000"
-                }, {
-                    "value": "19000"
-                }, {
-                    "value": "23000"
-                }]
-            }, {
-                "seriesName": "Profits",
-                "renderAs": "area",
-                "showValues": "0",
-                "data": [{
-                    "value": "4000"
-                }, {
-                    "value": "5000"
-                }, {
-                    "value": "3000"
-                }, {
-                    "value": "4000"
-                }, {
-                    "value": "1000"
-                }, {
-                    "value": "7000"
-                }, {
-                    "value": "1000"
-                }, {
-                    "value": "4000"
-                }, {
-                    "value": "1000"
-                }, {
-                    "value": "8000"
-                }, {
-                    "value": "2000"
-                }, {
-                    "value": "7000"
-                }]
-            }, {
-                "seriesName": "Profit %",
-                "parentYAxis": "S",
-                "renderAs": "line",
-                "showValues": "0",
-                "data": [{
-                    "value": "25"
-                }, {
-                    "value": "25"
-                }, {
-                    "value": "16.66"
-                }, {
-                    "value": "21.05"
-                }, {
-                    "value": "6.66"
-                }, {
-                    "value": "33.33"
-                }, {
-                    "value": "6.25"
-                }, {
-                    "value": "25"
-                }, {
-                    "value": "5.88"
-                }, {
-                    "value": "36.36"
-                }, {
-                    "value": "10.52"
-                }, {
-                    "value": "30.43"
-                }]
-            }]
+            "categories": [
+                {
+                    "category": [
+                        {"label": "Q1"},
+                        {"label": "Q2"},
+                        {"label": "Q3"},
+                        {"label": "Q4"}
+                    ]
+                }
+            ],
+            "dataset": [
+                {
+                    "seriesname": "Food Products",
+                    "data": [
+                        {"value": "11000"},
+                        {"value": "15000"},
+                        {"value": "13500"},
+                        {"value": "15000"}
+                    ]
+                }, 
+                {
+                    "seriesname": "Non-Food Products",
+                    "data": [
+                        {"value": "11400"},
+                        {"value": "14800"},
+                        {"value": "8300"},
+                        {"value": "11800"}
+                    ]
+                }
+            ]
         }
-    });
-
-    revenueChart.render();
+    }).render();
 });

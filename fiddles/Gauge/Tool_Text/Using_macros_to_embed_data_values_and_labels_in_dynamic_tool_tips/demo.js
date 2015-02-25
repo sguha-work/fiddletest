@@ -1,6 +1,6 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var salesChart = new FusionCharts({
+        type: 'column2d',
         renderAt: 'chart-container',
         id: 'myChart',
         width: '450',
@@ -8,63 +8,41 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Quarterly Sales Summary",
+                "subcaption": "(Roll over columns to see dynamic tool-tips)",
+                "subcaptionFontBold":"0",
+                "xaxisname": "Quarter",
+                "yaxisname": "Amount (In USD)",
+                "numberprefix": "$",
+                "numbersuffix": "K",
+                //Tool-tip customization
+                "toolTipBorderColor":"#003366",
+                "toolTipBgColor":"#003366",
+                "toolTipBgAlpha":"100",
+                "plottooltext": "<span id='headerdiv' >$label</span>{br}<div id='valueDiv'>$dataValue</div>",
+                "theme" : "fint"
             },
             "data": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "label": "Quarter 1",
+                    "value": "195"
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
+                    "label": "Quarter 2",
+                    "value": "155"
                 }, 
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
+                    "label": "Quarter 3",
+                    "value": "178"
                 }, 
                 {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "label": "Quarter 4",
+                    "value": "192"
                 }
             ]
         }
-    }).render();
+    });
+    
+    salesChart.render();
+    
 });

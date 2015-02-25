@@ -1,16 +1,13 @@
-<!-- Adding Trend-Zones in SparkLine chart using:
-    
-    Element
-    # trendlines
+<!-- Customizing tick marks/value visibility and position in  HBullet chart showing last month revenue for Bakersfield Central outlet using attributes:
 
-    Attribute
-        # startvalue - The starting value for the trendline. Say, if we want to plot a slanted trendline from value 102 to 109, the startValue will be 102.
+    # showTickMarks - Whether to show tick marks on graph
+    # showTickValues - Whether to show tick values on graph
+    # ticksBelowGraph - Whether to show tick below or top of graph
 
-        #endValue - The ending y-axis value for the trendline. Say, if we want to plot a slanted trendline from value 102 to 109, the endValue will be 109. If we do not specify a value for endValue, it will automatically assume the same value as startValue.
-
-        # isTrendZone - Whether the trend will display a line or a zone (filled colored rectangle).
-
-        # color - Defines color of the trend zone.
- 
 -->
 <div id="chart-container">FusionCharts will render here</div>
+<div id="checkbox-container">
+    <input type="checkbox" id="tmCB" checked>Show Tick Mark ?</input>
+    <input type="checkbox" id="tvCB" checked>Show Tick Value ?</input>
+    <input type="checkbox" id="tpCB">Tick On Top ?</input>
+</div>

@@ -1,48 +1,64 @@
-FusionCharts.ready(function(){
-    var tickmarkCB = document.getElementById('tmCB'),
-        tickvalueCB = document.getElementById('tvCB'),
-        fuelWidget = new FusionCharts({
-            type: 'cylinder',
-            dataFormat: 'json',
-            id: 'fuelMeter',
-            renderAt: 'chart-container',
-            width: '150',
-            height: '350',
-            dataSource: {
-                "chart": {
-                    "theme": "fint",
-                    "caption": "Diesel Level in Generator",
-                    "subcaption": "Bakersfield Central",
-                    "lowerLimit": "0",
-                    "upperLimit": "120",
-                    "lowerLimitDisplay": "Empty",
-                    "upperLimitDisplay": "Full",
-                    "numberSuffix": " ltrs",
-                    "showValue": "1",
-                    "chartBottomMargin": "25",
-                    "showTickValues": "0",
-                    "showTickMarks": "0",
-                    "ticksOnRight": "1"
-                },
-                "value": "75"
+FusionCharts.ready(function () {
+    var salesChart = new FusionCharts({
+        type: 'bulb',
+        renderAt: 'chart-container',
+        id: 'myChart',
+        width: '300',
+        height: '300',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "caption": "Temperature status of deep freezers",
+                "upperlimit": "-5",
+                "lowerlimit": "-60",
+                "captionPadding":"30",
+                "showshadow":"0",
+                "showvalue": "1",
+                "useColorNameAsValue":"1",
+                "placeValuesInside":"1",
+                "valueFontSize": "16",
+                
+               //2D look n feel
+                "is3D" : "0",
+                
+                //Theme
+                "theme" : "fint"
+                
+                
+            },
+            "colorrange": {
+                "color": [
+                    {
+                        "minvalue": "-60",
+                        "maxvalue": "-35",
+                        "label": "Mission control, <br> we have a situation!",
+                        "code": "#ff0000"
+                    }, 
+                    {
+                        "minvalue": "-35",
+                        "maxvalue": "-25",
+                        "label": "Something is just  not right!",
+                        "code": "#ff9900"
+                    }, 
+                    {
+                        "minvalue": "-25",
+                        "maxvalue": "-5",
+                        "label": "All well ahoy!",
+                        "code": "#00ff00"
+                    }
+                ]
+            },
+            "value": "-5"
+        },
+        "events":{
+            "rendered": function(evtObj, argObj){
+                setInterval(function () {
+                    var num = (Math.floor(Math.random() * 55)*-1) -5;
+                    FusionCharts("myChart").feedData("&value=" + num);
+                }, 10000);
             }
-        }).render();
+        }
+    });
+    salesChart.render();
     
-    //Function to show/hide tick mark
-    function showTickMark(evt, obj) {
-        //Using showTickMarks attribute to show/hide ticks
-        (tickmarkCB.checked) ? fuelWidget.setChartAttribute('showTickMarks', 1) : 
-        fuelWidget.setChartAttribute('showTickMarks', 0);
-        
-    }
-    //Function to show/hide tick value
-    function showTickValue(evt, obj) {
-        //Using showTickValues attribute to show/hide tick value 
-        (tickvalueCB.checked) ? fuelWidget.setChartAttribute('showTickValues', 1) :
-        fuelWidget.setChartAttribute('showTickValues', 0);
-    }
-    
-    //Set event listener for check boxes and radio buttons
-    tickmarkCB.addEventListener && tickmarkCB.addEventListener("click", showTickMark);
-    tickvalueCB.addEventListener && tickvalueCB.addEventListener("click", showTickValue);
 });

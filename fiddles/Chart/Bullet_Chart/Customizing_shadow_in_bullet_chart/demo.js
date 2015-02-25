@@ -1,68 +1,61 @@
 FusionCharts.ready(function () {
-    var stockPriceChart = new FusionCharts({
-        type: 'sparkline',
+   var showShadowCB = document.getElementById('showShadow'),
+     revBulletChart = new FusionCharts({
+        type: 'hbullet',
         renderAt: 'chart-container',
-        width: '450',
-        height: '70',
+        width: '500',
+        height: '90',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "theme": "fint",
-                "caption": "Stock Price",
-                "subcaption": "Last month",
+                "lowerLimit": "0",
+                "subCaptionFontSize": "11",
+                "upperLimit": "120",
+                "caption": "Last Month Revenue",
+                "subcaption": "Actual vs Target (Bakersfield Central)",
+                "showShadow" : "0",
                 "numberPrefix": "$",
-                "chartBottomMargin": "30"
+                "numberSuffix": "K",
+                "chartBottomMargin": "25"
             },
-            "dataset": [
-                {
-                    "data": [
-                        { "value": "38.42" },
-                        { "value": "41.43" },
-                        { "value": "34.78" },
-                        { "value": "40.67" },
-                        { "value": "44.12" },
-                        { "value": "38.45" },
-                        { "value": "40.71" },
-                        { "value": "49.90" },
-                        { "value": "40.12" },
-                        { "value": "34.91" },
-                        { "value": "42.02" },
-                        { "value": "35.21" },
-                        { "value": "43.31" },
-                        { "value": "40.21" },
-                        { "value": "40.54" },
-                        { "value": "40.90" },
-                        { "value": "54.21" },
-                        { "value": "41.90" },
-                        { "value": "33.43" },
-                        { "value": "46.73" },
-                        { "value": "50.42" },
-                        { "value": "40.74" },
-                        { "value": "42.31" },
-                        { "value": "50.39" },
-                        { "value": "51.10" },
-                        { "value": "44.84" },
-                        { "value": "51.64" },
-                        { "value": "47.62" },
-                        { "value": "39.61" },
-                        { "value": "35.13" }
-                    ]
-                }
-            ],
-            //Adding trend-zone in chart
-            "trendlines": [
-                {
-                    "line": [
-                        {
-                            "startValue": "30",
-                            "endValue": "45",
-                            "isTrendZone": "1",
-                            "color": "#999999"
-                        }
-                    ]
-                }
-            ]
+            "colorRange": {
+                "color": [
+                    {
+                        "minValue": "0",
+                        "maxValue": "50",
+                        "code": "#e44a00",
+                        "alpha": "25"
+                    },
+                    {
+                        "minValue": "50",
+                        "maxValue": "75",
+                        "code": "#f8bd19",
+                        "alpha": "25"
+                    },
+                    {
+                        "minValue": "75",
+                        "maxValue": "120",
+                        "code": "#6baa01",
+                        "alpha": "25"
+                    }
+                ]
+            },
+            "value": "82",
+            "target": "90"
         }
     })
     .render();
+      //Set event listener for check boxes
+    showShadowCB.addEventListener && showShadowCB.addEventListener("click", toggleShadow);
+    //Function to show/hide value
+    function toggleShadow(evt, obj) {
+        //Using showValue attribute to show hide chart value
+        if(showShadowCB.checked) {
+            revBulletChart.setChartAttribute('showShadow', 1);
+        }
+        else{
+            revBulletChart.setChartAttribute('showShadow', 0);
+        }
+    }
 });

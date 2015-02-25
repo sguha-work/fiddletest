@@ -1,5 +1,5 @@
 ---
-name: FusionCharts -  Setting sub-caption in JavaScript charts
+name: FusionCharts -  Setting x-axis title for a JavaScript chart
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

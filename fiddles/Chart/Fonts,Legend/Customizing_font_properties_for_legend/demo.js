@@ -1,48 +1,70 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'column2d',
+        type: 'mscolumn2d',
         renderAt: 'chart-container',
-        width: '500',
+        width: '600',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
-                "xAxisName": "Quarter",
+                "caption": "Comparison of Quarterly Revenue",
+                "subCaption": "Last year Vs This year",
+                "xAxisname": "Quarter",
                 "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
+                "theme": "fint",
+                //Set legend to appear at right side of chart
+                "legendPosition": "right",
+                //Set a text caption for legend
+                "legendCaption": "Which year?",                
+                "legendCaptionBold": "1",
+                "legendCaptionFont": "Arial",
+                "legendCaptionFontSize": "14",
+                "legendCaptionFontColor": "#333333",
+                //Configuration for legend font
+                "legendItemFontBold" : "0",
+                "legendItemFont": "Arial",
+                "legendItemFontSize": "11",
+                "legendItemFontColor": "#666666",
+                "legendItemHoverFontColor": "#000000",
+                "legendCaptionAlignment": "left",
+                //Color of hidden legend item
+                "legendItemHiddenColor": "#e8e8e8"
             },
-            
-            "data": [
-                {
-                    "label": "Q1",
-                    "value": "1950000"
-                }, 
-                {
-                    "label": "Q2",
-                    "value": "1450000"
-                },
-                {
-                    "label": "Q3",
-                    "value": "1730000"
-                },
-                {
-                    "label": "Q4",
-                    "value": "2120000"
-                }
-            ]
+            "categories": [{
+                "category": [{
+                    "label": "Q1"
+                }, {
+                    "label": "Q2"
+                }, {
+                    "label": "Q3"
+                }, {
+                    "label": "Q4"
+                }]
+            }],
+            "dataset": [{
+                "seriesname": "Last Year",
+                "data": [{
+                    "value": "10000"
+                }, {
+                    "value": "11500"
+                }, {
+                    "value": "12500"
+                }, {
+                    "value": "15000"
+                }]
+            }, {
+            "seriesname": "This Year",
+                "data": [{
+                    "value": "25400"
+                }, {
+                    "value": "29800"
+                }, {
+                    "value": "21800"
+                }, {
+                    "value": "26800"
+                }]
+            }]
         }
-    });
-    
-    revenueChart.render();
+    }).render();
 });

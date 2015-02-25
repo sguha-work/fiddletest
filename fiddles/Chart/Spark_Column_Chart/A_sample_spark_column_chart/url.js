@@ -1,0 +1,1 @@
+http://jsfiddle.net/fusioncharts/vc6FX/

@@ -2,7 +2,7 @@ FusionCharts.ready(function () {
     var conversionChart = new FusionCharts({
         type: 'funnel',
         renderAt: 'chart-container',
-        width: '450',
+        width: '500',
         height: '400',
         dataFormat: 'json',
         dataSource: {
@@ -10,13 +10,10 @@ FusionCharts.ready(function () {
                 "caption": "Website visits",
                 "subcaption": "Purchase - Conversion analysis for last year",
                 "decimals": "1",
-                "is2D": "0",
-                "streamlinedData" : "0",
-
-                //Show legend
-                "showLegend" : "1",
-                "showLabels" : "0",
-                
+                "is2D": "1",
+                "labelDistance": "15",
+                "plotTooltext": "Success : $percentOfPrevValue",
+                "showPercentValues": "1",
                 "theme" : "fint"
             },
             "data": [
@@ -30,7 +27,9 @@ FusionCharts.ready(function () {
                 }, 
                 {
                     "label": "Attempts to Register",
-                    "value": "540000"
+                    "value": "540000",
+                    //Funnel sliced out
+                    "isSliced" :"1"
                 }, 
                 {
                     "label": "Successful Registrations",

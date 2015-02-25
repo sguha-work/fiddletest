@@ -2,43 +2,40 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '500',
+        width: '400',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
-                "xAxisName": "Quarter",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
+               "caption": "Quarterly Revenue",
+                "subcaption": "Last year",
+                "xaxisname": "Quarter",
+                "yaxisname": "Amount",
+                "numberPrefix" : "$",
+                "numberSuffix" : "K",
+                "palettecolors": "#008ee4",
+                "useplotgradientcolor": "0",
+                "showplotborder": "0",
+                "showShadow":"0",
+                //Setting palette to 5
+                "palette":"5"
             },
-            
             "data": [
                 {
                     "label": "Q1",
-                    "value": "1950000"
+                    "value": "125"
                 }, 
                 {
                     "label": "Q2",
-                    "value": "1450000"
-                },
+                    "value": "257"
+                }, 
                 {
                     "label": "Q3",
-                    "value": "1730000"
-                },
+                    "value": "173"
+                }, 
                 {
                     "label": "Q4",
-                    "value": "2120000"
+                    "value": "182"
                 }
             ]
         }

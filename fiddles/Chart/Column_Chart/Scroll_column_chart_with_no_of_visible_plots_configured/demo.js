@@ -15,11 +15,9 @@ FusionCharts.ready(function () {
                 "rotateValues": "1",
                 "valueFontColor" : "#ffffff",
                 "numberprefix": "$",
-                //Configure scrollbar
-                "scrollShowButtons" : "1",
-                "scrollColor" : "#1aaf5d",
-                "scrollHeight" : "12",
-                "scrollPadding" : "2",
+                //Configure no.of visible plots
+                "numVisiblePlot" : "12",
+                
                 "theme" : "fint"
             },
             "categories": [

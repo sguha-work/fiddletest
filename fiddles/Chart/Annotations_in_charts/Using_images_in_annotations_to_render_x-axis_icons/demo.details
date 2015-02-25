@@ -1,8 +1,7 @@
 ---
-name: FusionCharts - Configuring border and background cosmetics of labels for vertical line. 
+name: FusionCharts - Using images in annotations to render icons on x-axis
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js
-  - http://static.fusioncharts.com/code/latest/fusioncharts.charts.js
   - http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js
 ...

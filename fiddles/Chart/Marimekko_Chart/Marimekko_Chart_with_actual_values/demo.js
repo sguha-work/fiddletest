@@ -1,139 +1,89 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'mscombidy2d',
+    var salesByBrandChart = new FusionCharts({
+        type: 'marimekko',
         renderAt: 'chart-container',
-        width: '600',
-        height: '350',
+        width: '450',
+        height: '300',
         dataFormat: 'json',
         dataSource: {
-            "chart": {
-                "caption": "Revenues and Profits",
-                    "subCaption": "For last year",
-                    "xAxisname": "Month",
-                    "pYAxisName": "Amount (In USD)",
-                    "sYAxisName": "Profit %",
-                    "numberPrefix": "$",
-                    "sNumberSuffix" : "%",
-                    "sYAxisMaxValue" : "50",
-                    "primaryAxisOnLeft": "0",                                        
-                    "theme": "fint"
-            },
-            "categories": [{
-                "category": [{
-                    "label": "Jan"
-                }, {
-                    "label": "Feb"
-                }, {
-                    "label": "Mar"
-                }, {
-                    "label": "Apr"
-                }, {
-                    "label": "May"
-                }, {
-                    "label": "Jun"
-                }, {
-                    "label": "Jul"
-                }, {
-                    "label": "Aug"
-                }, {
-                    "label": "Sep"
-                }, {
-                    "label": "Oct"
-                }, {
-                    "label": "Nov"
-                }, {
-                    "label": "Dec"
-                }]
-            }],
-            "dataset": [{
-                "seriesName": "Revenues",
-                    "data": [{
-                    "value": "16000"
-                }, {
-                    "value": "20000"
-                }, {
-                    "value": "18000"
-                }, {
-                    "value": "19000"
-                }, {
-                    "value": "15000"
-                }, {
-                    "value": "21000"
-                }, {
-                    "value": "16000"
-                }, {
-                    "value": "20000"
-                }, {
-                    "value": "17000"
-                }, {
-                    "value": "22000"
-                }, {
-                    "value": "19000"
-                }, {
-                    "value": "23000"
-                }]
-            }, {
-                "seriesName": "Profits",
-                "renderAs": "area",
-                "showValues": "0",
-                "data": [{
-                    "value": "4000"
-                }, {
-                    "value": "5000"
-                }, {
-                    "value": "3000"
-                }, {
-                    "value": "4000"
-                }, {
-                    "value": "1000"
-                }, {
-                    "value": "7000"
-                }, {
-                    "value": "1000"
-                }, {
-                    "value": "4000"
-                }, {
-                    "value": "1000"
-                }, {
-                    "value": "8000"
-                }, {
-                    "value": "2000"
-                }, {
-                    "value": "7000"
-                }]
-            }, {
-                "seriesName": "Profit %",
-                "parentYAxis": "S",
-                "renderAs": "line",
-                "showValues": "0",
-                "data": [{
-                    "value": "25"
-                }, {
-                    "value": "25"
-                }, {
-                    "value": "16.66"
-                }, {
-                    "value": "21.05"
-                }, {
-                    "value": "6.66"
-                }, {
-                    "value": "33.33"
-                }, {
-                    "value": "6.25"
-                }, {
-                    "value": "25"
-                }, {
-                    "value": "5.88"
-                }, {
-                    "value": "36.36"
-                }, {
-                    "value": "10.52"
-                }, {
-                    "value": "30.43"
-                }]
-            }]
+    "chart": {
+        "caption": "Top 3 Electronic Brands in Top 3 Stores",
+        "subcaption": "Last month",
+        "aligncaptiontocanvas": "0",
+        "yaxisname": "Statewise Sales (in %)",
+        "xaxisname": "Brand",
+        "numberprefix": "$",
+        "showPlotBorder" : "1",
+        "plotBorderThickness":"0.25",
+        "showxaxispercentvalues": "0",
+        "showsum": "1",
+        
+        // No percentage distribution
+        "usePercentDistribution": "0",
+        //Theme
+        "theme": "fint"
+    },
+    "categories": [
+        {
+            "category": [
+                {
+                    "label": "Bose"
+                },
+                {
+                    "label": "Dell"
+                },
+                {
+                    "label": "Apple"
+                }
+            ]
         }
+    ],
+    "dataset": [
+        {
+            "seriesname": "California",
+            "data": [
+                {
+                    "value": "335000"
+                },
+                {
+                    "value": "225100"
+                },
+                {
+                    "value": "164200"
+                }
+            ]
+        },
+        {
+            "seriesname": "Washington",
+            "data": [
+                {
+                    "value": "215000"
+                },
+                {
+                    "value": "198000"
+                },
+                {
+                    "value": "120000"
+                }
+            ]
+        },
+        {
+            "seriesname": "Nevada",
+            "data": [
+                {
+                    "value": "298000"
+                },
+                {
+                    "value": "109300"
+                },
+                {
+                    "value": "153600"
+                }
+            ]
+        }
+    ]
+}
     });
 
-    revenueChart.render();
+    salesByBrandChart.render();
 });

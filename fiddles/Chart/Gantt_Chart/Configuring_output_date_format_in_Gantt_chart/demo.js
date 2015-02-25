@@ -1,125 +1,46 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
+    var timeShiftChart = new FusionCharts({
         type: 'gantt',
         renderAt: 'chart-container',
         width: '650',
-        height: '300',
+        height: '400',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
-            },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
-                    {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
-                    }
-                ]
+                "caption": "Development Division - Work Schedule",
+                "subcaption": "Week 2 - (21st July to 25th July)",
+                "dateformat": "mm/dd/yyyy hh:mm:ss",
+                "outputDateFormat": "ddds mnl, yyyy hh12:mn ampm",                
+                "canvasBorderAlpha" : "30",
+                "theme" : "fint"
             },
             "categories": [
                 {
                     "category": [
                         {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
+                            "start": "7/21/2014 00:00:00",
+                            "end": "7/21/2014 23:59:59",
+                            "label": "Monday"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
+                            "start": "7/22/2014 00:00:00",
+                            "end": "7/22/2014 23:59:59",
+                            "label": "Tuesday"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
+                            "start": "7/23/2014 00:00:00",
+                            "end": "7/23/2014 23:59:59",
+                            "label": "Wednesday"
                         },
                         {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
+                            "start": "7/24/2014 00:00:00",
+                            "end": "7/24/2014 23:59:59",
+                            "label": "Thursday"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
-                        },
-                        {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
-                        },
-                        {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
-                        },
-                        {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
-                        },
-                        {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
+                            "start": "7/25/2014 00:00:00",
+                            "end": "7/25/2014 23:59:59",
+                            "label": "Friday"
                         }
                     ]
                 }
@@ -128,88 +49,104 @@ FusionCharts.ready(function () {
                 "fontsize": "12",
                 "isbold": "1",
                 "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
+                "headertext": "Employee",
+                "headerfontsize": "12",
+                "headervalign": "middle",
+                "headeralign": "left",
                 "process": [
                     {
-                        "label": "Identify Customers"
+                        "label": "John S.",
+                        "id": "EMP121"
                     },
                     {
-                        "label": "Survey 500 Customers"
+                        "label": "David G.",
+                        "id": "EMP122"
                     },
                     {
-                        "label": "Interpret Requirements"
+                        "label": "Mary P.",
+                        "id": "EMP123"
                     },
                     {
-                        "label": "Market Analysis"
+                        "label": "Andrew H.",
+                        "id": "EMP124"
                     },
                     {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
+                        "label": "Neil M.",
+                        "id": "EMP125"
                     }
                 ]
             },
             "tasks": {
+                "showlabels": "1",                
                 "task": [
                     {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
+                        "processid": "EMP121",
+                        "start": "7/21/2014 09:30:00",
+                        "end": "7/21/2014 17:00:00",
+                        "label": "Logo-I"
                     },
                     {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
+                        "processid": "EMP121",
+                        "start": "7/22/2014 09:30:00",
+                        "end": "7/22/2014 16:30:00",
+                        "label": "Logo-II"
                     },
                     {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
+                        "processid": "EMP121",
+                        "start": "7/23/2014 14:00:00",
+                        "end": "7/24/2014 16:30:00",
+                        "label": "Website template"
                     },
                     {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
+                        "processid": "EMP122",
+                        "start": "7/21/2014 10:00:00",
+                        "end": "7/25/2014 14:30:00",
+                        "label": "PHP Blueprint"
                     },
                     {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
+                        "processid": "EMP123",
+                        "start": "7/21/2014 10:00:00",
+                        "end": "7/21/2014 15:30:00",
+                        "label": "Testing Specification"
                     },
                     {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
+                        "processid": "EMP123",
+                        "start": "7/22/2014 09:30:00",
+                        "end": "7/22/2014 16:00:00",
+                        "label": "Testing tool research"
                     },
                     {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
+                        "processid": "EMP123",
+                        "start": "7/23/2014 09:30:00",
+                        "end": "7/25/2014 16:30:00",
+                        "label": "Testing tool integration"
                     },
                     {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
+                        "processid": "EMP124",
+                        "start": "7/22/2014 09:30:00",
+                        "end": "7/22/2014 16:30:00",
+                        "label": "QA"
                     },
                     {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
+                        "processid": "EMP124",
+                        "start": "7/23/2014 09:00:00",
+                        "end": "7/23/2014 16:30:00",
+                        "label": "QA"
                     },
                     {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
+                        "processid": "EMP124",
+                        "start": "7/24/2014 09:30:00",
+                        "end": "7/25/2014 14:30:00",
+                        "label": "QA"
+                    },
+                    {
+                        "processid": "EMP125",
+                        "start": "7/25/2014 15:00:00",
+                        "end": "7/25/2014 16:59:00",
+                        "label": "Weekly Meet"
                     }
                 ]
             }
-            
         }
     }).render();
 });

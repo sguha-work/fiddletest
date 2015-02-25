@@ -2,25 +2,19 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
+        id: 'myChart',
         width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
+                "theme": "fint",
+                "caption": "Quarterly revenue for last year",
                 "xAxisName": "Quarter",
-                "yAxisName": "Amount (In USD)",
+                "yAxisName": "Amount",
                 "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
+                //Changed to a lesser value deliberately to show automatic calculation of chart limits
+                "yAxisMaxValue": "2000000"
             },
             
             "data": [
@@ -31,18 +25,18 @@ FusionCharts.ready(function () {
                 {
                     "label": "Q2",
                     "value": "1450000"
-                },
+                }, 
                 {
                     "label": "Q3",
                     "value": "1730000"
-                },
+                }, 
                 {
                     "label": "Q4",
+                    //Maximum value. Chart automatically define chart limit based on max value.
                     "value": "2120000"
                 }
             ]
         }
-    });
+    }).render();
     
-    revenueChart.render();
 });

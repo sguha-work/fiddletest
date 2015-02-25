@@ -1,5 +1,5 @@
 ---
-name: FusionCharts - Configuration of Zero Plane in 3D charts
+name: FusionCharts - Showing or Hiding Zero Plane Value
 description: Showing only specific data values of a chart
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

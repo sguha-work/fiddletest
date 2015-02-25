@@ -1,57 +1,71 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'column2d',
+    var flag = 1,
+        revenueChart = new FusionCharts({
+        type: 'area2d',
+        id: "myChart",
         renderAt: 'chart-container',
-        width: '450',
-        height: '300',
+        width: '500',
+        height: '250',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
+                "caption": "Quarterly Revenue",
                 "subCaption": "Last year",
-                "xAxisName": "Month",
+                "xAxisName": "Quarter",
                 "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
-                "theme": "fint",
-                "labelDisplay": "auto"
+                //Canvas padding
+                "canvasPadding":"30",
+                //Theme
+                "theme" : "fint"
             },
-            "data": [{
-                "label": "January",
-                "value": "420000"
-            }, {
-                "label": "February",
-                "value": "810000"
-            }, {
-                "label": "March",
-                "value": "720000"
-            }, {
-                "label": "April",
-                "value": "550000"
-            }, {
-                "label": "May",
-                "value": "910000"
-            }, {
-                "label": "June",
-                "value": "510000"
-            }, {
-                "label": "July",
-                "value": "680000"
-            }, {
-                "label": "August",
-                "value": "620000"
-            }, {
-                "label": "September",
-                "value": "610000"
-            }, {
-                "label": "October",
-                "value": "490000"
-            }, {
-                "label": "November",
-                "value": "900000"
-            }, {
-                "label": "December",
-                "value": "730000"
-            }]
+            "data": [
+                {
+                    "label": "First Quarter",
+                    "value": "420000"
+                }, 
+                {
+                    "label": "Second Quarter",
+                    "value": "810000"
+                }, 
+                {
+                    "label": "Third Quarter",
+                    "value": "720000"
+                }, 
+                {
+                    "label": "Fourth Quarter",
+                    "value": "550000"
+                }
+            ]
+        },
+        "events" : {
+            "initialized" : function(evtObj, argObj){
+                var radElem,
+                    radio = document.getElementsByTagName('input');
+                for (i = 0; i < radio.length; i++) {
+                    radElem = radio[i];
+                    if (radElem.type === 'radio')     
+                    {                        
+                        radElem.onclick = function()
+                        {
+                            val = this.getAttribute('value');
+                            if(val === "withCP" && flag !== 1)
+                            {
+                                evtObj.sender.setChartAttribute( "canvasPadding" , "30" );
+                                flag = 1;
+                            } 
+                            else if(val === "withoutCP" && flag !== 0)
+                            {                            
+                                evtObj.sender.setChartAttribute( "canvasPadding" , "0" );
+                                flag = 0;
+                            }
+                        };
+                    }
+                }   
+            }
+            
         }
-    }).render();
+    });
+    
+    revenueChart.render();
 });

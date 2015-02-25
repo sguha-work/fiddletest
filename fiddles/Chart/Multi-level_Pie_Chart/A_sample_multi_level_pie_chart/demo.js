@@ -1,104 +1,140 @@
 FusionCharts.ready(function () {
-    var inventoryChart = new FusionCharts({
-        type: 'dragcolumn2d',
+    var topProductsChart = new FusionCharts({
+        type: 'multilevelpie',
         renderAt: 'chart-container',
+        id : "myChart",
         width: '500',
-        height: '350',
+        height: '500',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Inventory status - Bakersfield Central",                
-                "subCaption": "Top 5 Food items",
-                "xAxisName": "Food Item",
-                "yAxisName": "No. of Units",
+                "caption": "Sales Breakup - Top Product Categories",
+                "subcaption": "Last Quarter",
+                "showPlotBorder": "1",
+                "piefillalpha": "60",
+                "pieborderthickness": "2",
+                "hoverfillcolor": "#CCCCCC",
+                "piebordercolor": "#FFFFFF",
+                "hoverfillcolor": "#CCCCCC",
+                "numberprefix": "$",
+                "plottooltext": "$label, $$valueK, $percentValue",
+                //Theme
                 "theme": "fint"
             },
-            "categories": [
+            "category": [
                 {
+                    "label": "Products",
+                    "color": "#ffffff",
+                    "value": "150",
                     "category": [
                         {
-                            "label": "Poultry"
-                        }, 
-                        {
-                            "label": "Rice"
-                        }, 
-                        {
-                            "label": "Peanut Butter"
-                        }, 
-                        {
-                            "label": "Salmon"
-                        }, 
-                        {
-                            "label": "Cereal"
-                        }
-                    ]
-                }
-            ],
-            "dataset": [
-                {
-                    "seriesname": "Available Stock",
-                    "allowDrag": "0",
-                    "data": [{
-                        "value": "6000"
-                    }, 
-                             {
-                                 "value": "9500"
-                             }, 
-                             {
-                                 "value": "11900"
-                             }, 
-                             {
-                                 "value": "8000"
-                             }, 
-                             {
-                                 "value": "9700"
-                             }
+                            "label": "Food & {br}Beverages",
+                            "color": "#f8bd19",
+                            "value": "55.5",
+                            "tooltext" : "Food & Beverages, $$valueK, $percentValue",
+                            "category": [
+                                {
+                                    "label": "Breads",
+                                    "color": "#f8bd19",
+                                    "value": "11.1"
+                                },
+                                {
+                                    "label": "Juice",
+                                    "color": "#f8bd19",
+                                    "value": "27.75"
+                                },
+                                {
+                                    "label": "Noodles",
+                                    "color": "#f8bd19",
+                                    "value": "9.99"
+                                },
+                                {
+                                    "label": "Seafood",
+                                    "color": "#f8bd19",
+                                    "value": "6.66"
+                                }
                             ]
-                }, 
-                {
-                    "seriesname": "Estimated Demand",
-                    "dashed": "1",
-                    "data": [
+                        },
                         {
-                            "value": "19000"
-                        }, 
+                            "label": "Apparel &{br}Accessories",
+                            "color": "#33ccff",
+                            "value": "42",
+                            "tooltext" : "Apparel & Accessories, $$valueK, $percentValue",
+                            "category": [
+                                {
+                                    "label": "Sun Glasses",
+                                    "color": "#33ccff",
+                                    "value": "10.08"
+                                },
+                                {
+                                    "label": "Clothing",
+                                    "color": "#33ccff",
+                                    "value": "18.9"
+                                },
+                                {
+                                    "label": "Handbags",
+                                    "color": "#33ccff",
+                                    "value": "6.3"
+                                },
+                                {
+                                    "label": "Shoes",
+                                    "color": "#33ccff",
+                                    "value": "6.72"
+                                }
+                            ]
+                        },
                         {
-                            "value": "16500"
-                        }, 
+                            "label": "Baby {br}Products",
+                            "color": "#ffcccc",
+                            "value": "22.5",
+                            "tooltext" : "Baby Products, $$valueK, $percentValue",
+                            "category": [
+                                {
+                                    "label": "Bath &{br}Grooming",
+                                    "color": "#ffcccc",
+                                    "value": "9.45",
+                                    "tooltext" : "Bath & Grooming, $$valueK, $percentValue",
+                                    
+                                },
+                                {
+                                    "label": "Food",
+                                    "color": "#ffcccc",
+                                    "value": "6.3"
+                                },
+                                {
+                                    "label": "Diapers",
+                                    "color": "#ffcccc",
+                                    "value": "6.75"
+                                }
+                            ]
+                        },
                         {
-                            "value": "14300"
-                        }, 
-                        {
-                            "value": "10000"
-                        }, 
-                        {
-                            "value": "9800"
+                            "label": "Electronics",
+                            "color": "#ccff66",
+                            "value": "30",
+                            "category": [
+                                {
+                                    "label": "Laptops",
+                                    "color": "#ccff66",
+                                    "value": "8.1"
+                                },
+                                {
+                                    "label": "Televisions",
+                                    "color": "#ccff66",
+                                    "value": "10.5"
+                                },
+                                {
+                                    "label": "SmartPhones",
+                                    "color": "#ccff66",
+                                    "value": "11.4"
+                                }
+                            ]
                         }
                     ]
                 }
             ]
-        },
-        events: {
-            'beforeRender': function (evt, args) {
-                // creating div for controllers
-                var controllers = document.createElement('div');
-                
-                // Create radio buttons inside div
-                controllers.innerHTML = '<input type="button" value="Get Data" id="getdata_btn" style="margin-left:5px;padding-botom:15px;"/><div id="tableView" style="padding-top: 13px;"></div>';
-                // set css style for controllers div
-                controllers.style.cssText = '';
-                args.container.parentNode.insertBefore(controllers, args.container.nextSibling);
-                controllers.setAttribute('id', 'controllers');
-            },
-            'renderComplete': function(evt, arg){
-                function showData() {
-                    var chartIns = evt && evt.sender,
-                        data = chartIns && chartIns.getJSONData();
-                    alert(JSON.stringify(data)); 
-                }
-                document.getElementById("getdata_btn").addEventListener("click", showData);
-            }
-            
-        }
-    }).render();
+        }        
+    });
+    
+    topProductsChart.render();
 });

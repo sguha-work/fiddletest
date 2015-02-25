@@ -2,7 +2,7 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '450',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
@@ -13,43 +13,43 @@ FusionCharts.ready(function () {
                 "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
                 "theme": "fint",
-                "labelDisplay": "auto"
+                "labelDisplay": "wrap"
             },
             "data": [{
-                "label": "January",
+                "label": "Jan, 2015",
                 "value": "420000"
             }, {
-                "label": "February",
+                "label": "Feb, 2015",
                 "value": "810000"
             }, {
-                "label": "March",
+                "label": "Mar, 2015",
                 "value": "720000"
             }, {
-                "label": "April",
+                "label": "Apr, 2015",
                 "value": "550000"
             }, {
-                "label": "May",
+                "label": "May, 2015",
                 "value": "910000"
             }, {
-                "label": "June",
+                "label": "Jun, 2015",
                 "value": "510000"
             }, {
-                "label": "July",
+                "label": "Jul, 2015",
                 "value": "680000"
             }, {
-                "label": "August",
+                "label": "Aug, 2015",
                 "value": "620000"
             }, {
-                "label": "September",
+                "label": "Sep, 2015",
                 "value": "610000"
             }, {
-                "label": "October",
+                "label": "Oct, 2015",
                 "value": "490000"
             }, {
-                "label": "November",
+                "label": "Nov, 2015",
                 "value": "900000"
             }, {
-                "label": "December",
+                "label": "Dec, 2015",
                 "value": "730000"
             }]
         }

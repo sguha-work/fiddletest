@@ -2,56 +2,86 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '450',
-        height: '300',
+        width: '500',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
-                "subCaption": "Last year",
-                "xAxisName": "Month",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                "theme": "fint",
-                "labelDisplay": "auto"
+                "caption": "Harry's SuperMart",
+                "subCaption": "Cart Checkout to Payment Time",
+                "xAxisName": "Time",
+                "yAxisName": "Duration",
+                "yAxisMaxValue": "90",
+                "labelDisplay": "rotate",
+                "slantlabels":"1",
+                
+                //Attributes to configure scale                    
+                "formatNumberScale" : "1",
+                //Set scale to 60 (60 seconds: 1 minute)
+                "numberScaleValue":"60",
+                //Set the scale unit to minutes
+                "numberScaleUnit" : " minutes",
+                //Since all data is provided in seconds, default scale is seconds
+                "defaultNumberScale" : " seconds", 
+                //Theme
+                "theme" : "fint"
             },
-            "data": [{
-                "label": "January",
-                "value": "420000"
-            }, {
-                "label": "February",
-                "value": "810000"
-            }, {
-                "label": "March",
-                "value": "720000"
-            }, {
-                "label": "April",
-                "value": "550000"
-            }, {
-                "label": "May",
-                "value": "910000"
-            }, {
-                "label": "June",
-                "value": "510000"
-            }, {
-                "label": "July",
-                "value": "680000"
-            }, {
-                "label": "August",
-                "value": "620000"
-            }, {
-                "label": "September",
-                "value": "610000"
-            }, {
-                "label": "October",
-                "value": "490000"
-            }, {
-                "label": "November",
-                "value": "900000"
-            }, {
-                "label": "December",
-                "value": "730000"
-            }]
+            "data": [
+                {
+                    "label": "00:00",
+                    "value": "35"
+                }, 
+                {
+                    "label": "02:00",
+                    "value": "45"
+                }, 
+                {
+                    "label": "04:00",
+                    "value": "65"
+                }, 
+                {
+                    "label": "06:00",
+                    "value": "49"
+                }, 
+                {
+                    "label": "08:00",
+                    "value": "24"
+                }, 
+                {
+                    "label": "10:00",
+                    "value": "40"
+                }, 
+                {
+                    "label": "12:00",
+                    "value": "67"
+                }, 
+                {
+                    "label": "14:00",
+                    "value": "72"
+                }, 
+                {
+                    "label": "16:00",
+                    "value": "55"
+                }, 
+                {
+                    "label": "18:00",
+                    "value": "62"
+                }, 
+                {
+                    "label": "20:00",
+                    "value": "48"
+                }, 
+                {
+                    "label": "22:00",
+                    "value": "32"
+                }, 
+                {
+                    "label": "23:59",
+                    "value": "30"
+                }
+            ]
         }
-    }).render();
+    });
+    
+    revenueChart.render();
 });

@@ -1,19 +1,16 @@
-<!-- Configuring pointer properties in a simple Horizontal Linear Gauge showing Server CPU Utilization
+<!-- Configuring number of major and minor tick marks in a Horizontal Linear Gauge showing Server CPU Utilization using attributes:
 
-Element : 
-    # pointer
+    # majorTMNumber - To add number of ticks needed in major tickmarks
+    # minorTMNumber -  To add number of ticks needed in minor tickmarks
+    # adjustTM - Automatically adjust the number of major ticks and their values to a best feasible value if set to 1
 
-Attributes: 
-    # borderColor - To set the border color of the pointer (Hex code).
-    # borderThickness - To set the thickness of the boder (In pixel).
-    # borderAlpha - To set the alpha of the border (0-100).
-    # bgColor - To set the background color of the pointer (Hex code).
-    # bgAlpha - To set the background alpha of the pointer (Hex code).
-    # radius - To set the radius of the pointer.
-    # sides  - To set number of sides of the pointer.
+    Note : Attribute majorTMNumber intensionally set to 9 so as to show how adjustTM automatically adjust it to 10.
 
-     Deviation from Theme
-        #  valueFontSize
-        #  valueFontBold
+    Deviation from theme
+    # valueFontSize
+    # valueFontBold
 -->
 <div id="chart-container">FusionCharts will render here</div>
+<div id="checkbox-container">
+  <input type="checkbox" id="tMarkCB" checked >Adjust Tickmark ?</input>
+</div>

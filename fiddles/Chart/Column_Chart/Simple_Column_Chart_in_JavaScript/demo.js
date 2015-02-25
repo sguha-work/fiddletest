@@ -1,64 +1,71 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var revenueChart = new FusionCharts({
+        type: 'column2d',
         renderAt: 'chart-container',
         width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "theme": "fint",
-                "caption": "Visitors to website",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "Visits",
-                "showValues": "0",
-                //Hiding label borders for all vertical lines
-                "showVLineLabelBorder": "0"
+                "caption": "Monthly revenue for last year",
+                "subCaption": "Harry's SuperMart",
+                "xAxisName": "Month",
+                "yAxisName": "Revenues (In USD)",
+                "numberPrefix": "$",
+                "theme": "fint"
             },
+
             "data": [
                 {
-                    "label": "Mon",
-                    "value": "5123"
-                }, 
+                    "label": "Jan",
+                    "value": "420000"
+                },
                 {
-                    "label": "Tue",
-                    "value": "4233"
-                }, 
+                    "label": "Feb",
+                    "value": "810000"
+                },
                 {
-                    "label": "Wed",
-                    "value": "5507"
-                }, 
+                    "label": "Mar",
+                    "value": "720000"
+                },
                 {
-                    "label": "Thu",
-                    "value": "4110"
-                }, 
+                    "label": "Apr",
+                    "value": "550000"
+                },
                 {
-                    "label": "Fri",
-                    "value": "5529"
-                }, 
+                    "label": "May",
+                    "value": "910000"
+                },
                 {
-                    "vline": "true",
-                    "linePosition": "1",
-                    "label": "Weekend",
-                    "labelPosition": "0",
-                    "labelHAlign": "left",
-                    "labelVAlign": "top",
-                    "color": "#6da81e",
-                    "alpha": "50",
-                    //(Optionally) Hiding vline label border from vline element
-                    "showLabelBorder": "0"
-                }, 
+                    "label": "Jun",
+                    "value": "510000"
+                },
                 {
-                    "label": "Sat",
-                    "value": "5803"
-                }, 
+                    "label": "Jul",
+                    "value": "680000"
+                },
                 {
-                    "label": "Sun",
-                    "value": "6202"
+                    "label": "Aug",
+                    "value": "620000"
+                },
+                {
+                    "label": "Sep",
+                    "value": "610000"
+                },
+                {
+                    "label": "Oct",
+                    "value": "490000"
+                },
+                {
+                    "label": "Nov",
+                    "value": "900000"
+                },
+                {
+                    "label": "Dec",
+                    "value": "730000"
                 }
             ]
         }
-    }).render();
-    
+    });
+    revenueChart.render();
 });

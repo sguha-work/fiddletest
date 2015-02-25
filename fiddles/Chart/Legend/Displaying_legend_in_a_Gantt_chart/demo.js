@@ -1,215 +1,181 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
+    var timeShiftChart = new FusionCharts({
         type: 'gantt',
         renderAt: 'chart-container',
         width: '650',
-        height: '300',
+        height: '400',
         dataFormat: 'json',
-        dataSource: {
+        dataSource: 
+        
+        {
             "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
-            },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
-                    {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
-                    }
-                ]
+                "palette": "2",
+                "caption": "Construction Timeline",
+                "captionFontSize" : "16",
+                "dateformat": "dd/mm/yyyy",
+                "outputdateformat": "ddds mns",
+                "showCanvasBorder" : "1",
+                "canvasBorderAlpha" : "30",
+                "theme" : "fint"
+                
             },
             "categories": [
                 {
                     "category": [
                         {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
-                        },
-                        {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
+                            "start": "1/5/2014",
+                            "end": "31/8/2014",
+                            "label": "Months"
                         }
                     ]
                 },
                 {
                     "category": [
                         {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
+                            "start": "1/5/2014",
+                            "end": "31/5/2014",
+                            "label": "May"
                         },
                         {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
+                            "start": "1/6/2014",
+                            "end": "30/6/2014",
+                            "label": "June"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
+                            "start": "1/7/2014",
+                            "end": "31/7/2014",
+                            "label": "July"
                         },
                         {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
-                        },
-                        {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
-                        },
-                        {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
-                        },
-                        {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
+                            "start": "1/8/2014",
+                            "end": "31/8/2014",
+                            "label": "August"
                         }
                     ]
                 }
             ],
             "processes": {
+                "headertext": "Task",
+                "headerfontsize": "14",
                 "fontsize": "12",
-                "isbold": "1",
-                "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
                 "process": [
                     {
-                        "label": "Identify Customers"
+                        "label": "Terrace",
+                        "id": "TRC"
                     },
                     {
-                        "label": "Survey 500 Customers"
+                        "label": "Plumbing",
+                        "id": "INS"
                     },
                     {
-                        "label": "Interpret Requirements"
+                        "label": "Wood Work",
+                        "id": "WDW"
                     },
                     {
-                        "label": "Market Analysis"
-                    },
-                    {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
+                        "label": "Interiors",
+                        "id": "INT"
                     }
                 ]
             },
             "tasks": {
+                "showlabels": "1",
+                "showenddate": "1",
                 "task": [
                     {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
+                        "label": "Planned",
+                        "processid": "TRC",
+                        "start": "5/5/2014",
+                        "end": "2/6/2014",
+                        "id": "5-1",
+                        "color": "#EEEEEE",
+                        "height": "25%",
+                        "toppadding": "22%"
                     },
                     {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
+                        "label": "Actual",
+                        "processid": "TRC",
+                        "start": "10/5/2014",
+                        "end": "2/6/2014",
+                        "id": "5",
+                        "color": "#4567aa",
+                        "height": "25%",
+                        "toppadding": "70%"
                     },
                     {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
+                        "label": "Planned",
+                        "processid": "INS",
+                        "start": "11/5/2014",
+                        "end": "12/6/2014",
+                        "id": "6-1",
+                        "color": "#EEEEEE",
+                        "height": "25%",
+                        "toppadding": "22%"
                     },
                     {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
+                        "label": "Actual",
+                        "processid": "INS",
+                        "start": "13/5/2014",
+                        "end": "19/6/2014",
+                        "id": "6",
+                        "color": "#4567aa",
+                        "height": "25%",
+                        "toppadding": "70%"
                     },
                     {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
+                        "label": "Planned",
+                        "processid": "WDW",
+                        "start": "1/6/2014",
+                        "end": "12/7/2014",
+                        "id": "7-1",
+                        "color": "#EEEEEE",
+                        "height": "25%",
+                        "toppadding": "22%"
                     },
                     {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
+                        "label": "Actual",
+                        "processid": "WDW",
+                        "start": "2/6/2014",
+                        "end": "19/7/2014",
+                        "id": "7",
+                        "color": "#4567aa",
+                        "height": "25%",
+                        "toppadding": "70%"
                     },
                     {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
+                        "label": "Planned",
+                        "processid": "INT",
+                        "start": "1/6/2014",
+                        "end": "12/8/2014",
+                        "id": "8-1",
+                        "color": "#EEEEEE",
+                        "height": "25%",
+                        "toppadding": "22%"
                     },
                     {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
+                        "label": "Actual",
+                        "processid": "INT",
+                        "start": "1/6/2014",
+                        "end": "19/8/2014",
+                        "id": "8",
+                        "color": "#4567aa",
+                        "height": "25%",
+                        "toppadding": "70%"
+                    }
+                ]
+            },
+            "legend": {
+                "item": [
+                    {
+                        "label": "Planned",
+                        "color": "999999"
                     },
                     {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
-                    },
-                    {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
+                        "label": "Actual",
+                        "color": "4567aa"
                     }
                 ]
             }
-            
         }
+        
     }).render();
 });

@@ -1,9 +1,15 @@
-<!-- Dynamically resizing the angular gauge and scaling proportionately based on original width and original height.
+<!-- AngularGauge - Message Logger javascript API.
 
-Attributes:
+Methods:
+    
+    chartRef.showLog() - To show the log, if it's not already visible.
+    chartRef.hideLog() - To hide the log, if it's visible.
+    chartRef.clearLog() - To clear the contents of log.
+       
 
-    # origw - If you've opted to dynamically resize the chart, you can convey the original width of chart using this attribute. It refers to the width based on which you had defined the various co-ordinates/radius of the gauge. 
-    # origh -  	If you've opted to dynamically resize the chart, you can convey the original height of chart using this attribute. It refers to the height based on which you had defined the various co-ordinates/radius of the gauge. 
-                           
 -->
 <div id="chart-container">FusionCharts will render here</div>
+<div id='controllers'>
+    <input id='show' class='btns' type='Button' value='Show' />
+    <input id='clear' class='btns' type='Button' value='Clear Log' />
+</div>

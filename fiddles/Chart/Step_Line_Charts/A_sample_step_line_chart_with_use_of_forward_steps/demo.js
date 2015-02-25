@@ -1,65 +1,84 @@
 FusionCharts.ready(function () {
-    var salaryDistribution = new FusionCharts({
-        type: 'boxandwhisker2d',
+    var comparisonChart = new FusionCharts({
+        type: 'msstepline',
         renderAt: 'chart-container',
-        width: '500',
+        width: '550',
         height: '350',
         dataFormat: 'json',
-        dataSource:
-        {
+        dataSource: {
             "chart": {
-                "caption": "Distribution of annual salaries",
-                "subcaption": "By Gender",                
-                "xAxisName": "Pay Grades",
-                "YAxisName": "Salaries (In USD)",                
-                "numberPrefix": "$",
-                "theme": "fint",
-                "showValues": "0"
+                "caption": "Revenue Vs Expense",
+                "subcaption": "Last year",
+                "xaxisname": "Month",
+                "yaxisname": "Amount (In USD)",
+                "showvalues": "0",
+                "numberprefix": "$",
+                "palettecolors": "#6baa01, #d35400",
+                //Use Forward steps 
+                "useForwardSteps" : "0",
+                "theme" : "fint"
             },
             "categories": [
                 {
                     "category": [
-                        { "label": "Grade 1" }, 
-                        { "label": "Grade 2" }, 
-                        { "label": "Grade 3" }
+                        { "label" : "Jan" },
+                        { "label" : "Feb" },
+                        { "label" : "Mar" },
+                        { "label" : "Apr" },
+                        { "label" : "May" },
+                        { "label" : "Jun" },
+                        { "label" : "Jul" },
+                        { "label" : "Aug" },
+                        { "label" : "Sep" },
+                        { "label" : "Oct" },
+                        { "label" : "Nov" },
+                        { "label" : "Dec" }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Male",
-                    "lowerboxcolor": "#008ee4",
-                    "upperboxcolor": "#6baa01",
-                    //To show the icon representing the Quartile deviation
-                    "showQD": "1",
+                    "seriesname": "Revenue",
+                    "linethickness": "3",
+                    "anchorradius": "3",
                     "data": [
-                        {
-                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000"
-                        }, 
-                        {
-                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500"
-                        }, 
-                        {
-                            "value": "15000,19000,25000,32000,50000,65000"
-                        }
+                        { "value" : "374000" },
+                        { "value" : "350000" },
+                        { "value" : "380000" },
+                        { "value" : "340000" },
+                        { "value" : "398000" },
+                        { "value" : "326000" },
+                        { "value" : "448000" },
+                        { "value" : "379000" },
+                        { "value" : "355000" },
+                        { "value" : "374000" },
+                        { "value" : "348000" },
+                        { "value" : "402000" }
                     ]
-                }, {
-                    "seriesname": "Female",
-                    "lowerboxcolor": "#e44a00",
-                    "upperboxcolor": "#f8bd19",
+                }, 
+                {
+                    "seriesname": "Expense",
+                    "linethickness": "3",
+                    "anchorradius": "3",
                     "data": [
-                        {
-                            "value": "1900,2100,2300,2350,2400,2550,3000,3500,4000, 6000, 6500, 9000"
-                        }, 
-                        {
-                            "value": "7000,8000,8300,8700,9500,11000,15000, 17000, 21000"
-                        }, 
-                        {
-                            "value": "24000,32000,35000,37000,39000, 58000"
-                        }
+                        { "value" : "100000" },
+                        { "value" : "115000" },
+                        { "value" : "135000" },
+                        { "value" : "150000" },
+                        { "value" : "110000" },
+                        { "value" : "98000" },
+                        { "value" : "118000" },
+                        { "value" : "197000" },
+                        { "value" : "228000" },
+                        { "value" : "249000" },
+                        { "value" : "229000" },
+                        { "value" : "208000" }
                     ]
                 }
             ]
-        }                
-    }).render();
+        }
+        
+    });
+    
+    comparisonChart.render();
 });

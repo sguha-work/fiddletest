@@ -1,6 +1,6 @@
 FusionCharts.ready(function () {
     var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+        type: 'column2d',
         renderAt: 'chart-container',
         id: 'myChart',
         width: '450',
@@ -8,20 +8,21 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
+                "caption": "Website Visitors Growth",
                 "subcaption": "Last 10 weeks",
                 "xAxisName": "Week",
                 "yAxisName": "Growth",
                 "numberSuffix": "%",
                 "theme": "fint",
                 "showValues": "0",
-                //Zero plane configuration
                 "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
+                "zeroPlaneColor":"#003366",
                 "zeroPlaneAlpha": "100",
                 "zeroPlaneThickness": "3",
                 "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "divLineAlpha": "40",
+                //Hiding zero plane value
+                "showZeroPlaneValue": "0"
             },
             "data": [
                 {

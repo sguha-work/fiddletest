@@ -1,6 +1,6 @@
 ---
-name: FusionCharts - Configuration of Zero Plane in 3D charts
-description: Showing only specific data values of a chart
+name: FusionCharts -  Multi-line tool-tip with macro variables
+description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js
   - http://static.fusioncharts.com/code/latest/fusioncharts.charts.js

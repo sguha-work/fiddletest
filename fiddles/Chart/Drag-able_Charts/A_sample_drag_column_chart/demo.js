@@ -1,115 +1,138 @@
 FusionCharts.ready(function () {
-    var stockPriceChart = new FusionCharts({
-        id: "stackRealTimeChart",
-        type: 'realtimestackedcolumn',
+    var inventoryChart = new FusionCharts({
+        type: 'dragcolumn2d',
         renderAt: 'chart-container',
         width: '500',
-        height: '300',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Live Visitors on Site",
-                "subCaption": "Every 5 seconds",
-                "xAxisName": "Time",
-                "yAxisName": "No. of visitors",
-                "refreshinterval": "5",
-                "numberSuffix":"s",
-                "yaxisminvalue": "0",
-                "yaxismaxvalue": "60",
-                "numdisplaysets": "10",
-                "labeldisplay": "rotate",
-                "showValues": "1",
-                "showRealTimeValue": "0",
-                
-                //Cosmetics
-               
-                "paletteColors" : "#0075c2,#1aaf5d",
-                "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "captionFontSize" : "14",
-                "subcaptionFontSize" : "14",
-                "subcaptionFontBold" : "0",
-                "showBorder" : "0",
-                "bgColor" : "#ffffff",
-                "showShadow" : "0",
-                "usePlotGradientColor" :"0",
-                "showPlotBorder": "0",
-                "valueFontColor" : "#ffffff",
-                "placeValuesInside" : "1",
-                "canvasBgColor" : "#ffffff",
-                "canvasBorderAlpha" : "0",
-                "divlineAlpha" : "100",
-                "divlineColor" : "#999999",
-                "divlineThickness" : "1",
-                "divLineIsDashed" : "1",
-                "divLineDashLen" : "1",
-                "divLineGapLen" : "1",
-                "showXAxisLine" : "1",
-                "xAxisLineThickness" : "1",
-                "xAxisLineColor" : "#999999",
-                "showAlternateHGridColor" : "0",
-                "legendBgAlpha" : "0",
-                "legendBorderAlpha" : "0",
-                "legendShadow" : "0",
-                "legendItemFontSize" : "10",
-                "legendItemFontColor" : "#666666"
-
+                "caption": "Inventory status - Bakersfield Central",                
+                "subCaption": "Top 5 Food items",
+                "xAxisName": "Food Item",
+                "yAxisName": "No. of Units",
+                "paletteColors": "#0075c2,#1aaf5d",
+                "bgColor": "#ffffff",
+                "showAlternateHGridColor": "0",
+                "showBorder": "0",
+                "showCanvasBorder": "0",
+                "baseFontColor": "#333333",
+                "baseFont": "Helvetica Neue,Arial",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "usePlotGradientColor": "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
+                "legendBgAlpha": "0",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "legendItemFontSize": "10",
+                "legendItemFontColor": "#666666",
+                "legendCaptionFontSize": "9",
+                "divlineAlpha": "100",
+                "divlineColor": "#999999",
+                "divlineThickness": "1",
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1",
             },
             "categories": [
                 {
                     "category": [
-                        { "label": "Day Start" }
+                        {
+                            "label": "Poultry"
+                        }, 
+                        {
+                            "label": "Rice"
+                        }, 
+                        {
+                            "label": "Peanut Butter"
+                        }, 
+                        {
+                            "label": "Salmon"
+                        }, 
+                        {
+                            "label": "Cereal"
+                        }
                     ]
                 }
             ],
-           "dataset": [
+            "dataset": [
                 {
-                    "seriesName" : "clothing.hsm.com",
-                    "data": [
-                        { "value": "12" }
-                    ]
-                },
+                    "seriesname": "Available Stock",
+                    "allowDrag": "0",
+                    "data": [{
+                        "value": "6000"
+                    }, 
+                             {
+                                 "value": "9500"
+                             }, 
+                             {
+                                 "value": "11900"
+                             }, 
+                             {
+                                 "value": "8000"
+                             }, 
+                             {
+                                 "value": "9700"
+                             }
+                            ]
+                }, 
                 {
-                    "seriesName" : "food.hsm.com",
+                    "seriesname": "Estimated Demand",
+                    "dashed": "1",
                     "data": [
-                        { "value": "20" }
+                        {
+                            "value": "19000"
+                        }, 
+                        {
+                            "value": "16500"
+                        }, 
+                        {
+                            "value": "14300"
+                        }, 
+                        {
+                            "value": "10000"
+                        }, 
+                        {
+                            "value": "9800"
+                        }
                     ]
                 }
             ]
         },
         "events": {
-            "initialized": function (e) {
-                function addLeadingZero(num){
-                    return (num <= 9)? ("0"+num) : num;
-                }
-                function updateData() {
-                    // Get reference to the chart using its ID
-                    var chartRef = FusionCharts("stackRealTimeChart"),
-                        // We need to create a querystring format incremental update, containing
-                        // label in hh:mm:ss format
-                        // and a value (random).
-                        currDate = new Date(),
-                        label = addLeadingZero(currDate.getHours()) + ":" +
-                        addLeadingZero(currDate.getMinutes()) + ":" +
-                        addLeadingZero(currDate.getSeconds()),
-                        // Get random number between 20 & 38 - rounded to 2 decimal places
-                        randomValue = parseInt(Math.random()     
-                                                 * 15 )  + 10,
-                        randomValue2 = parseInt(Math.random()     
-                                                 * 20 )  + 15,
-                        // Build Data String in format &label=...&value=...
-                        strData = "&label=" + label 
-                    + "&value=" 
-                    + randomValue+ "|" + randomValue2;
-                    // Feed it to chart.
-                    chartRef.feedData(strData);
-                }
+            "dataplotDragEnd": function (evt, arg) {
+                var dataIndex = arg && arg.dataIndex,
+                    prevVal = arg && arg.startValue,
+                    newVal = arg && parseInt(arg.endValue, 10),
+                    valuerow = document.getElementById("dragcolumn2d-sample-table")
+                .getElementsByTagName("tr")[1]
+                .getElementsByTagName('td');
                 
-                var myVar = setInterval(function () {
-                    updateData();
-                }, 5000);
+                valuerow[dataIndex].innerHTML = newVal;
+            },
+            "dataRestored": function (evtObj) {
+                var estimatedOrigValues = ["19000", "16500", "14300", "10000", "9800"],
+                    i = 0,
+                    numVals = estimatedOrigValues.length,
+                    val,
+                    valuerow = document.getElementById("dragcolumn2d-sample-table")
+                .getElementsByTagName("tr")[1]
+                .getElementsByTagName('td');
+                
+                for (i; i < numVals; i += 1) {
+                    val = estimatedOrigValues[i];
+                    
+                    //set the original values
+                    valuerow[i + 1].innerHTML = val;
+                }
             }
         }
-    })
-    .render();
+    }).render();
 });

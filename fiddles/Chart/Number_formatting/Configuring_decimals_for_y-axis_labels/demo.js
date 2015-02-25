@@ -2,56 +2,51 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '450',
+        width: '400',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
-                "subCaption": "Last year",
-                "xAxisName": "Month",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                "theme": "fint",
-                "labelDisplay": "auto"
+                "caption": "Average value of online refunds",
+                "subcaption": "Last year",
+                "xaxisname": "Quarter",
+                "yaxisname": "Amount (In 000 USD)",
+                "placeValuesInside" :"0",
+                "rotateValues": "0",
+                "valueFontColor": "#000000",
+                //Setting flag to manually specify div lines                
+                "adjustDiv": "0",
+                //Setting 3 dvisional lines on y-axis
+                "numdivlines": "3",
+                //Manually setting y-axis lower limit
+                "yAxisMinValue": "60",     
+                //Setting number of decimals on y-axis to 2
+                "yAxisValueDecimals":"2",
+                "forceYAxisValueDecimals": "1", 
+                //Theme 
+                "theme" : "fint"
+                
             },
-            "data": [{
-                "label": "January",
-                "value": "420000"
-            }, {
-                "label": "February",
-                "value": "810000"
-            }, {
-                "label": "March",
-                "value": "720000"
-            }, {
-                "label": "April",
-                "value": "550000"
-            }, {
-                "label": "May",
-                "value": "910000"
-            }, {
-                "label": "June",
-                "value": "510000"
-            }, {
-                "label": "July",
-                "value": "680000"
-            }, {
-                "label": "August",
-                "value": "620000"
-            }, {
-                "label": "September",
-                "value": "610000"
-            }, {
-                "label": "October",
-                "value": "490000"
-            }, {
-                "label": "November",
-                "value": "900000"
-            }, {
-                "label": "December",
-                "value": "730000"
-            }]
+            "data": [
+                {
+                    "label": "Q1",
+                    "value": "125"
+                }, 
+                {
+                    "label": "Q2",
+                    "value": "257"
+                }, 
+                {
+                    "label": "Q3",
+                    "value": "173"
+                }, 
+                {
+                    "label": "Q4",
+                    "value": "182"
+                }
+            ]
         }
-    }).render();
+    });
+    
+    revenueChart.render();
 });

@@ -1,104 +1,59 @@
 FusionCharts.ready(function () {
-    var inventoryChart = new FusionCharts({
-        type: 'dragcolumn2d',
+    var BAChart = new FusionCharts({
+        type: 'waterfall2d',
         renderAt: 'chart-container',
-        width: '500',
+        width: '650',
         height: '350',
         dataFormat: 'json',
         dataSource: {
-            "chart": {
-                "caption": "Inventory status - Bakersfield Central",                
-                "subCaption": "Top 5 Food items",
-                "xAxisName": "Food Item",
-                "yAxisName": "No. of Units",
-                "theme": "fint"
+            "chart":{
+                "caption":"Total Profit Calculation",
+                "subcaption": "Last month",     
+                "yAxisname": "Amount (In USD)",
+                "numberprefix":"$",
+                "connectordashed":"1",
+                "sumlabel":"Total {br} Profit",
+                "theme": "fint",
+                "positiveColor": "#1aaf5d",
+                "negativeColor": "#c02d00",
+                //Not show sum at the end
+                "showSumAtEnd" : "0"
             },
-            "categories": [
+            "data":[
                 {
-                    "category": [
-                        {
-                            "label": "Poultry"
-                        }, 
-                        {
-                            "label": "Rice"
-                        }, 
-                        {
-                            "label": "Peanut Butter"
-                        }, 
-                        {
-                            "label": "Salmon"
-                        }, 
-                        {
-                            "label": "Cereal"
-                        }
-                    ]
-                }
-            ],
-            "dataset": [
+                    "label":"Online sales",
+                    "value":"420000"
+                },
                 {
-                    "seriesname": "Available Stock",
-                    "allowDrag": "0",
-                    "data": [{
-                        "value": "6000"
-                    }, 
-                             {
-                                 "value": "9500"
-                             }, 
-                             {
-                                 "value": "11900"
-                             }, 
-                             {
-                                 "value": "8000"
-                             }, 
-                             {
-                                 "value": "9700"
-                             }
-                            ]
-                }, 
+                    "label":"Store Sales",
+                    "value":"710000"
+                },
                 {
-                    "seriesname": "Estimated Demand",
-                    "dashed": "1",
-                    "data": [
-                        {
-                            "value": "19000"
-                        }, 
-                        {
-                            "value": "16500"
-                        }, 
-                        {
-                            "value": "14300"
-                        }, 
-                        {
-                            "value": "10000"
-                        }, 
-                        {
-                            "value": "9800"
-                        }
-                    ]
+                    "label":"Total Sales",
+                    "issum":"1"
+                },
+                {
+                    "label":"Fixed Costs",
+                    "value":"-250000"
+                },
+                {
+                    "label":"Variable Costs",
+                    "value":"-156000"
+                },
+                {
+                    "label": "COGS",
+                    "value": "-310000"
+                },
+                {
+                    "label":"Promotion Costs",
+                    "value":"-86000"
+                },
+                {
+                    "label":"Total Costs",
+                    "issum":"1",
+                    "cumulative":"0"
                 }
             ]
-        },
-        events: {
-            'beforeRender': function (evt, args) {
-                // creating div for controllers
-                var controllers = document.createElement('div');
-                
-                // Create radio buttons inside div
-                controllers.innerHTML = '<input type="button" value="Get Data" id="getdata_btn" style="margin-left:5px;padding-botom:15px;"/><div id="tableView" style="padding-top: 13px;"></div>';
-                // set css style for controllers div
-                controllers.style.cssText = '';
-                args.container.parentNode.insertBefore(controllers, args.container.nextSibling);
-                controllers.setAttribute('id', 'controllers');
-            },
-            'renderComplete': function(evt, arg){
-                function showData() {
-                    var chartIns = evt && evt.sender,
-                        data = chartIns && chartIns.getJSONData();
-                    alert(JSON.stringify(data)); 
-                }
-                document.getElementById("getdata_btn").addEventListener("click", showData);
-            }
-            
         }
     }).render();
 });

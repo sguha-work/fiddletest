@@ -1,5 +1,5 @@
 ---
-name: FusionCharts - Configuring border and background cosmetics of labels for vertical line. 
+name: FusionCharts - Customizing cosmetics of legend, including border, background and shadow
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

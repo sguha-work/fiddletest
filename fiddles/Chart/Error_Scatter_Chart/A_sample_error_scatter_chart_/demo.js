@@ -1,125 +1,163 @@
 FusionCharts.ready(function () {
-    var salesPrediction = new FusionCharts({
-        type: 'dragline',
+    var revForecastChart = new FusionCharts({
+        type: 'errorscatter',
         renderAt: 'chart-container',
-        width: '500',
+        width: '600',
         height: '350',
         dataFormat: 'json',
         dataSource: {
-            "chart": {
-                "caption": "Quarterly Sales Projections",
-                "subCaption": "iPhone vs Samsung Galaxy",
-                "xAxisName": "Quarter",
-                "yAxisName": "No. of Units",
-                "paletteColors": "#0075c2,#1aaf5d",
-                "showalternatehgridcolor": "0",
-                "bgAlpha": "0",
-                "borderAlpha": "20",
-                "usePlotGradientColor": "0",
-                "canvasBorderAlpha": "0",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
-                "showXAxisLine": "1",
-                "axisLineAlpha": "25",
-                "divLineAlpha": "25",
-                "showBorder": "0"                
-            },            
+            "chart": {                
+                "xaxisname": "Month",
+                "yaxisname": "Revenue (In USD)",
+                "caption": "Revenue forecast",
+                "subcaption": "For Next Year",
+                "halfverticalerrorbar": "0",
+                "showlegend": "0",
+                "bgColor": "#ffffff",
+                "showBorder": "0",
+                "numberPrefix":"$",
+                "showCanvasBorder": "0",
+                "showAlternateHGridColor": "0",
+                "baseFontColor": "#333333",
+                "baseFont": "Helvetica Neue,Arial",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
+                "divlineAlpha": "100",
+                "divlineColor": "#999999",
+                "divlineThickness": "1",
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1"
+            },
             "categories": [
                 {
                     "category": [
                         {
-                            "label": "Q1"
+                            "label": "Jan",
+                            "x": "20",
                         }, 
                         {
-                            "label": "Q2"
+                            "label": "Feb",
+                            "x": "30",
+                        },
+                        {
+                            "label": "Mar",
+                            "x": "40",
                         }, 
                         {
-                            "label": "Q3(E)"
+                            "label": "Apr",
+                            "x": "50",
+                        },
+                        {
+                            "label": "May",
+                            "x": "60",
+                        },
+                        {
+                            "label": "Jun",
+                            "x": "70",
                         }, 
                         {
-                            "label": "Q4(E)"
+                            "label": "Jul",
+                            "x": "80",
+                        },
+                        {
+                            "label": "Aug",
+                            "x": "90",
+                        }, {
+                            "label": "Sep",
+                            "x": "100",
+                        },
+                        {
+                            "label": "Oct",
+                            "x": "110",
+                        }, 
+                        {
+                            "label": "Nov",
+                            "x": "120",
+                        }, 
+                        {
+                            "label": "Dec",
+                            "x": "130",
                         }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Apple",
-                    "valuePosition": "ABOVE",
-                    "allowDrag": "0",
+                    "seriesname": "This Year",
+                    "color": "",
+                    "anchorradius": "8",
+                    "anchorbgcolor": "#1aaf5d",
                     "data": [
                         {
-                            "value": "1200"
+                            "y": "450000",
+                            "x": "20",
+                            "verticalErrorValue": "50000"
                         }, 
                         {
-                            "value": "1500",
-                            "dashed": "1"
+                            "y": "860000",
+                            "x": "30",
+                            "verticalErrorValue": "69000"
                         }, 
                         {
-                            "value": "1300",
-                            "allowDrag": "1",
-                            "dashed": "1"
+                            "y": "750000",
+                            "x": "40",
+                            "verticalErrorValue": "69000"
                         }, 
                         {
-                            "value": "900",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
-                        }
-                    ]
-                },
-                {
-                    "seriesname": "Samsung",
-                    "allowDrag": "0",
-                    "data": [
-                        {
-                            "value": "600"
+                            "y": "570000",
+                            "x": "50",
+                            "verticalErrorValue": "60000"
+                        }, {
+                            "y": "910000",
+                            "x": "60",
+                            "verticalErrorValue": "50000"
                         }, 
                         {
-                            "value": "850",
-                            "dashed": "1"
+                            "y": "580000",
+                            "x": "70",
+                            "verticalErrorValue": "55000"
+                        },
+                        {
+                            "y": "610000",
+                            "x": "80",
+                            "verticalErrorValue": "87000"
+                        }, {
+                            "y": "620000",
+                            "x": "90",
+                            "verticalErrorValue": "45000"
                         }, 
                         {
-                            "value": "1000",
-                            "allowDrag": "1",
-                            "dashed": "1"
+                            "y": "520000",
+                            "x": "100",
+                            "verticalErrorValue": "59000"
                         }, 
                         {
-                            "value": "1200",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
+                            "y": "530000",
+                            "x": "110",
+                            "verticalErrorValue": "72000"
+                        }, 
+                        {
+                            "y": "950000",
+                            "x": "120",
+                            "verticalErrorValue": "69000"
+                        }, 
+                        {
+                            "y": "770000",
+                            "x": "130",
+                            "verticalErrorValue": "69000"
                         }
                     ]
                 }
             ]
-        },
-        events: {
-            'dataplotdragend': function(evt, arg){
-                var dsIndx = arg && arg.datasetIndex,
-                    dtIndx = arg && arg.dataIndex,
-                    val = arg && parseInt(arg.endValue, 10);
-                
-                document.getElementById(dsIndx+'-'+dtIndx).innerHTML = val;
-                
-            },
-            
-            'datarestored': function(evtObj){
-                var ds1Values = ["1200", "1500", "1300", "900"],
-                    ds2Values = ["600", "850", "1000", "1200"],
-                    
-                    update = function (arr, rowNum) {
-                        var i = 0,
-                            arrLen = arr.length;
-                        
-                        for (i; i < arrLen; i += 1) {
-                            val = arr[i];
-                            
-                            document.getElementById(rowNum+'-'+(i+1)).innerHTML = val;
-                        }
-                    };
-                
-                update(ds1Values, 1);
-                update(ds2Values, 2);
-            }
         }
     }).render();
+    
 });

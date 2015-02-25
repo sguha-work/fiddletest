@@ -1,19 +1,17 @@
-<!-- Configuring pointer properties in a simple Horizontal Linear Gauge showing Server CPU Utilization
+<!-- Adding Trend-zone in Horizontal Linear Gauge showing Server CPU Utilization using element:
 
-Element : 
-    # pointer
+    Element
+        # point
+   
+    Attribute
+        # startValue - To set the starting point of the zone
+        # endValue - To set the end point of the zone
+        # displayValue - What to display for the trendzone
+        # alpha - Transparency of the trendzone (0-100)
+        
 
-Attributes: 
-    # borderColor - To set the border color of the pointer (Hex code).
-    # borderThickness - To set the thickness of the boder (In pixel).
-    # borderAlpha - To set the alpha of the border (0-100).
-    # bgColor - To set the background color of the pointer (Hex code).
-    # bgAlpha - To set the background alpha of the pointer (Hex code).
-    # radius - To set the radius of the pointer.
-    # sides  - To set number of sides of the pointer.
-
-     Deviation from Theme
-        #  valueFontSize
-        #  valueFontBold
+    Deviation from theme
+    # valueFontSize
+    # valueFontBold
 -->
 <div id="chart-container">FusionCharts will render here</div>

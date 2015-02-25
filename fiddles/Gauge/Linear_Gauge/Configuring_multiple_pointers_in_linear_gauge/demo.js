@@ -3,19 +3,21 @@ FusionCharts.ready(function () {
         type: 'hlineargauge',
         renderAt: 'chart-container',
         width: '400',
-        height: '150',
+        height: '170',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "theme": "fint",
                 "caption": "Server CPU Utilization",
-                "captionPadding": "0",
+                "subcaption": "Transaction Server & Web Server",
+                "subcaptionFontBold": "0",
+                "lowerLimit": "0",
+                "upperLimit": "100",
                 "numberSuffix": "%",
-                "valueFontSize": "11",
-                "valueFontBold": "0", 
-                "chartBottomMargin": "20",
-                "gaugeFillMix":"{light-10},{light-70},{dark-10}",
-                "gaugeFillRatio":"40,20,40"
+                "valueAbovePointer": "0",
+                "chartBottomMargin": "20",  
+                "valueFontSize": "11",  
+                "valueFontBold": "0"  
             },
             "colorRange": {
                 "color": [
@@ -40,16 +42,19 @@ FusionCharts.ready(function () {
                 ]
             },
             "pointers": {
+                //Multiple pointers defined here
                 "pointer": [
                     {
-                        "borderColor": "#333333",
-                        "borderThickness": "2",
-                        "borderAlpha": "60",
-                        "bgColor": "#0075c2",
-                        "bgAlpha": "75",
-                        "radius":"6",
-                        "sides":"4",
-                        "value": "75"
+                        "value": "75",
+                        "bgColor": "#0044DD",
+                        "bgAlpha": "80",
+                        "tooltext": "Transaction Server: $value%"
+                    },
+                    {
+                        "value": "92",
+                        "bgColor": "#0077CC",
+                        "bgAlpha": "80",
+                        "tooltext": "Web Server: $value%"
                     }
                 ]
             }

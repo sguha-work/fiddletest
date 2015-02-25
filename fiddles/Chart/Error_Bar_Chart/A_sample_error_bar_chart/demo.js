@@ -1,125 +1,120 @@
 FusionCharts.ready(function () {
-    var salesPrediction = new FusionCharts({
-        type: 'dragline',
+    var lifeSpanChart = new FusionCharts({
+        type: 'errorbar2d',
         renderAt: 'chart-container',
-        width: '500',
+        width: '600',
         height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Sales Projections",
-                "subCaption": "iPhone vs Samsung Galaxy",
-                "xAxisName": "Quarter",
-                "yAxisName": "No. of Units",
-                "paletteColors": "#0075c2,#1aaf5d",
-                "showalternatehgridcolor": "0",
-                "bgAlpha": "0",
-                "borderAlpha": "20",
+                "caption": "Machinery lifespan range",
+                "subcaption": "Means & standard deviations",
+                "xAxisName": "Systems",
+                "yAxisName": "Life Span",                
+                "numberSuffix": " Years",
+                "halfErrorBar": "0",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500",                
+                "showValues": "0",                
+                "errorBarColor": "666666",
+                "bgColor": "#ffffff",
+                "showBorder": "0",
+                "showCanvasBorder": "0",
                 "usePlotGradientColor": "0",
-                "canvasBorderAlpha": "0",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
                 "showXAxisLine": "1",
                 "axisLineAlpha": "25",
-                "divLineAlpha": "25",
-                "showBorder": "0"                
-            },            
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "legendBgAlpha": "0",
+                "showShadow": "0",
+                "showAlternateHgridColor": "0",
+                "showHoverEffect":"1"
+            },
             "categories": [
                 {
                     "category": [
-                        {
-                            "label": "Q1"
-                        }, 
-                        {
-                            "label": "Q2"
-                        }, 
-                        {
-                            "label": "Q3(E)"
-                        }, 
-                        {
-                            "label": "Q4(E)"
-                        }
+                        { "label": "Central AC" }, 
+                        { "label": "Computers" }, 
+                        { "label": "Bar-code Scanners" },
+                        { "label": "Packaging Machines" }, 
+                        { "label": "Chilling Compartments" }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Apple",
-                    "valuePosition": "ABOVE",
-                    "allowDrag": "0",
+                    "seriesname": "Daly City Serramonte",
                     "data": [
                         {
-                            "value": "1200"
+                            "value": "8",
+                            "errorvalue": "2"
+                        },
+                        {
+                            "value": "3",
+                            "errorvalue": "0.5"
                         }, 
                         {
-                            "value": "1500",
-                            "dashed": "1"
+                            "value": "2",
+                            "errorvalue": "1"
                         }, 
                         {
-                            "value": "1300",
-                            "allowDrag": "1",
-                            "dashed": "1"
+                            "value": "6",
+                            "errorvalue": "1.8"
                         }, 
                         {
-                            "value": "900",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
+                            "value": "8",
+                            "errorvalue": "1.2"
                         }
                     ]
-                },
-                {
-                    "seriesname": "Samsung",
-                    "allowDrag": "0",
+                }, {
+                    "seriesname": "Bakersfield Central",
                     "data": [
                         {
-                            "value": "600"
+                            "value": "7",
+                            "errorvalue": "1"
                         }, 
                         {
-                            "value": "850",
-                            "dashed": "1"
+                            "value": "4",
+                            "errorvalue": "0.5"
                         }, 
                         {
-                            "value": "1000",
-                            "allowDrag": "1",
-                            "dashed": "1"
+                            "value": "2",
+                            "errorvalue": "1"
+                        },
+                        {
+                            "value": "4",
+                            "errorvalue": "0.8"
                         }, 
                         {
-                            "value": "1200",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
+                            "value": "7",
+                            "errorvalue": "1"
+                        }
+                    ]
+                }, {
+                    "seriesname": "Garden Groove harbour",
+                    "data": [
+                        {
+                            "value": "9",
+                            "errorvalue": "2"
+                        }, 
+                        {
+                            "value": "3",
+                            "errorvalue": "0.7"
+                        },
+                        {
+                            "value": "3",
+                            "errorvalue": "1"
+                        }, 
+                        {
+                            "value": "6",
+                            "errorvalue": "1.8"
+                        }, 
+                        {
+                            "value": "7",
+                            "errorvalue": "1.2"
                         }
                     ]
                 }
             ]
-        },
-        events: {
-            'dataplotdragend': function(evt, arg){
-                var dsIndx = arg && arg.datasetIndex,
-                    dtIndx = arg && arg.dataIndex,
-                    val = arg && parseInt(arg.endValue, 10);
-                
-                document.getElementById(dsIndx+'-'+dtIndx).innerHTML = val;
-                
-            },
-            
-            'datarestored': function(evtObj){
-                var ds1Values = ["1200", "1500", "1300", "900"],
-                    ds2Values = ["600", "850", "1000", "1200"],
-                    
-                    update = function (arr, rowNum) {
-                        var i = 0,
-                            arrLen = arr.length;
-                        
-                        for (i; i < arrLen; i += 1) {
-                            val = arr[i];
-                            
-                            document.getElementById(rowNum+'-'+(i+1)).innerHTML = val;
-                        }
-                    };
-                
-                update(ds1Values, 1);
-                update(ds2Values, 2);
-            }
         }
     }).render();
 });

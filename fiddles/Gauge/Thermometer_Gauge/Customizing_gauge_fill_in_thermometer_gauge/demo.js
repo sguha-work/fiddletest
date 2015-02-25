@@ -1,47 +1,49 @@
 FusionCharts.ready(function () {
     var chart = new FusionCharts({
-        type: 'hled',
+        type: 'thermometer',
         renderAt: 'chart-container',
-        width: '400',
-        height: '150',
+        id  : 'myThm',
+        width: '240',
+        height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Fuel Level Indicator",
-                "lowerLimit": "0",
-                "upperLimit": "100",
-                "lowerLimitDisplay": "Empty",
-                "upperLimitDisplay": "Full",
-                "numberSuffix": "%",
-                "valueFontSize": "12",
-                //Add hover effect
+                "caption": "Temperature Monitor",
+                "subcaption": " Central cold store",
+                "lowerLimit": "-10",
+                "upperLimit": "0",
+                "numberSuffix": "°C",
                 "showhovereffect": "1",
-
+                "decimals" : "1",
+                
+                //Customizing gauge fill
+                "gaugeFillColor": "#008ee4",
+                "gaugeFillAlpha": "70",
+                               
+                "thmOriginX": "100",
                 "theme" : "fint",
-                "ledSize" : "4"
+                "chartBottomMargin" : "20"
             },
-            "colorRange": {
-                "color": [
-                    {
-                        "minValue": "0",
-                        "maxValue": "45",
-                        "code": "#e44a00"
-                    }, 
-                    {
-                        "minValue": "45",
-                        "maxValue": "75",
-                        "code": "#f8bd19"
-                    }, 
-                    {
-                        "minValue": "75",
-                        "maxValue": "100",
-                        "code": "#6baa01"
-                    }
-                ]
-            },
-            "value": "92"
+            "value": "-6"
+        },
+        "events" : {
+            "initialized" : function (evt, arg) {
+                var dataUpdate = setInterval(function () {
+                    var value,
+                        prevTemp = FusionCharts.items["myThm"].getData(),
+                        mainTemp = (Math.random()*10)* (-1),
+                        diff = Math.abs(prevTemp - mainTemp);
+                    
+                    diff = diff > 1 ? (Math.random()*1) : diff;
+                    if(mainTemp > prevTemp){
+                        value = prevTemp + diff;
+                    }else{
+                        value = prevTemp - diff;
+                    }                            
+                    FusionCharts.items["myThm"].feedData("&value="+value);
+                }, 3000);
+            }
         }
-        
     })
     .render();
 });

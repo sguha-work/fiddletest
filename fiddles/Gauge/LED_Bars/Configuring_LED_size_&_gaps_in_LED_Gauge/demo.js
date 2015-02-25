@@ -1,55 +1,43 @@
 FusionCharts.ready(function () {
-    var csiGauge = new FusionCharts({
-        type: 'hlineargauge',
+    var chart = new FusionCharts({
+        type: 'hled',
         renderAt: 'chart-container',
-        id: 'csi-linear-gauge',
         width: '400',
-        height: '190',
+        height: '150',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "theme": "fint",
-                "caption": "Target CSAT Index",
+                "caption": "Fuel Level Indicator",
                 "lowerLimit": "0",
                 "upperLimit": "100",
+                "lowerLimitDisplay": "Empty",
+                "upperLimitDisplay": "Full",
                 "numberSuffix": "%",
-                "chartBottomMargin": "40",  
-                "valueFontSize": "11",  
-                "valueFontBold": "0",
-                "gaugeFillMix":"{light-10},{light-70},{dark-10}",
-                "gaugeFillRatio":"40,20,40",
-                "editMode": "1"
+                "valueFontSize": "12",
+                "showhovereffect": "1",
+                "ledGap" : "0",
+                "ChartBottomMargin" : "20",
+                "theme" : "fint"
             },
             "colorRange": {
                 "color": [
                     {
                         "minValue": "0",
-                        "maxValue": "35",
-                        "label": "Low",
-                        "code": "#e44a00"
+                        "maxValue": "45"
                     }, 
                     {
-                        "minValue": "35",
-                        "maxValue": "70",
-                        "label": "Moderate",
-                        "code": "#f8bd19"
+                        "minValue": "45",
+                        "maxValue": "75"
                     }, 
                     {
-                        "minValue": "70",
-                        "maxValue": "100",
-                        "label": "High",
-                        "code": "#6baa01"
+                        "minValue": "75",
+                        "maxValue": "100"
                     }
                 ]
             },
-            "pointers": {
-                "pointer": [
-                    {
-                        "value": "0"
-                    }
-                ]
-            }
+            "value": "92"
         }
+        
     })
     .render();
 });

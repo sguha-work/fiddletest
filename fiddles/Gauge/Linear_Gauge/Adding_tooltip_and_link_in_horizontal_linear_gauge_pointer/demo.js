@@ -11,8 +11,9 @@ FusionCharts.ready(function () {
                 "caption": "Server CPU Utilization",
                 "captionPadding": "0",
                 "numberSuffix": "%",
-                "valueFontSize": "11",
-                "valueFontBold": "0", 
+                "valueAbovePointer": "0",
+                "valueFontSize": "11",  
+                "valueFontBold": "0",
                 "chartBottomMargin": "20",
                 "gaugeFillMix":"{light-10},{light-70},{dark-10}",
                 "gaugeFillRatio":"40,20,40"
@@ -42,13 +43,10 @@ FusionCharts.ready(function () {
             "pointers": {
                 "pointer": [
                     {
-                        "borderColor": "#333333",
-                        "borderThickness": "2",
-                        "borderAlpha": "60",
-                        "bgColor": "#0075c2",
-                        "bgAlpha": "75",
-                        "radius":"6",
-                        "sides":"4",
+                        //Adding custom tooltext
+                        "toolText":"Customer satisfaction $value%",  
+                        //Adding external url
+                        "link":"http://www.fusioncharts.com",
                         "value": "75"
                     }
                 ]

@@ -1,44 +1,79 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'column2d',
+        type: 'mscombidy2d',
         renderAt: 'chart-container',
-        width: '500',
+        width: '550',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
-                "xAxisName": "Quarter",
-                "yAxisName": "Amount (In USD)",
+                "caption": "Revenue Vs Profit",
+                "subCaption": "Last year",
+                "xAxisname": "Month",
+                "pYAxisName": "Revenue (In USD)",
+                "sYAxisName": "Profit (In USD)",
                 "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
+                "sNumberPrefix": "$",
+                "showValues": "0",
+                //Setting both axes to synchronize the limits
+                "syncAxisLimits" :"1",
+                //Theme 
                 "theme" : "fint"
             },
-            
-            "data": [
+            "categories": [
                 {
-                    "label": "Q1",
-                    "value": "1950000"
+                    "category": [
+                        { "label": "Jan" }, 
+                        { "label": "Feb" }, 
+                        { "label": "Mar" }, 
+                        { "label": "Apr" }, 
+                        { "label": "May" }, 
+                        { "label": "Jun" }, 
+                        { "label": "Jul" }, 
+                        { "label": "Aug" }, 
+                        { "label": "Sep" }, 
+                        { "label": "Oct" }, 
+                        { "label": "Nov" }, 
+                        { "label": "Dec" }
+                    ]
+                }],
+            "dataset": [
+                {
+                    "seriesName": "Revenue",
+                    "showValues": "1",
+                    "data": [
+                        { "value" : "16000" },
+                        { "value" : "20000" },
+                        { "value" : "18000" },
+                        { "value" : "19000" },
+                        { "value" : "15000" },
+                        { "value" : "21000" },
+                        { "value" : "16000" },
+                        { "value" : "20000" },
+                        { "value" : "17000" },
+                        { "value" : "22000" },
+                        { "value" : "19000" },
+                        { "value" : "23000" }
+                    ]
                 }, 
                 {
-                    "label": "Q2",
-                    "value": "1450000"
-                },
-                {
-                    "label": "Q3",
-                    "value": "1730000"
-                },
-                {
-                    "label": "Q4",
-                    "value": "2120000"
+                    "seriesName": "Profit",
+                    "parentYAxis": "S",
+                    "renderAs": "line",
+                    "data": [
+                        { "value" : "4000" },
+                        { "value" : "5000" },
+                        { "value" : "3000" },
+                        { "value" : "4000" },
+                        { "value" : "1000" },
+                        { "value" : "7000" },
+                        { "value" : "1000" },
+                        { "value" : "4000" },
+                        { "value" : "1000" },
+                        { "value" : "8000" },
+                        { "value" : "2000" },
+                        { "value" : "7000" }
+                    ]
                 }
             ]
         }

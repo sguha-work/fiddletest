@@ -1,112 +1,84 @@
 FusionCharts.ready(function () {
-    var analysisChart = new FusionCharts({
-        type: 'stackedColumn3DLine',
+    var revenueChart = new FusionCharts({
+        type: 'column3d',
         renderAt: 'chart-container',
         width: '500',
-        height: '350',
+        height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "showvalues": "0",
-                "caption": "Cost Analysis",
-                "numberprefix": "$",
-                "xaxisname": "Quarters",
-                "yaxisname": "Cost",
-                "showBorder": "0",
-                "paletteColors": "#0075c2,#1aaf5d,#f2c500",
-                "bgColor": "#ffffff",
-                "canvasBgColor": "#ffffff",
+                "caption": "Monthly revenue for last year",
+                "subCaption": "Harry's SuperMart",
+                "xAxisName": "Month",
+                "yAxisName": "Revenues (In USD)",
+                "paletteColors": "#0075c2",
+                "valueFontColor": "#ffffff",
+                "baseFont": "Helvetica Neue,Arial",
                 "captionFontSize": "14",
                 "subcaptionFontSize": "14",
                 "subcaptionFontBold": "0",
-                "divlineColor": "#999999",
+                "placeValuesInside": "1",
+                "rotateValues": "1",
+                "showShadow": "0",
+                "divlineColor": "#999999",               
                 "divLineIsDashed": "1",
+                "divlineThickness": "1",
                 "divLineDashLen": "1",
                 "divLineGapLen": "1",
-                "toolTipColor": "#ffffff",
-                "toolTipBorderThickness": "0",
-                "toolTipBgColor": "#000000",
-                "toolTipBgAlpha": "80",
-                "toolTipBorderRadius": "2",
-                "toolTipPadding": "5",
-                "legendBgColor": "#ffffff",
-                "legendBorderAlpha": '0',
-                "legendShadow": '0',
-                "legendItemFontSize": '10',
-                "legendItemFontColor": '#666666'
+                "canvasBgColor": "#ffffff"
             },
-            "categories": [
+
+            "data": [
                 {
-                    "category": [
-                        {
-                            "label": "Quarter 1"
-                        },
-                        {
-                            "label": "Quarter 2"
-                        },
-                        {
-                            "label": "Quarter 3"
-                        },
-                        {
-                            "label": "Quarter 4"
-                        }
-                    ]
-                }
-            ],
-            "dataset": [
-                {
-                    "seriesname": "Fixed Cost",
-                    "data": [
-                        {
-                            "value": "235000"
-                        },
-                        {
-                            "value": "225100"
-                        },
-                        {
-                            "value": "222000"
-                        },
-                        {
-                            "value": "230500"
-                        }
-                    ]
+                    "label": "Jan",
+                    "value": "420000"
                 },
                 {
-                    "seriesname": "Variable Cost",
-                    "data": [
-                        {
-                            "value": "230000"
-                        },
-                        {
-                            "value": "143000"
-                        },
-                        {
-                            "value": "198000"
-                        },
-                        {
-                            "value": "327600"
-                        }
-                    ]
+                    "label": "Feb",
+                    "value": "810000"
                 },
                 {
-                    "seriesname": "Budgeted cost",
-                    "renderas": "Line",
-                    "data": [
-                        {
-                            "value": "455000"
-                        },
-                        {
-                            "value": "334000"
-                        },
-                        {
-                            "value": "426000"
-                        },
-                        {
-                            "value": "403000"
-                        }
-                    ]
+                    "label": "Mar",
+                    "value": "720000"
+                },
+                {
+                    "label": "Apr",
+                    "value": "550000"
+                },
+                {
+                    "label": "May",
+                    "value": "910000"
+                },
+                {
+                    "label": "Jun",
+                    "value": "510000"
+                },
+                {
+                    "label": "Jul",
+                    "value": "680000"
+                },
+                {
+                    "label": "Aug",
+                    "value": "620000"
+                },
+                {
+                    "label": "Sep",
+                    "value": "610000"
+                },
+                {
+                    "label": "Oct",
+                    "value": "490000"
+                },
+                {
+                    "label": "Nov",
+                    "value": "900000"
+                },
+                {
+                    "label": "Dec",
+                    "value": "730000"
                 }
             ]
         }
-    }).render();
+    });
+    revenueChart.render();
 });

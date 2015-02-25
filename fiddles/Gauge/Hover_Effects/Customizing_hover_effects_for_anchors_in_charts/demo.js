@@ -1,72 +1,44 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'column2d',
+    var visitChart = new FusionCharts({
+        type: 'line',
         renderAt: 'chart-container',
         width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
-                "subCaption": "Last year",
-                "xAxisName": "Month",
-                "yAxisName": "Amount(In USD)",
-                "numberPrefix": "$",
-                //Theme
-                "theme" : "fint"
+                "caption": "Visitors to website",
+                "subCaption": "Last week",
+                "xAxisName": "Day",
+                "yAxisName": "Visits",
+                "theme": "fint",
+                //Additional anchor hover cosmetics attributes
+                "anchorBgHoverColor": "#96d7fa",                
+                "anchorBorderHoverThickness" : "4",
+                "anchorHoverRadius":"7"               
             },
-            "data": [
-                {
-                    "label": "Jan",
-                    "value": "420000"
-                }, 
-                {
-                    "label": "Feb",
-                    "value": "810000"
-                }, 
-                {
-                    "label": "Mar",
-                    "value": "720000"
-                }, 
-                {
-                    "label": "Apr",
-                    "value": "550000"
-                }, 
-                {
-                    "label": "May",
-                    "value": "910000"
-                }, 
-                {
-                    "label": "Jun",
-                    "value": "510000"
-                }, 
-                {
-                    "label": "Jul",
-                    "value": "680000"
-                }, 
-                {
-                    "label": "Aug",
-                    "value": "620000"
-                }, 
-                {
-                    "label": "Sep",
-                    "value": "610000"
-                }, 
-                {
-                    "label": "Oct",
-                    "value": "490000"
-                }, 
-                {
-                    "label": "Nov",
-                    "value": "900000"
-                }, 
-                {
-                    "label": "Dec",
-                    "value": "730000"
-                }
-            ]
+            "data": [{
+                "label": "Mon",
+                "value": "5123"
+            }, {
+                "label": "Tue",
+                "value": "4233"
+            }, {
+                "label": "Wed",
+                "value": "5507"
+            }, {
+                "label": "Thu",
+                "value": "4110"
+            }, {
+                "label": "Fri",
+                "value": "5529"
+            }, {
+                "label": "Sat",
+                "value": "5803"
+            }, {
+                "label": "Sun",
+                "value": "6202"
+            }]
         }
-    });
-
-    revenueChart.render();
+    }).render();
 });

@@ -1,26 +1,30 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'stackedcolumn3d',
+        type: 'stackedcolumn3dlinedy',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '550',
+        height: '350',
         dataFormat: 'json',
-        dataSource: {
+        dataSource: {            
             "chart": {
-                "caption": "Product-wise quarterly revenue in current year",
-                "subCaption": "Harry's SuperMart",
+                "caption": "Product-wise Quarterly Revenue vs. Profit %",
+                "subCaption": "Harry's SuperMart - Last Year",
                 "xAxisname": "Quarter",
-                "yAxisName": "Revenue (In USD)",
+                "pYAxisName": "Sales",
+                "sYAxisName": "Profit %",
                 "numberPrefix": "$",
-                "paletteColors": "#0075c2,#1aaf5d",
+                "sNumberSuffix": "%",
+                "sYAxisMaxValue": "25",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500",
                 "bgColor": "#ffffff",
-                "borderAlpha": "20",
+                "borderAlpha": "20",               
                 "showCanvasBorder": "0",
                 "usePlotGradientColor": "0",
                 "plotBorderAlpha": "10",
                 "legendBorderAlpha": "0",
                 "legendShadow": "0",
-                "valueFontColor": "#ffffff",                
+                "legendBgAlpha": "0",
+                "valueFontColor": "#ffffff",               
                 "showXAxisLine": "1",
                 "xAxisLineColor": "#999999",
                 "divlineColor": "#999999",               
@@ -28,7 +32,7 @@ FusionCharts.ready(function () {
                 "showAlternateHGridColor": "0",
                 "subcaptionFontBold": "0",
                 "subcaptionFontSize": "14",
-                "showHoverEffect":"1"
+                "showHoverEffect": "1"
             },
             "categories": [
                 {
@@ -53,16 +57,16 @@ FusionCharts.ready(function () {
                     "seriesname": "Food Products",
                     "data": [
                         {
-                            "value": "121000"
+                            "value": "11000"
                         },
                         {
-                            "value": "135000"
+                            "value": "15000"
                         },
                         {
-                            "value": "123500"
+                            "value": "13500"
                         },
                         {
-                            "value": "145000"
+                            "value": "15000"
                         }
                     ]
                 },
@@ -70,16 +74,36 @@ FusionCharts.ready(function () {
                     "seriesname": "Non-Food Products",
                     "data": [
                         {
-                            "value": "131400"
+                            "value": "11400"
                         },
                         {
-                            "value": "154800"
+                            "value": "14800"
                         },
                         {
-                            "value": "98300"
+                            "value": "8300"
                         },
                         {
-                            "value": "131800"
+                            "value": "11800"
+                        }
+                    ]
+                },
+                {
+                    "seriesname": "Profit %",
+                    "renderAs": "line",
+                    "parentYAxis": "S",
+                    "showValues": "0",
+                    "data": [
+                        {
+                            "value": "14"
+                        },
+                        {
+                            "value": "16"
+                        },
+                        {
+                            "value": "15"
+                        },
+                        {
+                            "value": "17"
                         }
                     ]
                 }

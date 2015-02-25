@@ -1,48 +1,102 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'column2d',
+    var vstrChart = new FusionCharts({
+        type: 'mscolumn2d',
         renderAt: 'chart-container',
         width: '500',
-        height: '300',
+        height: '340',
         dataFormat: 'json',
         dataSource: {
-            "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
-                "xAxisName": "Quarter",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
-            },
-            
-            "data": [
+            "chart": {                
+                "caption": "Website Visitors",
+                "subCaption": "Last week Vs This week",
+                "xAxisName": "Day",
+                "yAxisName": "No. of Visitors",
+                "theme": "fint",          
+                //Divisional line cosmetics
+                "divLineColor":"#6699cc",
+                "divLineAlpha":"60",
+                "divLineIsDashed" : "0"
+            },            
+            "categories": [
                 {
-                    "label": "Q1",
-                    "value": "1950000"
-                }, 
+                    "category": [
+                        {
+                            "label": "Mon"
+                        }, 
+                        {
+                            "label": "Tue"
+                        }, 
+                        {
+                            "label": "Wed"
+                        }, 
+                        {
+                            "label": "Thu"
+                        }, 
+                        {
+                            "label": "Fri"
+                        }, 
+                        {
+                            "label": "Sat"
+                        }, 
+                        {
+                            "label": "Sun"
+                        }
+                    ]
+                }
+            ],            
+            "dataset": [
                 {
-                    "label": "Q2",
-                    "value": "1450000"
-                },
-                {
-                    "label": "Q3",
-                    "value": "1730000"
-                },
-                {
-                    "label": "Q4",
-                    "value": "2120000"
+                    "seriesname": "Last Week",
+                    "data": [
+                        {
+                            "value": "13000"
+                        }, 
+                        {
+                            "value": "14500"
+                        }, 
+                        {
+                            "value": "13500"
+                        }, 
+                        {
+                            "value": "15000"
+                        }, 
+                        {
+                            "value": "15500"
+                        }, 
+                        {
+                            "value": "17650"
+                        }, 
+                        {
+                            "value": "19500"
+                        }
+                    ]
+                }, {
+                    "seriesname": "This Week",
+                    "data": [
+                        {
+                            "value": "15400"
+                        }, 
+                        {
+                            "value": "16800"
+                        }, 
+                        {
+                            "value": "18800"
+                        }, 
+                        {
+                            "value": "22400"
+                        }, 
+                        {
+                            "value": "23800"
+                        }, 
+                        {
+                            "value": "25800"
+                        }, 
+                        {
+                            "value": "30800"
+                        }
+                    ]
                 }
             ]
         }
-    });
-    
-    revenueChart.render();
+    }).render();
 });

@@ -1,57 +1,65 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
+    var powerBackupChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '450',
-        height: '300',
+        width: '600',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
-                "subCaption": "Last year",
-                "xAxisName": "Month",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                "theme": "fint",
-                "labelDisplay": "auto"
+                "caption": "Power Backup Used",
+                "subcaption": "Last Week At Bakersfield Central",
+                "xaxisname": "Time",
+                "yaxisname": "Duration",
+                "yAxisMaxValue": "100",
+                "showValues":"1",                
+                "formatNumberScale" : "1",
+                //60 minutes = 1 hour, 60 seconds = 1 minute
+                "numberScaleValue":"60,60",
+                //Converts seconds to Minutes, Hours
+                "numberScaleUnit" : " Min, Hrs",
+                //Since all data is provided in seconds
+                "defaultNumberScale" : " Seconds", 
+                "scaleRecursively":"1",
+                //Recurse for all provided units/values
+                "maxScaleRecursion":"-1",
+                //Character used to separate scale
+                "scaleSeparator": " ",
+                 //Theme 
+                "theme" : "fint"
             },
-            "data": [{
-                "label": "January",
-                "value": "420000"
-            }, {
-                "label": "February",
-                "value": "810000"
-            }, {
-                "label": "March",
-                "value": "720000"
-            }, {
-                "label": "April",
-                "value": "550000"
-            }, {
-                "label": "May",
-                "value": "910000"
-            }, {
-                "label": "June",
-                "value": "510000"
-            }, {
-                "label": "July",
-                "value": "680000"
-            }, {
-                "label": "August",
-                "value": "620000"
-            }, {
-                "label": "September",
-                "value": "610000"
-            }, {
-                "label": "October",
-                "value": "490000"
-            }, {
-                "label": "November",
-                "value": "900000"
-            }, {
-                "label": "December",
-                "value": "730000"
-            }]
+            "data": [
+                {
+                    "label": "Sunday",
+                    "value": "7242"
+                }, 
+                {
+                    "label": "Monday",
+                    "value": "5343"
+                }, 
+                {
+                    "label": "Tuesday",
+                    "value": "4543"
+                }, 
+                {
+                    "label": "Wednesday",
+                    "value": "6743"
+                }, 
+                {
+                    "label": "Thrusday",
+                    "value": "5543"
+                }, 
+                {
+                    "label": "Friday",
+                    "value": "8334"
+                }, 
+                {
+                    "label": "Saturday",
+                    "value": "1543"
+                }
+            ]
         }
-    }).render();
+    });
+    
+    powerBackupChart.render();
 });

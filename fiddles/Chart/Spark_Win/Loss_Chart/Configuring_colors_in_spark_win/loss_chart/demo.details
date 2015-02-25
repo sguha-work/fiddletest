@@ -1,5 +1,5 @@
 ---
-name: FusionCharts - Adding Trendzones in Sparkline chart
+name: FusionCharts - Configuring win, loss, draw colors in Spark Win/Loss chart
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

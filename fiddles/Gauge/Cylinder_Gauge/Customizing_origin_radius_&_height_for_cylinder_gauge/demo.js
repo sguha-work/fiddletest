@@ -1,47 +1,32 @@
-FusionCharts.ready(function () {
-    var chart = new FusionCharts({
-        type: 'hled',
-        renderAt: 'chart-container',
-        width: '400',
-        height: '150',
+FusionCharts.ready(function(){
+    var fuelWidget = new FusionCharts({
+        type: 'cylinder',
         dataFormat: 'json',
+        id: 'fuelMeter',
+        renderAt: 'chart-container',
+        width: '200',
+        height: '350',
         dataSource: {
             "chart": {
-                "caption": "Fuel Level Indicator",
+                "theme": "fint",
+                "caption": "Diesel Level in Generator",
+                "subcaption": "Bakersfield Central",
                 "lowerLimit": "0",
-                "upperLimit": "100",
+                "upperLimit": "120",
                 "lowerLimitDisplay": "Empty",
                 "upperLimitDisplay": "Full",
-                "numberSuffix": "%",
-                "valueFontSize": "12",
-                //Add hover effect
-                "showhovereffect": "1",
-
-                "theme" : "fint",
-                "ledSize" : "4"
+                "numberSuffix": " ltrs",
+                "showValue": "1",
+                //Customizing the origin x position
+                "cyloriginx":"30", 
+                //Customizing the origin y position
+                "cyloriginy":"260", 
+                //Setting the radius of the Cylinder
+                "cylradius":"40", 
+                //Setting the height of the Cylinder
+                "cylheight":"150"
             },
-            "colorRange": {
-                "color": [
-                    {
-                        "minValue": "0",
-                        "maxValue": "45",
-                        "code": "#e44a00"
-                    }, 
-                    {
-                        "minValue": "45",
-                        "maxValue": "75",
-                        "code": "#f8bd19"
-                    }, 
-                    {
-                        "minValue": "75",
-                        "maxValue": "100",
-                        "code": "#6baa01"
-                    }
-                ]
-            },
-            "value": "92"
+            "value": "75"
         }
-        
-    })
-    .render();
+    }).render();
 });

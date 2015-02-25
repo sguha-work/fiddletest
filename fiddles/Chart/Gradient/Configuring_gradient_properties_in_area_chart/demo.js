@@ -1,70 +1,127 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
-        renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
-        height: '300',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
-            },
-            "data": [
-                {
-                    "label": "Week 1",
-                    "value": "14.5"
-                }, 
-                {
-                    "label": "Week 2",
-                    "value": "-6.5"
-                }, 
-                {
-                    "label": "Week 3",
-                    "value": "9.8"
-                }, 
-                {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
-                }
-            ]
-        }
-    }).render();
+    var salesData = [
+            {
+                "label": "Mon",
+                "value": "4123"
+            }, 
+            {
+                "label": "Tue",
+                "value": "4633"
+            }, 
+            {
+                "label": "Wed",
+                "value": "5507"
+            }, 
+            {
+                "label": "Thu",
+                "value": "4910"
+            }, 
+            {
+                "label": "Fri",
+                "value": "5529"
+            }, 
+            {
+                "label": "Sat",
+                "value": "5803"
+            }, 
+            {
+                "label": "Sun",
+                "value": "6202"
+            }
+        ],
+        salesChart = new FusionCharts({
+            type: 'area2d',
+            renderAt: 'chart-container1',
+            width: '500',
+            height: '300',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "Sales of liquor",
+                    "subCaption": "Last week",
+                    "xAxisName": "Day",
+                    "yAxisName": "Sales (In USD)",
+                    "numberPrefix": "$",
+                    "theme": "fint",
+                    "usePlotGradientColor": "1",
+                    "plotGradientColor": "#f2c500",
+                    "plotFillRatio": "1:100",
+                    "plotFillAngle":"270"	
+                },
+                
+                "data": salesData
+            }
+        }).render(),
+        
+        salesChart2 = new FusionCharts({
+            type: 'column2d',
+            renderAt: 'chart-container2',
+            width: '500',
+            height: '300',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "Sales of liquor",
+                    "subCaption": "Last week",
+                    "xAxisName": "Day",
+                    "yAxisName": "Sales (In USD)",
+                    "numberPrefix": "$",
+                    "theme": "fint",
+                    "usePlotGradientColor": "1",
+                    "plotGradientColor": "#f2c500",
+                    "plotFillRatio": "1:100",
+                    "plotFillAngle":"270"	
+                },
+                
+                "data": salesData
+            }
+        }).render(),
+        
+        salesChart3 = new FusionCharts({
+            type: 'area2d',
+            renderAt: 'chart-container3',
+            width: '500',
+            height: '300',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "Sales of liquor",
+                    "subCaption": "Last week",
+                    "xAxisName": "Day",
+                    "yAxisName": "Sales (In USD)",
+                    "numberPrefix": "$",
+                    "theme": "fint",
+                    "usePlotGradientColor": "1",
+                    "plotGradientColor": "#1aaf5d",
+                    "plotFillRatio": "1:100",
+                    "plotFillAngle":"0"	
+                },
+                
+                "data": salesData
+            }
+        }).render(),
+        
+        salesChart4 = new FusionCharts({
+            type: 'column2d',
+            renderAt: 'chart-container4',
+            width: '500',
+            height: '300',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "Sales of liquor",
+                    "subCaption": "Last week",
+                    "xAxisName": "Day",
+                    "yAxisName": "Sales (In USD)",
+                    "numberPrefix": "$",
+                    "theme": "fint",
+                    "usePlotGradientColor": "1",
+                    "plotGradientColor": "#1aaf5d",
+                    "plotFillRatio": "1:100",
+                    "plotFillAngle":"0"	
+                },
+                
+                "data": salesData
+            }
+        }).render();
 });

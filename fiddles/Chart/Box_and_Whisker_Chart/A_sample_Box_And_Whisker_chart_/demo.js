@@ -1,115 +1,85 @@
 FusionCharts.ready(function () {
-    var stockPriceChart = new FusionCharts({
-        id: "stackRealTimeChart",
-        type: 'realtimestackedcolumn',
+    var salaryDistribution = new FusionCharts({
+        type: 'boxandwhisker2d',
         renderAt: 'chart-container',
         width: '500',
-        height: '300',
+        height: '350',
         dataFormat: 'json',
-        dataSource: {
+        dataSource:
+        {
             "chart": {
-                "caption": "Live Visitors on Site",
-                "subCaption": "Every 5 seconds",
-                "xAxisName": "Time",
-                "yAxisName": "No. of visitors",
-                "refreshinterval": "5",
-                "numberSuffix":"s",
-                "yaxisminvalue": "0",
-                "yaxismaxvalue": "60",
-                "numdisplaysets": "10",
-                "labeldisplay": "rotate",
-                "showValues": "1",
-                "showRealTimeValue": "0",
-                
-                //Cosmetics
-               
-                "paletteColors" : "#0075c2,#1aaf5d",
-                "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "captionFontSize" : "14",
-                "subcaptionFontSize" : "14",
-                "subcaptionFontBold" : "0",
-                "showBorder" : "0",
-                "bgColor" : "#ffffff",
-                "showShadow" : "0",
-                "usePlotGradientColor" :"0",
-                "showPlotBorder": "0",
-                "valueFontColor" : "#ffffff",
-                "placeValuesInside" : "1",
-                "canvasBgColor" : "#ffffff",
-                "canvasBorderAlpha" : "0",
-                "divlineAlpha" : "100",
-                "divlineColor" : "#999999",
-                "divlineThickness" : "1",
-                "divLineIsDashed" : "1",
-                "divLineDashLen" : "1",
-                "divLineGapLen" : "1",
-                "showXAxisLine" : "1",
-                "xAxisLineThickness" : "1",
-                "xAxisLineColor" : "#999999",
-                "showAlternateHGridColor" : "0",
-                "legendBgAlpha" : "0",
-                "legendBorderAlpha" : "0",
-                "legendShadow" : "0",
-                "legendItemFontSize" : "10",
-                "legendItemFontColor" : "#666666"
-
+                "caption": "Distribution of annual salaries",
+                "subcaption": "By Gender",                
+                "xAxisName": "Pay Grades",
+                "YAxisName": "Salaries (In USD)",                
+                "numberPrefix": "$",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00",
+                "bgColor": "#ffffff",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "showBorder": "0",
+                "showCanvasBorder": "0",
+                "showAlternateHGridColor": "0",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "legendPosition": "right",
+                "showValues": "0",                
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5"                
             },
             "categories": [
                 {
                     "category": [
-                        { "label": "Day Start" }
+                        {
+                            "label": "Grade 1"
+                        }, 
+                        {
+                            "label": "Grade 2"
+                        }, 
+                        {
+                            "label": "Grade 3"
+                        }
                     ]
                 }
             ],
-           "dataset": [
+            "dataset": [
                 {
-                    "seriesName" : "clothing.hsm.com",
+                    "seriesname": "Male",
+                    "lowerboxcolor": "#0075c2",
+                    "upperboxcolor": "#1aaf5d",
                     "data": [
-                        { "value": "12" }
+                        {
+                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000"
+                        }, 
+                        {
+                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500"
+                        }, 
+                        {
+                            "value": "15000,19000,25000,32000,50000,65000"
+                        }
                     ]
-                },
-                {
-                    "seriesName" : "food.hsm.com",
+                }, {
+                    "seriesname": "Female",
+                    "lowerboxcolor": "#f45b00",
+                    "upperboxcolor": "#f2c500",
                     "data": [
-                        { "value": "20" }
+                        {
+                            "value": "1900,2100,2300,2350,2400,2550,3000,3500,4000, 6000, 6500, 9000"
+                        }, 
+                        {
+                            "value": "7000,8000,8300,8700,9500,11000,15000, 17000, 21000"
+                        }, 
+                        {
+                            "value": "24000,32000,35000,37000,39000, 58000"
+                        }
                     ]
                 }
             ]
-        },
-        "events": {
-            "initialized": function (e) {
-                function addLeadingZero(num){
-                    return (num <= 9)? ("0"+num) : num;
-                }
-                function updateData() {
-                    // Get reference to the chart using its ID
-                    var chartRef = FusionCharts("stackRealTimeChart"),
-                        // We need to create a querystring format incremental update, containing
-                        // label in hh:mm:ss format
-                        // and a value (random).
-                        currDate = new Date(),
-                        label = addLeadingZero(currDate.getHours()) + ":" +
-                        addLeadingZero(currDate.getMinutes()) + ":" +
-                        addLeadingZero(currDate.getSeconds()),
-                        // Get random number between 20 & 38 - rounded to 2 decimal places
-                        randomValue = parseInt(Math.random()     
-                                                 * 15 )  + 10,
-                        randomValue2 = parseInt(Math.random()     
-                                                 * 20 )  + 15,
-                        // Build Data String in format &label=...&value=...
-                        strData = "&label=" + label 
-                    + "&value=" 
-                    + randomValue+ "|" + randomValue2;
-                    // Feed it to chart.
-                    chartRef.feedData(strData);
-                }
-                
-                var myVar = setInterval(function () {
-                    updateData();
-                }, 5000);
-            }
-        }
-    })
-    .render();
+        }                
+    }).render();
 });

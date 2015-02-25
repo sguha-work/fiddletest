@@ -1,26 +1,28 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'stackedcolumn3d',
+        type: 'stackedcolumn3dline',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '550',
+        height: '350',
         dataFormat: 'json',
-        dataSource: {
+        dataSource: {            
             "chart": {
-                "caption": "Product-wise quarterly revenue in current year",
-                "subCaption": "Harry's SuperMart",
-                "xAxisname": "Quarter",
-                "yAxisName": "Revenue (In USD)",
-                "numberPrefix": "$",
-                "paletteColors": "#0075c2,#1aaf5d",
+                "showvalues": "1",
+                "caption": "Cost Analysis",
+                "subcaption": "Last Year",
+                "numberprefix": "$",
+                "xaxisname": "Quarter",
+                "yaxisname": "Cost",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500",
                 "bgColor": "#ffffff",
-                "borderAlpha": "20",
+                "borderAlpha": "20",               
                 "showCanvasBorder": "0",
                 "usePlotGradientColor": "0",
                 "plotBorderAlpha": "10",
                 "legendBorderAlpha": "0",
                 "legendShadow": "0",
-                "valueFontColor": "#ffffff",                
+                "legendBgAlpha": "0",
+                "valueFontColor": "#ffffff",               
                 "showXAxisLine": "1",
                 "xAxisLineColor": "#999999",
                 "divlineColor": "#999999",               
@@ -34,52 +36,71 @@ FusionCharts.ready(function () {
                 {
                     "category": [
                         {
-                            "label": "Q1"
+                            "label": "Quarter 1"
                         },
                         {
-                            "label": "Q2"
+                            "label": "Quarter 2"
                         },
                         {
-                            "label": "Q3"
+                            "label": "Quarter 3"
                         },
                         {
-                            "label": "Q4"
+                            "label": "Quarter 4"
                         }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Food Products",
+                    "seriesname": "Fixed Cost",
                     "data": [
                         {
-                            "value": "121000"
+                            "value": "235000"
                         },
                         {
-                            "value": "135000"
+                            "value": "225100"
                         },
                         {
-                            "value": "123500"
+                            "value": "222000"
                         },
                         {
-                            "value": "145000"
+                            "value": "230500"
                         }
                     ]
                 },
                 {
-                    "seriesname": "Non-Food Products",
+                    "seriesname": "Variable Cost",
                     "data": [
                         {
-                            "value": "131400"
+                            "value": "230000"
                         },
                         {
-                            "value": "154800"
+                            "value": "143000"
                         },
                         {
-                            "value": "98300"
+                            "value": "198000"
                         },
                         {
-                            "value": "131800"
+                            "value": "327600"
+                        }
+                    ]
+                },
+                {
+                    "seriesname": "Budgeted cost",
+                    "renderAs": "Line",
+                    "showValues":"0",
+                    "data": [
+                        {
+                            "value": "455000"
+                        },
+                        {
+                            "value": "334000"
+                        },
+                        {
+                            "value": "426000"
+                        },
+                        {
+                            "value": "403000"
                         }
                     ]
                 }

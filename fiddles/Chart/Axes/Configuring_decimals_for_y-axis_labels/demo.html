@@ -1,8 +1,14 @@
 <!-- 
-FusionCharts Suite XT automatically chooses the best mode for your x-axis labels. It either wraps them, rotates them, or adds ellipses to it, to avoid overlapping of labels. The default mode is auto mode. To manually over-ride a mode, you specify it for this attribute.
+If the number of divisional lines is manually provided, to control the decimal places for y-axis values only, and not chart values, use these attribute:
+    # forceYAxisValueDecimals - Set to 1 if you wish to force decimals on y-axis values
+    # yAxisValueDecimals - Number of decimal places
+    # adjustDiv - 0, for manual configyration of number of divisional lines
 
-Attributes:
-    # labelDisplay - auto (Default value)
+In this example, by manually fixing the chart lower limit and number of divisional lines, we instruct FusionCharts to ignore automatic adjustment of divisional lines. Thereafter, we set forceYAxisValueDecimals to 1, to force decimal plaes on y-axis, and provide the decimal places as 2 using yAxisValueDecimals
 
--->
+Deviation from theme:
+    # placeValuesInside - Set to 0
+    # rotateValues - Set to 0
+    # valueFontColor - Set to #000000
+ -->
 <div id="chart-container">FusionCharts will render here</div>

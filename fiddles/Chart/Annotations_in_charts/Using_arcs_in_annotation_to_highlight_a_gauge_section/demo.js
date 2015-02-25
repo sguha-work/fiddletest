@@ -1,64 +1,67 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var cSatScoreChart = new FusionCharts({
+        type: 'angulargauge',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '400',
+        height: '250',
         dataFormat: 'json',
         dataSource: {
             "chart": {
+                "caption": "Customer Satisfaction Score",
+                "subcaption": "Last week",                
                 "theme": "fint",
-                "caption": "Visitors to website",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "Visits",
-                "showValues": "0",
-                //Hiding label borders for all vertical lines
-                "showVLineLabelBorder": "0"
+                "gaugeOuterRadius":"160",
+                "gaugeInnerRadius":"140",
+                "gaugeFillMix":"{dark-10}",
+                "majorTMThickness" : "0",
+                "majorTMHeight": "0"
             },
-            "data": [
-                {
-                    "label": "Mon",
-                    "value": "5123"
-                }, 
-                {
-                    "label": "Tue",
-                    "value": "4233"
-                }, 
-                {
-                    "label": "Wed",
-                    "value": "5507"
-                }, 
-                {
-                    "label": "Thu",
-                    "value": "4110"
-                }, 
-                {
-                    "label": "Fri",
-                    "value": "5529"
-                }, 
-                {
-                    "vline": "true",
-                    "linePosition": "1",
-                    "label": "Weekend",
-                    "labelPosition": "0",
-                    "labelHAlign": "left",
-                    "labelVAlign": "top",
-                    "color": "#6da81e",
-                    "alpha": "50",
-                    //(Optionally) Hiding vline label border from vline element
-                    "showLabelBorder": "0"
-                }, 
-                {
-                    "label": "Sat",
-                    "value": "5803"
-                }, 
-                {
-                    "label": "Sun",
-                    "value": "6202"
-                }
-            ]
+            "colorRange": {
+                "color": [
+                    {
+                        "minValue": "0",
+                        "maxValue": "50",
+                        "code": "#F45B00"
+                    },
+                    {
+                        "minValue": "50",
+                        "maxValue": "75",
+                        "code": "#F2C500"
+                    },
+                    {
+                        "minValue": "75",
+                        "maxValue": "100",
+                        "code": "#8CBB2C"
+                    }
+                ]
+            },
+            "annotations": {                
+                "showbelow": "1",
+                "groups": [
+                    {
+                        "id": "transarc",                                                                        
+                        "items": [
+                            {
+                                "type": "arc",
+                                "radius": "140",
+                                "borderColor":"#FFFFFF",
+                                "innerRadius": "120",
+                                "color": "#8CBB2C",
+                                "alpha": "90",
+                                "x": "200",
+                                "y": "235",
+                                "startangle": "0",
+                                "endangle": "45"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dials": {
+                "dial": [{
+                    "value": "67"
+                }]
+            }
         }
     }).render();
-    
 });

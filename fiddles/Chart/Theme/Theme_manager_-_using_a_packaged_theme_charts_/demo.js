@@ -1,48 +1,50 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'column2d',
+        type: 'mscolumn2d',
         renderAt: 'chart-container',
         width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
-                "xAxisName": "Quarter",
-                "yAxisName": "Amount (In USD)",
+                "caption": "Comparison of Quarterly Revenue",
+                "subCaption": "Harry's SuperMart",
+                "xAxisname": "Quarter",
+                "yAxisName": "Amount ($)",
                 "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
+                // Theme can be set to "zune", "ocean" or "carbon"
+                "theme": "zune"
             },
-            
-            "data": [
+            "categories": [{
+                "category": [
+                    { "label": "Q1" },
+                    { "label": "Q2" },
+                    { "label": "Q3" },
+                    { "label": "Q4" }
+                ]
+            }],
+            "dataset": [
                 {
-                    "label": "Q1",
-                    "value": "1950000"
-                }, 
-                {
-                    "label": "Q2",
-                    "value": "1450000"
+                    "seriesname": "Previous Year",
+                    "data": [
+                        { "value": "10000" },
+                        { "value": "11500" },
+                        { "value": "12500" },
+                        { "value": "15000" }
+                    ]
                 },
                 {
-                    "label": "Q3",
-                    "value": "1730000"
-                },
-                {
-                    "label": "Q4",
-                    "value": "2120000"
+                    "seriesname": "Current Year",
+                    "data": [
+                        { "value": "25400" },
+                        { "value": "29800" },
+                        { "value": "21800" },
+                        { "value": "26800" }
+                    ]
                 }
             ]
         }
     });
-    
+
     revenueChart.render();
 });

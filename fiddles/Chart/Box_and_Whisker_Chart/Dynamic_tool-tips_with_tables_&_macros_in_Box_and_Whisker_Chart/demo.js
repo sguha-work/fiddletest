@@ -1,70 +1,81 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var salaryDistribution = new FusionCharts({
+        type: 'boxandwhisker2d',
         renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
-        height: '300',
+        width: '500',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Distribution of annual salaries",
+                    "subcaption": "By Gender",
+                    "xAxisName": "Pay Grades",
+                    "YAxisName": "Salaries (In USD)",
+                    "theme": "fint",  
+                    "showValues": "0",
+                    "numberPrefix": "$",
+                    "legendPosition": "right",
+                
+                    //Usage of tooltip macro to populate custom tooltip
+                    "plottooltext": "\
+<div id='headerdiv'>$label</div>\
+  {br}\
+  <div>\
+    <table width='120' border='1'>\
+      <tr>\
+        <td class='labelDiv'>Maximum</td>\
+        <td class='allpadding'>$maxDatavalue</td>\
+      </tr>\
+      <tr>\
+        <td class='labelDiv'>Q3</td>\
+        <td class='allpadding'>$Q3</td>\
+      </tr>\
+      <tr>\
+        <td class='labelDiv'>Median</td>\
+        <td class='allpadding'>$median</td>\
+      </tr>\
+      <tr>\
+         <td class='labelDiv'>Q1</td>\
+         <td class='allpadding'>$Q1</td>\
+      </tr>\
+      <tr>\
+         <td class='labelDiv'>Minimum</td>\
+         <td class='allpadding'>$minDataValue</td>\
+      </tr>\
+    </table>\
+</div>"
             },
-            "data": [
-                {
-                    "label": "Week 1",
-                    "value": "14.5"
-                }, 
-                {
-                    "label": "Week 2",
-                    "value": "-6.5"
-                }, 
-                {
-                    "label": "Week 3",
-                    "value": "9.8"
-                }, 
-                {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
-                }
-            ]
+            "categories": [{
+                "category": [{
+                    "label": "Grade 1"
+                }, {
+                    "label": "Grade 2"
+                }, {
+                    "label": "Grade 3"
+                }]
+            }],
+            "dataset": [{
+                "seriesname": "Males",
+                    "data": [{
+                    "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000"
+                }, {
+                    "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500"
+                }, {
+                    "value": "15000,19000,25000,32000,50000,65000"
+                }]
+            }, {
+                "seriesname": "Females",
+                    "data": [{
+                    "value": "1900,2100,2300,2350,2400,2550,3000,3500,4000, 6000, 6500, 9000"
+                }, {
+                    "value": "7000,8000,8300,8700,9500,11000,15000, 17000, 21000"
+                }, {
+                    "value": "24000,32000,35000,37000,39000, 58000"
+                }]
+            }]
         }
-    }).render();
+
+
+    });
+    salaryDistribution.render();
 });

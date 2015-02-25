@@ -1,5 +1,5 @@
 ---
-name: FusionCharts - Configuring tick marks & values in  Cylinder gauge
+name: FusionCharts - Retrieving data through API in Real Time Cylinder
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

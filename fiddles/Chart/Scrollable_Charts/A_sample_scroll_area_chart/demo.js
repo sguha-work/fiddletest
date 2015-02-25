@@ -1,60 +1,99 @@
-FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'pareto2d',
-        renderAt: 'chart-container',
-        width: '600',
-        height: '300',
+FusionCharts.ready(function(){
+    var myChart = new FusionCharts({
+        type: 'scrollarea2d',
         dataFormat: 'json',
-        dataSource: {            
+        renderAt: 'chart-container',
+        width: '550',
+        height: '350',
+        dataSource: {
             "chart": {
-                "caption": "Employee late arrivals by reported cause",
-                "subCaption": "Last month",
+                "caption": "Sales Trends",
+                "subCaption": "(FY 2012 to FY 2013)",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "xAxisname": "Month",
+                "pYAxisName": "Amount",
+                "labelDisplay": "AUTO",
+                "sYAxisName": "Employees",
+                "numberPrefix": "$",
                 "paletteColors": "#0075c2",
-                "lineColor": "#1aaf5d",
-                "xAxisName": "Reported Cause",
-                "pYAxisName": "No. of Occurrence",
-                "sYAxisname": "Cumulative Percentage",
-                "bgColor": "#ffffff",
-                "borderAlpha": "20",
+                "bgcolor": "#ffffff",
+                "showBorder": "0",
                 "showCanvasBorder": "0",
-                "showHoverEffect": "1",
                 "usePlotGradientColor": "0",
                 "plotBorderAlpha": "10",
-                "showValues": "0",                
-                "showXAxisLine": "1",
-                "xAxisLineColor": "#999999",
-                "divlineColor": "#999999",               
-                "divLineIsDashed": "1",
+                "showAxisLines": "0",
+                "valueBgColor":"#FFFFFF",
+                "valueBgAlpha":"50",
                 "showAlternateHGridColor": "0",
-                "subcaptionFontBold": "0",
-                "subcaptionFontSize": "14"
+                "divlineThickness": "1",
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1",
+                "numVisiblePlot": "8",
+                "flatScrollBars": "1",
+                "scrollheight": "10"
             },
-            "data": [
+            "categories": [
                 {
-                    "label": "Traffic",
-                    "value": "5680"
-                },
+                    "category": [
+                        { "label": "Jan 2012" },
+                        { "label": "Feb 2012" },
+                        { "label": "Mar 2012" },
+                        { "label": "Apr 2012" },
+                        { "label": "May 2012" },
+                        { "label": "Jun 2012" },
+                        { "label": "Jul 2012" },
+                        { "label": "Aug 2012" },
+                        { "label": "Sep 2012" },
+                        { "label": "Oct 2012" },
+                        { "label": "Nov 2012" },
+                        { "label": "Dec 2012" },
+                        { "label": "Jan 2013" }, 
+                        { "label": "Feb 2013" }, 
+                        { "label": "Mar 2013" }, 
+                        { "label": "Apr 2013" }, 
+                        { "label": "May 2013" }, 
+                        { "label": "Jun 2013" }, 
+                        { "label": "Jul 2013" }, 
+                        { "label": "Aug 2013" }, 
+                        { "label": "Sep 2013" }, 
+                        { "label": "Oct 2013" }, 
+                        { "label": "Nov 2013" }, 
+                        { "label": "Dec 2013" }
+                    ]
+                }],
+            "dataset": [
                 {
-                    "label": "Family Engagement",
-                    "value": "1036"
-                },
-                {
-                    "label": "Public Transport",
-                    "value": "950"
-                },
-                {
-                    "label": "Weather",
-                    "value": "500"
-                },
-                {
-                    "label": "Emergency",
-                    "value": "140"
-                },
-                {
-                    "label": "Others",
-                    "value": "68"
+                    "data": [
+                        { "value": "27400" },
+                        { "value": "29800" },
+                        { "value": "25800" },
+                        { "value": "26800" },
+                        { "value": "29600" },
+                        { "value": "32600" },
+                        { "value": "31800" },
+                        { "value": "36700" },
+                        { "value": "29700" },
+                        { "value": "31900" },
+                        { "value": "34800" },
+                        { "value": "24800" },
+                        { "value": "26300" },
+                        { "value": "31800" },
+                        { "value": "30900" },
+                        { "value": "33000" },
+                        { "value": "36200" },
+                        { "value": "32100" },
+                        { "value": "37500" },
+                        { "value": "38500" },
+                        { "value": "35400" },
+                        { "value": "38200" },
+                        { "value": "33300" },
+                        { "value": "38300" }
+                    ]
                 }
             ]
         }
-    }).render();    
+    }).render();
 });

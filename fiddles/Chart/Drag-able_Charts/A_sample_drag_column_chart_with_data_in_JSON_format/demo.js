@@ -38,40 +38,51 @@ FusionCharts.ready(function () {
                 {
                     "seriesname": "Available Stock",
                     "allowDrag": "0",
-                    "data": [{
-                        "value": "6000"
-                    }, 
-                             {
-                                 "value": "9500"
-                             }, 
-                             {
-                                 "value": "11900"
-                             }, 
-                             {
-                                 "value": "8000"
-                             }, 
-                             {
-                                 "value": "9700"
-                             }
-                            ]
+                    "data": [
+                        {
+                            "id": "P_AS",
+                            "value": "6000"
+                        }, 
+                        {
+                            "id": "R_AS",                            
+                            "value": "9500"
+                        }, 
+                        {
+                            "id": "PB_AS",
+                            "value": "11900"
+                        }, 
+                        {
+                            "id": "S_AS",
+                            "value": "8000"
+                        }, 
+                        {
+                            "id": "C_AS",
+                            "value": "9700"
+                        }
+                    ]
                 }, 
                 {
                     "seriesname": "Estimated Demand",
                     "dashed": "1",
                     "data": [
                         {
+                            "id": "P_ED",
                             "value": "19000"
                         }, 
                         {
+                            "id": "R_ED",
                             "value": "16500"
                         }, 
                         {
+                            "id": "PB_ED",
                             "value": "14300"
                         }, 
                         {
+                            "id": "S_ED",
                             "value": "10000"
                         }, 
                         {
+                            "id": "C_ED",
                             "value": "9800"
                         }
                     ]
@@ -79,26 +90,39 @@ FusionCharts.ready(function () {
             ]
         },
         events: {
-            'beforeRender': function (evt, args) {
-                // creating div for controllers
-                var controllers = document.createElement('div');
+            'rendered': function(evt, arg){
+                var chartIns = evt && evt.sender,
+                    data = chartIns && chartIns.getData(),
+                    dataTable = document.getElementById("data-table"),
+                    i,
+                    j,
+                    len = data && data.length,
+                    len2,
+                    tableStr = "";
                 
-                // Create radio buttons inside div
-                controllers.innerHTML = '<input type="button" value="Get Data" id="getdata_btn" style="margin-left:5px;padding-botom:15px;"/><div id="tableView" style="padding-top: 13px;"></div>';
-                // set css style for controllers div
-                controllers.style.cssText = '';
-                args.container.parentNode.insertBefore(controllers, args.container.nextSibling);
-                controllers.setAttribute('id', 'controllers');
-            },
-            'renderComplete': function(evt, arg){
-                function showData() {
-                    var chartIns = evt && evt.sender,
-                        data = chartIns && chartIns.getJSONData();
-                    alert(JSON.stringify(data)); 
+                for(i = 0; i < len; i+=1){
+                    tableStr += "<tr>";
+                    len2 = data[i].length;
+                    for(j = 0; j < len2; j+= 1){
+                        if(i == 0){
+                            if(data[i][j] == ""){
+                                 tableStr += "<th>Item Name</th>";
+                            }else{
+                                tableStr += "<th>"+data[i][j]+"</th>";
+                            }
+                        }else{
+                            if(data[i][j] == ""){
+                                 tableStr += "<td>empty</td>";
+                            }else{
+                                tableStr += "<td>"+data[i][j]+"</td>";
+                            }
+                        }
+                    }
+                    tableStr +=  "</tr>"
                 }
-                document.getElementById("getdata_btn").addEventListener("click", showData);
+                
+                dataTable.innerHTML = tableStr;                
             }
-            
         }
     }).render();
 });

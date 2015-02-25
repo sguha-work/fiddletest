@@ -1,55 +1,69 @@
 FusionCharts.ready(function () {
-    var csiGauge = new FusionCharts({
-        type: 'hlineargauge',
+    var chart = new FusionCharts({
+        type: 'hled',
         renderAt: 'chart-container',
-        id: 'csi-linear-gauge',
         width: '400',
-        height: '190',
+        height: '150',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "theme": "fint",
-                "caption": "Target CSAT Index",
+                "caption": "Fuel Level Indicator",
                 "lowerLimit": "0",
                 "upperLimit": "100",
+                "lowerLimitDisplay": "Empty",
+                "upperLimitDisplay": "Full",
                 "numberSuffix": "%",
-                "chartBottomMargin": "40",  
-                "valueFontSize": "11",  
-                "valueFontBold": "0",
-                "gaugeFillMix":"{light-10},{light-70},{dark-10}",
-                "gaugeFillRatio":"40,20,40",
-                "editMode": "1"
+                "valueFontSize": "12",
+                "showhovereffect": "1",
+                "tickMarkDistance" : "10",
+                
+                //Gauge Configuration
+                "showGaugeBorder" : "0",
+                
+                "theme" : "fint"
             },
             "colorRange": {
                 "color": [
                     {
                         "minValue": "0",
-                        "maxValue": "35",
-                        "label": "Low",
+                        "maxValue": "45",
                         "code": "#e44a00"
                     }, 
                     {
-                        "minValue": "35",
-                        "maxValue": "70",
-                        "label": "Moderate",
+                        "minValue": "45",
+                        "maxValue": "75",
                         "code": "#f8bd19"
                     }, 
                     {
-                        "minValue": "70",
+                        "minValue": "75",
                         "maxValue": "100",
-                        "label": "High",
                         "code": "#6baa01"
                     }
                 ]
             },
-            "pointers": {
-                "pointer": [
+            "value": "92"
+        },
+        "events" : {
+            "drawComplete": function(evt, arg){
+                var i,
+                    //Annotation
+                    annotations = evt.sender.annotations,
+                    //Value
+                    val = evt.sender.getData(),
+                    //Color Range Array
+                    crArr = evt.sender.args.dataSource.colorRange.color;
+        
+                for (i = crArr.length-1; i>=0; i-- ) {
+                    //When value falls within the color range
+                    if(val >= crArr[i].minValue && val <= crArr[i].maxValue)
                     {
-                        "value": "0"
+                        annotations.update('bgRectAngle', {"fillColor": crArr[i].code});
                     }
-                ]
+                }
+              
             }
         }
+        
     })
     .render();
 });

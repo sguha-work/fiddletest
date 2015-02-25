@@ -1,64 +1,43 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var cSatScoreChart = new FusionCharts({
+        type: 'angulargauge',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '400',
+        height: '250',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "theme": "fint",
-                "caption": "Visitors to website",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "Visits",
-                "showValues": "0",
-                //Hiding label borders for all vertical lines
-                "showVLineLabelBorder": "0"
+                "caption": "Customer Satisfaction Score",
+                "subcaption": "Last week",                
+                //Place tick marks and values inside gauge
+                "placeTicksInside":"1",
+                "placeValuesInside":"1",
+                "theme": "fint"
             },
-            "data": [
-                {
-                    "label": "Mon",
-                    "value": "5123"
-                }, 
-                {
-                    "label": "Tue",
-                    "value": "4233"
-                }, 
-                {
-                    "label": "Wed",
-                    "value": "5507"
-                }, 
-                {
-                    "label": "Thu",
-                    "value": "4110"
-                }, 
-                {
-                    "label": "Fri",
-                    "value": "5529"
-                }, 
-                {
-                    "vline": "true",
-                    "linePosition": "1",
-                    "label": "Weekend",
-                    "labelPosition": "0",
-                    "labelHAlign": "left",
-                    "labelVAlign": "top",
-                    "color": "#6da81e",
-                    "alpha": "50",
-                    //(Optionally) Hiding vline label border from vline element
-                    "showLabelBorder": "0"
-                }, 
-                {
-                    "label": "Sat",
-                    "value": "5803"
-                }, 
-                {
-                    "label": "Sun",
-                    "value": "6202"
-                }
-            ]
+            "colorRange": {
+                "color": [
+                    {
+                        "minValue": "0",
+                        "maxValue": "50",
+                        "code": "#e44a00"
+                    },
+                    {
+                        "minValue": "50",
+                        "maxValue": "75",
+                        "code": "#f8bd19"
+                    },
+                    {
+                        "minValue": "75",
+                        "maxValue": "100",
+                        "code": "#6baa01"
+                    }
+                ]
+            },
+            "dials": {
+                "dial": [{
+                    "value": "67"
+                }]
+            }
         }
     }).render();
-    
 });

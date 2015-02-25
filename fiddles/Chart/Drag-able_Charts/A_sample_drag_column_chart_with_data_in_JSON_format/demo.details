@@ -1,5 +1,5 @@
 ---
-name: Drag Column Chart - Getting data in JSON format
+name: Drag Column Chart - Getting data with getData method
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

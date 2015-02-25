@@ -1,70 +1,55 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var revenueChart = new FusionCharts({
+        type: 'mscolumn2d',
         renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Comparison of Quarterly Revenue",
+                "subCaption": "(Roll over columns to view tooltip using macros)",
+                "subCaptionFontBold": "0",
+                "xAxisname": "Quarter",
+                "yAxisName": "Amount (In USD)",
+                "numberPrefix": "$",
+                //Dynamic tool-text using a combination of HTML and macros
+                "plottooltext":"Year : <b>$seriesName</b>{br}$xAxisName : <b>$label</b>{br}$yAxisName : <b>$dataValue</b>",
+                //Theme
+                "theme" : "fint"
             },
-            "data": [
+            "categories": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "category": [
+                        { "label": "Quarter 1" },
+                        { "label": "Quarter 2" },
+                        { "label": "Quarter 3" },
+                        { "label": "Quarter 4" }
+                    ]
+                }
+            ],
+            "dataset": [
+                {
+                    "seriesname": "Previous Year",
+                    "data": [
+                        { "value": "10000" }, 
+                        { "value": "11500" }, 
+                        { "value": "12500" }, 
+                        { "value": "15000" }
+                    ]
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
-                }, 
-                {
-                    "label": "Week 3",
-                    "value": "9.8"
-                }, 
-                {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "seriesname": "This Year",
+                    "data": [
+                        { "value": "25400" }, 
+                        { "value": "29800" }, 
+                        { "value": "21800" }, 
+                        { "value": "26800" }
+                    ]
                 }
             ]
         }
-    }).render();
+    });
+    
+    revenueChart.render();
 });

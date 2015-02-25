@@ -1,108 +1,64 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'mscolumn2d',
+    var salesByBrandChart = new FusionCharts({
+        type: 'marimekko',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '550',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Comparison of Quarterly Revenue",
-                "xAxisname": "Quarter",
-                "yAxisName": "Revenues (In USD)",
-                "numberPrefix": "$",
-                "plotFillAlpha" : "80",
-
-                //Cosmetics
-                "paletteColors" : "#0075c2,#1aaf5d",
-                "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "captionFontSize" : "14",
-                "subcaptionFontSize" : "14",
-                "subcaptionFontBold" : "0",
-                "showBorder" : "0",
-                "bgColor" : "#ffffff",
-                "showShadow" : "0",
-                "canvasBgColor" : "#ffffff",
-                "canvasBorderAlpha" : "0",
-                "divlineAlpha" : "100",
-                "divlineColor" : "#999999",
-                "divlineThickness" : "1",
-                "divLineIsDashed" : "1",
-                "divLineDashLen" : "1",
-                "divLineGapLen" : "1",
-                "usePlotGradientColor" : "0",
-                "showplotborder" : "0",
-                "valueFontColor" : "#ffffff",
-                "placeValuesInside" : "1",
-                "showHoverEffect" : "1",
-                "rotateValues" : "1",
-                "showXAxisLine" : "1",
-                "xAxisLineThickness" : "1",
-                "xAxisLineColor" : "#999999",
-                "showAlternateHGridColor" : "0",
-                "legendBgAlpha" : "0",
-                "legendBorderAlpha" : "0",
-                "legendShadow" : "0",
-                "legendItemFontSize" : "10",
-                "legendItemFontColor" : "#666666"                
+                "caption": "Top 3 Electronic Brands in Top 3 Revenue Earning States",
+                "subcaption": "Last month",
+                "aligncaptiontocanvas": "0",
+                "yaxisname": "Statewise Sales (in %)",
+                "xaxisname": "Brand",
+                "numberprefix": "$",
+                "valueBgColor":"#FFFFFF",
+                "valueBgAlpha":"60",
+                "showPlotBorder" : "1",
+                "plotBorderThickness": "0.25",
+                "showxaxispercentvalues": "1",
+                "showsum": "1",
+                //Custom tool-text string built using a combination of HTML and chart macro variables
+                "plottooltext": "<div id='nameDiv' style='font-size: 14px; border-bottom: 1px dashed #666666; font-weight:bold; padding-bottom: 3px; margin-bottom: 5px; display: inline-block;'>$label :</div>{br}State: <b>$seriesName</b>{br}Sales : <b>$dataValue</b>{br}Market share in $seriesName : <b>$percentValue</b>{br}Overall market share of $label: <b>$xAxisPercentValue</b>",
+                "theme": "fint"
             },
             "categories": [
                 {
                     "category": [
-                        { "label": "Q1" },
-                        { "label": "Q2" },
-                        { "label": "Q3" },
-                        { "label": "Q4" }
+                        { "label": "Bose" },
+                        { "label": "Dell" },
+                        { "label": "Apple" }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Previous Year",
+                    "seriesname": "California",
                     "data": [
-                        { "value": "10000" }, 
-                        { "value": "11500" }, 
-                        { "value": "12500" }, 
-                        { "value": "15000" }
+                        { "value": "335000" },
+                        { "value": "225100" },
+                        { "value": "164200" }
                     ]
-                }, 
+                },
                 {
-                    "seriesname": "Current Year",
+                    "seriesname": "Washington",
                     "data": [
-                        { "value": "25400" }, 
-                        { "value": "29800" }, 
-                        { "value": "21800" }, 
-                        { "value": "26800" }
+                        { "value": "215000" },
+                        { "value": "198000" },
+                        { "value": "120000" }
                     ]
-                }
-            ],
-            "trendlines": [
+                },
                 {
-                    "line": [
-                        {
-                            "startvalue": "12250",
-                            "color": "#0075c2",
-                            "displayvalue": "Previous{br}Average",
-                            "valueOnRight" : "1",
-                            "thickness" : "1",
-                            "showBelow" : "1",
-                            "tooltext" : "Previous year quarterly target  : $13.5K"
-                        },
-                        {
-                            "startvalue": "25950",
-                            "color": "#1aaf5d",
-                            "displayvalue": "Current{br}Average",
-                            "valueOnRight" : "1",
-                            "thickness" : "1",
-                            "showBelow" : "1",
-                            "tooltext" : "Current year quarterly target  : $23K"
-                        }
+                    "seriesname": "Nevada",
+                    "data": [
+                        { "value": "298000" },
+                        { "value": "109300" },
+                        { "value": "153600" }
                     ]
                 }
             ]
         }
-    });
-    
-    revenueChart.render();
+    }).render();
+   
 });

@@ -1,104 +1,120 @@
 FusionCharts.ready(function () {
-    var inventoryChart = new FusionCharts({
-        type: 'dragcolumn2d',
+    var hourlySalesChart = new FusionCharts({
+        type: 'multiaxisline',
         renderAt: 'chart-container',
-        width: '500',
+        width: '600',
         height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Inventory status - Bakersfield Central",                
-                "subCaption": "Top 5 Food items",
-                "xAxisName": "Food Item",
-                "yAxisName": "No. of Units",
-                "theme": "fint"
+                "caption": "Revenue Analysis",
+                "subcaption": "Last 12 weeks",
+                "xaxisname": "Week of Year",
+                "showvalues": "0",
+                "theme" : "fint"
             },
             "categories": [
                 {
                     "category": [
-                        {
-                            "label": "Poultry"
-                        }, 
-                        {
-                            "label": "Rice"
-                        }, 
-                        {
-                            "label": "Peanut Butter"
-                        }, 
-                        {
-                            "label": "Salmon"
-                        }, 
-                        {
-                            "label": "Cereal"
-                        }
+                        { "label": "1" },
+                        { "label": "2" }, 
+                        { "label": "3" }, 
+                        { "label": "4" }, 
+                        { "label": "5" }, 
+                        { "label": "6" }, 
+                        { "label": "7" }, 
+                        { "label": "8" }, 
+                        { "label": "9" }, 
+                        { "label": "10" }, 
+                        { "label": "11" }, 
+                        { "label": "12" }
                     ]
                 }
             ],
-            "dataset": [
+            "axis": [
                 {
-                    "seriesname": "Available Stock",
-                    "allowDrag": "0",
-                    "data": [{
-                        "value": "6000"
-                    }, 
-                             {
-                                 "value": "9500"
-                             }, 
-                             {
-                                 "value": "11900"
-                             }, 
-                             {
-                                 "value": "8000"
-                             }, 
-                             {
-                                 "value": "9700"
-                             }
+                    "title": "Revenue",
+                    "titlepos": "left",
+                    "tickwidth": "10",
+                    "numberPrefix": "$",
+                    "divlineisdashed": "1",
+                    "dataset": [
+                        {
+                            "seriesname": "Revenue",
+                            "linethickness": "3",
+                            "data": [
+                                { "value": "137500" }, 
+                                { "value": "124350" }, 
+                                { "value": "156700" }, 
+                                { "value": "131450" },
+                                { "value": "208300" }, 
+                                { "value": "219900" }, 
+                                { "value": "227500" }, 
+                                { "value": "254300" },
+                                { "value": "155900" }, 
+                                { "value": "105650" }, 
+                                { "value": "120950" }, 
+                                { "value": "127500" }
                             ]
+                        }
+                    ]
+                }, {
+                    "title": "Orders",
+                    "axisonleft": "0",
+                    "titlepos": "right",
+                    "numdivlines": "8",
+                    "tickwidth": "10",
+                    "divlineisdashed": "1",
+                    "dataset": [
+                        {
+                            "seriesname": "Orders",
+                            "data": [
+                                { "value": "22567" }, 
+                                { "value": "21348" }, 
+                                { "value": "24846" }, 
+                                { "value": "19237" }, 
+                                { "value": "20672" }, 
+                                { "value": "23403" }, 
+                                { "value": "30278" }, 
+                                { "value": "26719" },
+                                { "value": "21940" }, 
+                                { "value": "24396" }, 
+                                { "value": "22340" }, 
+                                { "value": "25439" }
+                            ]
+                        }
+                    ]
                 }, 
                 {
-                    "seriesname": "Estimated Demand",
-                    "dashed": "1",
-                    "data": [
+                    "title": "Footfalls",
+                    "titlepos": "RIGHT",
+                    "axisonleft": "0",
+                    "numdivlines": "5",
+                    "tickwidth": "10",
+                    "numberSuffix": "",
+                    "divlineisdashed": "1",
+                    "dataset": [
                         {
-                            "value": "19000"
-                        }, 
-                        {
-                            "value": "16500"
-                        }, 
-                        {
-                            "value": "14300"
-                        }, 
-                        {
-                            "value": "10000"
-                        }, 
-                        {
-                            "value": "9800"
+                            "seriesname": "Footfalls",
+                            "data": [
+                                { "value": "68473" }, 
+                                { "value": "57934" }, 
+                                { "value": "78925" }, 
+                                { "value": "69213" }, 
+                                { "value": "74892" }, 
+                                { "value": "81123" }, 
+                                { "value": "90086" }, 
+                                { "value": "91174" }, 
+                                { "value": "68934" }, 
+                                { "value": "80934" }, 
+                                { "value": "73634" }, 
+                                { "value": "84453" }
+                            ]
                         }
                     ]
                 }
             ]
-        },
-        events: {
-            'beforeRender': function (evt, args) {
-                // creating div for controllers
-                var controllers = document.createElement('div');
-                
-                // Create radio buttons inside div
-                controllers.innerHTML = '<input type="button" value="Get Data" id="getdata_btn" style="margin-left:5px;padding-botom:15px;"/><div id="tableView" style="padding-top: 13px;"></div>';
-                // set css style for controllers div
-                controllers.style.cssText = '';
-                args.container.parentNode.insertBefore(controllers, args.container.nextSibling);
-                controllers.setAttribute('id', 'controllers');
-            },
-            'renderComplete': function(evt, arg){
-                function showData() {
-                    var chartIns = evt && evt.sender,
-                        data = chartIns && chartIns.getJSONData();
-                    alert(JSON.stringify(data)); 
-                }
-                document.getElementById("getdata_btn").addEventListener("click", showData);
-            }
-            
         }
     }).render();
+    
 });

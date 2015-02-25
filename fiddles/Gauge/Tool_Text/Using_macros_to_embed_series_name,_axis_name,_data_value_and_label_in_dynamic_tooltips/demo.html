@@ -1,11 +1,17 @@
-<!-- 
-Zero Plane shows up on the chart when the chart has a mix of positive and negative values.
+<!--
+    Using macros to embed series name, axis name, data value and label in dynamic tooltips    
 
-Attributes to configure zero plane in 3D chart: 
-    # showZeroPlane - By default 1
-    # zeroPlaneColor
-    # zeroPlaneAlpha
-    # zeroPlaneThickness
+    Attribute:
+        # plottooltext
 
- -->
+    Macros:
+        # $seriesName - Series Name 
+        # $yAxisName 
+        # $xAxisName
+        # $label
+        # $dataValue - Formatted data value
+    
+    Deviation from theme: 
+        # subCaptionFontBold - Set to 0
+-->
 <div id="chart-container">FusionCharts will render here</div>

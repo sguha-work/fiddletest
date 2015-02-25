@@ -1,11 +1,15 @@
 <!-- 
-Zero Plane shows up on the chart when the chart has a mix of positive and negative values.
+    Tool-tip macro in a bulb gauge. Macros can be used to add dynamic values (e.g., label, value, display value, percent value in pie) to the tool-text.
 
-Attributes to configure zero plane in 3D chart: 
-    # showZeroPlane - By default 1
-    # zeroPlaneColor
-    # zeroPlaneAlpha
-    # zeroPlaneThickness
+Attribute: 
+    # plotToolText - String for the toil-text. It can contain text, HTML and embedded tool-tip macros.
 
- -->
+  Macros used: 
+    # $value - Gets the current value in bulb gauge
+
+Deviation from theme:
+        # placeValuesInside - Set to 1
+        # valueFontSize - Set to 16
+
+-->
 <div id="chart-container">FusionCharts will render here</div>

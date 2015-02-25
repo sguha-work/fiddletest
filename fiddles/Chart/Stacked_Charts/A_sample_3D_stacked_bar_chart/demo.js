@@ -1,13 +1,13 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'stackedcolumn3d',
+        type: 'stackedbar3d',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '450',
+        height: '400',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Product-wise quarterly revenue in current year",
+                "caption": "Product-wise quarterly revenue in last year",
                 "subCaption": "Harry's SuperMart",
                 "xAxisname": "Quarter",
                 "yAxisName": "Revenue (In USD)",
@@ -18,17 +18,15 @@ FusionCharts.ready(function () {
                 "showCanvasBorder": "0",
                 "usePlotGradientColor": "0",
                 "plotBorderAlpha": "10",
+                "legendBgColor": "#ffffff",
                 "legendBorderAlpha": "0",
                 "legendShadow": "0",
                 "valueFontColor": "#ffffff",                
                 "showXAxisLine": "1",
                 "xAxisLineColor": "#999999",
-                "divlineColor": "#999999",               
-                "divLineIsDashed": "1",
-                "showAlternateHGridColor": "0",
+                "divlineColor": "#999999",                                            
                 "subcaptionFontBold": "0",
-                "subcaptionFontSize": "14",
-                "showHoverEffect":"1"
+                "subcaptionFontSize": "14"
             },
             "categories": [
                 {

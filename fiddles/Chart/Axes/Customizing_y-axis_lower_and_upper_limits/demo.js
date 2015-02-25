@@ -2,32 +2,27 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '500',
+        id: 'myChart',
+        width: '400',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
+                "subcaption":"Last year",
                 "xAxisName": "Quarter",
                 "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
-            },
-            
+                "theme": "fint",
+                //Manually setting y-axis upper and lower limit
+                "yAxisMaxValue": "2500000",
+                "yAxisMinValue": "1000000"                
+            },            
             "data": [
                 {
                     "label": "Q1",
                     "value": "1950000"
-                }, 
+                },
                 {
                     "label": "Q2",
                     "value": "1450000"
@@ -42,7 +37,5 @@ FusionCharts.ready(function () {
                 }
             ]
         }
-    });
-    
-    revenueChart.render();
+    }).render();    
 });

@@ -13,8 +13,8 @@ FusionCharts.ready(function () {
                 "showPercentValues": "1",
                 "showPercentInTooltip": "0",
                 "decimals": "1",
-                //Starting Angle
-                "startingAngle" : "45",
+                //Configuring slicing distance
+                "slicingDistance ":"10",
                 //Theme
                 "theme": "fint"
             },

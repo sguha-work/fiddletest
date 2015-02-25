@@ -1,5 +1,5 @@
 FusionCharts.ready(function () {
-    var csiGauge = new FusionCharts({
+    var CSIGauge = new FusionCharts({
         type: 'hlineargauge',
         renderAt: 'chart-container',
         id: 'csi-linear-gauge',
@@ -9,7 +9,7 @@ FusionCharts.ready(function () {
         dataSource: {
             "chart": {
                 "theme": "fint",
-                "caption": "Target CSAT Index",
+                "caption": "Target CSAT Score",
                 "lowerLimit": "0",
                 "upperLimit": "100",
                 "numberSuffix": "%",
@@ -48,6 +48,50 @@ FusionCharts.ready(function () {
                         "value": "0"
                     }
                 ]
+            },
+            "annotations": {
+                "origw": "400",
+                "origh": "190",
+                "autoscale": "1",
+                "groups": [
+                    {
+                        "id": "range",
+                        "items": [
+                            {
+                                "id": "rangeBg",                                
+                                "type": "rectangle",
+                                "x" : "$chartCenterX-80",
+                                "y": "$chartEndY-35",
+                                "tox": "$chartCenterX +80",
+                                "toy": "$chartEndY-15",
+                                "fillcolor": "#0075c2",
+                                "visible": "0"
+                            },
+                            {
+                                "id": "rangeText",
+                                "type": "Text",                                
+                                "fontSize": "11",                                                                
+                                "fillcolor": "#ffffff",
+                                "text": "",
+                                "x" : "$chartCenterX",
+                                "y": "$chartEndY-25"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        "events": {
+            //Event is raised when a real-time gauge or chart completes updating data.
+            //Where we can get the updated data and display the same.
+            "realTimeUpdateComplete" : function (evt, arg){
+                var annotations = evt.sender.annotations,
+                    percentValue = evt.sender.getData(1) * 100,
+                    dispValue = parseFloat(Math.round(percentValue) / 100).toFixed(2),
+                    colorVal = "#" + ((dispValue > 70) ? "6baa01" : ((dispValue >35 && dispValue < 70 ) ? "f8bd19" : "e44a00") );
+                //Showing the annotation background and change its color
+                annotations.update('rangeBg', {"visible" : 1,"fillcolor" : colorVal});
+                annotations && annotations.update('rangeText', {"text" : "Target CSAT Score is "+dispValue+ "%"});
             }
         }
     })

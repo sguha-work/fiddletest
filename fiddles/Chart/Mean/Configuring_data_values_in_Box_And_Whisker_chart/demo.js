@@ -1,104 +1,77 @@
 FusionCharts.ready(function () {
-    var inventoryChart = new FusionCharts({
-        type: 'dragcolumn2d',
+    var salaryDistribution = new FusionCharts({
+        type: 'boxandwhisker2d',
         renderAt: 'chart-container',
         width: '500',
         height: '350',
         dataFormat: 'json',
-        dataSource: {
+        dataSource:
+        {
             "chart": {
-                "caption": "Inventory status - Bakersfield Central",                
-                "subCaption": "Top 5 Food items",
-                "xAxisName": "Food Item",
-                "yAxisName": "No. of Units",
-                "theme": "fint"
+                "caption": "Distribution of annual salaries",
+                "subcaption": "By Gender",                
+                "xAxisName": "Pay Grades",
+                "YAxisName": "Salaries (In USD)",                
+                "numberPrefix": "$",
+                "theme": "fint",
+                "showValues": "0",
+                //To draw a line connecting all the mean icons
+                "drawMeanConnector": "1",
+                //To ignore the null data and draw a continuous connector
+                "connectNullData ": "1"
             },
             "categories": [
                 {
                     "category": [
                         {
-                            "label": "Poultry"
+                            "label": "Grade 1"
                         }, 
                         {
-                            "label": "Rice"
+                            "label": "Grade 2"
                         }, 
                         {
-                            "label": "Peanut Butter"
-                        }, 
-                        {
-                            "label": "Salmon"
-                        }, 
-                        {
-                            "label": "Cereal"
+                            "label": "Grade 3"
                         }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Available Stock",
-                    "allowDrag": "0",
-                    "data": [{
-                        "value": "6000"
-                    }, 
-                             {
-                                 "value": "9500"
-                             }, 
-                             {
-                                 "value": "11900"
-                             }, 
-                             {
-                                 "value": "8000"
-                             }, 
-                             {
-                                 "value": "9700"
-                             }
-                            ]
-                }, 
-                {
-                    "seriesname": "Estimated Demand",
-                    "dashed": "1",
+                    "seriesname": "Male",
+                    "lowerboxcolor": "#008ee4",
+                    "upperboxcolor": "#6baa01",
                     "data": [
                         {
-                            "value": "19000"
+                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000",
+                //showing the icon representing the mean value
+                "showMean": "1"
                         }, 
                         {
-                            "value": "16500"
+                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500",
+                             "showMean": "0"
                         }, 
                         {
-                            "value": "14300"
+                            "value": "15000,19000,25000,32000,50000,65000",
+                             "showMean": "1"
+                        }
+                    ]
+                }, {
+                    "seriesname": "Female",
+                    "lowerboxcolor": "#e44a00",
+                    "upperboxcolor": "#f8bd19",
+                    "data": [
+                        {
+                            "value": "1900,2100,2300,2350,2400,2550,3000,3500,4000, 6000, 6500, 9000"
                         }, 
                         {
-                            "value": "10000"
+                            "value": "7000,8000,8300,8700,9500,11000,15000, 17000, 21000"
                         }, 
                         {
-                            "value": "9800"
+                            "value": "24000,32000,35000,37000,39000, 58000"
                         }
                     ]
                 }
             ]
-        },
-        events: {
-            'beforeRender': function (evt, args) {
-                // creating div for controllers
-                var controllers = document.createElement('div');
-                
-                // Create radio buttons inside div
-                controllers.innerHTML = '<input type="button" value="Get Data" id="getdata_btn" style="margin-left:5px;padding-botom:15px;"/><div id="tableView" style="padding-top: 13px;"></div>';
-                // set css style for controllers div
-                controllers.style.cssText = '';
-                args.container.parentNode.insertBefore(controllers, args.container.nextSibling);
-                controllers.setAttribute('id', 'controllers');
-            },
-            'renderComplete': function(evt, arg){
-                function showData() {
-                    var chartIns = evt && evt.sender,
-                        data = chartIns && chartIns.getJSONData();
-                    alert(JSON.stringify(data)); 
-                }
-                document.getElementById("getdata_btn").addEventListener("click", showData);
-            }
-            
-        }
+        }                
     }).render();
 });

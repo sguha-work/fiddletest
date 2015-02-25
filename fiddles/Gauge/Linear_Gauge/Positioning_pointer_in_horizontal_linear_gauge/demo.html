@@ -1,19 +1,18 @@
-<!-- Configuring pointer properties in a simple Horizontal Linear Gauge showing Server CPU Utilization
+<!-- Configuring Pointer values in a simple Horizontal Linear Gauge showing Server CPU Utilization
 
-Element : 
-    # pointer
+Attributes :
 
-Attributes: 
-    # borderColor - To set the border color of the pointer (Hex code).
-    # borderThickness - To set the thickness of the boder (In pixel).
-    # borderAlpha - To set the alpha of the border (0-100).
-    # bgColor - To set the background color of the pointer (Hex code).
-    # bgAlpha - To set the background alpha of the pointer (Hex code).
-    # radius - To set the radius of the pointer.
-    # sides  - To set number of sides of the pointer.
+# showValue - Whether to show values associated with pointer.
+# valueAbovePointer - Whether to show the value above the pointer or below.
 
-     Deviation from Theme
-        #  valueFontSize
-        #  valueFontBold
--->
+    Deviation from Theme
+    #  valueFontSize
+    #  valueFontBold
+
+ -->
 <div id="chart-container">FusionCharts will render here</div>
+
+<div id="checkbox-container">
+   <input type="checkbox" id="showCB" name="padding" value="1" checked >Show Value</input><br>
+   <input type="checkbox" id="positionCB" name="padding" value="2">Place Value Above Pointer</input>
+</div>

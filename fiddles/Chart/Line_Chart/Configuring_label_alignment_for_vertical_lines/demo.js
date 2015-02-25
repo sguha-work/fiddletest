@@ -1,70 +1,134 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
-        renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
+    var visitChart1 = new FusionCharts({
+        type: 'line',
+        renderAt: 'chart-container1',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
                 "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Visitors to website",
+                "subCaption": "Last week",
+                "xAxisName": "Day",
+                "yAxisName": "Visits",
+                "showValues": "0"
             },
+            
             "data": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "label": "Mon",
+                    "value": "5123"
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
+                    "label": "Tue",
+                    "value": "4233"
                 }, 
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
+                    "label": "Wed",
+                    "value": "5507"
                 }, 
                 {
-                    "label": "Week 4",
-                    "value": "9.2"
+                    "label": "Thu",
+                    "value": "4110"
+                },
+                {
+                    "label": "Fri",
+                    "value": "5529"
                 }, 
                 {
-                    "label": "Week 5",
-                    "value": "-7.45"
+                    //Adding vline data
+                    "vline": "true",
+                    //Defining vline position to match with Friday
+                    "linePosition": "0",
+                    //Setting vline label text
+                    "label": "Weekdays",
+                    "labelPosition": "0",
+                    "color": "#6da81e",
+                    "thickness": "1",
+                    "alpha": "50",
+                    //vline label vertically aligned to middle
+                    "labelVAlign": "middle",
+                    //vline label horizontally aligned to bottom
+                    "labelHAlign": "right"
                 }, 
                 {
-                    "label": "Week 6",
-                    "value": "-3.19"
+                    "label": "Sat",
+                    "value": "5803"
                 }, 
                 {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "label": "Sun",
+                    "value": "6202"
                 }
             ]
         }
     }).render();
+    
+   
+    
+    var visitChart2 = new FusionCharts({
+        type: 'line',
+        renderAt: 'chart-container2',
+        width: '500',
+        height: '300',
+        dataFormat: 'json',
+        dataSource: {
+            "chart": {
+                "theme": "fint",
+                "chartRightMargin": "40",
+                "caption": "Visitors to website",
+                "subCaption": "Last week",
+                "xAxisName": "Day",
+                "yAxisName": "Visits",
+                "showValues": "0"
+            },
+            "data": [
+                {
+                    "label": "Mon",
+                    "value": "5123"
+                }, 
+                {
+                    "label": "Tue",
+                    "value": "4233"
+                }, 
+                {
+                    "label": "Wed",
+                    "value": "5507"
+                }, 
+                {
+                    "label": "Thu",
+                    "value": "4110"
+                }, 
+                {
+                    "label": "Fri",
+                    "value": "5529"
+                }, 
+                {
+                    //Adding vline data
+                    "vline": "true",
+                    //Defining vline position to match with Saturday
+                    "linePosition": "1",
+                    //Setting vline label text
+                    "label": "Weekend",
+                    "labelPosition": "0.95",
+                    "color": "#6da81e",
+                    "thickness": "1",
+                    "alpha": "50",
+                    //vline label vertically aligned to middle
+                    "labelVAlign": "middle",
+                    //vline label horizontally aligned to left
+                    "labelHAlign": "left"
+                }, 
+                {
+                    "label": "Sat",
+                    "value": "5803"
+                },
+                {
+                    "label": "Sun",
+                    "value": "6202"
+                }
+            ]
+        }
+    }).render();
+    
 });

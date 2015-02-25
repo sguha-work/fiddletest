@@ -1,72 +1,48 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'column2d',
+    var cscGauge = new FusionCharts({
+        type: 'hlineargauge',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '400',
+        height: '150',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
-                "subCaption": "Last year",
-                "xAxisName": "Month",
-                "yAxisName": "Amount(In USD)",
-                "numberPrefix": "$",
-                //Theme
-                "theme" : "fint"
+                "caption": "Customer satisfaction score",
+                "subcaption": "Current week - Garden Groove Harbour",                               
+                "theme": "fint",
+                "showValue": "0",                
+                //Attributes to customize pointer on hover.
+                "pointerBgHoverColor": "#ffffff",
+                "pointerBgHoverAlpha": "80",
+                "pointerHoverRadius": "12",
+                "showBorderOnHover": "1",
+                "pointerBorderHoverColor": "#333333",
+                "pointerBorderHoverThickness": "2"
             },
-            "data": [
-                {
-                    "label": "Jan",
-                    "value": "420000"
-                }, 
-                {
-                    "label": "Feb",
-                    "value": "810000"
-                }, 
-                {
-                    "label": "Mar",
-                    "value": "720000"
-                }, 
-                {
-                    "label": "Apr",
-                    "value": "550000"
-                }, 
-                {
-                    "label": "May",
-                    "value": "910000"
-                }, 
-                {
-                    "label": "Jun",
-                    "value": "510000"
-                }, 
-                {
-                    "label": "Jul",
-                    "value": "680000"
-                }, 
-                {
-                    "label": "Aug",
-                    "value": "620000"
-                }, 
-                {
-                    "label": "Sep",
-                    "value": "610000"
-                }, 
-                {
-                    "label": "Oct",
-                    "value": "490000"
-                }, 
-                {
-                    "label": "Nov",
-                    "value": "900000"
-                }, 
-                {
-                    "label": "Dec",
-                    "value": "730000"
-                }
-            ]
+            "colorRange": {
+                "color": [{
+                    "minValue": "0",
+                        "maxValue": "3.5",
+                        "label": "Low",
+                        "code": "#e44a00"
+                }, {
+                    "minValue": "3.5",
+                        "maxValue": "",
+                        "label": "Moderate",
+                        "code": "#f8bd19"
+                }, {
+                    "minValue": "7",
+                        "maxValue": "10",
+                        "label": "High",
+                        "code": "#6baa01"
+                }]
+            },
+            "pointers": {
+                "pointer": [{
+                    "value": "7.25"
+                }]
+            }
         }
-    });
-
-    revenueChart.render();
+    })
+    .render();
 });

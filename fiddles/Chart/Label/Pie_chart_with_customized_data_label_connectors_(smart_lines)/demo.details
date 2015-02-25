@@ -1,5 +1,5 @@
 ---
-name: FusionCharts - Enable slicing of a single slice in Pie 2D Chart
+name: FusionCharts - Pie 2D Chart with customized smart lines
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

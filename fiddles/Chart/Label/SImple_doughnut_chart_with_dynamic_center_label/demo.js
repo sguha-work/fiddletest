@@ -2,43 +2,33 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'doughnut2d',
         renderAt: 'chart-container',
-        width: '450',
-        height: '300',
+        width: '500',
+        height: '400',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Split of revenue by product categories",
-                "subCaption": "Last year",
-                "numberPrefix": "$",
-                "startingAngle": "20",
-                "showPercentValues": "1",
-                "showPercentInTooltip": "0",
-                "enableSmartLabels": "0",
-                "enableMultiSlicing": "0",
-                "decimals": "1",
-                //Theme
-                "theme": "fint"
+                "caption": "Split of Revenue by Product Categories",
+                "subCaption": "Los Angeles Topanga - Last month",
+                "numberPrefix": "$",                
+                "startingAngle": "310",
+                "decimals": "0",                
+                "defaultCenterLabel": "Total revenue: $60K",
+                "centerLabel": "Revenue from $label: $value",                
+                "theme": "fint"                
             },
-            "data": [
-                {
-                    "label": "Food",
-                    "value": "285040"
-                }, 
-                {
-                    "label": "Apparels",
-                    "value": "146330"
-                }, 
-                {
-                    "label": "Electronics",
-                    "value": "105070"
-                }, 
-                {
-                    "label": "Household",
-                    "value": "49100",
-                    "isSliced": "1"
-                }
-            ]
+            "data": [{
+                "label": "Food",
+                "value": "28504"
+            }, {
+                "label": "Apparels",
+                "value": "14633"
+            }, {
+                "label": "Electronics",
+                "value": "10507"
+            }, {
+                "label": "Household",
+                "value": "4910"
+            }]
         }
     }).render();
-    
 });

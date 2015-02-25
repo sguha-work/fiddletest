@@ -1,6 +1,6 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var salesChart = new FusionCharts({
+        type: 'column2d',
         renderAt: 'chart-container',
         id: 'myChart',
         width: '450',
@@ -8,63 +8,39 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Quarterly Sales Summary",
+                "subcaption": "For last year",
+                "xaxisname": "Quarter",
+                "yaxisname": "Amount (In USD)",
+                "numberprefix": "$",
+                //Theme
+                "theme" : "fint"
             },
             "data": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "label": "Q1",
+                    "value": "195000",
+                    "tooltext":"Quarter 1{br}Total Sale: $195K{br}Rank: 1"
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
+                    "label": "Q2",
+                    "value": "155000",
+                    "tooltext":"Quarter 2{br}Total Sale: $155K{br}Rank: 4"
                 }, 
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
+                    "label": "Q3",
+                    "value": "178000",
+                    "tooltext":"Quarter 3{br}Total Sale: $178K{br}Rank: 3"
                 }, 
                 {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "label": "Q4",
+                    "value": "192000",
+                    "tooltext":"Quarter 4{br}Total Sale: $192K{br}Rank: 4"
                 }
             ]
         }
-    }).render();
+    });
+    
+    salesChart.render();
+    
 });

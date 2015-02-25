@@ -1,5 +1,5 @@
 ---
-name: FusionCharts -  Configuring Font Cosmetics for y-axis name
+name: Configuring Charts - Chart ignoring yAxisMaxValue value provided manually, because data item exceeds value
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

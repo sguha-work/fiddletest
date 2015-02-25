@@ -1,89 +1,68 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'stackedcolumn3d',
+    var salesChart = new FusionCharts({
+        type: 'bulb',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        id: 'myChart',
+        width: '200',
+        height: '200',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Product-wise quarterly revenue in current year",
-                "subCaption": "Harry's SuperMart",
-                "xAxisname": "Quarter",
-                "yAxisName": "Revenue (In USD)",
-                "numberPrefix": "$",
-                "paletteColors": "#0075c2,#1aaf5d",
-                "bgColor": "#ffffff",
-                "borderAlpha": "20",
-                "showCanvasBorder": "0",
-                "usePlotGradientColor": "0",
-                "plotBorderAlpha": "10",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
-                "valueFontColor": "#ffffff",                
-                "showXAxisLine": "1",
-                "xAxisLineColor": "#999999",
-                "divlineColor": "#999999",               
-                "divLineIsDashed": "1",
-                "showAlternateHGridColor": "0",
-                "subcaptionFontBold": "0",
-                "subcaptionFontSize": "14",
-                "showHoverEffect":"1"
+                "caption": "Temperature status of deep freezers",
+                "upperlimit": "-5",
+                "lowerlimit": "-60",
+                "captionPadding":"30",
+                "showshadow":"0",
+                "showvalue": "1",
+                "useColorNameAsValue":"1",
+                "placeValuesInside":"1",
+                "valueFontSize": "16",
+                //Cosmetics
+                "baseFontColor" : "#333333",
+                "baseFont" : "Helvetica Neue,Arial",
+                "captionFontSize" : "14",
+                "showborder": "0",
+                "bgcolor": "#FFFFFF",
+                "toolTipColor" : "#ffffff",
+                "toolTipBorderThickness" : "0",
+                "toolTipBgColor" : "#000000",
+                "toolTipBgAlpha" : "80",
+                "toolTipBorderRadius" : "2",
+                "toolTipPadding" : "5",
             },
-            "categories": [
-                {
-                    "category": [
-                        {
-                            "label": "Q1"
-                        },
-                        {
-                            "label": "Q2"
-                        },
-                        {
-                            "label": "Q3"
-                        },
-                        {
-                            "label": "Q4"
-                        }
-                    ]
-                }
-            ],
-            "dataset": [
-                {
-                    "seriesname": "Food Products",
-                    "data": [
-                        {
-                            "value": "121000"
-                        },
-                        {
-                            "value": "135000"
-                        },
-                        {
-                            "value": "123500"
-                        },
-                        {
-                            "value": "145000"
-                        }
-                    ]
-                },
-                {
-                    "seriesname": "Non-Food Products",
-                    "data": [
-                        {
-                            "value": "131400"
-                        },
-                        {
-                            "value": "154800"
-                        },
-                        {
-                            "value": "98300"
-                        },
-                        {
-                            "value": "131800"
-                        }
-                    ]
-                }
-            ]
+            "colorrange": {
+                "color": [
+                    {
+                        "minvalue": "-60",
+                        "maxvalue": "-35",
+                        "label": "Problem detected!",
+                        "code": "#ff0000"
+                    }, 
+                    {
+                        "minvalue": "-35",
+                        "maxvalue": "-25",
+                        "label": "Alert!",
+                        "code": "#ff9900"
+                    }, 
+                    {
+                        "minvalue": "-25",
+                        "maxvalue": "-5",
+                        "label": "All well!",
+                        "code": "#00ff00"
+                    }
+                ]
+            },
+            "value": "-5"
+        },
+        "events":{
+            "rendered": function(evtObj, argObj){
+                setInterval(function () {
+                    var num = (Math.floor(Math.random() * 55)*-1) -5;
+                    FusionCharts("myChart").feedData("&value=" + num);
+                }, 10000);
+            }
         }
-    }).render();    
+    });
+    salesChart.render();
+    
 });

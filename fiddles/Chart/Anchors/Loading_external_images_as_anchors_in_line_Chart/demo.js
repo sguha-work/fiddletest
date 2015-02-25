@@ -1,70 +1,73 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var ratingsChart = new FusionCharts({
+        type: 'line',
         renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Top Employees",
+                "subcaption": "Last six months",
+                "xAxisName": "Month",
+                "yAxisName": "Rating",
+                "yaxisminvalue": "0",
+                "yaxismaxvalue": "10",
+                "yAxisValuesPadding": "15",
+                "valuePosition" : "below",
+                "numDivlines": "5",
+                "lineAlpha": "1",
+                "anchorAlpha": "100",
+                //Theme
+                "theme":"fint"
             },
             "data": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "label": "July",
+                    "value": "7.8",
+                    "displayValue" :"John, 7.8",
+                    "tooltext" :"July : John, 7.8",
+                    "anchorImageUrl":"http://static.fusioncharts.com/sampledata/userimages/1.png"
+                    
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
+                    "label": "August",
+                    "value": "6.9",
+                    "displayValue" :"Mac, 6.9",
+                    "tooltext" :"August : Mac, 6.9",
+                    "anchorImageUrl":"http://static.fusioncharts.com/sampledata/userimages/2.png"
                 }, 
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
+                    "label": "September",
+                    "value": "8",
+                    "displayValue" :"Phillips, 8",
+                    "tooltext" :"September : Phillips, 8",
+                    "anchorImageUrl":"http://static.fusioncharts.com/sampledata/userimages/3.png"
                 }, 
                 {
-                    "label": "Week 4",
-                    "value": "9.2"
+                    "label": "October",
+                    "value": "7.5",
+                    "displayValue" :"Terrin, 7.5",
+                    "tooltext" :"October : Terrin, 7.5",
+                    "anchorImageUrl":"http://static.fusioncharts.com/sampledata/userimages/4.png"
                 }, 
                 {
-                    "label": "Week 5",
-                    "value": "-7.45"
+                    "label": "November",
+                    "value": "7.7",
+                    "displayValue" :"Tom, 7.7",
+                    "tooltext" :"November : Tom, 7.7",
+                    "anchorImageUrl":"http://static.fusioncharts.com/sampledata/userimages/5.png"
                 }, 
                 {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "label": "December",
+                    "value": "6.7",
+                    "displayValue" :"Martha, 6.7",
+                    "tooltext" :"December : Martha, 6.7",
+                    "anchorImageUrl":"http://static.fusioncharts.com/sampledata/userimages/6.png"
                 }
             ]
         }
-    }).render();
+    });
+
+    ratingsChart.render();
 });

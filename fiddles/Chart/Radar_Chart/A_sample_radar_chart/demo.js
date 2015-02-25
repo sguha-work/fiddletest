@@ -1,104 +1,61 @@
 FusionCharts.ready(function () {
-    var inventoryChart = new FusionCharts({
-        type: 'dragcolumn2d',
+    var ratingsChart = new FusionCharts({
+        type: 'radar',
         renderAt: 'chart-container',
         width: '500',
         height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Inventory status - Bakersfield Central",                
-                "subCaption": "Top 5 Food items",
-                "xAxisName": "Food Item",
-                "yAxisName": "No. of Units",
-                "theme": "fint"
+                "caption": "Store rating across parameters",
+                "subCaption": "Based on customer feedback survey",                                                                                               
+                "numberPreffix": "$",
+                "theme": "fint",
+                "radarfillcolor": "#ffffff",
             },
             "categories": [
                 {
                     "category": [
                         {
-                            "label": "Poultry"
+                            "label": "Ambience"
                         }, 
                         {
-                            "label": "Rice"
-                        }, 
+                            "label": "Product Assortment"
+                        },
                         {
-                            "label": "Peanut Butter"
-                        }, 
+                            "label": "Price Competitiveness"
+                        },
                         {
-                            "label": "Salmon"
-                        }, 
+                            "label": "Service"
+                        },
                         {
-                            "label": "Cereal"
+                            "label": "Recommend to others"
                         }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Available Stock",
-                    "allowDrag": "0",
-                    "data": [{
-                        "value": "6000"
-                    }, 
-                             {
-                                 "value": "9500"
-                             }, 
-                             {
-                                 "value": "11900"
-                             }, 
-                             {
-                                 "value": "8000"
-                             }, 
-                             {
-                                 "value": "9700"
-                             }
-                            ]
-                }, 
-                {
-                    "seriesname": "Estimated Demand",
-                    "dashed": "1",
+                    "seriesname": "User Ratings",
                     "data": [
                         {
-                            "value": "19000"
-                        }, 
+                            "value": "3.5"
+                        },
                         {
-                            "value": "16500"
-                        }, 
+                            "value": "4.8"
+                        },
                         {
-                            "value": "14300"
-                        }, 
+                            "value": "3.1"
+                        },
                         {
-                            "value": "10000"
-                        }, 
+                            "value": "4.0"
+                        },
                         {
-                            "value": "9800"
+                            "value": "3.6"
                         }
                     ]
                 }
             ]
-        },
-        events: {
-            'beforeRender': function (evt, args) {
-                // creating div for controllers
-                var controllers = document.createElement('div');
-                
-                // Create radio buttons inside div
-                controllers.innerHTML = '<input type="button" value="Get Data" id="getdata_btn" style="margin-left:5px;padding-botom:15px;"/><div id="tableView" style="padding-top: 13px;"></div>';
-                // set css style for controllers div
-                controllers.style.cssText = '';
-                args.container.parentNode.insertBefore(controllers, args.container.nextSibling);
-                controllers.setAttribute('id', 'controllers');
-            },
-            'renderComplete': function(evt, arg){
-                function showData() {
-                    var chartIns = evt && evt.sender,
-                        data = chartIns && chartIns.getJSONData();
-                    alert(JSON.stringify(data)); 
-                }
-                document.getElementById("getdata_btn").addEventListener("click", showData);
-            }
-            
         }
     }).render();
 });

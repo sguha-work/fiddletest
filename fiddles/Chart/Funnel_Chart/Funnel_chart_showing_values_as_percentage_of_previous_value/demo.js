@@ -2,7 +2,7 @@ FusionCharts.ready(function () {
     var conversionChart = new FusionCharts({
         type: 'funnel',
         renderAt: 'chart-container',
-        width: '450',
+        width: '500',
         height: '400',
         dataFormat: 'json',
         dataSource: {
@@ -10,12 +10,13 @@ FusionCharts.ready(function () {
                 "caption": "Website visits",
                 "subcaption": "Purchase - Conversion analysis for last year",
                 "decimals": "1",
-                "is2D": "0",
-                "streamlinedData" : "0",
-
-                //Show legend
-                "showLegend" : "1",
-                "showLabels" : "0",
+                "is2D": "1",
+                "labelDistance": "15",
+                "plotTooltext": "Success : $percentOfPrevValue",
+                "showPercentValues": "1",
+                
+                //Values as percentage of previous value
+                "percentOfPrevious" : "1",
                 
                 "theme" : "fint"
             },

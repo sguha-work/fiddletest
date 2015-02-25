@@ -1,70 +1,63 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var satisfactionChart = new FusionCharts({
+        type: 'line',
         renderAt: 'chart-container',
         id: 'myChart',
-        width: '450',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Customer Satisfaction Averages",
+                "chartBottomMargin": "30",
+                "chartRightMargin": "30",
+                "subcaption": "Last week",
+                "xaxisname": "Day",
+                "yaxisname": "Satisfaction (In%)",
+                "numbersuffix": "%",
+                "showValues" : "0",
+                
+                //Anchor cosmetics
+                "anchorradius": "6",
+                "anchorborderthickness": "2",
+                "anchorborderColor": "#127fcb",
+                "anchorBgColor": "#d3f7ff",
+                //Theme
+                "theme" : "fint"
             },
             "data": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "label": "Monday",
+                    "value": "22.5"
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
+                    "label": "Tuesday",
+                    "value": "42.4"
                 }, 
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
+                    "label": "Wednesday",
+                    "value": "28.2",
                 }, 
                 {
-                    "label": "Week 4",
-                    "value": "9.2"
+                    "label": "Thursday",
+                    "value": "22.8",
+                    "anchorradius": "10",
+                    "anchorAlpha": "70",
+                    "anchorBorderColor" : "#cc3333",
+                    "anchorBgColor" : "#ff9900"
                 }, 
                 {
-                    "label": "Week 5",
-                    "value": "-7.45"
+                    "label": "Friday",
+                    "value": "39.2"
                 }, 
                 {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "label": "Saturday",
+                    "value": "66.45"
                 }
             ]
         }
-    }).render();
+    });
+    
+    satisfactionChart.render();
+    
 });

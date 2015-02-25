@@ -1,215 +1,145 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
-        type: 'gantt',
-        renderAt: 'chart-container',
-        width: '650',
-        height: '300',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
-            },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
+    var maxBtn = document.getElementById('max-btn'),
+        minBtn = document.getElementById('min-btn'),
+        maxTxtFld = document.getElementById('max-limit'),                    
+        minTxtFld = document.getElementById('min-limit'),
+        
+        setMaxLimit = function () {
+            var maxLimit = maxTxtFld.value,
+                crntLimit = salesPrediction && salesPrediction.getUpperLimit(),
+                status;
+            
+            if(maxLimit != crntLimit){
+                status = salesPrediction && salesPrediction.setUpperLimit(maxLimit);
+                if(status){
+                    alert('Max limit updated successfully');
+                }else{                    
+                    maxTxtFld.value = crntLimit;                    
+                    alert('Max limit could not be updated!')
+                }
+            }           
+                        
+        },
+        
+        setMinLimit = function () {
+            var minLimit = minTxtFld.value,
+                crntLimit = salesPrediction && salesPrediction.getLowerLimit(),
+                status;
+            
+            if(minLimit != crntLimit){
+                status = salesPrediction && salesPrediction.setLowerLimit(minLimit);
+                if(status){
+                    alert('Min limit updated successfully');
+                }else{                    
+                    minTxtFld.value = crntLimit;                    
+                    alert('Min limit could not be updated!')
+                }
+            }           
+                        
+        },
+    
+        salesPrediction = new FusionCharts({
+            type: 'dragarea',
+            renderAt: 'chart-container',
+            width: '500',
+            height: '350',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "caption": "Quarterly Unit Sales - Apple vs. Samsung",
+                    "subCaption": "Drag anchors to change estimated values",
+                    "subCaptionFontSize" : "12",
+                    "xAxisName": "Quarter",
+                    "yAxisName": "No. of Units",
+                    "theme": "fint"
+                },
+                "categories": [
                     {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
+                        "category": [
                             {
-                                "label": "John"
-                            },
+                                "label": "Q1"
+                            }, 
                             {
-                                "label": "David"
-                            },
+                                "label": "Q2"
+                            }, 
                             {
-                                "label": "Mary"
-                            },
+                                "label": "Q3(E)"
+                            }, 
                             {
-                                "label": "John"
-                            },
+                                "label": "Q4(E)"
+                            }
+                        ]
+                    }
+                ],
+                "dataset": [
+                    {
+                        "seriesname": "Apple",
+                        "valuePosition": "ABOVE",
+                        "allowDrag": "0",
+                        "data": [
                             {
-                                "label": "Andrew & Harry"
-                            },
+                                "value": "1200"
+                            }, 
                             {
-                                "label": "John & Harry"
-                            },
+                                "value": "1500",
+                                "dashed": "1"
+                            }, 
                             {
-                                "label": "Neil & Harry"
-                            },
+                                "value": "1300",
+                                "allowDrag": "1",
+                                "dashed": "1"
+                            }, 
                             {
-                                "label": "Neil & Harry"
-                            },
+                                "value": "900",
+                                "allowDrag": "1",
+                                "tooltext": "Predicted sales $value units"
+                            }
+                        ]
+                    },
+                    {
+                        "seriesname": "Samsung",
+                        "allowDrag": "0",
+                        "data": [
                             {
-                                "label": "Chris"
-                            },
+                                "value": "600"
+                            }, 
                             {
-                                "label": "John & Richard"
+                                "value": "850",
+                                "dashed": "1"
+                            }, 
+                            {
+                                "value": "1000",
+                                "allowDrag": "1",
+                                "dashed": "1"
+                            }, 
+                            {
+                                "value": "1200",
+                                "allowDrag": "1",
+                                "tooltext": "Predicted sales $value units"
                             }
                         ]
                     }
                 ]
             },
-            "categories": [
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
-                        },
-                        {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
-                        },
-                        {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
-                        },
-                        {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
-                        },
-                        {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
-                        },
-                        {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
-                        },
-                        {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
-                        },
-                        {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
-                        }
-                    ]
+            events: {
+                'rendered': function(evtObj, argObj){
+                    var chartIns = evtObj.sender,                                        
+                        chartMaxLimit = chartIns.getUpperLimit(),
+                        chartMinLimit = chartIns.getLowerLimit();
+                    
+                    maxTxtFld.value = chartMaxLimit;
+                    minTxtFld.value = chartMinLimit;
                 }
-            ],
-            "processes": {
-                "fontsize": "12",
-                "isbold": "1",
-                "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
-                "process": [
-                    {
-                        "label": "Identify Customers"
-                    },
-                    {
-                        "label": "Survey 500 Customers"
-                    },
-                    {
-                        "label": "Interpret Requirements"
-                    },
-                    {
-                        "label": "Market Analysis"
-                    },
-                    {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
-                    }
-                ]
-            },
-            "tasks": {
-                "task": [
-                    {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
-                    },
-                    {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
-                    },
-                    {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
-                    },
-                    {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
-                    },
-                    {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
-                    },
-                    {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
-                    },
-                    {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
-                    },
-                    {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
-                    }
-                ]
             }
-            
-        }
-    }).render();
+        }).render();
+    
+    if (maxBtn.addEventListener) {
+        maxBtn.addEventListener("click", setMaxLimit);
+        minBtn.addEventListener("click", setMinLimit);
+    } else {
+        maxBtn.onclick && maxBtn.onclick(setMaxLimit);
+        minBtn.onclick && minBtn.onclick(setMinLimit);
+    }
+    
+    
 });

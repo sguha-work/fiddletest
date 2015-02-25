@@ -1,8 +1,6 @@
 ---
-name: FusionCharts - Gallery Example - Drag Line Chart
+name: FusionCharts - Gallery Example - Inverse y-Axis Line 2D Chart in Javascript
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js
-  - http://static.fusioncharts.com/code/latest/fusioncharts.powercharts.js
-  - http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js
 ...

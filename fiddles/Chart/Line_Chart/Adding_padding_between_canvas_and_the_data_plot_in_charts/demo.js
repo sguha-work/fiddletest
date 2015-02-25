@@ -2,19 +2,22 @@ FusionCharts.ready(function () {
     var visitChart = new FusionCharts({
         type: 'line',
         renderAt: 'chart-container',
-        width: '500',
+        width: '600',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "theme": "fint",
-                "caption": "Visitors to website",
+                "caption": "Website Visitors",
                 "subCaption": "Last week",
                 "xAxisName": "Day",
                 "yAxisName": "Visits",
-                "showValues": "0",
-                //Hiding label borders for all vertical lines
-                "showVLineLabelBorder": "0"
+                //Showing the canvas border
+                "showCanvasBorder": "1",
+                //Setting border alpha lower
+                "canvasBorderAlpha": "20",
+                //Setting pading
+                "canvasPadding": "30"
             },
             "data": [
                 {
@@ -36,18 +39,6 @@ FusionCharts.ready(function () {
                 {
                     "label": "Fri",
                     "value": "5529"
-                }, 
-                {
-                    "vline": "true",
-                    "linePosition": "1",
-                    "label": "Weekend",
-                    "labelPosition": "0",
-                    "labelHAlign": "left",
-                    "labelVAlign": "top",
-                    "color": "#6da81e",
-                    "alpha": "50",
-                    //(Optionally) Hiding vline label border from vline element
-                    "showLabelBorder": "0"
                 }, 
                 {
                     "label": "Sat",

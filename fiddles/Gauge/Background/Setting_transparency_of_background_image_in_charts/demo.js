@@ -1,65 +1,43 @@
 FusionCharts.ready(function () {
-    var salaryDistribution = new FusionCharts({
-        type: 'boxandwhisker2d',
+    var flavorChart = new FusionCharts({
+        type: 'column2d',
         renderAt: 'chart-container',
-        width: '500',
-        height: '350',
+        width: '400',
+        height: '300',
         dataFormat: 'json',
-        dataSource:
-        {
+        dataSource: {
             "chart": {
-                "caption": "Distribution of annual salaries",
-                "subcaption": "By Gender",                
-                "xAxisName": "Pay Grades",
-                "YAxisName": "Salaries (In USD)",                
+                "caption": "Top 3 Juice Flavors",
+                "subCaption": "Last year",
+                "xAxisName": "Flavor",
+                "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
-                "theme": "fint",
-                "showValues": "0"
+                "canvasBgAlpha": "0",
+                "showAlternateHgridColor": "1",
+                //Background image properties
+                "bgImage": "http://upload.wikimedia.org/wikipedia/commons/7/79/Misc_fruit.jpg",
+                //Background image transparency 
+                "bgImageAlpha":"25",
+                "bgImageDisplayMode":"stretch",
+                //Theme
+                "theme" : "fint"
             },
-            "categories": [
+            "data": [
                 {
-                    "category": [
-                        { "label": "Grade 1" }, 
-                        { "label": "Grade 2" }, 
-                        { "label": "Grade 3" }
-                    ]
-                }
-            ],
-            "dataset": [
+                    "label": "Apple",
+                    "value": "810000"
+                }, 
                 {
-                    "seriesname": "Male",
-                    "lowerboxcolor": "#008ee4",
-                    "upperboxcolor": "#6baa01",
-                    //To show the icon representing the Quartile deviation
-                    "showQD": "1",
-                    "data": [
-                        {
-                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000"
-                        }, 
-                        {
-                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500"
-                        }, 
-                        {
-                            "value": "15000,19000,25000,32000,50000,65000"
-                        }
-                    ]
-                }, {
-                    "seriesname": "Female",
-                    "lowerboxcolor": "#e44a00",
-                    "upperboxcolor": "#f8bd19",
-                    "data": [
-                        {
-                            "value": "1900,2100,2300,2350,2400,2550,3000,3500,4000, 6000, 6500, 9000"
-                        }, 
-                        {
-                            "value": "7000,8000,8300,8700,9500,11000,15000, 17000, 21000"
-                        }, 
-                        {
-                            "value": "24000,32000,35000,37000,39000, 58000"
-                        }
-                    ]
+                    "label": "Cranberry",
+                    "value": "620000"
+                }, 
+                {
+                    "label": "Grapes",
+                    "value": "350000"
                 }
             ]
-        }                
-    }).render();
+        }
+    });
+
+    flavorChart.render();
 });

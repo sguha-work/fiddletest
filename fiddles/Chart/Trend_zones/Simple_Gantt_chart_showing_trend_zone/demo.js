@@ -1,84 +1,17 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
+    var cnstrctnPlan = new FusionCharts({
         type: 'gantt',
         renderAt: 'chart-container',
-        width: '650',
-        height: '300',
+        width: '750',
+        height: '500',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "dateformat": "mm/dd/yyyy",
                 "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
-            },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
-                    {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
-                    }
-                ]
+                "subcaption": "Project Plan"
             },
             "categories": [
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
-                        },
-                        {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
                 {
                     "category": [
                         {
@@ -128,10 +61,6 @@ FusionCharts.ready(function () {
                 "fontsize": "12",
                 "isbold": "1",
                 "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
                 "process": [
                     {
                         "label": "Identify Customers"
@@ -193,7 +122,7 @@ FusionCharts.ready(function () {
                     },
                     {
                         "start": "10/06/2014",
-                        "end": "01/21/2015",                        
+                        "end": "01/21/2015"
                     },
                     {
                         "start": "01/21/2015",
@@ -208,8 +137,21 @@ FusionCharts.ready(function () {
                         "end": "03/27/2015"
                     }
                 ]
-            }
-            
+            },
+            "trendlines": [
+                {
+                    "line": [
+                        {
+                            "start": "12/25/2014",
+                            "end": "12/31/2014",
+                            "displayvalue": "Christmas Week",
+                            "istrendzone": "1",
+                            "alpha": "20",
+                            "color": "#FF5904"
+                        }
+                    ]
+                }
+            ]
         }
     }).render();
 });

@@ -1,64 +1,55 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var convRatGauge = new FusionCharts({
+        type: 'hled',
         renderAt: 'chart-container',
+        id: 'myChart',
         width: '500',
-        height: '300',
+        height: '160',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "theme": "fint",
-                "caption": "Visitors to website",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "Visits",
-                "showValues": "0",
-                //Hiding label borders for all vertical lines
-                "showVLineLabelBorder": "0"
+                "caption": "Harry's Supermart - Bakersfield Central",
+                "subCaption": "Footfall vs Conversion ratio",                
+                "numberSuffix":"%",
+                //Distance bbetween tick mark scale and gauge
+                "tickMarkDistance": "4",
+                "majorTMNumber": "5", 
+                "minorTMNumber": "4",
+                //Cosmetics for major tick marks
+                "majorTMColor": "#666666", 
+                "majorTMAlpha": "70",   
+                "majorTMHeight": "10", 
+                "majorTMThickness": "2", 
+                //Cosmetics for minor tick marks
+                "minorTMColor": "#cccccc",
+                "minorTMAlpha": "100",   
+                "minorTMHeight": "6", 
+                "minorTMThickness": "1",
+                "theme": "fint"
             },
-            "data": [
-                {
-                    "label": "Mon",
-                    "value": "5123"
-                }, 
-                {
-                    "label": "Tue",
-                    "value": "4233"
-                }, 
-                {
-                    "label": "Wed",
-                    "value": "5507"
-                }, 
-                {
-                    "label": "Thu",
-                    "value": "4110"
-                }, 
-                {
-                    "label": "Fri",
-                    "value": "5529"
-                }, 
-                {
-                    "vline": "true",
-                    "linePosition": "1",
-                    "label": "Weekend",
-                    "labelPosition": "0",
-                    "labelHAlign": "left",
-                    "labelVAlign": "top",
-                    "color": "#6da81e",
-                    "alpha": "50",
-                    //(Optionally) Hiding vline label border from vline element
-                    "showLabelBorder": "0"
-                }, 
-                {
-                    "label": "Sat",
-                    "value": "5803"
-                }, 
-                {
-                    "label": "Sun",
-                    "value": "6202"
-                }
-            ]
+            "colorrange": {
+                "color": [
+                    {
+                        "minvalue": "100",
+                        "maxvalue": "76",
+                        "label": "Bad",
+                        "code": "#00FF00"
+                    }, 
+                    {
+                        "minvalue": "75",
+                        "maxvalue": "36",
+                        "label": "Average",
+                        "code": "#FFFF00"
+                    }, 
+                    {
+                        "minvalue": "0",
+                        "maxvalue": "35",
+                        "label": "Good",
+                        "code": "#FF0000"
+                    }
+                ]
+            },
+            "value": "62"
         }
     }).render();
-    
 });

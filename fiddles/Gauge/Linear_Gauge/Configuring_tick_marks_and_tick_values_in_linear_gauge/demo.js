@@ -1,59 +1,71 @@
 FusionCharts.ready(function () {
-    var cpuGauge = new FusionCharts({
-        type: 'hlineargauge',
-        renderAt: 'chart-container',
-        width: '400',
-        height: '150',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "theme": "fint",
-                "caption": "Server CPU Utilization",
-                "captionPadding": "0",
-                "numberSuffix": "%",
-                "valueFontSize": "11",
-                "valueFontBold": "0", 
-                "chartBottomMargin": "20",
-                "gaugeFillMix":"{light-10},{light-70},{dark-10}",
-                "gaugeFillRatio":"40,20,40"
-            },
-            "colorRange": {
-                "color": [
-                    {
-                        "minValue": "0",
-                        "maxValue": "35",
-                        "label": "Low",
-                        "code": "#6baa01"
-                    }, 
-                    {
-                        "minValue": "35",
-                        "maxValue": "70",
-                        "label": "Moderate",
-                        "code": "#f8bd19"
-                    }, 
-                    {
-                        "minValue": "70",
-                        "maxValue": "100",
-                        "label": "High",
-                        "code": "#e44a00"
-                    }
-                ]
-            },
-            "pointers": {
-                "pointer": [
-                    {
-                        "borderColor": "#333333",
-                        "borderThickness": "2",
-                        "borderAlpha": "60",
-                        "bgColor": "#0075c2",
-                        "bgAlpha": "75",
-                        "radius":"6",
-                        "sides":"4",
-                        "value": "75"
-                    }
-                ]
+    var tickmarkCB = document.getElementById('tmCB'),
+        tickvalueCB = document.getElementById('tvCB'),
+        cpuGauge = new FusionCharts({
+            type: 'hlineargauge',
+            renderAt: 'chart-container',
+            id: 'cpu-linear-gauge',
+            width: '400',
+            height: '170',
+            dataFormat: 'json',
+            dataSource: {
+                "chart": {
+                    "theme": "fint",
+                    "caption": "Server CPU Utilization",
+                    "lowerLimit": "0",
+                    "upperLimit": "100",
+                    "numberSuffix": "%",
+                    "chartBottomMargin": "20",  
+                    "valueFontSize": "11",  
+                    "valueFontBold": "0",
+                    "gaugeFillMix":"{light-10},{light-70},{dark-10}",
+                    "gaugeFillRatio":"40,20,40"
+                },
+                "colorRange": {
+                    "color": [
+                        {
+                            "minValue": "0",
+                            "maxValue": "35",
+                            "label": "Low",
+                        }, 
+                        {
+                            "minValue": "35",
+                            "maxValue": "70",
+                            "label": "Moderate",
+                        }, 
+                        {
+                            "minValue": "70",
+                            "maxValue": "100",
+                            "label": "High",
+                        }
+                    ]
+                },
+                "pointers": {
+                    "pointer": [
+                        {
+                            "value": "75"
+                        }
+                    ]
+                }
             }
-        }
-    })
+        })
     .render();
+    
+    //Set event listener for check boxes
+    tickmarkCB.addEventListener && tickmarkCB.addEventListener("click", showTickMark);
+    tickvalueCB.addEventListener && tickvalueCB.addEventListener("click", showTickValue);
+    
+    //Function to show/hide tick mark
+    function showTickMark() {
+        //Using showTickMarks attribute to show/hide ticks
+        (tickmarkCB.checked) ? cpuGauge.setChartAttribute('showTickMarks', 1) : 
+        cpuGauge.setChartAttribute('showTickMarks', 0);
+        
+    }
+    //Function to show/hide tick value
+    function showTickValue() {
+        //Using showTickValues attribute to show/hide tick value 
+        (tickvalueCB.checked) ? cpuGauge.setChartAttribute('showTickValues', 1) :
+        cpuGauge.setChartAttribute('showTickValues', 0);
+    }
 });

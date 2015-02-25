@@ -1,16 +1,14 @@
-FusionCharts.ready(function(){
-    var tickmarkCB = document.getElementById('tmCB'),
-        tickvalueCB = document.getElementById('tvCB'),
-        fuelWidget = new FusionCharts({
-            type: 'cylinder',
-            dataFormat: 'json',
-            id: 'fuelMeter',
-            renderAt: 'chart-container',
-            width: '150',
-            height: '350',
-            dataSource: {
-                "chart": {
-                    "theme": "fint",
+FusionCharts.ready(function () {
+    var fuelWidget = new FusionCharts({
+        type: 'cylinder',
+        dataFormat: 'json',
+        id: 'fuelMeter',
+        renderAt: 'chart-container',
+        width: '200',
+        height: '350',
+        dataSource: {
+            "chart": {
+                "theme": "fint",
                     "caption": "Diesel Level in Generator",
                     "subcaption": "Bakersfield Central",
                     "lowerLimit": "0",
@@ -18,31 +16,33 @@ FusionCharts.ready(function(){
                     "lowerLimitDisplay": "Empty",
                     "upperLimitDisplay": "Full",
                     "numberSuffix": " ltrs",
-                    "showValue": "1",
-                    "chartBottomMargin": "25",
-                    "showTickValues": "0",
-                    "showTickMarks": "0",
-                    "ticksOnRight": "1"
-                },
-                "value": "75"
+                    "showValue": "0",
+                    "chartBottomMargin": "60",
+                    "dataStreamURL": "dummyErrorURL/cylinderData.php"
+            },
+                "value": "110"
+        },
+            "events": {
+            'beforeRender': function (evt, args) {
+
+                // creating div for controllers
+                var controllers = document.createElement('div'),
+                    container = document.getElementById('chart-container');
+                // Create checkbox inside div
+
+                controllers.innerHTML = '<div id="chart-message"></div>';
+
+                controllers.setAttribute('id', 'controllers');
+                // setting css styles for controllers div
+                controllers.style.cssText = "width : 300px;min-height: 50px;color : #cc0000;font-family : Arial, Helvetica, sans-serif;font-size : 14px;margin-top : 10px;";
+                args.container.parentNode.insertBefore(controllers, args.container.nextSibling);
+            },
+
+            //Using real time update error event 
+            "realtimeUpdateError": function (evtObj, argObj) {
+                var msgDiv = document.getElementById('chart-message');
+                msgDiv.innerHTML = "<b>Error Occured !</b><br> Status Code : " + argObj.httpStatus;
             }
-        }).render();
-    
-    //Function to show/hide tick mark
-    function showTickMark(evt, obj) {
-        //Using showTickMarks attribute to show/hide ticks
-        (tickmarkCB.checked) ? fuelWidget.setChartAttribute('showTickMarks', 1) : 
-        fuelWidget.setChartAttribute('showTickMarks', 0);
-        
-    }
-    //Function to show/hide tick value
-    function showTickValue(evt, obj) {
-        //Using showTickValues attribute to show/hide tick value 
-        (tickvalueCB.checked) ? fuelWidget.setChartAttribute('showTickValues', 1) :
-        fuelWidget.setChartAttribute('showTickValues', 0);
-    }
-    
-    //Set event listener for check boxes and radio buttons
-    tickmarkCB.addEventListener && tickmarkCB.addEventListener("click", showTickMark);
-    tickvalueCB.addEventListener && tickvalueCB.addEventListener("click", showTickValue);
+        }
+    }).render();
 });

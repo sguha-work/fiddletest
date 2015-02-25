@@ -1,64 +1,74 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var revenueChart = new FusionCharts({
+        type: 'mscolumn2d',
         renderAt: 'chart-container',
         width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
+                "caption": "Comparison of Quarterly Revenue",
+                "subCaption": "Last year Vs This year",
+                "xAxisname": "Quarter",
+                "yAxisName": "Revenue (In USD)",
+                "numberPrefix": "$",
                 "theme": "fint",
-                "caption": "Visitors to website",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "Visits",
-                "showValues": "0",
-                //Hiding label borders for all vertical lines
-                "showVLineLabelBorder": "0"
+                //Increasing scale of legend icons
+                "legendIconScale":"2"
             },
-            "data": [
+            "categories": [
                 {
-                    "label": "Mon",
-                    "value": "5123"
-                }, 
+                    "category": [
+                        {
+                            "label": "Q1"
+                        }, 
+                        {
+                            "label": "Q2"
+                        }, 
+                        {
+                            "label": "Q3"
+                        }, 
+                        {
+                            "label": "Q4"
+                        }
+                    ]
+                }
+            ],
+            "dataset": [
                 {
-                    "label": "Tue",
-                    "value": "4233"
-                }, 
-                {
-                    "label": "Wed",
-                    "value": "5507"
-                }, 
-                {
-                    "label": "Thu",
-                    "value": "4110"
-                }, 
-                {
-                    "label": "Fri",
-                    "value": "5529"
-                }, 
-                {
-                    "vline": "true",
-                    "linePosition": "1",
-                    "label": "Weekend",
-                    "labelPosition": "0",
-                    "labelHAlign": "left",
-                    "labelVAlign": "top",
-                    "color": "#6da81e",
-                    "alpha": "50",
-                    //(Optionally) Hiding vline label border from vline element
-                    "showLabelBorder": "0"
-                }, 
-                {
-                    "label": "Sat",
-                    "value": "5803"
-                }, 
-                {
-                    "label": "Sun",
-                    "value": "6202"
+                    "seriesname": "Last Year",
+                    "data": [
+                        {
+                            "value": "10000"
+                        }, 
+                        {
+                            "value": "11500"
+                        }, 
+                        {
+                            "value": "12500"
+                        }, 
+                        {
+                            "value": "15000"
+                        }
+                    ]
+                }, {
+                    "seriesname": "This Year",
+                    "data": [
+                        {
+                            "value": "25400"
+                        }, 
+                        {
+                            "value": "29800"
+                        }, 
+                        {
+                            "value": "21800"
+                        }, 
+                        {
+                            "value": "26800"
+                        }
+                    ]
                 }
             ]
         }
     }).render();
-    
 });

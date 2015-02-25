@@ -1,60 +1,59 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'pareto2d',
+    var ageGroupChart = new FusionCharts({
+        type: 'pie2d',
         renderAt: 'chart-container',
-        width: '600',
+        width: '450',
         height: '300',
         dataFormat: 'json',
-        dataSource: {            
+        dataSource: {
             "chart": {
-                "caption": "Employee late arrivals by reported cause",
-                "subCaption": "Last month",
-                "paletteColors": "#0075c2",
-                "lineColor": "#1aaf5d",
-                "xAxisName": "Reported Cause",
-                "pYAxisName": "No. of Occurrence",
-                "sYAxisname": "Cumulative Percentage",
+                "caption": "Split of Visitors by Age Group",
+                "subCaption": "Last year",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
                 "bgColor": "#ffffff",
-                "borderAlpha": "20",
-                "showCanvasBorder": "0",
-                "showHoverEffect": "1",
-                "usePlotGradientColor": "0",
-                "plotBorderAlpha": "10",
-                "showValues": "0",                
-                "showXAxisLine": "1",
-                "xAxisLineColor": "#999999",
-                "divlineColor": "#999999",               
-                "divLineIsDashed": "1",
-                "showAlternateHGridColor": "0",
+                "showBorder": "0",
+                "use3DLighting": "0",
+                "showShadow": "0",
+                "enableSmartLabels": "0",
+                "startingAngle": "0",
+                "showPercentValues": "1",
+                "showPercentInTooltip": "0",
+                "decimals": "1",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
                 "subcaptionFontBold": "0",
-                "subcaptionFontSize": "14"
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
+                "showHoverEffect":"1",
+                "showLegend": "1",
+                "legendBgColor": "#ffffff",
+                "legendBorderAlpha": '0',
+                "legendShadow": '0',
+                "legendItemFontSize": '10',
+                "legendItemFontColor": '#666666'
             },
             "data": [
                 {
-                    "label": "Traffic",
-                    "value": "5680"
-                },
+                    "label": "Teenage",
+                    "value": "1250400"
+                }, 
                 {
-                    "label": "Family Engagement",
-                    "value": "1036"
-                },
+                    "label": "Adult",
+                    "value": "1463300"
+                }, 
                 {
-                    "label": "Public Transport",
-                    "value": "950"
-                },
+                    "label": "Mid-age",
+                    "value": "1050700"
+                }, 
                 {
-                    "label": "Weather",
-                    "value": "500"
-                },
-                {
-                    "label": "Emergency",
-                    "value": "140"
-                },
-                {
-                    "label": "Others",
-                    "value": "68"
+                    "label": "Senior",
+                    "value": "491000"
                 }
             ]
         }
-    }).render();    
+    }).render();
 });

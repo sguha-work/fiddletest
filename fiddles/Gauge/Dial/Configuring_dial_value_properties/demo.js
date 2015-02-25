@@ -11,6 +11,16 @@ FusionCharts.ready(function () {
                 "subcaption": "Last year vs Current year",
                 "lowerLimit": "0",
                 "upperLimit": "100",
+                "valueFontSize": "16",
+                "valueFontBold": "1",
+                "valueBgColor": "#cccccc",
+                "valueBorderColor": "#999999",
+                "valueAlpha": "80",
+                "valueBorderThickness": "2",
+                "valueBorderRadius": "2",
+                "valueBorderDashed": "1",
+                "valueBorderDashGap": "2",
+                "valueBorderDashLen": "5",
                 "gaugeFillMix": "{dark-40},{light-40},{dark-20}",
                 "theme": "fint"
             },
@@ -38,16 +48,15 @@ FusionCharts.ready(function () {
                     {
                         "value": "67",
                         "showValue": "1",
-                        "valueX": "200",
-                        "valueY": "180",
-                        "bgAlpha": "10",
+                        "valueX": "190",
+                        "valueY": "180",                        
                         "tooltext": "Last year's average : $value",
                         "rearExtension": "15"
                     },
                     {
                         "value": "78",
                         "showValue": "1",
-                        "valueX": "250",
+                        "valueX": "260",
                         "valueY": "220",
                         "tooltext": "Current year's average : $value",
                         "rearExtension": "15"

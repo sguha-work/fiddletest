@@ -1,125 +1,76 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
+    var timeShiftChart = new FusionCharts({
         type: 'gantt',
         renderAt: 'chart-container',
         width: '650',
-        height: '300',
+        height: '400',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
-            },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
-                    {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
-                    }
-                ]
+                "dateformat": "dd/mm/yyyy",
+                "outputdateformat": "hh12:mn ampm",
+                "caption": "Development Division - Time Shifts",
+                "canvasBorderAlpha" : "30",
+                
+                //Enabling Scroll
+                "ganttPaneDuration" : "12",
+                "ganttPaneDurationUnit" : "h",
+                "scrollToDate" : "09:00:00",
+                
+                "theme" : "fint"
             },
             "categories": [
                 {
                     "category": [
                         {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
-                        },
-                        {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
+                            "start": "00:00:00",
+                            "end": "23:59:59",
+                            "label": "Time"
                         }
                     ]
                 },
                 {
+                    "align": "left",
                     "category": [
                         {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
+                            "start": "00:00:00",
+                            "end": "02:59:59",
+                            "label": "Midnight"
                         },
                         {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
+                            "start": "03:00:00",
+                            "end": "05:59:59",
+                            "label": "3 am"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
+                            "start": "06:00:00",
+                            "end": "08:59:59",
+                            "label": "6 am"
                         },
                         {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
+                            "start": "09:00:00",
+                            "end": "11:59:59",
+                            "label": "9 am"
                         },
                         {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
+                            "start": "12:00:00",
+                            "end": "14:59:59",
+                            "label": "12 noon"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
+                            "start": "15:00:00",
+                            "end": "17:59:59",
+                            "label": "3 pm"
                         },
                         {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
+                            "start": "18:00:00",
+                            "end": "20:59:59",
+                            "label": "6 pm"
                         },
                         {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
+                            "start": "21:00:00",
+                            "end": "23:59:59",
+                            "label": "9 pm"
                         }
                     ]
                 }
@@ -128,88 +79,80 @@ FusionCharts.ready(function () {
                 "fontsize": "12",
                 "isbold": "1",
                 "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
+                "headertext": "Employee",
+                "headerfontsize": "14",
+                "headervalign": "middle",
+                "headeralign": "left",
                 "process": [
                     {
-                        "label": "Identify Customers"
+                        "label": "John S.",
+                        "id": "EMP121"
                     },
                     {
-                        "label": "Survey 500 Customers"
+                        "label": "David G.",
+                        "id": "EMP122"
                     },
                     {
-                        "label": "Interpret Requirements"
+                        "label": "Mary P.",
+                        "id": "EMP123"
                     },
                     {
-                        "label": "Market Analysis"
+                        "label": "Andrew H.",
+                        "id": "EMP124"
                     },
                     {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
+                        "label": "Neil M.",
+                        "id": "EMP125"
                     }
                 ]
             },
             "tasks": {
+                "showlabels": "1",
                 "task": [
                     {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
+                        "processid": "EMP121",
+                        "start": "08:00:00",
+                        "end": "12:30:00",
+                        "label": "Morning Shift"
                     },
                     {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
+                        "processid": "EMP121",
+                        "start": "15:00:00",
+                        "end": "19:30:00",
+                        "label": "Evening Shift"
                     },
                     {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
+                        "processid": "EMP122",
+                        "start": "10:00:00",
+                        "end": "16:30:00",
+                        "label": "Half Day"
                     },
                     {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
+                        "processid": "EMP123",
+                        "start": "08:00:00",
+                        "end": "12:00:00",
+                        "label": "Morning Shift"
                     },
                     {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
+                        "processid": "EMP123",
+                        "start": "15:00:00",
+                        "end": "21:30:00",
+                        "label": "Evening Shift"
                     },
                     {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
+                        "processid": "EMP124",
+                        "start": "08:00:00",
+                        "end": "20:30:00",
+                        "label": "Full time support"
                     },
                     {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
-                    },
-                    {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
-                    },
-                    {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
-                    },
-                    {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
+                        "processid": "EMP125",
+                        "start": "10:00:00",
+                        "end": "14:30:00",
+                        "label": "Half Day"
                     }
                 ]
             }
-            
         }
     }).render();
 });

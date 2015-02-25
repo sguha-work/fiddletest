@@ -1,52 +1,61 @@
 FusionCharts.ready(function () {
-    var conversionChart = new FusionCharts({
-        type: 'funnel',
+    var stockPriceChart = new FusionCharts({
+        type: 'sparkline',
         renderAt: 'chart-container',
         width: '450',
-        height: '400',
+        height: '70',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website visits",
-                "subcaption": "Purchase - Conversion analysis for last year",
-                "decimals": "1",
-                "is2D": "0",
-                "streamlinedData" : "0",
-
-                //Show legend
-                "showLegend" : "1",
-                "showLabels" : "0",
-                
-                "theme" : "fint"
+                "theme": "fint",
+                "caption": "Stock Price",
+                "subcaption": "Last month",
+                "numberPrefix": "$",
+                "chartBottomMargin": "30",
+                //Customizing line color
+                "lineColor": "#ee8f49",
+                //Changing lie thickness
+                "lineThickness": "2",
+                //Setting Line transparency(alpha)
+                "lineAlpha": "75",
             },
-            "data": [
+            "dataset": [
                 {
-                    "label": "Unique Website Visits",
-                    "value": "1460000"
-                }, 
-                {
-                    "label": "Programme Details Section Visits",
-                    "value": "930000"
-                }, 
-                {
-                    "label": "Attempts to Register",
-                    "value": "540000"
-                }, 
-                {
-                    "label": "Successful Registrations",
-                    "value": "210000"
-                }, 
-                {
-                    "label": "Logged In",
-                    "value": "190000"
-                }, 
-                {
-                    "label": "Purchased on Introductory Offers",
-                    "value": "120000"
+                    "data": [
+                        { "value": "38.42" },
+                        { "value": "41.43" },
+                        { "value": "34.78" },
+                        { "value": "40.67" },
+                        { "value": "44.12" },
+                        { "value": "38.45" },
+                        { "value": "40.71" },
+                        { "value": "49.90" },
+                        { "value": "40.12" },
+                        { "value": "34.91" },
+                        { "value": "42.02" },
+                        { "value": "35.21" },
+                        { "value": "43.31" },
+                        { "value": "40.21" },
+                        { "value": "40.54" },
+                        { "value": "40.90" },
+                        { "value": "54.21" },
+                        { "value": "41.90" },
+                        { "value": "33.43" },
+                        { "value": "46.73" },
+                        { "value": "50.42" },
+                        { "value": "40.74" },
+                        { "value": "42.31" },
+                        { "value": "50.39" },
+                        { "value": "51.10" },
+                        { "value": "44.84" },
+                        { "value": "51.64" },
+                        { "value": "47.62" },
+                        { "value": "39.61" },
+                        { "value": "35.13" }
+                    ]
                 }
             ]
         }
-    });
-    
-    conversionChart.render();
+    })
+    .render();
 });

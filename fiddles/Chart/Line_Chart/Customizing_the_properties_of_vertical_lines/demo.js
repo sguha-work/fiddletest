@@ -1,70 +1,73 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var visitChart = new FusionCharts({
+        type: 'line',
         renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
                 "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Visitors to website",
+                "subCaption": "Last week",
+                "xAxisName": "Day",
+                "yAxisName": "Visits",
+                "showValues": "0"
             },
+            
             "data": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "label": "Mon",
+                    "value": "5123"
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
+                    "label": "Tue",
+                    "value": "4233"
                 }, 
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
+                    "label": "Wed",
+                    "value": "5507"
                 }, 
                 {
-                    "label": "Week 4",
-                    "value": "9.2"
+                    "label": "Thu",
+                    "value": "4110"
                 }, 
                 {
-                    "label": "Week 5",
-                    "value": "-7.45"
+                    "label": "Fri",
+                    "value": "5529"
                 }, 
                 {
-                    "label": "Week 6",
-                    "value": "-3.19"
+                    //Adding vline data
+                    "vline": "true",
+                    //Defining vline position
+                    "linePosition": "1",
+                    //Setting vline label text
+                    "label": "Weekend",
+                    //Defining vline label position
+                    "labelPosition": "0.5",
+                    //Customizing vline color
+                    "color": "#6da81e",
+                    //Customizing vline thickness
+                    "thickness": "2",
+                    //Changing vline alpha
+                    "alpha": "50",
+                    //Setting vline as dashed line
+                    "dashed":"1", 
+                    //Defining dash length for vline
+                    "dashLen":"4",
+                    //Setting gap between dash in vline
+                    "dashGap":"2"
                 }, 
                 {
-                    "label": "Week 7",
-                    "value": "-11.78"
+                    "label": "Sat",
+                    "value": "5803"
                 }, 
                 {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "label": "Sun",
+                    "value": "6202"
                 }
             ]
         }
     }).render();
+    
 });

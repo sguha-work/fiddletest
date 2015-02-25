@@ -1,55 +1,47 @@
 FusionCharts.ready(function () {
-    var csiGauge = new FusionCharts({
-        type: 'hlineargauge',
+    var chart = new FusionCharts({
+        type: 'hled',
         renderAt: 'chart-container',
-        id: 'csi-linear-gauge',
         width: '400',
-        height: '190',
+        height: '150',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "theme": "fint",
-                "caption": "Target CSAT Index",
+                "caption": "Fuel Level Indicator",
                 "lowerLimit": "0",
                 "upperLimit": "100",
                 "numberSuffix": "%",
-                "chartBottomMargin": "40",  
-                "valueFontSize": "11",  
-                "valueFontBold": "0",
-                "gaugeFillMix":"{light-10},{light-70},{dark-10}",
-                "gaugeFillRatio":"40,20,40",
-                "editMode": "1"
+                
+                //Tick Marks and Values configuration
+                "showTickMarks" : "0",
+                "showTickValues" : "0",
+                
+                "chartBottomMargin" : "20",
+                "ledSize" : "4",
+                "theme" : "fint"
             },
             "colorRange": {
                 "color": [
                     {
                         "minValue": "0",
-                        "maxValue": "35",
-                        "label": "Low",
+                        "maxValue": "45",
                         "code": "#e44a00"
                     }, 
                     {
-                        "minValue": "35",
-                        "maxValue": "70",
-                        "label": "Moderate",
+                        "minValue": "45",
+                        "maxValue": "75",
                         "code": "#f8bd19"
                     }, 
                     {
-                        "minValue": "70",
+                        "minValue": "75",
                         "maxValue": "100",
-                        "label": "High",
                         "code": "#6baa01"
                     }
                 ]
             },
-            "pointers": {
-                "pointer": [
-                    {
-                        "value": "0"
-                    }
-                ]
-            }
+            "value": "92"
         }
+        
     })
     .render();
 });

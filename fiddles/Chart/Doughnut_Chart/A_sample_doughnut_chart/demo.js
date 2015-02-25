@@ -1,212 +1,52 @@
 FusionCharts.ready(function () {
-    var salesAnlysisChart = new FusionCharts({
-        type: 'mscombi2d',
+    var revenueChart = new FusionCharts({
+        type: 'doughnut2d',
         renderAt: 'chart-container',
-        width: '600',
-        height: '300',
+        width: '450',
+        height: '450',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Harry's SuperMart",
-                "subCaption": "Sales analysis of last year",
-                "xAxisname": "Month",
-                "yAxisName": "Amount (In USD)",
+                "caption": "Split of Revenue by Product Categories",
+                "subCaption": "Last year",
                 "numberPrefix": "$",
-                "showBorder": "0",
-                "showValues": "0",
-                "paletteColors": "#0075c2,#1aaf5d,#f2c500",
+                "paletteColors": "#0075c2,#1aaf5d,#f2c500,#f45b00,#8e0000",
                 "bgColor": "#ffffff",
-                "showCanvasBorder": "0",
-                "canvasBgColor": "#ffffff",
+                "showBorder": "0",
+                "use3DLighting": "0",
+                "showShadow": "0",
+                "enableSmartLabels": "0",
+                "startingAngle": "310",
+                "showLabels": "0",
+                "showPercentValues": "1",
+                "showLegend": "1",
+                "legendShadow": "0",
+                "legendBorderAlpha": "0",
+                "defaultCenterLabel": "Total revenue: $64.08K",
+                "centerLabel": "Revenue from $label: $value",
+                "centerLabelBold": "1",
+                "showTooltip": "0",
+                "decimals": "0",
                 "captionFontSize": "14",
                 "subcaptionFontSize": "14",
-                "subcaptionFontBold": "0",
-                "divlineColor": "#999999",
-                "divLineIsDashed": "1",
-                "divLineDashLen": "1",
-                "divLineGapLen": "1",
-                "showAlternateHGridColor": "0",
-                "usePlotGradientColor": "0",
-                "toolTipColor": "#ffffff",
-                "toolTipBorderThickness": "0",
-                "toolTipBgColor": "#000000",
-                "toolTipBgAlpha": "80",
-                "toolTipBorderRadius": "2",
-                "toolTipPadding": "5",
-                "legendBgColor": "#ffffff",
-                "legendBorderAlpha": '0',
-                "legendShadow": '0',
-                "legendItemFontSize": '10',
-                "legendItemFontColor": '#666666'
+                "subcaptionFontBold": "0"
             },
-            "categories": [
+            "data": [
                 {
-                    "category": [
-                        {
-                            "label": "Jan"
-                        },
-                        {
-                            "label": "Feb"
-                        },
-                        {
-                            "label": "Mar"
-                        },
-                        {
-                            "label": "Apr"
-                        },
-                        {
-                            "label": "May"
-                        },
-                        {
-                            "label": "Jun"
-                        },
-                        {
-                            "label": "Jul"
-                        },
-                        {
-                            "label": "Aug"
-                        },
-                        {
-                            "label": "Sep"
-                        },
-                        {
-                            "label": "Oct"
-                        },
-                        {
-                            "label": "Nov"
-                        },
-                        {
-                            "label": "Dec"
-                        }
-                    ]
-                }
-            ],
-            "dataset": [
+                    "label": "Food",
+                    "value": "28504"
+                }, 
                 {
-                    "seriesName": "Actual Revenue",
-                    "showValues": "1",
-                    "data": [
-                        {
-                            "value": "16000"
-                        },
-                        {
-                            "value": "20000"
-                        },
-                        {
-                            "value": "18000"
-                        },
-                        {
-                            "value": "19000"
-                        },
-                        {
-                            "value": "15000"
-                        },
-                        {
-                            "value": "21000"
-                        },
-                        {
-                            "value": "16000"
-                        },
-                        {
-                            "value": "20000"
-                        },
-                        {
-                            "value": "17000"
-                        },
-                        {
-                            "value": "25000"
-                        },
-                        {
-                            "value": "19000"
-                        },
-                        {
-                            "value": "23000"
-                        }
-                    ]
-                },
+                    "label": "Apparels",
+                    "value": "14633"
+                }, 
                 {
-                    "seriesName": "Projected Revenue",
-                    "renderAs": "line",
-                    "data": [
-                        {
-                            "value": "15000"
-                        },
-                        {
-                            "value": "16000"
-                        },
-                        {
-                            "value": "17000"
-                        },
-                        {
-                            "value": "18000"
-                        },
-                        {
-                            "value": "19000"
-                        },
-                        {
-                            "value": "19000"
-                        },
-                        {
-                            "value": "19000"
-                        },
-                        {
-                            "value": "19000"
-                        },
-                        {
-                            "value": "20000"
-                        },
-                        {
-                            "value": "21000"
-                        },
-                        {
-                            "value": "22000"
-                        },
-                        {
-                            "value": "23000"
-                        }
-                    ]
-                },
+                    "label": "Electronics",
+                    "value": "10507"
+                }, 
                 {
-                    "seriesName": "Profit",
-                    "renderAs": "area",
-                    "data": [
-                        {
-                            "value": "4000"
-                        },
-                        {
-                            "value": "5000"
-                        },
-                        {
-                            "value": "3000"
-                        },
-                        {
-                            "value": "4000"
-                        },
-                        {
-                            "value": "1000"
-                        },
-                        {
-                            "value": "7000"
-                        },
-                        {
-                            "value": "1000"
-                        },
-                        {
-                            "value": "4000"
-                        },
-                        {
-                            "value": "1000"
-                        },
-                        {
-                            "value": "8000"
-                        },
-                        {
-                            "value": "2000"
-                        },
-                        {
-                            "value": "7000"
-                        }
-                    ]
+                    "label": "Household",
+                    "value": "4910"
                 }
             ]
         }

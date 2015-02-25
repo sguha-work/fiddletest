@@ -1,4 +1,9 @@
 body div {
     float: left;
-    padding: 0 10px;
+    
+}
+body{
+    font-family: 'Helvetica Neue', Arial;
+    font-size: 14px;
+    font-weight: normal;
 }

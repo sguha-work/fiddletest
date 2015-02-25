@@ -1,6 +1,6 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'doughnut2d',
+        type: 'pie2d',
         renderAt: 'chart-container',
         width: '450',
         height: '300',
@@ -13,8 +13,10 @@ FusionCharts.ready(function () {
                 "startingAngle": "20",
                 "showPercentValues": "1",
                 "showPercentInTooltip": "0",
+                "showLabels": "0",
                 "enableSmartLabels": "0",
                 "enableMultiSlicing": "0",
+                "showLegend": "1",
                 "decimals": "1",
                 //Theme
                 "theme": "fint"

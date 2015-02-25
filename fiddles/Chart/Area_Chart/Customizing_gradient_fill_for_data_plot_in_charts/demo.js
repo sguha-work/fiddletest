@@ -1,68 +1,49 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var salesChart = new FusionCharts({
+        type: 'area2d',
         renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
+        width: '600',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
+                "caption": "Sales of liquor",
+                "subCaption": "Last week",
+                "xAxisName": "Day",
+                "yAxisName": "Sales (In USD)",
+                "numberPrefix": "$",
                 "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
-            },
+                //Setting gradient fill to off.
+                "usePlotGradientColor": "0"
+            },            
             "data": [
                 {
-                    "label": "Week 1",
-                    "value": "14.5"
+                    "label": "Mon",
+                    "value": "4123"
                 }, 
                 {
-                    "label": "Week 2",
-                    "value": "-6.5"
+                    "label": "Tue",
+                    "value": "4633"
                 }, 
                 {
-                    "label": "Week 3",
-                    "value": "9.8"
+                    "label": "Wed",
+                    "value": "5507"
                 }, 
                 {
-                    "label": "Week 4",
-                    "value": "9.2"
+                    "label": "Thu",
+                    "value": "4910"
                 }, 
                 {
-                    "label": "Week 5",
-                    "value": "-7.45"
+                    "label": "Fri",
+                    "value": "5529"
                 }, 
                 {
-                    "label": "Week 6",
-                    "value": "-3.19"
+                    "label": "Sat",
+                    "value": "5803"
                 }, 
                 {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
+                    "label": "Sun",
+                    "value": "6202"
                 }
             ]
         }

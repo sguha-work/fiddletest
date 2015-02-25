@@ -1,70 +1,61 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var salesChart = new FusionCharts({
+        type: 'bulb',
         renderAt: 'chart-container',
         id: 'myChart',
-        width: '450',
+        width: '300',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Temperature status of deep freezers",
+                "upperlimit": "-5",
+                "lowerlimit": "-60",
+                "captionPadding":"30",
+                "showshadow":"0",
+                "showvalue": "1",
+                "useColorNameAsValue":"1",
+                "placeValuesInside":"1",
+                "valueFontSize": "16",
+                //Tool-text with HTML and $value macro
+                "plottooltext": "<span id='headerdiv'>Current Temperature:</span>{br}<div id='valueDiv'>$value°C</div>",
+                //Theme
+                "theme" : "fint"
             },
-            "data": [
-                {
-                    "label": "Week 1",
-                    "value": "14.5"
-                }, 
-                {
-                    "label": "Week 2",
-                    "value": "-6.5"
-                }, 
-                {
-                    "label": "Week 3",
-                    "value": "9.8"
-                }, 
-                {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
-                }
-            ]
+            "colorrange": {
+                "color": [
+                    {
+                        "minvalue": "-60",
+                        "maxvalue": "-35",
+                        "label": "Mission control, <br> we have a situation!",
+                        "code": "#ff0000"
+                    }, 
+                    {
+                        "minvalue": "-35",
+                        "maxvalue": "-25",
+                        "label": "Something is just  not right!",
+                        "code": "#ff9900"
+                    }, 
+                    {
+                        "minvalue": "-25",
+                        "maxvalue": "-5",
+                        "label": "All well ahoy!",
+                        "code": "#00ff00"
+                    }
+                ]
+            },
+            "value": "-5"
+        },
+        "events":{
+            "rendered": function(evtObj, argObj){
+                //Funcation to change value of the the bulb-gauge in real-timd
+                setInterval(function () {
+                    var num = (Math.floor(Math.random() * 55)*-1) -5;
+                    FusionCharts("myChart").feedData("&value=" + num);
+                }, 10000);
+            }
         }
-    }).render();
+    });
+    salesChart.render();
+    
 });

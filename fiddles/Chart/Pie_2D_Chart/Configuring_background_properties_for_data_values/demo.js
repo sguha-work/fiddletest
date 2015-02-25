@@ -1,57 +1,43 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'column2d',
+    var ageGroupChart = new FusionCharts({
+        type: 'pie2d',
         renderAt: 'chart-container',
-        width: '450',
-        height: '300',
+        id: 'myChart',
+        width: '500',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
+                "caption": "Age group of website customers",
                 "subCaption": "Last year",
-                "xAxisName": "Month",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                "theme": "fint",
-                "labelDisplay": "auto"
+                //Data value background properties 
+                "valueBgColor":"#99ccff",
+                "valueBgAlpha":"30",
+                "valueBgHoverAlpha":"60",
+                "valueFontSize":"13",
+                //Theme
+                "theme" : "fint"
             },
-            "data": [{
-                "label": "January",
-                "value": "420000"
-            }, {
-                "label": "February",
-                "value": "810000"
-            }, {
-                "label": "March",
-                "value": "720000"
-            }, {
-                "label": "April",
-                "value": "550000"
-            }, {
-                "label": "May",
-                "value": "910000"
-            }, {
-                "label": "June",
-                "value": "510000"
-            }, {
-                "label": "July",
-                "value": "680000"
-            }, {
-                "label": "August",
-                "value": "620000"
-            }, {
-                "label": "September",
-                "value": "610000"
-            }, {
-                "label": "October",
-                "value": "490000"
-            }, {
-                "label": "November",
-                "value": "900000"
-            }, {
-                "label": "December",
-                "value": "730000"
-            }]
+            "data": [
+                {
+                    "label": "Teenage",
+                    "value": "1250400"
+                },
+                {
+                    "label": "Adult",
+                    "value": "1463300"
+                },
+                {
+                    "label": "Middle-age",
+                    "value": "1050700"
+                },
+                {
+                    "label": "Senior Citizen",
+                    "value": "491000"
+                }
+            ]
         }
-    }).render();
+    });
+    ageGroupChart.render();
+    
 });

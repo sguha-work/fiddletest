@@ -1,8 +1,9 @@
 ---
-name: FusionCharts -  Configuring Font Cosmetics for y-axis name
+name: FusionCharts - Switching themes of a chart at runtime
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js
-  - http://static.fusioncharts.com/code/latest/fusioncharts.charts.js
-  - http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.fint.js
+  - http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.carbon.js
+  - http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.ocean.js
+  - http://static.fusioncharts.com/code/latest/themes/fusioncharts.theme.zune.js
 ...

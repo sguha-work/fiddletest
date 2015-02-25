@@ -1,5 +1,5 @@
 ---
-name: FusionCharts - Showing individual Quartile deviation in Box And Whisker Chart
+name: FusionCharts - Logarithmic Column Chart with custom log base
 description: Created using FusionCharts Suite XT - www.fusioncharts.com
 resources: 
   - http://static.fusioncharts.com/code/latest/fusioncharts.js

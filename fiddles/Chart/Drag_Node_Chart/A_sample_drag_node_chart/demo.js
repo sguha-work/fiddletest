@@ -1,215 +1,280 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
-        type: 'gantt',
+    var railwayChart = new FusionCharts({
+        type: 'dragnode',
         renderAt: 'chart-container',
-        width: '650',
-        height: '300',
+        width: '800',
+        height: '600',
         dataFormat: 'json',
         dataSource: {
-            "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
+            "chart":{
+                "caption":"Railway Map",
+                "xaxisminvalue":"0",
+                "xaxismaxvalue":"100",
+                "yaxisminvalue":"0",
+                "yaxismaxvalue":"100",
+                "is3d":"0",
+                "showformbtn":"1",
+                "formaction":"dragnodeData.php",
+                "formtarget":"_blank",
+                "formmethod":"POST",
+                "formbtntitle":"Save",
+                "viewmode":"0",
+                "showplotborder":"1",
+                "plotborderthickness":"4",
+                "theme":"fint",
+                "showcanvasborder":"1",
+                "canvasborderalpha":"20"
             },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
-                    {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
-                    }
-                ]
-            },
-            "categories": [
+            "dataset":[
                 {
-                    "category": [
+                    "data":[
                         {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
+                            "id":"01",
+                            "label":"Santa Monica",
+                            "color":"#ffffff",
+                            "x":"16",
+                            "y":"54",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
+                            "id":"02",
+                            "label":"Los Angeles",
+                            "color":"#ffffff",
+                            "x":"27",
+                            "y":"54",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
+                            "id":"03",
+                            "label":"Ontario",
+                            "color":"#ffffff",
+                            "x":"48",
+                            "y":"54",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
+                            "id":"04",
+                            "label":"Phoenix",
+                            "color":"#ffffff",
+                            "x":"85",
+                            "y":"54",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
+                            "id":"05",
+                            "label":"Flagstaff",
+                            "color":"#ffffff",
+                            "x":"85",
+                            "y":"80",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
+                            "id":"06",
+                            "label":"Barstow",
+                            "color":"#ffffff",
+                            "x":"62",
+                            "y":"80",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
+                            "id":"07",
+                            "label":"San Diego",
+                            "color":"#ffffff",
+                            "x":"35",
+                            "y":"30",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
+                            "id":"08",
+                            "label":"San Ysidro",
+                            "color":"#ffffff",
+                            "x":"40",
+                            "y":"12",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
+                            "id":"09",
+                            "label":"Las Vegas",
+                            "color":"#ffffff",
+                            "x":"68",
+                            "y":"93",
+                            "radius":"30",
+                            "shape":"circle"
                         },
                         {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
+                            "id":"10",
+                            "label":"",
+                            "color":"#ffffff",
+                            "x":"12",
+                            "y":"98",
+                            "radius":"0",
+                            "shape":"circle"
+                        },
+                        {
+                            "id":"11",
+                            "label":"",
+                            "color":"#ffffff",
+                            "x":"100",
+                            "y":"80",
+                            "radius":"0",
+                            "shape":"circle"
+                        },
+                        {
+                            "id":"12",
+                            "label":"",
+                            "color":"#ffffff",
+                            "x":"99",
+                            "y":"40",
+                            "radius":"0",
+                            "shape":"circle"
+                        },
+                        {
+                            "id":"13",
+                            "label":"Yuma",
+                            "color":"#ffffff",
+                            "x":"70",
+                            "y":"30",
+                            "radius":"30",
+                            "shape":"circle"
+                        },
+                        {
+                            "id":"14",
+                            "label":"",
+                            "color":"#ffffff",
+                            "x":"100",
+                            "y":"30",
+                            "radius":"0",
+                            "shape":"circle"
                         }
                     ]
                 }
             ],
-            "processes": {
-                "fontsize": "12",
-                "isbold": "1",
-                "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
-                "process": [
-                    {
-                        "label": "Identify Customers"
-                    },
-                    {
-                        "label": "Survey 500 Customers"
-                    },
-                    {
-                        "label": "Interpret Requirements"
-                    },
-                    {
-                        "label": "Market Analysis"
-                    },
-                    {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
-                    }
-                ]
-            },
-            "tasks": {
-                "task": [
-                    {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
-                    },
-                    {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
-                    },
-                    {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
-                    },
-                    {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
-                    },
-                    {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
-                    },
-                    {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
-                    },
-                    {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
-                    },
-                    {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
-                    }
-                ]
+            "connectors":[
+                {
+                    "color":"#ffffff",
+                    "stdThickness":"20",
+                    "connector":[
+                        {
+                            "from":"01",
+                            "to":"02",
+                            "color":"#fec110",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"02",
+                            "to":"03",
+                            "color":"#fec110",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"03",
+                            "to":"04",
+                            "color":"#fec110",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"04",
+                            "to":"12",
+                            "color":"#fec110",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"04",
+                            "to":"05",
+                            "color":"#a6aaad",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"09",
+                            "to":"06",
+                            "color":"#0178bc",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"06",
+                            "to":"03",
+                            "color":"#0178bc",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"03",
+                            "to":"07",
+                            "color":"#0178bc",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"05",
+                            "to":"06",
+                            "color":"#f1277d",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"06",
+                            "to":"11",
+                            "color":"#f1277d",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"02",
+                            "to":"07",
+                            "color":"#c1c733",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"07",
+                            "to":"08",
+                            "color":"#c1c733",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"02",
+                            "to":"10",
+                            "color":"#c1c733",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                            "from":"07",
+                            "to":"13",
+                            "color":"#6d6e70",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        },
+                        {
+                             "from":"13",
+                            "to":"14",
+                            "color":"#6d6e70",
+                            "arrowatstart":"0",
+                            "arrowatend":"0"
+                        }
+                    ]
+                }
+            ],
+            "labels":{
+                "label":[]
             }
-            
         }
-    }).render();
+    });
+    
+    railwayChart.render();
 });

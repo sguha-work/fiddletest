@@ -1,24 +1,27 @@
 FusionCharts.ready(function () {
-    var csiGauge = new FusionCharts({
+    var cpuGauge = new FusionCharts({
         type: 'hlineargauge',
         renderAt: 'chart-container',
-        id: 'csi-linear-gauge',
+        id: 'cpu-linear-gauge',
         width: '400',
-        height: '190',
+        height: '170',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "theme": "fint",
-                "caption": "Target CSAT Index",
+                "caption": "Server CPU Utilization",
+                "subcaption": "Transaction Server vs Web Server",
+                "subcaptionFontBold": "0",
+                "subCaptionFontSize": "12",
                 "lowerLimit": "0",
                 "upperLimit": "100",
                 "numberSuffix": "%",
-                "chartBottomMargin": "40",  
+                "valueAbovePointer": "0",
+                "chartBottomMargin": "20",  
                 "valueFontSize": "11",  
                 "valueFontBold": "0",
                 "gaugeFillMix":"{light-10},{light-70},{dark-10}",
-                "gaugeFillRatio":"40,20,40",
-                "editMode": "1"
+                "gaugeFillRatio":"40,20,40"   
             },
             "colorRange": {
                 "color": [
@@ -26,7 +29,7 @@ FusionCharts.ready(function () {
                         "minValue": "0",
                         "maxValue": "35",
                         "label": "Low",
-                        "code": "#e44a00"
+                        "code": "#6baa01"
                     }, 
                     {
                         "minValue": "35",
@@ -38,16 +41,41 @@ FusionCharts.ready(function () {
                         "minValue": "70",
                         "maxValue": "100",
                         "label": "High",
-                        "code": "#6baa01"
+                        "code": "#e44a00"
                     }
                 ]
             },
             "pointers": {
+                //Multiple pointers defined here
                 "pointer": [
                     {
-                        "value": "0"
+                        "id": "transServer",
+                        "value": "75",
+                        "bgColor": "#999999",
+                        "bgAlpha": "80",
+                        "tooltext": "Transaction Server: $value%"
+                    },
+                    {
+                        "id": "webServer",
+                        "value": "92",
+                        "bgColor": "#444444",
+                        "bgAlpha": "80",
+                        "tooltext": "Web Server: $value%"
                     }
                 ]
+            }
+        },
+        "events": {
+            "rendered" : function (evtObj, argObj){
+                var intervalVar = setInterval(function () {
+                    //Updating widget with randomly generated values 
+                    //Transaction server Range 60-70%
+                    var trnPrcnt = 60 + parseInt( Math.floor(Math.random() * 10), 10),
+                    //Web server Range 75-85%
+                        webPrcnt = 75 + parseInt( Math.floor(Math.random() * 10), 10);
+                    FusionCharts.items["cpu-linear-gauge"].setDataForId("transServer",trnPrcnt);
+                    FusionCharts.items["cpu-linear-gauge"].setDataForId("webServer",webPrcnt);
+                }, 5000);
             }
         }
     })

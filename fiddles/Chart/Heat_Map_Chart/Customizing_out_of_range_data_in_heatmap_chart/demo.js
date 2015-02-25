@@ -1,215 +1,226 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
-        type: 'gantt',
+    var HIChart = new FusionCharts({
+        type: 'heatmap',
         renderAt: 'chart-container',
-        width: '650',
+        width: '550',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
                 "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
+                "caption": "Job Happiness Index By Roles",
+                "subCaption": "Harry's Supermart",
+                "showValues": "1",
+                "showBorder": "0",
+                "showPlotBorder": "1"
             },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
+            "rows": {
+                "row": [
                     {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
+                        "id": "Admin"
+                    },
+                    {
+                        "id": "Accounting"
+                    },
+                    {
+                        "id": "Operations"
+                    },
+                    {
+                        "id": "Marketing"
+                    },
+                    {
+                        "id": "Sales"
                     }
                 ]
             },
-            "categories": [
+            "columns": {
+                "column": [
+                    {
+                        "id": "BC",
+						"label": "Bakersfield Central"
+                    },
+                    {
+                        "id": "GGH",
+						"label": "Garden Groove harbour"
+                    },
+                    {
+                        "id": "LAT",
+						"label": "Los Angeles Topanga"
+                    },
+                    {
+                        "id": "CRD",
+						"label": "Compton-Rancho Dom"
+                    },
+                    {
+                        "id": "DCS",
+						"label": "Daly City Serramonte"
+                    }
+                ]
+            },
+            "dataset": [
                 {
-                    "category": [
+                    "data": [
                         {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
+                            "rowid": "Admin",
+                            "columnid": "BC",
+                            "value": "2",
+                            "showValue": "0"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
+                            "rowid": "Admin",
+                            "columnid": "GGH",
+                            "value": "3",
+                            "showValue": "0"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
+                            "rowid": "Admin",
+                            "columnid": "LAT",
+                            "value": "3",
+                            "showValue": "0"
                         },
                         {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
+                            "rowid": "Admin",
+                            "columnid": "CRD",
+                            "value": "2",
+                            "showValue": "0"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
+                            "rowid": "Admin",
+                            "columnid": "DCS",
+                            "value": "1",
+                            "showValue": "0"
                         },
                         {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
+                            "rowid": "Accounting",
+                            "columnid": "BC",
+                            "value": "3",
+                            "showValue": "0"
                         },
                         {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
+                            "rowid": "Accounting",
+                            "columnid": "GGH",
+                            "value": "2",
+                            "showValue": "0"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
+                            "rowid": "Accounting",
+                            "columnid": "LAT",
+                            "value": "2",
+                            "showValue": "0"
                         },
                         {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
+                            "rowid": "Accounting",
+                            "columnid": "CRD",
+                            "value": "-1",
+                            "showValue": "0"
                         },
                         {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
+                            "rowid": "Accounting",
+                            "columnid": "DCS",
+                            "value": "5",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Operations",
+                            "columnid": "BC",
+                            "value": "3",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Operations",
+                            "columnid": "GGH",
+                            "value": "3",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Operations",
+                            "columnid": "LAT",
+                            "value": "4",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Operations",
+                            "columnid": "CRD",
+                            "value": "3",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Operations",
+                            "columnid": "DCS",
+                            "value": "3",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Marketing",
+                            "columnid": "BC",
+                            "value": "2",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Marketing",
+                            "columnid": "GGH",
+                            "value": "-1",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Marketing",
+                            "columnid": "LAT",
+                            "value": "5",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Marketing",
+                            "columnid": "CRD",
+                            "value": "3",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Marketing",
+                            "columnid": "DCS",
+                            "value": "2",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Sales",
+                            "columnid": "BC",
+                            "value": "4",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Sales",
+                            "columnid": "GGH",
+                            "value": "5",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Sales",
+                            "columnid": "LAT",
+                            "value": "4",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Sales",
+                            "columnid": "CRD",
+                            "value": "3",
+                            "showValue": "0"
+                        },
+                        {
+                            "rowid": "Sales",
+                            "columnid": "DCS",
+                            "value": "3",
+                            "showValue": "0"
                         }
                     ]
                 }
             ],
-            "processes": {
-                "fontsize": "12",
-                "isbold": "1",
-                "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
-                "process": [
-                    {
-                        "label": "Identify Customers"
-                    },
-                    {
-                        "label": "Survey 500 Customers"
-                    },
-                    {
-                        "label": "Interpret Requirements"
-                    },
-                    {
-                        "label": "Market Analysis"
-                    },
-                    {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
-                    }
-                ]
-            },
-            "tasks": {
-                "task": [
-                    {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
-                    },
-                    {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
-                    },
-                    {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
-                    },
-                    {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
-                    },
-                    {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
-                    },
-                    {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
-                    },
-                    {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
-                    },
-                    {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
-                    }
-                ]
+            "colorRange": {
+                "gradient": "1",
+                "minValue": "0",
+                "code": "#2a7faa",
+                "startLabel": "Not satisfied",
+                "endLabel": "Love it!"
             }
-            
         }
-    }).render();
+    })
+    .render();
 });

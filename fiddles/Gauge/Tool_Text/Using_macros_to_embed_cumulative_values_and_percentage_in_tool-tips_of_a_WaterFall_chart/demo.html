@@ -1,11 +1,13 @@
 <!-- 
-Zero Plane shows up on the chart when the chart has a mix of positive and negative values.
+    Using macros to embed Cumulative Values and Cumulative Percentage in dynamic tool-tips of a WaterFall chart
 
-Attributes to configure zero plane in 3D chart: 
-    # showZeroPlane - By default 1
-    # zeroPlaneColor
-    # zeroPlaneAlpha
-    # zeroPlaneThickness
-
- -->
+        Attribute: 
+            # plotTooltext 
+        Macros: 
+            # $cumulativePercentValue
+            # $cumulativeDataValue 
+            # $sum 
+            # $label 
+            # $dataValue
+-->
 <div id="chart-container">FusionCharts will render here</div>

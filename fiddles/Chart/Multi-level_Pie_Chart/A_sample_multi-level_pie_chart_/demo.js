@@ -1,146 +1,145 @@
 FusionCharts.ready(function () {
-    var hourlySalesChart = new FusionCharts({
-        type: 'multiaxisline',
+    var topProductsChart = new FusionCharts({
+        type: 'multilevelpie',
         renderAt: 'chart-container',
-        width: '600',
-        height: '350',
+        id : "myChart",
+        width: '500',
+        height: '500',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Revenue Analysis",
-                "subcaption": "Last 12 weeks",
+                "caption": "Split of Top Products Sold",
+                "subCaption": "Last Quarter",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
                 "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "xaxisname": "Week of Year",
-                "showvalues": "0",
-                "numvdivlines": "2",
-                "paletteColors" : "#0075c2,#1aaf5d,#f2c500,#f45b00",
+                "baseFont" : "Helvetica Neue,Arial",   
+                "basefontsize": "9",
+                "subcaptionFontBold": "0",
                 "bgColor" : "#ffffff",
-                "canvasBgColor" : "#ffffff",                                 
-                "captionFontSize" : "13",
-                "subcaptionFontSize" : "13",
-                "subcaptionFontBold" : "0",
+                "canvasBgColor" : "#ffffff",
                 "showBorder" : "0",
-                "showPlotBorder": "0",
-                "showXAxisLine" : "1",
                 "showShadow" : "0",
-                "showCanvasBorder" : "0",
-                "showAlternateHGridColor" : "0",
-                "showalternatevgridcolor": "1",
-                "usePlotGradientColor" :"0",
-                "divlineColor" : "#999999",
-                "divlineThickness" : "1",
-                "divLineIsDashed" : "1",
-                "divLineDashLen" : "1",
-                "divLineGapLen" : "1",
-                "xAxisLineThickness" : "1",
-                "xAxisLineColor" : "#999999",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
-                "alignCaptionWithCanvas": "0"
+                "showCanvasBorder": "0",
+                "pieFillAlpha": "60",
+                "pieBorderThickness": "2",
+                "hoverFillColor": "#cccccc",
+                "pieBorderColor": "#ffffff",
+                "useHoverColor": "1",
+                "showValuesInTooltip": "1",
+                "showPercentInTooltip": "0",
+                "numberPrefix": "$",
+                "plotTooltext": "$label, $$valueK, $percentValue"
             },
-            "categories": [
+            "category": [
                 {
+                    "label": "Sales by category",
+                    "color": "#ffffff",
+                    "value": "150",
                     "category": [
-                        { "label": "1" },
-                        { "label": "2" }, 
-                        { "label": "3" }, 
-                        { "label": "4" }, 
-                        { "label": "5" }, 
-                        { "label": "6" }, 
-                        { "label": "7" }, 
-                        { "label": "8" }, 
-                        { "label": "9" }, 
-                        { "label": "10" }, 
-                        { "label": "11" }, 
-                        { "label": "12" }
-                    ]
-                }
-            ],
-            "axis": [
-                {
-                    "title": "Revenue",
-                    "titlepos": "left",
-                    "tickwidth": "10",
-                    "numberPrefix": "$",
-                    "divlineisdashed": "1",
-                    "dataset": [
                         {
-                            "seriesname": "Revenue",
-                            "linethickness": "3",
-                            "data": [
-                                { "value": "137500" }, 
-                                { "value": "124350" }, 
-                                { "value": "156700" }, 
-                                { "value": "131450" },
-                                { "value": "208300" }, 
-                                { "value": "219900" }, 
-                                { "value": "227500" }, 
-                                { "value": "254300" },
-                                { "value": "155900" }, 
-                                { "value": "105650" }, 
-                                { "value": "120950" }, 
-                                { "value": "127500" }
+                            "label": "Food & {br}Beverages",
+                            "color": "#f8bd19",
+                            "value": "55.5",
+                            "category": [
+                                {
+                                    "label": "Breads",
+                                    "color": "#f8bd19",
+                                    "value": "11.1"
+                                },
+                                {
+                                    "label": "Juice",
+                                    "color": "#f8bd19",
+                                    "value": "27.75"
+                                },
+                                {
+                                    "label": "Noodles",
+                                    "color": "#f8bd19",
+                                    "value": "9.99"
+                                },
+                                {
+                                    "label": "Seafood",
+                                    "color": "#f8bd19",
+                                    "value": "6.66"
+                                }
                             ]
-                        }
-                    ]
-                }, {
-                    "title": "Orders",
-                    "axisonleft": "0",
-                    "titlepos": "right",
-                    "numdivlines": "8",
-                    "tickwidth": "10",
-                    "divlineisdashed": "1",
-                    "dataset": [
+                        },
                         {
-                            "seriesname": "Orders",
-                            "data": [
-                                { "value": "22567" }, 
-                                { "value": "21348" }, 
-                                { "value": "24846" }, 
-                                { "value": "19237" }, 
-                                { "value": "20672" }, 
-                                { "value": "23403" }, 
-                                { "value": "30278" }, 
-                                { "value": "26719" },
-                                { "value": "21940" }, 
-                                { "value": "24396" }, 
-                                { "value": "22340" }, 
-                                { "value": "25439" }
+                            "label": "Apparel &{br}Accessories",
+                            "color": "#e44a00",
+                            "value": "42",
+                            "category": [
+                                {
+                                    "label": "Sun Glasses",
+                                    "color": "#e44a00",
+                                    "value": "10.08"
+                                },
+                                {
+                                    "label": "Clothing",
+                                    "color": "#e44a00",
+                                    "value": "18.9"
+                                },
+                                {
+                                    "label": "Handbags",
+                                    "color": "#e44a00",
+                                    "value": "6.3"
+                                },
+                                {
+                                    "label": "Shoes",
+                                    "color": "#e44a00",
+                                    "value": "6.72"
+                                }
                             ]
-                        }
-                    ]
-                }, 
-                {
-                    "title": "Footfalls",
-                    "titlepos": "RIGHT",
-                    "axisonleft": "0",
-                    "numdivlines": "5",
-                    "tickwidth": "10",
-                    "numberSuffix": "",
-                    "divlineisdashed": "1",
-                    "dataset": [
+                        },
                         {
-                            "seriesname": "Footfalls",
-                            "data": [
-                                { "value": "68473" }, 
-                                { "value": "57934" }, 
-                                { "value": "78925" }, 
-                                { "value": "69213" }, 
-                                { "value": "74892" }, 
-                                { "value": "81123" }, 
-                                { "value": "90086" }, 
-                                { "value": "91174" }, 
-                                { "value": "68934" }, 
-                                { "value": "80934" }, 
-                                { "value": "73634" }, 
-                                { "value": "84453" }
+                            "label": "Baby {br}Products",
+                            "color": "#008ee4",
+                            "value": "22.5",
+                            "category": [
+                                {
+                                    "label": "Bath &{br}Grooming",
+                                    "color": "#008ee4",
+                                    "value": "9.45"
+                                },
+                                {
+                                    "label": "Feeding",
+                                    "color": "#008ee4",
+                                    "value": "6.3"
+                                },
+                                {
+                                    "label": "Diapers",
+                                    "color": "#008ee4",
+                                    "value": "6.75"
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Electronics",
+                            "color": "#33bdda",
+                            "value": "30",
+                            "category": [
+                                {
+                                    "label": "Laptops",
+                                    "color": "#33bdda",
+                                    "value": "8.1"
+                                },
+                                {
+                                    "label": "Televisions",
+                                    "color": "#33bdda",
+                                    "value": "10.5"
+                                },
+                                {
+                                    "label": "SmartPhones",
+                                    "color": "#33bdda",
+                                    "value": "11.4"
+                                }
                             ]
                         }
                     ]
                 }
             ]
         }
-    }).render();
+    });
     
+    topProductsChart.render();
 });

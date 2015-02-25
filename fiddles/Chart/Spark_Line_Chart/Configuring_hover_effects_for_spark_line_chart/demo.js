@@ -11,7 +11,13 @@ FusionCharts.ready(function () {
                 "caption": "Stock Price",
                 "subcaption": "Last month",
                 "numberPrefix": "$",
-                "chartBottomMargin": "30"
+                "chartBottomMargin": "30",
+                "anchorRadius": "4",
+                //Configuring Hover color for anchors
+                "openHoverColor": "#9bd6fd",
+                "closeHoverColor": "#9bd6fd",
+                "highHoverColor": "#90ff90",
+                "lowHoverColor": "#fd6c6c"
             },
             "dataset": [
                 {
@@ -46,19 +52,6 @@ FusionCharts.ready(function () {
                         { "value": "47.62" },
                         { "value": "39.61" },
                         { "value": "35.13" }
-                    ]
-                }
-            ],
-            //Adding trend-zone in chart
-            "trendlines": [
-                {
-                    "line": [
-                        {
-                            "startValue": "30",
-                            "endValue": "45",
-                            "isTrendZone": "1",
-                            "color": "#999999"
-                        }
                     ]
                 }
             ]

@@ -1,48 +1,71 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
+    var wVstrsChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '500',
+        id: 'myChart',
+        width: '450',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
-                "xAxisName": "Quarter",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
+                "caption": "Website Visitors WoW Growth",
+                "subcaption": "Last 10 weeks",
+                "xAxisName": "Week",
+                "yAxisName": "Growth",
+                "numberSuffix": "%",
+                "theme": "fint",
+                "showValues": "0",
+                //Show Zero plane
+                "showZeroPlane": "1",                                
+                //Customize Zero Plane Properties 
+                "zeroPlaneColor":"#003366",
+                "zeroPlaneAlpha": "100",
+                "zeroPlaneThickness": "3",
+                "divLineIsDashed": "0",
+                "divLineAlpha": "40"
             },
-            
             "data": [
                 {
-                    "label": "Q1",
-                    "value": "1950000"
+                    "label": "Week 1",
+                    "value": "14.5"
                 }, 
                 {
-                    "label": "Q2",
-                    "value": "1450000"
-                },
+                    "label": "Week 2",
+                    "value": "-6.5"
+                }, 
                 {
-                    "label": "Q3",
-                    "value": "1730000"
-                },
+                    "label": "Week 3",
+                    "value": "9.8"
+                }, 
                 {
-                    "label": "Q4",
-                    "value": "2120000"
+                    "label": "Week 4",
+                    "value": "9.2"
+                }, 
+                {
+                    "label": "Week 5",
+                    "value": "-7.45"
+                }, 
+                {
+                    "label": "Week 6",
+                    "value": "-3.19"
+                }, 
+                {
+                    "label": "Week 7",
+                    "value": "-11.78"
+                }, 
+                {
+                    "label": "Week 8",
+                    "value": "3.32"
+                }, 
+                {
+                    "label": "Week 9",
+                    "value": "8.57"
+                }, 
+                {
+                    "label": "Week 10",
+                    "value": "16.95"
                 }
             ]
         }
-    });
-    
-    revenueChart.render();
+    }).render();
 });

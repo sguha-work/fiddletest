@@ -2,7 +2,7 @@ FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
-        width: '450',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
@@ -13,7 +13,8 @@ FusionCharts.ready(function () {
                 "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
                 "theme": "fint",
-                "labelDisplay": "auto"
+                //Forcing chart to show every 3rd label
+                "labelStep": "3"
             },
             "data": [{
                 "label": "January",

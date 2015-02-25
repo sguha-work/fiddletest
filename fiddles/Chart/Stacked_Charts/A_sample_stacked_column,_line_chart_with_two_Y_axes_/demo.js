@@ -1,20 +1,25 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'mscolumn2d',
+        type: 'msstackedcolumn2dlinedy',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '550',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Comparison of Quarterly Revenue",
-                "xAxisname": "Quarter",
-                "yAxisName": "Revenues (In USD)",
+                "caption": "Quarterly Sales vs. Profit % in Last Year",
+                "subcaption": "Product-wise Break-up - Harry's SuperMart",
+                "xAxisName": "Quarter",
+                "pYAxisName": "Sales",
+                "sYAxisName": "Profit %",
+                
                 "numberPrefix": "$",
-                "plotFillAlpha" : "80",
-
+                "numbersuffix": "M",
+                "sNumberSuffix": "%",
+                "sYAxisMaxValue": "25",
+                
                 //Cosmetics
-                "paletteColors" : "#0075c2,#1aaf5d",
+                "paletteColors": "#5598c3,#2785c3,#31cc77,#1aaf5d,#f45b00",                
                 "baseFontColor" : "#333333",
                 "baseFont" : "Helvetica Neue,Arial",
                 "captionFontSize" : "14",
@@ -35,8 +40,6 @@ FusionCharts.ready(function () {
                 "showplotborder" : "0",
                 "valueFontColor" : "#ffffff",
                 "placeValuesInside" : "1",
-                "showHoverEffect" : "1",
-                "rotateValues" : "1",
                 "showXAxisLine" : "1",
                 "xAxisLineThickness" : "1",
                 "xAxisLineColor" : "#999999",
@@ -45,7 +48,8 @@ FusionCharts.ready(function () {
                 "legendBorderAlpha" : "0",
                 "legendShadow" : "0",
                 "legendItemFontSize" : "10",
-                "legendItemFontColor" : "#666666"                
+                "legendItemFontColor" : "#666666"
+                
             },
             "categories": [
                 {
@@ -59,45 +63,59 @@ FusionCharts.ready(function () {
             ],
             "dataset": [
                 {
-                    "seriesname": "Previous Year",
-                    "data": [
-                        { "value": "10000" }, 
-                        { "value": "11500" }, 
-                        { "value": "12500" }, 
-                        { "value": "15000" }
+                    "dataset": [
+                        {
+                            "seriesname": "Processed Food",
+                            "data": [
+                                { "value": "30" },
+                                { "value": "26" },
+                                { "value": "33" },
+                                { "value": "31" }
+                            ]
+                        },
+                        {
+                            "seriesname": "Un-Processed Food",
+                            "data": [
+                                { "value": "21" },
+                                { "value": "28" },
+                                { "value": "39" },
+                                { "value": "41" }
+                            ]
+                        }
                     ]
-                }, 
+                },
                 {
-                    "seriesname": "Current Year",
-                    "data": [
-                        { "value": "25400" }, 
-                        { "value": "29800" }, 
-                        { "value": "21800" }, 
-                        { "value": "26800" }
+                    "dataset": [
+                        {
+                            "seriesname": "Electronics",
+                            "data": [
+                                { "value": "27" },
+                                { "value": "25" },
+                                { "value": "28" },
+                                { "value": "26" }
+                            ]
+                        },
+                        {
+                            "seriesname": "Apparels",
+                            "data": [
+                                { "value": "17" },
+                                { "value": "15"},
+                                { "value": "18" },
+                                { "value": "16" }
+                            ]
+                        }
                     ]
                 }
             ],
-            "trendlines": [
+            "lineset": [
                 {
-                    "line": [
-                        {
-                            "startvalue": "12250",
-                            "color": "#0075c2",
-                            "displayvalue": "Previous{br}Average",
-                            "valueOnRight" : "1",
-                            "thickness" : "1",
-                            "showBelow" : "1",
-                            "tooltext" : "Previous year quarterly target  : $13.5K"
-                        },
-                        {
-                            "startvalue": "25950",
-                            "color": "#1aaf5d",
-                            "displayvalue": "Current{br}Average",
-                            "valueOnRight" : "1",
-                            "thickness" : "1",
-                            "showBelow" : "1",
-                            "tooltext" : "Current year quarterly target  : $23K"
-                        }
+                    "seriesname": "Profit %",
+                    "showValues": "0",
+                    "data": [
+                        { "value": "14" },
+                        { "value": "16" },
+                        { "value": "15" },
+                        { "value": "17" }
                     ]
                 }
             ]

@@ -1,47 +1,38 @@
-FusionCharts.ready(function () {
-    var chart = new FusionCharts({
-        type: 'hled',
-        renderAt: 'chart-container',
-        width: '400',
-        height: '150',
-        dataFormat: 'json',
-        dataSource: {
-            "chart": {
-                "caption": "Fuel Level Indicator",
-                "lowerLimit": "0",
-                "upperLimit": "100",
-                "lowerLimitDisplay": "Empty",
-                "upperLimitDisplay": "Full",
-                "numberSuffix": "%",
-                "valueFontSize": "12",
-                //Add hover effect
-                "showhovereffect": "1",
-
-                "theme" : "fint",
-                "ledSize" : "4"
-            },
-            "colorRange": {
-                "color": [
-                    {
-                        "minValue": "0",
-                        "maxValue": "45",
-                        "code": "#e44a00"
-                    }, 
-                    {
-                        "minValue": "45",
-                        "maxValue": "75",
-                        "code": "#f8bd19"
-                    }, 
-                    {
-                        "minValue": "75",
-                        "maxValue": "100",
-                        "code": "#6baa01"
-                    }
-                ]
-            },
-            "value": "92"
+FusionCharts.ready(function(){
+    var showValueCB = document.getElementById('showVal'),
+        fuelWidget = new FusionCharts({
+            type: 'cylinder',
+            dataFormat: 'json',
+            id: 'fuelMeter',
+            renderAt: 'chart-container',
+            width: '200',
+            height: '350',
+            dataSource: {
+                "chart": {
+                    "theme": "fint",
+                    "caption": "Diesel Level in Generator",
+                    "subcaption": "Bakersfield Central",
+                    "lowerLimit": "0",
+                    "upperLimit": "120",
+                    "lowerLimitDisplay": "Empty",
+                    "upperLimitDisplay": "Full",
+                    "numberSuffix": " ltrs",
+                    "showValue": "0",
+                    "chartBottomMargin": "25" 
+                },
+                "value": "75"
+            }
+        }).render();
+    //Set event listener for check boxes
+    showValueCB.addEventListener && showValueCB.addEventListener("click", showValue);
+    //Function to show/hide value
+    function showValue(evt, obj) {
+        //Using showValue attribute to show hide gauge value
+        if(showVal.checked) {
+            fuelWidget.setChartAttribute('showValue', 1);
         }
-        
-    })
-    .render();
+        else{
+            fuelWidget.setChartAttribute('showValue', 0);
+        }
+    }
 });

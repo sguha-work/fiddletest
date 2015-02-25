@@ -1,56 +1,34 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'column2d',
+        type: 'line',
         renderAt: 'chart-container',
-        width: '450',
-        height: '300',
+        width: '500',
+        height: '250',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Monthly Revenue",
+                "caption": "Quarterly Revenue",
                 "subCaption": "Last year",
-                "xAxisName": "Month",
+                "xAxisName": "Quarter",
                 "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
                 "theme": "fint",
-                "labelDisplay": "auto"
+                //Remove the comment for the canvasPadding attribute below to add custom padding. The chart adds a canvasPadding automatically.
+                //"canvasPadding": "0"
             },
+
             "data": [{
-                "label": "January",
+                "label": "First Quarter",
                 "value": "420000"
             }, {
-                "label": "February",
+                "label": "Second Quarter",
                 "value": "810000"
             }, {
-                "label": "March",
+                "label": "Third Quarter",
                 "value": "720000"
             }, {
-                "label": "April",
+                "label": "Fourth Quarter",
                 "value": "550000"
-            }, {
-                "label": "May",
-                "value": "910000"
-            }, {
-                "label": "June",
-                "value": "510000"
-            }, {
-                "label": "July",
-                "value": "680000"
-            }, {
-                "label": "August",
-                "value": "620000"
-            }, {
-                "label": "September",
-                "value": "610000"
-            }, {
-                "label": "October",
-                "value": "490000"
-            }, {
-                "label": "November",
-                "value": "900000"
-            }, {
-                "label": "December",
-                "value": "730000"
             }]
         }
     }).render();

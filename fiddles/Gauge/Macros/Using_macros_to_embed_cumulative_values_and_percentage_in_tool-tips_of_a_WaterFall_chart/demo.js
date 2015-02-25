@@ -1,70 +1,59 @@
 FusionCharts.ready(function () {
-    var wVstrsChart = new FusionCharts({
-        type: 'column3d',
+    var ageGroupChart = new FusionCharts({
+        type: 'pareto2d',
         renderAt: 'chart-container',
-        id: 'myChart',
-        width: '450',
+        width: '500',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Website Visitors WoW Growth",
-                "subcaption": "Last 10 weeks",
-                "xAxisName": "Week",
-                "yAxisName": "Growth",
-                "numberSuffix": "%",
-                "theme": "fint",
-                "showValues": "0",
-                //Zero plane configuration
-                "showZeroPlane": "1",                                
-                "zeroPlaneColor":"#99ccff",
-                "zeroPlaneAlpha": "100",
-                "zeroPlaneThickness": "3",
-                "divLineIsDashed": "0",
-                "divLineAlpha": "40"
+                "caption": "Website Customers by Age Group",
+                    "subCaption": "Last year",
+                    "paletteColors": "#008ee4",
+                    "lineColor": "#f8bd19",
+                    "xAxisName": "Age Group",
+                    "pYAxisName": "Visits",
+                    "sYAxisname": "Cumulative Visits",
+                    "showValues": "0",
+                    //Dynamic tool-text with macros and HTML
+                    "plottooltext": "<div id='nameDiv'>$label :</div>{br}No. Of Visitors : <b>$dataValue</b> of the total <b>$sum</b> visitors{br}Cumulative Value : <b>$cumulativeDataValue</b>{br}Cumulative Percent : <b>$cumulativePercentValue</b>",
+                //Theme
+                "theme" : "fint"
             },
-            "data": [
-                {
-                    "label": "Week 1",
-                    "value": "14.5"
-                }, 
-                {
-                    "label": "Week 2",
-                    "value": "-6.5"
-                }, 
-                {
-                    "label": "Week 3",
-                    "value": "9.8"
-                }, 
-                {
-                    "label": "Week 4",
-                    "value": "9.2"
-                }, 
-                {
-                    "label": "Week 5",
-                    "value": "-7.45"
-                }, 
-                {
-                    "label": "Week 6",
-                    "value": "-3.19"
-                }, 
-                {
-                    "label": "Week 7",
-                    "value": "-11.78"
-                }, 
-                {
-                    "label": "Week 8",
-                    "value": "3.32"
-                }, 
-                {
-                    "label": "Week 9",
-                    "value": "8.57"
-                }, 
-                {
-                    "label": "Week 10",
-                    "value": "16.95"
-                }
+                "data": [
+
+            {
+
+                "label": "Adult",
+                    "value": "1250400"
+
+            },
+
+            {
+
+                "label": "Middle-age",
+                    "value": "246330"
+
+            },
+
+            {
+
+                "label": "Teenage",
+                    "value": "145070"
+
+            },
+
+            {
+
+                "label": "Senior Citizen",
+                    "value": "10100"
+
+            }
+
             ]
+
         }
-    }).render();
+    });
+
+    ageGroupChart.render();
 });

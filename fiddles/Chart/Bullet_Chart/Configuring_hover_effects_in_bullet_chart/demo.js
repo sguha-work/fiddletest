@@ -16,8 +16,14 @@ FusionCharts.ready(function () {
                 "numberPrefix": "$",
                 "numberSuffix": "K",
                 "chartBottomMargin": "25",
-                //Configuring the plot to show as a dot
-                "plotAsDot": "1"
+                //Configuring hover effects
+                "targetHoverColor" : "#1aaf5d",
+                "targetHoverAlpha" : "75",
+                "targetHoverThickness" : "5",
+                "showPlotBorderOnHover" : "1",
+                "plotBorderHoverColor" : "#001421",
+                "plotBorderHoverAlpha" : "75",
+                "plotBorderHoverThickness" : "2"
             },
             "colorRange": {
                 "color": [

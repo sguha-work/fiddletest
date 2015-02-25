@@ -1,215 +1,187 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
-        type: 'gantt',
+    var salesHMChart = new FusionCharts({
+        type: 'heatmap',
         renderAt: 'chart-container',
-        width: '650',
+        width: '550',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
                 "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
+                "caption": "Top 4 US Cities",
+                "subcaption": "Average temperature (°F) in seasons (2013-14)",
+                "xAxisName":"Seasons",
+                "yAxisName":"Cities",
+                "showPlotBorder": "1",
+                "mapByCategory": "1"
             },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
+            "rows": {
+                "row": [
                     {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
+                        "id": "NY",
+                        "label": "New York"
+                    },
+                    {
+                        "id": "LA",
+                        "label": "Los Angeles"
+                    },
+                    {
+                        "id": "CH",
+                        "label": "Chicago"
+                    },
+                    {
+                        "id": "HO",
+                        "label": "Houston"
                     }
                 ]
             },
-            "categories": [
+            "columns": {
+                "column": [
+                    {
+                        "id": "wI",
+                        "label": "Winter"
+                    },
+                    {
+                        "id": "SU",
+                        "label": "Summer"
+                    },
+                    {
+                        "id": "SP",
+                        "label": "Spring"
+                    }
+                    ,
+                    {
+                        "id": "AU",
+                        "label": "Autumn"
+                    }
+                ]
+            },
+            "dataset": [
                 {
-                    "category": [
+                    "data": [
                         {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
+                            "rowid": "LA",
+                            "columnid": "WI",
+                            "value": "60.10",
+                            "colorRangeLabel": "Warm" 			
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
+                            "rowid": "LA",
+                            "columnid": "SP",
+                            "displayValue": "64.5",
+                            "colorRangeLabel": "Warm"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
+                            "rowid": "LA",
+                            "columnid": "SU",
+                            "displayValue": "68.2",
+                            "colorRangeLabel": "Warm"
                         },
                         {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
+                            "rowid": "LA",
+                            "columnid": "AU",
+                            "displayValue": "65.7",
+                            "colorRangeLabel": "Warm"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
+                            "rowid": "NY",
+                            "columnid": "WI",
+                            "displayValue": "33.7",
+                            "colorRangeLabel": "Freezing"
                         },
                         {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
+                            "rowid": "NY",
+                            "columnid": "SP",
+                            "displayValue": "57.8",
+                            "colorRangeLabel": "Warm"
                         },
                         {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
+                            "rowid": "NY",
+                            "columnid": "SU",
+                            "displayValue": "74.49",
+                            "colorRangeLabel": "Hot"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
+                            "rowid": "NY",
+                            "columnid": "AU",
+                            "displayValue": "57.6",
+                            "colorRangeLabel": "Warm"
                         },
                         {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
+                            "rowid": "CH",
+                            "columnid": "WI",
+                            "displayValue": "22.89",
+                            "colorRangeLabel": "Freezing"			
                         },
                         {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
+                            "rowid": "CH",
+                            "columnid": "SP",
+                            "displayValue": "55.7",
+                            "colorRangeLabel": "Warm"
+                        },
+                        {
+                            "rowid": "CH",
+                            "columnid": "SU",
+                            "displayValue": "72.2",
+                            "colorRangeLabel": "Hot"
+                        },
+                        {
+                            "rowid": "CH",
+                            "columnid": "AU",
+                            "displayValue": "51.6",
+                            "colorRangeLabel": "Warm"
+                        },
+                        {
+                            "rowid": "HO",
+                            "columnid": "WI",
+                            "displayValue": "53.0",
+                            "colorRangeLabel": "Warm" 			
+                        },
+                        {
+                            "rowid": "HO",
+                            "columnid": "SP",
+                            "displayValue": "72.7",
+                            "colorRangeLabel": "Hot"
+                        },
+                        {
+                            "rowid": "HO",
+                            "columnid": "SU",
+                            "displayValue": "83.3",
+                            "colorRangeLabel": "Hot"
+                        },
+                        {
+                            "rowid": "HO",
+                            "columnid": "AU",
+                            "displayValue": "53.0",
+                            "colorRangeLabel": "Warm"
                         }
                     ]
                 }
             ],
-            "processes": {
-                "fontsize": "12",
-                "isbold": "1",
-                "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
-                "process": [
+            "colorRange": {
+                "gradient": "0",
+                "color": [
                     {
-                        "label": "Identify Customers"
+                        "code": "#6da81e",
+                        "minValue": "0",
+                        "maxValue": "50",
+                        "label": "Freezing"
                     },
                     {
-                        "label": "Survey 500 Customers"
+                        "code": "#f6bc33",
+                        "minValue": "50",
+                        "maxValue": "70",
+                        "label": "Warm"
                     },
                     {
-                        "label": "Interpret Requirements"
-                    },
-                    {
-                        "label": "Market Analysis"
-                    },
-                    {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
-                    }
-                ]
-            },
-            "tasks": {
-                "task": [
-                    {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
-                    },
-                    {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
-                    },
-                    {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
-                    },
-                    {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
-                    },
-                    {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
-                    },
-                    {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
-                    },
-                    {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
-                    },
-                    {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
+                        "code": "#e24b1a",
+                        "minValue": "70",
+                        "maxValue": "85",
+                        "label": "Hot"
                     }
                 ]
             }
-            
         }
-    }).render();
+    })
+    .render();
 });

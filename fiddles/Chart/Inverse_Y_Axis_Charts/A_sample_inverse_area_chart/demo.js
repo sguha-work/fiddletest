@@ -1,125 +1,125 @@
 FusionCharts.ready(function () {
-    var salesPrediction = new FusionCharts({
-        type: 'dragline',
+    var siteTrafficChart = new FusionCharts({
+        type: 'inversemsarea',
         renderAt: 'chart-container',
         width: '500',
         height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Sales Projections",
-                "subCaption": "iPhone vs Samsung Galaxy",
-                "xAxisName": "Quarter",
-                "yAxisName": "No. of Units",
+                "caption": "Daily bounce rate",                
+                "subCaption": "Last week",
+                "xAxisName": "Day",
+                "yAxisName": "Percentage",
+                "numberSuffix": "%",
+                "showBorder": "0",
                 "paletteColors": "#0075c2,#1aaf5d",
-                "showalternatehgridcolor": "0",
-                "bgAlpha": "0",
-                "borderAlpha": "20",
-                "usePlotGradientColor": "0",
-                "canvasBorderAlpha": "0",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
-                "showXAxisLine": "1",
-                "axisLineAlpha": "25",
-                "divLineAlpha": "25",
-                "showBorder": "0"                
-            },            
+                "bgColor": "#ffffff",                
+                'usePlotGradientColor': "0",
+                "plotFillAlpha": "50",
+                "showCanvasBorder": "0",                                                                
+                "LegendShadow": "0",
+                "legendBorderAlpha": "0",                
+                "showXAxisLine": "1",                
+                "axisLineAlpha": "40",
+                "divlineColor": "#999999",
+                "divlineThickness": "1",
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1",
+                "showAlternateHgridColor": "0",
+                "showValues": "0",
+                "baseFontColor": "#333333",
+                "baseFont": "Helvetica Neue,Arial",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
+            },
             "categories": [
                 {
                     "category": [
                         {
-                            "label": "Q1"
+                            "label": "Mon"
                         }, 
                         {
-                            "label": "Q2"
-                        }, 
+                            "label": "Tue"
+                        },
                         {
-                            "label": "Q3(E)"
-                        }, 
+                            "label": "Wed"
+                        },
                         {
-                            "label": "Q4(E)"
-                        }
-                    ]
-                }
-            ],
+                            "label": "Thu"
+                        },
+                        {
+                            "label": "Fri"
+                        },
+                        {
+                            "label": "Sat"
+                        },
+                        {
+                            "label": "Sun"
+                        }]
+                }],
             "dataset": [
                 {
-                    "seriesname": "Apple",
-                    "valuePosition": "ABOVE",
-                    "allowDrag": "0",
+                    "seriesname": "food.hsm.com",                
                     "data": [
                         {
-                            "value": "1200"
-                        }, 
+                            "value": "27"
+                        },
                         {
-                            "value": "1500",
-                            "dashed": "1"
-                        }, 
+                            "value": "22"
+                        },
                         {
-                            "value": "1300",
-                            "allowDrag": "1",
-                            "dashed": "1"
-                        }, 
+                            "value": "25"
+                        },
                         {
-                            "value": "900",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
+                            "value": "27"
+                        },
+                        {
+                            "value": "21"
+                        },
+                        {
+                            "value": "29"
+                        },
+                        {
+                            "value": "22"
                         }
                     ]
                 },
                 {
-                    "seriesname": "Samsung",
-                    "allowDrag": "0",
+                    "seriesname": "cloth.hsm.com",                
                     "data": [
                         {
-                            "value": "600"
-                        }, 
+                            "value": "42"
+                        },
                         {
-                            "value": "850",
-                            "dashed": "1"
-                        }, 
+                            "value": "38"
+                        },
                         {
-                            "value": "1000",
-                            "allowDrag": "1",
-                            "dashed": "1"
-                        }, 
+                            "value": "39"
+                        },
                         {
-                            "value": "1200",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
+                            "value": "36"
+                        },
+                        {
+                            "value": "43"
+                        },
+                        {
+                            "value": "44"
+                        },
+                        {
+                            "value": "35"
                         }
                     ]
-                }
+                }                               
             ]
-        },
-        events: {
-            'dataplotdragend': function(evt, arg){
-                var dsIndx = arg && arg.datasetIndex,
-                    dtIndx = arg && arg.dataIndex,
-                    val = arg && parseInt(arg.endValue, 10);
-                
-                document.getElementById(dsIndx+'-'+dtIndx).innerHTML = val;
-                
-            },
-            
-            'datarestored': function(evtObj){
-                var ds1Values = ["1200", "1500", "1300", "900"],
-                    ds2Values = ["600", "850", "1000", "1200"],
-                    
-                    update = function (arr, rowNum) {
-                        var i = 0,
-                            arrLen = arr.length;
-                        
-                        for (i; i < arrLen; i += 1) {
-                            val = arr[i];
-                            
-                            document.getElementById(rowNum+'-'+(i+1)).innerHTML = val;
-                        }
-                    };
-                
-                update(ds1Values, 1);
-                update(ds2Values, 2);
-            }
         }
     }).render();
 });

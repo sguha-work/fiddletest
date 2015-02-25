@@ -1,49 +1,224 @@
 FusionCharts.ready(function () {
-    var revBulletChart = new FusionCharts({
-        type: 'hbullet',
+    var smoPlan = new FusionCharts({
+        type: 'gantt',
         renderAt: 'chart-container',
-        width: '500',
-        height: '90',
+        width: '750',
+        height: '500',
         dataFormat: 'json',
         dataSource: {
             "chart": {
+                "dateformat": "mm/dd/yyyy",
+                "caption": "Social Media Optimization",
+                "captionFontSize" : "16",
                 "theme": "fint",
-                "lowerLimit": "0",
-                "subCaptionFontSize": "11",
-                "upperLimit": "120",
-                "caption": "Last Month Revenue",
-                "subcaption": "Actual vs Target (Bakersfield Central)",
-                "numberPrefix": "$",
-                "numberSuffix": "K",
-                "chartBottomMargin": "25",
-                //Configuring the plot to show as a dot
-                "plotAsDot": "1"
+                "canvasBorderAlpha": "40"
             },
-            "colorRange": {
-                "color": [
+            "datatable": {
+                "headervalign": "bottom",
+                "datacolumn": [
                     {
-                        "minValue": "0",
-                        "maxValue": "50",
-                        "code": "#e44a00",
-                        "alpha": "25"
-                    },
-                    {
-                        "minValue": "50",
-                        "maxValue": "75",
-                        "code": "#f8bd19",
-                        "alpha": "25"
-                    },
-                    {
-                        "minValue": "75",
-                        "maxValue": "120",
-                        "code": "#6baa01",
-                        "alpha": "25"
+                        "headertext": "Owner",
+                        "headerfontsize": "14",
+                        "headervalign": "bottom",
+                        "headeralign": "left",
+                        "align": "left",
+                        "fontsize": "12",                        
+                        "text": [
+                            {
+                                "label": "John"
+                            },
+                            {
+                                "label": "David"
+                            },
+                            {
+                                "label": "Mary"
+                            },
+                            {
+                                "label": "John"
+                            },
+                            {
+                                "label": "Andrew & Harry"
+                            },
+                            {
+                                "label": "John & Harry"
+                            },
+                            {
+                                "label": "Neil & Harry"
+                            },
+                            {
+                                "label": "Neil & Harry"
+                            },
+                            {
+                                "label": "Chris"
+                            },
+                            {
+                                "label": "John & Richard"
+                            }
+                        ]
                     }
                 ]
             },
-            "value": "82",
-            "target": "90"
+            "categories": [                
+                {
+                    "category": [
+                        {
+                            "start": "08/01/2014",
+                            "end": "09/30/2014",
+                            "label": "Q3"
+                        },
+                        {
+                            "start": "10/01/2014",
+                            "end": "12/31/2014",
+                            "label": "Q4"
+                        },
+                        {
+                            "start": "01/01/2015",
+                            "end": "03/31/2015",
+                            "label": "Q1"
+                        }
+                    ]
+                },
+                {                    
+                    "category": [
+                        {
+                            "start": "08/01/2014",
+                            "end": "08/31/2014",
+                            "label": "Aug '14"
+                        },
+                        {
+                            "start": "09/01/2014",
+                            "end": "09/30/2014",
+                            "label": "Sep '14"
+                        },
+                        {
+                            "start": "10/01/2014",
+                            "end": "10/31/2014",
+                            "label": "Oct '14"
+                        },
+                        {
+                            "start": "11/01/2014",
+                            "end": "11/30/2014",
+                            "label": "Nov '14"
+                        },
+                        {
+                            "start": "12/01/2014",
+                            "end": "12/31/2014",
+                            "label": "Dec '14"
+                        },
+                        {
+                            "start": "01/01/2015",
+                            "end": "01/31/2015",
+                            "label": "Jan '15"
+                        },
+                        {
+                            "start": "02/01/2015",
+                            "end": "02/28/2015",
+                            "label": "Feb '15"
+                        },
+                        {
+                            "start": "03/01/2015",
+                            "end": "03/31/2015",
+                            "label": "Mar '15"
+                        }
+                    ]
+                }
+            ],
+            "processes": {
+                "fontsize": "12",
+                "isbold": "1",
+                "align": "left",
+                "headerText": "Steps",
+                "headerFontSize": "14",
+                "headerVAlign": "bottom",
+                "headerAlign": "left",                
+                "process": [
+                    {
+                        "label": "Identify Customers"
+                    },
+                    {
+                        "label": "Survey 500 Customers"
+                    },
+                    {
+                        "label": "Interpret Requirements"
+                    },
+                    {
+                        "label": "Market Analysis"
+                    },
+                    {
+                        "label": "Brainstorm concepts"
+                    },
+                    {
+                        "label": "Define Ad Requirements"
+                    },
+                    {
+                        "label": "Design & Develop"                                                
+                    },
+                    {
+                        "label": "Mock test"
+                    },
+                    {
+                        "label": "Documentation"
+                    },
+                    {
+                        "label": "Start Campaign"
+                    }
+                ]
+            },
+            "tasks": {
+                "hoverFillColor": "#F4BEFF",
+                "hoverFillAlpha": "30",
+                "slackHoverFillColor": "#CEFF1F",
+                "slackHoverFillAlpha": "80",
+                "task": [
+                    {
+                        "start": "08/04/2014",
+                        "end": "08/10/2014",
+                        "percentComplete": "60"
+                    },
+                    {
+                        "start": "08/08/2014",
+                        "end": "08/19/2014",
+                        "percentComplete": "25"
+                    },
+                    {
+                        "start": "08/19/2014",
+                        "end": "09/02/2014"
+                    },
+                    {
+                        "start": "08/24/2014",
+                        "end": "09/02/2014"
+                    },
+                    {
+                        "start": "09/02/2014",
+                        "end": "09/21/2014",
+                        "percentComplete": "50"
+                    },
+                    {
+                        "start": "09/21/2014",
+                        "end": "10/06/2014"
+                    },
+                    {
+                        "start": "10/06/2014",
+                        "end": "01/21/2015",
+                        "percentComplete": "20",
+                        "slackHoverFillColor": "#F50EF1",
+                        "slackHoverFillAlpha": "80"
+                    },
+                    {
+                        "start": "01/21/2015",
+                        "end": "02/19/2015"
+                    },
+                    {
+                        "start": "01/28/2015",
+                        "end": "02/24/2015"
+                    },
+                    {
+                        "start": "02/24/2015",
+                        "end": "03/27/2015"
+                    }
+                ]
+            }
+            
         }
-    })
-    .render();
+    }).render();
 });

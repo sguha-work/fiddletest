@@ -1,47 +1,64 @@
 FusionCharts.ready(function () {
     var chart = new FusionCharts({
-        type: 'hled',
+        type: 'thermometer',
         renderAt: 'chart-container',
-        width: '400',
-        height: '150',
+        id  : 'myThm',
+        width: '240',
+        height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Fuel Level Indicator",
-                "lowerLimit": "0",
-                "upperLimit": "100",
-                "lowerLimitDisplay": "Empty",
-                "upperLimitDisplay": "Full",
-                "numberSuffix": "%",
-                "valueFontSize": "12",
-                //Add hover effect
+                "caption": "Temperature Monitor",
+                "subcaption": " Central cold store",
+                "lowerLimit": "-10",
+                "upperLimit": "0",
+                "numberSuffix": "°C",
                 "showhovereffect": "1",
-
-                "theme" : "fint",
-                "ledSize" : "4"
+                "thmOriginX": "100",
+                //Palette
+                "palette" : "1"
             },
-            "colorRange": {
-                "color": [
-                    {
-                        "minValue": "0",
-                        "maxValue": "45",
-                        "code": "#e44a00"
-                    }, 
-                    {
-                        "minValue": "45",
-                        "maxValue": "75",
-                        "code": "#f8bd19"
-                    }, 
-                    {
-                        "minValue": "75",
-                        "maxValue": "100",
-                        "code": "#6baa01"
+            "value": "-6",
+        },
+        "events" :{
+            "rendered" : function (evt, arg) {
+                var chargeInterval = setInterval( function(){
+                    var temp = parseInt(Math.random()*2) -5;
+                    FusionCharts.items["myThm"].feedData("&value="+temp);
+                }, 4000);
+            },
+            "initialized" : function(evtObj, argObj){
+                var radElem,
+                    radio = document.getElementsByTagName('input'),
+                    dataUpdate = setInterval(function () {
+                    var value,
+                        prevTemp = FusionCharts.items["myThm"].getData(),
+                        mainTemp = (Math.random()*10)* (-1),
+                        diff = Math.abs(prevTemp - mainTemp);
+                    
+                    diff = diff > 1 ? (Math.random()*1) : diff;
+                    if(mainTemp > prevTemp){
+                        value = prevTemp + diff;
+                    }else{
+                        value = prevTemp - diff;
+                    }                            
+                    FusionCharts.items["myThm"].feedData("&value="+value);
+                }, 3000);
+                
+                for (i = 0; i < radio.length; i++) {
+                    radElem = radio[i];
+                    if (radElem.type === 'radio')     
+                    {                        
+                        radElem.onclick = function()
+                        {
+                            val = this.getAttribute('value');
+                            evtObj.sender.setChartAttribute( "palette" , val );
+                            
+                        };
                     }
-                ]
-            },
-            "value": "92"
+                }  
+            }
         }
-        
     })
     .render();
 });

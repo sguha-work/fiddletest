@@ -1,0 +1,1 @@
+http://jsfiddle.net/fusioncharts/A9cY7/

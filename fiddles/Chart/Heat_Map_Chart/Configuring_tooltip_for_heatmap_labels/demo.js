@@ -1,215 +1,261 @@
 FusionCharts.ready(function () {
-    var smoPlan = new FusionCharts({
-        type: 'gantt',
+    var salesHMChart = new FusionCharts({
+        type: 'heatmap',
         renderAt: 'chart-container',
-        width: '650',
-        height: '300',
+        width: '550',
+        height: '270',
         dataFormat: 'json',
-        dataSource: {
+        dataSource:  {
             "chart": {
-                "dateformat": "mm/dd/yyyy",
-                "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
+                "caption": "Top Smartphone Ratings",
+                "subcaption": "By Features",
+                "xAxisName":"Features",
+                "yAxisName":"Model",
+                "showplotborder": "1",
+                "xAxisLabelsOnTop": "1",
+                //Configuring the tooltip using macros
+                "plottooltext":"<div id='nameDiv' style='font-size: 12px; border-bottom: 1px dashed #666666; font-weight:bold; padding-bottom: 3px; margin-bottom: 5px; display: inline-block; color: #888888;' >$rowLabel :</div>{br}Rating : <b>$dataValue</b>{br}$columnLabel : <b>$tlLabel</b>{br}<b>$trLabel</b>",
+
+                 //Cosmetics
+                "baseFontColor" : "#333333",
+                "baseFont" : "Helvetica Neue,Arial",
+                "captionFontSize" : "14",
+                "subcaptionFontSize" : "14",
+                "subcaptionFontBold" : "0",
+                "showBorder" : "0",
+                "bgColor" : "#ffffff",
+                "showShadow" : "0",
+                "usePlotGradientColor" :"0",
+                "canvasBgColor" : "#ffffff",
+                "canvasBorderAlpha" : "0",
+                "legendBgAlpha" : "0",
+                "legendBorderAlpha" : "0",
+                "legendShadow" : "0",
+                "legendItemFontSize" : "10",
+                "legendItemFontColor" : "#666666",
+                "toolTipColor" : "#ffffff",
+                "toolTipBorderThickness" : "0",
+                "toolTipBgColor" : "#000000",
+                "toolTipBgAlpha" : "80",
+                "toolTipBorderRadius" : "2",
+                "toolTipPadding" : "5",
+                
             },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
+            "rows": {
+                "row": [
                     {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
+                        "id": "SGS5",
+                        "label": "Samsung Galaxy S5"
+                    },
+                    {
+                        "id": "HTC1M8",
+                        "label": "HTC One (M8)"
+                    },
+                    {
+                        "id": "IPHONES5",
+                        "label": "Apple iPhone 5S"
+                    },
+                    {
+                        "id": "LUMIA",
+                        "label": "Nokia Lumia 1520"
                     }
                 ]
             },
-            "categories": [
+            "columns": {
+                "column": [
+                    {
+                        "id": "processor",
+                        "label": "Processor"
+                    },
+                    {
+                        "id": "screen",
+                        "label": "Screen Size"
+                    },
+                    {
+                        "id": "price",
+                        "label": "Price"
+                    },
+                    {
+                        "id": "backup",
+                        "label": "Battery Backup"
+                    }
+					,
+                    {
+                        "id": "cam",
+                        "label": "Camera"
+                    }
+                ]
+            },
+            "dataset": [
                 {
-                    "category": [
+                    "data": [
                         {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
+                            "rowid": "SGS5",
+                            "columnid": "processor",
+                            "value": "8.7",
+                            "tllabel": "Quad Core 2.5 GHz",
+                            "trlabel": "OS : Android 4.4 Kitkat"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
+                            "rowid": "SGS5",
+                            "columnid": "screen",
+                            "value": "8.5",
+                            "tllabel": "5.1 inch",
+                            "trlabel": "AMOLED screen"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "08/31/2014",
-                            "label": "Aug '14"
+                            "rowid": "SGS5",
+                            "columnid": "price",
+                            "value": "9.3",
+                            "tllabel": "$600"
                         },
                         {
-                            "start": "09/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Sep '14"
+                            "rowid": "SGS5",
+                            "columnid": "backup",
+                            "value": "9.7",
+                            "tllabel": "29 Hrs",
+                            "trlabel": "Battery : 2800 MAH"
+                        },
+						{
+                            "rowid": "SGS5",
+                            "columnid": "cam",
+                            "value": "8",
+                            "tllabel": "16 MP",
+                            "trlabel": "Front Camera : 2.1 MP"
                         },
                         {
-                            "start": "10/01/2014",
-                            "end": "10/31/2014",
-                            "label": "Oct '14"
+                            "rowid": "HTC1M8",
+                            "columnid": "processor",
+                            "value": "9.2",
+                            "tllabel": "Quad Core 2.3 GHz",
+                            "trlabel": "OS : Android 4.4 Kitkat"
                         },
                         {
-                            "start": "11/01/2014",
-                            "end": "11/30/2014",
-                            "label": "Nov '14"
+                            "rowid": "HTC1M8",
+                            "columnid": "screen",
+                            "value": "8.3",
+                            "tllabel": "5 inch",
+                            "trlabel": "LCD screen"
                         },
                         {
-                            "start": "12/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Dec '14"
+                            "rowid": "HTC1M8",
+                            "columnid": "price",
+                            "value": "7.3",
+                            "tllabel": "$600"
                         },
                         {
-                            "start": "01/01/2015",
-                            "end": "01/31/2015",
-                            "label": "Jan '15"
+                            "rowid": "HTC1M8",
+                            "columnid": "backup",
+                            "value": "8.8",
+                            "tllabel": "20 Hrs",
+                            "trlabel": "Battery : 2600 MAH"
+                        },
+						{
+                            "rowid": "HTC1M8",
+                            "columnid": "cam",
+                            "value": "8.7",
+                            "tllabel": "4 MP",
+                            "trlabel": "Front Camera : 5 MP"
                         },
                         {
-                            "start": "02/01/2015",
-                            "end": "02/28/2015",
-                            "label": "Feb '15"
+                            "rowid": "IPHONES5",
+                            "columnid": "processor",
+                            "value": "9.1",
+                            "tllabel": "Dual Core",
+                            "trlabel": "OS : iOS 7"
                         },
                         {
-                            "start": "03/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Mar '15"
+                            "rowid": "IPHONES5",
+                            "columnid": "screen",
+                            "value": "8.6",
+                            "tllabel": "4 inch",
+                            "trlabel": "Retina LCD screen"
+                        },
+                        {
+                            "rowid": "IPHONES5",
+                            "columnid": "price",
+                            "value": "7.2",
+                            "tllabel": "$649"
+                        },
+                        {
+                            "rowid": "IPHONES5",
+                            "columnid": "backup",
+                            "value": "8.4",
+                            "tllabel": "10 Hrs",
+                            "trlabel": "Battery : 1560 MAH"
+                        },
+						{
+                            "rowid": "IPHONES5",
+                            "columnid": "cam",
+                            "value": "9.5",
+                            "tllabel": "8 MP",
+                            "trlabel": "Front Camera : 1.2 MP"
+                        },
+                        {
+                            "rowid": "LUMIA",
+                            "columnid": "processor",
+                            "value": "8.8",
+                            "tllabel": "Quad Core 2.2 GHz",
+                            "trlabel": "OS: Windows Phone 8"
+                        },
+                        {
+                            "rowid": "LUMIA",
+                            "columnid": "screen",
+                            "value": "9.1",
+                            "tllabel": "6 inch",
+                            "trlabel": "LCD screen"
+                        },
+                        {
+                            "rowid": "LUMIA",
+                            "columnid": "price",
+                            "value": "9.7",
+                            "tllabel": "$470"
+                        },
+                        {
+                            "rowid": "LUMIA",
+                            "columnid": "backup",
+                            "value": "9.2",
+                            "tllabel": "27 Hrs",
+                            "trlabel": "Battery : 3400 MAH"
+                        },
+                        {
+                            "rowid": "LUMIA",
+                            "columnid": "cam",
+                            "value": "8.1",
+                            "tllabel": "20MP",
+                            "trlabel": "Front Camera : 1.2 MP"
                         }
                     ]
                 }
             ],
-            "processes": {
-                "fontsize": "12",
-                "isbold": "1",
-                "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
-                "process": [
+            "colorrange": {
+                "gradient": "0",
+                "minvalue": "0",
+                "code": "E24B1A",
+                "startlabel": "Poor",
+                "endlabel": "Good",
+                "color": [
                     {
-                        "label": "Identify Customers"
+                        "code": "E24B1A",
+                        "minvalue": "1",
+                        "maxvalue": "5",
+                        "label": "Bad"
                     },
                     {
-                        "label": "Survey 500 Customers"
+                        "code": "F6BC33",
+                        "minvalue": "5",
+                        "maxvalue": "8.5",
+                        "label": "Average"
                     },
                     {
-                        "label": "Interpret Requirements"
-                    },
-                    {
-                        "label": "Market Analysis"
-                    },
-                    {
-                        "label": "Brainstorm concepts"
-                    },
-                    {
-                        "label": "Define Ad Requirements"
-                    },
-                    {
-                        "label": "Design & Develop"
-                    },
-                    {
-                        "label": "Mock test"
-                    },
-                    {
-                        "label": "Documentation"
-                    },
-                    {
-                        "label": "Start Campaign"
-                    }
-                ]
-            },
-            "tasks": {
-                "task": [
-                    {
-                        "start": "08/04/2014",
-                        "end": "08/10/2014"
-                    },
-                    {
-                        "start": "08/08/2014",
-                        "end": "08/19/2014"
-                    },
-                    {
-                        "start": "08/19/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "08/24/2014",
-                        "end": "09/02/2014"
-                    },
-                    {
-                        "start": "09/02/2014",
-                        "end": "09/21/2014"
-                    },
-                    {
-                        "start": "09/21/2014",
-                        "end": "10/06/2014"
-                    },
-                    {
-                        "start": "10/06/2014",
-                        "end": "01/21/2015",                        
-                    },
-                    {
-                        "start": "01/21/2015",
-                        "end": "02/19/2015"
-                    },
-                    {
-                        "start": "01/28/2015",
-                        "end": "02/24/2015"
-                    },
-                    {
-                        "start": "02/24/2015",
-                        "end": "03/27/2015"
+                        "code": "6DA81E",
+                        "minvalue": "8.5",
+                        "maxvalue": "10",
+                        "label": "Good"
                     }
                 ]
             }
-            
         }
-    }).render();
+    });
+    salesHMChart.render();
 });

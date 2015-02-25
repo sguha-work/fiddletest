@@ -3,50 +3,66 @@ FusionCharts.ready(function () {
         type: 'angulargauge',
         renderAt: 'chart-container',
         width: '400',
-        height: '380',
+        height: '300',
         dataFormat: 'json',
         dataSource: {
-            "chart": {                                
-                "caption": "Customer Satisfaction Score",
-                "subcaption": "Los Angeles Topanga",
-                "origw": "390",
-                "origh": "300",
-                "plotToolText": "Current Score: $value",
-                "lowerLimitDisplay": "Bad",
-                "upperLimitDisplay": "Good",
-                "gaugeStartAngle": "135",
-                "gaugeEndAngle": "45",
-                "gaugeOriginX": "195",
-                "gaugeOriginY": "280",
-                "gaugeOuterRadius": "200",
-                "tickValueDistance": "10",
-                "valueBelowPivot" : "1",
-                "valueFontSize" : "16",
-                "majorTMHeight": "10",
-                "minorTMHeight": "5",                
-                "theme": "fint",                            
-                "showValue": "1"
+            "chart": {
+                "caption": "Average Customer Satisfaction Score",
+                "subcaption": "Last month",
+                "lowerLimit": "0",
+                "upperLimit": "100",
+                "editMode": "1",
+                "showValue": "1",
+                "valueBelowPivot": "1",
+                "tickValueDistance": "25",                               
+                "theme": "fint",
+                "gaugeFillMix": "{dark-30},{light-60},{dark-10}",
+                "gaugeFillRatio": "15",
             },
             "colorRange": {
-                "color": [{
-                    "minValue": "0",
-                    "maxValue": "4.5",
-                    "code": "#e44a00"
-                }, {
-                    "minValue": "4.5",
-                    "maxValue": "7.5",
-                    "code": "#f8bd19"
-                }, {
-                    "minValue": "7.5",
-                    "maxValue": "10",
-                    "code": "#6baa01"
-                }]
+                "color": [
+                    {
+                        "minValue": "0",
+                        "maxValue": "50",
+                        "code": "#e44a00"                                                
+                    },
+                    {
+                        "minValue": "50",
+                        "maxValue": "75",
+                        "code": "#f8bd19"                        
+                    },
+                    {
+                        "minValue": "75",
+                        "maxValue": "100",
+                        "code": "#6baa01"                        
+                    }
+                ]
             },
             "dials": {
-                "dial": [{
-                    "value": "8.9",
-                }]
-            }                        
+                "dial": [                    
+                    {
+                        "id": "crntYr",
+                        "value": "78",
+                        "showValue": "1",                        
+                        "tooltext": "Current year's average : $value",
+                        "rearExtension": "15"
+                    }
+                ]
+            }
+        },
+        events: {
+            "realtimeUpdateComplete": function(evtObj, argObj){
+                var updtObj = argObj && argObj.updateObject,
+                    values = updtObj && updtObj.values,
+                    updtValStr = values && values[0],
+                    updtVal = updtValStr && 
+                                parseFloat(updtValStr).toFixed(2),
+                    divToUpdate = document.getElementById("score-detail");
+                
+                divToUpdate.innerHTML = "Last month's average satisfaction score: <b>" + updtVal + "</b>";
+
+                
+            }
         }
     }).render();
 });

@@ -7,11 +7,13 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Average Customer Satisfaction Score",
-                "subcaption": "Last year vs Current year",
+                "caption": "Customer Satisfaction Score",
+                "subcaption": "Last week",
                 "lowerLimit": "0",
-                "upperLimit": "100",
-                "gaugeFillMix": "{dark-40},{light-40},{dark-20}",
+                "upperLimit": "100",                
+                "showValue": "1",                                              
+                "valueBelowPivot": "1",
+                "gaugeFillMix": "{dark-40},{light-40},{dark-20}",                
                 "theme": "fint"
             },
             "colorRange": {
@@ -34,25 +36,11 @@ FusionCharts.ready(function () {
                 ]
             },
             "dials": {
-                "dial": [
-                    {
-                        "value": "67",
-                        "showValue": "1",
-                        "valueX": "200",
-                        "valueY": "180",
-                        "bgAlpha": "10",
-                        "tooltext": "Last year's average : $value",
-                        "rearExtension": "15"
-                    },
-                    {
-                        "value": "78",
-                        "showValue": "1",
-                        "valueX": "250",
-                        "valueY": "220",
-                        "tooltext": "Current year's average : $value",
-                        "rearExtension": "15"
-                    }
-                ]
+                "dial": [{
+                    "value": "67",
+                    "bgColor": "#999999",
+                    "borderAlpha": "0"
+                }]
             }
         }
     }).render();

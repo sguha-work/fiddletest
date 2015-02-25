@@ -1,12 +1,11 @@
 FusionCharts.ready(function(){
-    var tickmarkCB = document.getElementById('tmCB'),
-        tickvalueCB = document.getElementById('tvCB'),
+    var fuelVolume = 110,
         fuelWidget = new FusionCharts({
             type: 'cylinder',
             dataFormat: 'json',
             id: 'fuelMeter',
             renderAt: 'chart-container',
-            width: '150',
+            width: '200',
             height: '350',
             dataSource: {
                 "chart": {
@@ -18,31 +17,62 @@ FusionCharts.ready(function(){
                     "lowerLimitDisplay": "Empty",
                     "upperLimitDisplay": "Full",
                     "numberSuffix": " ltrs",
-                    "showValue": "1",
-                    "chartBottomMargin": "25",
-                    "showTickValues": "0",
-                    "showTickMarks": "0",
-                    "ticksOnRight": "1"
+                    "showValue": "0",
+                    "chartBottomMargin": "60" 
                 },
-                "value": "75"
+                "value": "110",
+                
+                "annotations": {
+                    "origw": "400",
+                    "origh": "190",
+                    "autoscale": "1",
+                    "groups": [
+                        {
+                            "id": "range",
+                            "items": [
+                                {
+                                    "id": "rangeBg",                                
+                                    "type": "rectangle",
+                                    "x" : "$canvasCenterX-125",
+                                    "y": "$chartEndY-50",
+                                    "tox": "$canvasCenterX +145",
+                                    "toy": "$chartEndY-95",
+                                    "fillcolor": "#6caa03"
+                                },
+                                {
+                                    "id": "rangeText",
+                                    "type": "Text",                                
+                                    "fontSize": "11",                                                                
+                                    "fillcolor": "#333333",
+                                    "text": "Available Volume : 110 ltrs",
+                                    "x" : "$chartCenterX-35",
+                                    "y": "$chartEndY-70"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            },
+            "events":{
+                "rendered": function(evtObj, argObj){
+                    setInterval(function () {
+                        (fuelVolume < 10) ? (fuelVolume = 110) : "";
+                        var consVolume = fuelVolume -(Math.floor(Math.random() * 3));
+                        FusionCharts("fuelMeter").feedData("&value=" + consVolume);
+                        fuelVolume = consVolume;
+                    }, 1000);
+                },
+                //Using real time update event to update the annotation 
+                //showing available volume of Diesel
+                "realTimeUpdateComplete" : function (evt, arg){
+                    var annotations = evt.sender.annotations,
+                         dataVal = evt.sender.getData(),
+                        colorVal = (dataVal >= 70)? "#6caa03" : ((dataVal <= 25)? "#e44b02" :"#f8bd1b");
+                    //Updating value
+                    annotations && annotations.update('rangeText', {"text" : "Available Volume: "+dataVal + " ltrs"});
+                    //Changing background color as per value
+                    annotations && annotations.update('rangeBg', {"fillcolor" : colorVal});
+                }
             }
         }).render();
-    
-    //Function to show/hide tick mark
-    function showTickMark(evt, obj) {
-        //Using showTickMarks attribute to show/hide ticks
-        (tickmarkCB.checked) ? fuelWidget.setChartAttribute('showTickMarks', 1) : 
-        fuelWidget.setChartAttribute('showTickMarks', 0);
-        
-    }
-    //Function to show/hide tick value
-    function showTickValue(evt, obj) {
-        //Using showTickValues attribute to show/hide tick value 
-        (tickvalueCB.checked) ? fuelWidget.setChartAttribute('showTickValues', 1) :
-        fuelWidget.setChartAttribute('showTickValues', 0);
-    }
-    
-    //Set event listener for check boxes and radio buttons
-    tickmarkCB.addEventListener && tickmarkCB.addEventListener("click", showTickMark);
-    tickvalueCB.addEventListener && tickvalueCB.addEventListener("click", showTickValue);
 });

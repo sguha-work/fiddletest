@@ -1,87 +1,116 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var revenueChart = new FusionCharts({
+        type: 'msbar2d',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '450',
+        height: '420',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Total footfall in Bakersfield Central",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "No. of Visitors",
-                
-                //Cosmetics
-                "lineThickness" : "2",
-                "paletteColors" : "#0075c2",
-                "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "captionFontSize" : "14",
-                "subcaptionFontSize" : "14",
-                "subcaptionFontBold" : "0",
-                "showBorder" : "0",
-                "bgColor" : "#ffffff",
-                "showShadow" : "0",
-                "canvasBgColor" : "#ffffff",
-                "canvasBorderAlpha" : "0",
-                "divlineAlpha" : "100",
-                "divlineColor" : "#999999",
-                "divlineThickness" : "1",
-                "divLineIsDashed" : "1",
-                "divLineDashLen" : "1",
-                "divLineGapLen" : "1",
-                "showXAxisLine" : "1",
-                "xAxisLineThickness" : "1",
-                "xAxisLineColor" : "#999999",
-                "showAlternateHGridColor" : "0",
-                
-            },
-            "data": [
+                "caption": "Split of Sales by Product Category",
+                "subCaption": "In top 5 stores last month",
+                "yAxisname": "Sales (In USD)",
+                "numberPrefix": "$",
+                "paletteColors": "#0075c2,#1aaf5d",
+                "bgColor": "#ffffff",
+                "showBorder": "0",
+                "showHoverEffect":"1",
+                "showCanvasBorder": "0",
+                "usePlotGradientColor": "0",
+                "plotBorderAlpha": "10",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "placevaluesInside": "1",
+                "valueFontColor": "#ffffff",
+                "showXAxisLine": "1",
+                "xAxisLineColor": "#999999",
+                "divlineColor": "#999999",               
+                "divLineIsDashed": "1",
+                "showAlternateVGridColor": "0",
+                "subcaptionFontBold": "0",
+                "subcaptionFontSize": "14"
+            },            
+            "categories": [
                 {
-                    "label": "Mon",
-                    "value": "15123"
-                },
+                    "category": [
+                        {
+                            "label": "Bakersfield Central"
+                        }, 
+                        {
+                            "label": "Garden Groove harbour"
+                        }, 
+                        {
+                            "label": "Los Angeles Topanga"
+                        }, 
+                        {
+                            "label": "Compton-Rancho Dom"
+                        }, 
+                        {
+                            "label": "Daly City Serramonte"
+                        }
+                    ]
+                }
+            ],            
+            "dataset": [
                 {
-                    "label": "Tue",
-                    "value": "14233"
-                },
+                    "seriesname": "Food Products",
+                    "data": [
+                        {
+                            "value": "17000"
+                        }, 
+                        {
+                            "value": "19500"
+                        }, 
+                        {
+                            "value": "12500"
+                        }, 
+                        {
+                            "value": "14500"
+                        }, 
+                        {
+                            "value": "17500"
+                        }
+                    ]
+                }, 
                 {
-                    "label": "Wed",
-                    "value": "23507"
-                },
-                {
-                    "label": "Thu",
-                    "value": "9110"
-                },
-                {
-                    "label": "Fri",
-                    "value": "15529"
-                },
-                {
-                    "label": "Sat",
-                    "value": "20803"
-                },
-                {
-                    "label": "Sun",
-                    "value": "19202"
+                    "seriesname": "Non-Food Products",
+                    "data": [
+                        {
+                            "value": "25400"
+                        }, 
+                        {
+                            "value": "29800"
+                        }, 
+                        {
+                            "value": "21800"
+                        }, 
+                        {
+                            "value": "19500"
+                        }, 
+                        {
+                            "value": "11500"
+                        }
+                    ]
                 }
             ],
             "trendlines": [
                 {
                     "line": [
                         {
-                            "startvalue": "18500",
+                            "startvalue": "15000",
+                            "color": "#0075c2",
+                            "valueOnRight": "1",
+                            "displayvalue": "Avg. for{br}Food"
+                        },
+                        {
+                            "startvalue": "22000",
                             "color": "#1aaf5d",
-                            "displayvalue": "Average{br}weekly{br}footfall",
-                            "valueOnRight" : "1",
-                            "thickness" : "2"
+                            "valueOnRight": "1",
+                            "displayvalue": "Avg. for{br}Non-food"
                         }
                     ]
                 }
             ]
         }
-    });
-    
-    visitChart.render();
+    }).render();    
 });

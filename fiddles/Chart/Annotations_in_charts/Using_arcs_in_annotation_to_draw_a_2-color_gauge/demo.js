@@ -1,64 +1,91 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var cSatScoreChart = new FusionCharts({
+        type: 'angulargauge',
         renderAt: 'chart-container',
-        width: '500',
-        height: '300',
+        width: '400',
+        height: '250',
         dataFormat: 'json',
         dataSource: {
             "chart": {
+                "caption": "Customer Satisfaction Score",
+                "subcaption": "Last week",                
                 "theme": "fint",
-                "caption": "Visitors to website",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
-                "yAxisName": "Visits",
-                "showValues": "0",
-                //Hiding label borders for all vertical lines
-                "showVLineLabelBorder": "0"
+                "gaugeOuterRadius":"160",
+                "gaugeInnerRadius":"140",
+                "gaugeFillMix":"{dark-10}",
+                "majorTMThickness" : "1",
+                "majorTMHeight": "40"                
             },
-            "data": [
-                {
-                    "label": "Mon",
-                    "value": "5123"
-                }, 
-                {
-                    "label": "Tue",
-                    "value": "4233"
-                }, 
-                {
-                    "label": "Wed",
-                    "value": "5507"
-                }, 
-                {
-                    "label": "Thu",
-                    "value": "4110"
-                }, 
-                {
-                    "label": "Fri",
-                    "value": "5529"
-                }, 
-                {
-                    "vline": "true",
-                    "linePosition": "1",
-                    "label": "Weekend",
-                    "labelPosition": "0",
-                    "labelHAlign": "left",
-                    "labelVAlign": "top",
-                    "color": "#6da81e",
-                    "alpha": "50",
-                    //(Optionally) Hiding vline label border from vline element
-                    "showLabelBorder": "0"
-                }, 
-                {
-                    "label": "Sat",
-                    "value": "5803"
-                }, 
-                {
-                    "label": "Sun",
-                    "value": "6202"
-                }
-            ]
+            "colorRange": {
+                "color": [
+                    {
+                        "minValue": "0",
+                        "maxValue": "50",
+                        "code": "#e44a00"
+                    },
+                    {
+                        "minValue": "50",
+                        "maxValue": "75",
+                        "code": "#f8bd19"
+                    },
+                    {
+                        "minValue": "75",
+                        "maxValue": "100",
+                        "code": "#6baa01"
+                    }
+                ]
+            },
+            "annotations": {                
+                "showbelow": "1",
+                "groups": [
+                    {
+                        "id": "transarc",                                                                        
+                        "items": [
+                            {
+                                "type": "arc",
+                                "radius": "140",
+                                "borderColor":"#FFFFFF",
+                                "innerRadius": "120",
+                                "color": "#6baa01",
+                                "alpha": "70",
+                                "x": "200",
+                                "y": "235",
+                                "startangle": "0",
+                                "endangle": "45"
+                            },                           
+                            {
+                                "type": "arc",
+                                "radius": "140",
+                                "innerRadius": "120",
+                                "borderColor":"#FFFFFF",
+                                "color": "#f8bd19",
+                                "alpha": "70",
+                                "x": "200",
+                                "y": "235",
+                                "startangle": "45",
+                                "endangle": "90"
+                            },                           
+                            {
+                                "type": "arc",
+                                "radius": "140",
+                                "innerRadius": "120",
+                                "borderColor":"#FFFFFF",
+                                "color": "#e44a00",
+                                "alpha": "70",
+                                "x": "200",
+                                "y": "235",
+                                "startangle": "90",
+                                "endangle": "180"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "dials": {
+                "dial": [{
+                    "value": "67"
+                }]
+            }
         }
     }).render();
-    
 });

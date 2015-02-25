@@ -1,48 +1,57 @@
 FusionCharts.ready(function () {
-    var revenueChart = new FusionCharts({
-        type: 'column2d',
+    var visitChart = new FusionCharts({
+        type: 'line',
         renderAt: 'chart-container',
-        width: '500',
+        width: '400',
         height: '300',
         dataFormat: 'json',
         dataSource: {
-            "chart": {
-                "caption": "Quarterly Revenue",
-                "subCaption": "For last year",
-                "xAxisName": "Quarter",
-                "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
-                //Y-Axis Name font/ cosmetics configuration
-                "yAxisNameFont": "Arial",
-                "yAxisNameFontSize": "14",
-                "yAxisNameFontColor": "#0066cc",
-                "yAxisNameFontBold": "1",
-                "yAxisNameFontItalic": "1",
-                "yAxisNameAlpha": "100",
-                //Theme
-                "theme" : "fint"
+            "chart": {                
+                "caption": "Visitors to website",
+                "subCaption": "Last week",
+                "xAxisName": "Day",
+                "yAxisName": "Visits",
+                "showValues": "0",
+                "lineThickness":"5",
+                "theme": "fint",
+                //Converting to dashed div line
+                "divLineDashed":"1",
+                //Customizing div lines dash length in pixel
+                "divLineDashLen":"5",
+                //Setting gap between div line dashes
+                "divLineDashGap":"6"
             },
-            
             "data": [
                 {
-                    "label": "Q1",
-                    "value": "1950000"
+                    "label": "Mon",
+                    "value": "5123"
                 }, 
                 {
-                    "label": "Q2",
-                    "value": "1450000"
-                },
+                    "label": "Tue",
+                    "value": "4233"
+                }, 
                 {
-                    "label": "Q3",
-                    "value": "1730000"
-                },
+                    "label": "Wed",
+                    "value": "5507"
+                }, 
                 {
-                    "label": "Q4",
-                    "value": "2120000"
+                    "label": "Thu",
+                    "value": "4110"
+                }, 
+                {
+                    "label": "Fri",
+                    "value": "5529"
+                }, 
+                {
+                    "label": "Sat",
+                    "value": "5803"
+                }, 
+                {
+                    "label": "Sun",
+                    "value": "6202"
                 }
             ]
         }
-    });
+    }).render();
     
-    revenueChart.render();
 });

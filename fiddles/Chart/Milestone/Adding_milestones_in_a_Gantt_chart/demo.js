@@ -2,83 +2,18 @@ FusionCharts.ready(function () {
     var smoPlan = new FusionCharts({
         type: 'gantt',
         renderAt: 'chart-container',
-        width: '650',
-        height: '300',
+        width: '750',
+        height: '500',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "dateformat": "mm/dd/yyyy",
                 "caption": "Social Media Optimization",
-                "subcaption": "Project Plan",
-                "theme": "fint",
-                "useVerticalScrolling" : "0",
-                "canvasBorderAlpha": "40"
-            },
-            "datatable": {
-                "headervalign": "bottom",
-                "datacolumn": [
-                    {
-                        "headertext": "Owner",
-                        "headerfontsize": "14",
-                        "headervalign": "bottom",
-                        "headeralign": "left",
-                        "align": "left",
-                        "fontsize": "12",                        
-                        "text": [
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "David"
-                            },
-                            {
-                                "label": "Mary"
-                            },
-                            {
-                                "label": "John"
-                            },
-                            {
-                                "label": "Andrew & Harry"
-                            },
-                            {
-                                "label": "John & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Neil & Harry"
-                            },
-                            {
-                                "label": "Chris"
-                            },
-                            {
-                                "label": "John & Richard"
-                            }
-                        ]
-                    }
-                ]
+                "captionFontSize" : "14",
+                "subCaption" : "Project Plan",
+                "subCaptionFontSize" : "12"
             },
             "categories": [
-                {
-                    "category": [
-                        {
-                            "start": "08/01/2014",
-                            "end": "09/30/2014",
-                            "label": "Q3"
-                        },
-                        {
-                            "start": "10/01/2014",
-                            "end": "12/31/2014",
-                            "label": "Q4"
-                        },
-                        {
-                            "start": "01/01/2015",
-                            "end": "03/31/2015",
-                            "label": "Q1"
-                        }
-                    ]
-                },
                 {
                     "category": [
                         {
@@ -128,10 +63,6 @@ FusionCharts.ready(function () {
                 "fontsize": "12",
                 "isbold": "1",
                 "align": "left",
-                "headerText": "Steps",
-                "headerFontSize": "14",
-                "headerVAlign": "bottom",
-                "headerAlign": "left",
                 "process": [
                     {
                         "label": "Identify Customers"
@@ -168,47 +99,77 @@ FusionCharts.ready(function () {
             "tasks": {
                 "task": [
                     {
+                        "id": "1",
                         "start": "08/04/2014",
                         "end": "08/10/2014"
                     },
                     {
+                        "id": "2",
                         "start": "08/08/2014",
                         "end": "08/19/2014"
                     },
                     {
+                        "id": "3",
                         "start": "08/19/2014",
                         "end": "09/02/2014"
                     },
                     {
+                        "id": "4",
                         "start": "08/24/2014",
                         "end": "09/02/2014"
                     },
                     {
+                        "id": "5",
                         "start": "09/02/2014",
                         "end": "09/21/2014"
                     },
                     {
+                        "id": "6",
                         "start": "09/21/2014",
                         "end": "10/06/2014"
                     },
                     {
+                        "id": "7",
                         "start": "10/06/2014",
-                        "end": "01/21/2015",                        
+                        "end": "01/21/2015"
                     },
                     {
+                        "id": "8",
                         "start": "01/21/2015",
                         "end": "02/19/2015"
                     },
                     {
+                        "id": "9",
                         "start": "01/28/2015",
                         "end": "02/24/2015"
                     },
                     {
+                        "id": "10",
                         "start": "02/24/2015",
                         "end": "03/27/2015"
                     }
                 ]
+            },
+            //Adding milestones with task id 8 and 10
+            "milestones": {
+                "milestone": [
+                    {
+                        "date": "1/21/2015",
+                        "taskid": "7",
+                        "color": "#f8bd19",
+                        "shape": "star",
+                        "tooltext": "Development Complete"
+                    },
+                    {
+                        "date": "3/28/2015",
+                        "taskid": "10",
+                        "color": "#f8bd19",
+                        "shape": "star",
+                        "tooltext": "Successful Completion of Campaign"
+                    }                   
+                ]
             }
+            
             
         }
     }).render();

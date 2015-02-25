@@ -1,125 +1,82 @@
 FusionCharts.ready(function () {
-    var salesPrediction = new FusionCharts({
-        type: 'dragline',
+    var footfallChart = new FusionCharts({
+        type: 'logmscolumn2d',
         renderAt: 'chart-container',
         width: '500',
         height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Sales Projections",
-                "subCaption": "iPhone vs Samsung Galaxy",
+                "caption": "Store footfall vs Online visitors ",
+                "subCaption": "Last Year",
+                "captionFontSize" : "14",
+                "subcaptionFontSize" : "14",
+                "subcaptionFontBold" : "0",
+                "baseFontColor" : "#333333",
+                "baseFont" : "Helvetica Neue,Arial",
                 "xAxisName": "Quarter",
-                "yAxisName": "No. of Units",
+                "yAxisName": "No of visitors",
                 "paletteColors": "#0075c2,#1aaf5d",
-                "showalternatehgridcolor": "0",
-                "bgAlpha": "0",
-                "borderAlpha": "20",
-                "usePlotGradientColor": "0",
-                "canvasBorderAlpha": "0",
-                "legendBorderAlpha": "0",
-                "legendShadow": "0",
+                "bgColor": "#ffffff",
+                "showBorder": "0",
+                "showCanvasBorder": "0",
+                "showPlotBorder": "0",
+                "showAlternateHgridColor": "0",
                 "showXAxisLine": "1",
-                "axisLineAlpha": "25",
-                "divLineAlpha": "25",
-                "showBorder": "0"                
-            },            
+                "usePlotGradientcolor": "0",
+                "valueFontColor": "#ffffff",
+                "placeValuesInside": "1",
+                "rotateValues": "1",
+                "LegendShadow": "0",
+                "legendBorderAlpha": "0",
+                "base": "10",
+                "axisLineAlpha": "10",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
+                "divlineAlpha" : "100",
+                "divlineColor" : "#999999",
+                "divlineThickness" : "1",
+                "divLineIsDashed" : "1",
+                "divLineDashLen" : "1",
+                "divLineGapLen" : "1",
+            },
             "categories": [
                 {
                     "category": [
-                        {
-                            "label": "Q1"
-                        }, 
-                        {
-                            "label": "Q2"
-                        }, 
-                        {
-                            "label": "Q3(E)"
-                        }, 
-                        {
-                            "label": "Q4(E)"
-                        }
+                        { "label": "Q1" },
+                        { "label": "Q2" },
+                        { "label": "Q3" },
+                        { "label": "Q4" }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Apple",
-                    "valuePosition": "ABOVE",
-                    "allowDrag": "0",
+                    "seriesname": "Total footfalls",
                     "data": [
-                        {
-                            "value": "1200"
-                        }, 
-                        {
-                            "value": "1500",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "1300",
-                            "allowDrag": "1",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "900",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
-                        }
+                        { "value": "126734" },
+                        { "value": "159851" },
+                        { "value": "197393" },
+                        { "value": "168560" },
+                        { "value": "199428" }
                     ]
                 },
                 {
-                    "seriesname": "Samsung",
-                    "allowDrag": "0",
+                    "seriesname": "Online Visits",
                     "data": [
-                        {
-                            "value": "600"
-                        }, 
-                        {
-                            "value": "850",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "1000",
-                            "allowDrag": "1",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "1200",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
-                        }
+                        { "value": "1126059" },
+                        { "value": "1292145" },
+                        { "value": "1496849" },
+                        { "value": "1460249" },
+                        { "value": "1083962" }
                     ]
                 }
             ]
-        },
-        events: {
-            'dataplotdragend': function(evt, arg){
-                var dsIndx = arg && arg.datasetIndex,
-                    dtIndx = arg && arg.dataIndex,
-                    val = arg && parseInt(arg.endValue, 10);
-                
-                document.getElementById(dsIndx+'-'+dtIndx).innerHTML = val;
-                
-            },
-            
-            'datarestored': function(evtObj){
-                var ds1Values = ["1200", "1500", "1300", "900"],
-                    ds2Values = ["600", "850", "1000", "1200"],
-                    
-                    update = function (arr, rowNum) {
-                        var i = 0,
-                            arrLen = arr.length;
-                        
-                        for (i; i < arrLen; i += 1) {
-                            val = arr[i];
-                            
-                            document.getElementById(rowNum+'-'+(i+1)).innerHTML = val;
-                        }
-                    };
-                
-                update(ds1Values, 1);
-                update(ds2Values, 2);
-            }
         }
     }).render();
+    
 });

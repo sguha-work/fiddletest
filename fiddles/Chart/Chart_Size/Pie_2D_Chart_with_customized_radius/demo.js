@@ -1,21 +1,20 @@
 FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
-        type: 'doughnut2d',
+        type: 'pie2d',
         renderAt: 'chart-container',
         width: '450',
-        height: '300',
+        height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
                 "caption": "Split of revenue by product categories",
                 "subCaption": "Last year",
                 "numberPrefix": "$",
-                "startingAngle": "20",
                 "showPercentValues": "1",
                 "showPercentInTooltip": "0",
-                "enableSmartLabels": "0",
-                "enableMultiSlicing": "0",
                 "decimals": "1",
+                //Radius
+                "pieRadius": "75",
                 //Theme
                 "theme": "fint"
             },
@@ -34,8 +33,7 @@ FusionCharts.ready(function () {
                 }, 
                 {
                     "label": "Household",
-                    "value": "49100",
-                    "isSliced": "1"
+                    "value": "49100"
                 }
             ]
         }

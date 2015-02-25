@@ -1,87 +1,128 @@
 FusionCharts.ready(function () {
-    var visitChart = new FusionCharts({
-        type: 'line',
+    var salesChart = new FusionCharts({
+        type: 'msarea',
         renderAt: 'chart-container',
-        width: '500',
+        width: '450',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Total footfall in Bakersfield Central",
-                "subCaption": "Last week",
+                "caption": "Sales of Liquor",
+                "subCaption": "Previous week vs current week",
                 "xAxisName": "Day",
-                "yAxisName": "No. of Visitors",
-                
-                //Cosmetics
-                "lineThickness" : "2",
-                "paletteColors" : "#0075c2",
-                "baseFontColor" : "#333333",
-                "baseFont" : "Helvetica Neue,Arial",
-                "captionFontSize" : "14",
-                "subcaptionFontSize" : "14",
-                "subcaptionFontBold" : "0",
-                "showBorder" : "0",
-                "bgColor" : "#ffffff",
-                "showShadow" : "0",
-                "canvasBgColor" : "#ffffff",
-                "canvasBorderAlpha" : "0",
-                "divlineAlpha" : "100",
-                "divlineColor" : "#999999",
-                "divlineThickness" : "1",
-                "divLineIsDashed" : "1",
-                "divLineDashLen" : "1",
-                "divLineGapLen" : "1",
-                "showXAxisLine" : "1",
-                "xAxisLineThickness" : "1",
-                "xAxisLineColor" : "#999999",
-                "showAlternateHGridColor" : "0",
-                
+                "yAxisName": "Sales (In USD)",
+                "numberPrefix": "$",
+                "paletteColors": "#0075c2,#1aaf5d",
+                "bgColor": "#ffffff",
+                "showBorder": "0",
+                "showCanvasBorder": "0",
+                "plotBorderAlpha": "10",
+                "usePlotGradientColor": "0",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "plotFillAlpha": "60",
+                "showXAxisLine": "1",
+                "axisLineAlpha": "25",                
+                "showValues": "0",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
+                "divlineColor": "#999999",                
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1",
+                "showAlternateHGridColor": "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
             },
-            "data": [
+            
+            "categories": [
                 {
-                    "label": "Mon",
-                    "value": "15123"
-                },
-                {
-                    "label": "Tue",
-                    "value": "14233"
-                },
-                {
-                    "label": "Wed",
-                    "value": "23507"
-                },
-                {
-                    "label": "Thu",
-                    "value": "9110"
-                },
-                {
-                    "label": "Fri",
-                    "value": "15529"
-                },
-                {
-                    "label": "Sat",
-                    "value": "20803"
-                },
-                {
-                    "label": "Sun",
-                    "value": "19202"
+                    "category": [
+                        {
+                            "label": "Mon"
+                        }, 
+                        {
+                            "label": "Tue"
+                        }, 
+                        {
+                            "label": "Wed"
+                        }, 
+                        {
+                            "label": "Thu"
+                        }, 
+                        {
+                            "label": "Fri"
+                        }, 
+                        {
+                            "label": "Sat"
+                        }, 
+                        {
+                            "label": "Sun"
+                        }
+                    ]
                 }
             ],
-            "trendlines": [
+            
+            "dataset": [
                 {
-                    "line": [
+                    "seriesname": "Previous Week",
+                    "data": [
                         {
-                            "startvalue": "18500",
-                            "color": "#1aaf5d",
-                            "displayvalue": "Average{br}weekly{br}footfall",
-                            "valueOnRight" : "1",
-                            "thickness" : "2"
+                            "value": "13000"
+                        }, 
+                        {
+                            "value": "14500"
+                        }, 
+                        {
+                            "value": "13500"
+                        }, 
+                        {
+                            "value": "15000"
+                        }, 
+                        {
+                            "value": "15500"
+                        }, 
+                        {
+                            "value": "17650"
+                        }, 
+                        {
+                            "value": "19500"
+                        }
+                    ]
+                }, 
+                {
+                    "seriesname": "Current Week",
+                    "data": [
+                        {
+                            "value": "8400"
+                        }, 
+                        {
+                            "value": "9800"
+                        }, 
+                        {
+                            "value": "11800"
+                        }, 
+                        {
+                            "value": "14400"
+                        }, 
+                        {
+                            "value": "18800"
+                        }, 
+                        {
+                            "value": "24800"
+                        }, 
+                        {
+                            "value": "30800"
                         }
                     ]
                 }
             ]
         }
-    });
-    
-    visitChart.render();
+    })
+    .render();
 });
