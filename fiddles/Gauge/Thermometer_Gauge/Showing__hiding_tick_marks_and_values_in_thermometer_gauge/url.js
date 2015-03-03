@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/tQ985/
+http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Gauge/Thermometer_Gauge/Showing__hiding_tick_marks_and_values_in_thermometer_gauge/

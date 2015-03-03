@@ -17,8 +17,8 @@ FusionCharts.ready(function () {
                 "useplotgradientcolor": "0",
                 "showplotborder": "0",
                 "showShadow":"0",
-                //Setting palette to 5
-                "palette":"5"
+                //Setting palette to 1
+                "palette":"1"
             },
             "data": [
                 {

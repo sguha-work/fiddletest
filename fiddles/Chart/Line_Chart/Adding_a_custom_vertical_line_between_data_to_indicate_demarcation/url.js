@@ -1,1 +1,2 @@
 http://jsfiddle.net/fusioncharts/EeM9D/
+http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Line_Chart/Adding_a_custom_vertical_line_between_data_to_indicate_demarcation/

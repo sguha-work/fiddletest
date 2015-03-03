@@ -9,11 +9,10 @@ FusionCharts.ready(function () {
             "chart": {
                 "dateformat": "mm/dd/yyyy",
                 "caption": "Social Media Optimization",
+                "captionFontSize" : "16",
                 "subcaption": "Project Plan",
                 "theme": "fint",
-                "canvasBorderAlpha" : "30",
-                "ganttPaneDuration": "3",
-                "ganttPaneDurationUnit": "m"
+                "canvasBorderAlpha" : "30"
             },
             "datatable": {
                 "headervalign": "bottom",
@@ -127,8 +126,9 @@ FusionCharts.ready(function () {
             ],
             "processes": {
                 "fontsize": "12",
+                "isbold": "1",
                 "align": "left",
-                "headerText": "Steps",
+                "headerText": "Step",
                 "headerFontSize": "14",
                 "headerVAlign": "bottom",
                 "headerAlign": "left",

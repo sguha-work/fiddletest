@@ -37,7 +37,7 @@ FusionCharts.ready(function () {
             "dials": {
                 "dial": [{
                     "value": "67",
-                    "tooltext": "Current customer satisfaction score is $value",
+                    "tooltext": "Current customer satisfaction score is 67",
                     "rearExtension": "15"
                 }]
             }

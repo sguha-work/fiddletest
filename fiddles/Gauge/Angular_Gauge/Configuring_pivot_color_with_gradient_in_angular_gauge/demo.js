@@ -14,10 +14,8 @@ FusionCharts.ready(function () {
                 "showValue": "1",
                 "gaugeFillMix": "{dark-40},{light-40},{dark-20}",
                 "pivotRadius": "10",
-                "pivotFillColor": "#CCCCCC",
-                "pivotFillType": "linear",
-                "pivotFillAngle": "0",
-                "pivotFillMix": "{light-40},{dark-60}",
+                "pivotFillColor": "#1122CC",                                
+                "pivotFillMix": "{dark-50},{light-30},{dark-40}",
                 "pivotFillRatio": "",                
                 "valueBelowPivot": "1",                
                 "theme": "fint"

@@ -7,13 +7,23 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Unit Sales - Apple vs Samsung",
-                "subCaption": "Drag anchors to change estimated values",
-                "subCaptionFontSize" : "12",
+                "caption": "Quarterly Sales Projections",
+                "subCaption": "iPhone vs Samsung Galaxy",
                 "xAxisName": "Quarter",
                 "yAxisName": "No. of Units",
-                "theme": "fint"
-            },
+                "paletteColors": "#0075c2,#1aaf5d",
+                "showalternatehgridcolor": "0",
+                "bgAlpha": "0",
+                "borderAlpha": "20",
+                "usePlotGradientColor": "0",
+                "canvasBorderAlpha": "0",
+                "legendBorderAlpha": "0",
+                "legendShadow": "0",
+                "showXAxisLine": "1",
+                "axisLineAlpha": "25",
+                "divLineAlpha": "25",
+                "showBorder": "0"                
+            },            
             "categories": [
                 {
                     "category": [

@@ -7,10 +7,12 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Average Customer Satisfaction Score",
-                "subcaption": "Actual vs Expected",                
+                "caption": "Estimated purchase conversion rate",
+                "subcaption": "food.hsm.com vs cloth.hsm.com",
+                "editMode": "1",
                 "lowerLimit": "0",
-                "upperLimit": "100",                                
+                "upperLimit": "100",
+                "numberSuffix": "%",
                 "theme": "fint",
                 "gaugeFillMix": "{dark-30},{light-60},{dark-10}",
                 "gaugeFillRatio": "15",
@@ -40,22 +42,21 @@ FusionCharts.ready(function () {
             "dials": {
                 "dial": [
                     {
-                        "editMode": "1",
-                        "value": "85",
+                        "value": "70",
                         "showValue": "1",
                         "valueX": "250",
                         "valueY": "240",
                         "bgColor": "#0075c2",
-                        "tooltext": "Expected : $value",
-                        "rearExtension": "15"
+                        "tooltext": "food.hs.com : $value",
+                        "rearExtension": "15"                       
                     },
                     {
-                        "value": "68",
+                        "value": "50",
                         "showValue": "1",
                         "valueX": "150",
                         "valueY": "240",
                         "bgColor": "#1aaf5d",
-                        "tooltext": "Actual : $value",
+                        "tooltext": "cloth.hsm.com : $value",
                         "rearExtension": "15"
                     }
                 ]
@@ -63,7 +64,8 @@ FusionCharts.ready(function () {
             "annotations": {
                 "origw": "400",
                 "origh": "300",
-                "autoscale": "1",                 
+                "autoscale": "1", 
+                
                 "groups": [
                     {
                         "id": "valueBG",

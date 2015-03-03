@@ -3,7 +3,7 @@ FusionCharts.ready(function () {
         type: 'boxandwhisker2d',
         renderAt: 'chart-container',
         width: '500',
-        height: '350',
+        height: '550',
         dataFormat: 'json',
         dataSource:
         {
@@ -14,11 +14,11 @@ FusionCharts.ready(function () {
                 "YAxisName": "Salaries (In USD)",                
                 "numberPrefix": "$",
                 "theme": "fint",
-                "showValues": "0",
-                //To draw a line connecting all the mean icons
-                "drawMeanConnector": "1",
-                //To ignore the null data and draw a continuous connector
-                "connectNullData ": "1"
+                "showValues": "1",
+                //To show or hide the lower quartile value
+                "showQ1Values": "0",	
+                //To show or hide the upper quartile value
+                "showQ3Values": "0"
             },
             "categories": [
                 {
@@ -42,17 +42,13 @@ FusionCharts.ready(function () {
                     "upperboxcolor": "#6baa01",
                     "data": [
                         {
-                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000",
-                //showing the icon representing the mean value
-                "showMean": "1"
+                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000"
                         }, 
                         {
-                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500",
-                             "showMean": "0"
+                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500"
                         }, 
                         {
-                            "value": "15000,19000,25000,32000,50000,65000",
-                             "showMean": "1"
+                            "value": "15000,19000,25000,32000,50000,65000"
                         }
                     ]
                 }, {

@@ -1,1 +1,2 @@
 http://jsfiddle.net/fusioncharts/rr92f6Lm/
+http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Axes/A_sample_logarithmic_multi-series_column_chart_with_inverse_Y-axis/

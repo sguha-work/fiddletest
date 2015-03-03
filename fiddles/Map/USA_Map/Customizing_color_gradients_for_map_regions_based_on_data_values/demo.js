@@ -1,4 +1,4 @@
-FusionCharts.ready(function () {
+FusionCharts.ready(function() {
     var salesMap = new FusionCharts({
         type: 'usa',
         renderAt: 'chart-container',
@@ -7,26 +7,30 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Statewise Sales",
-                "subcaption": "Last year", 
-                "borderColor": "#DDDDDDD",
-                "showLabels": "1",               
-                
-                "numberScaleValue": "1,1000,1000",
-                "numberScaleUnit": "K,M,B",
+                "theme": "fint",
+                "caption": "Annual Sales by State",
+                "subcaption": "Last year",
+                "entityFillHoverColor": "#cccccc",
                 "numberPrefix": "$",
-                "entityFillHoverColor": "#d35400",
-                "entityFillHoverAlpha": "30",
-                //Theme
-                "theme" : "fint"
+                "showLabels": "1"
             },
-            "colorrange": {
-                "gradient": "1",
-                "startLabel": "Low",
-                "endLabel": "High",
-                "code": "#f39c12",
+           "colorrange": {
                 "minvalue": "920000",
-                "maxValue": "97400000" 
+                "startlabel": "Low",
+                "endlabel": "High",
+                "code": "#e44a00",
+                "gradient": "1",
+                "color": [
+                    {
+                        "maxvalue": "56580000",
+                        "displayvalue": "Average",
+                        "code": "#f8bd19"
+                    },
+                    {
+                        "maxvalue": "97400000",
+                        "code": "#6baa01"
+                    }
+                ]
             },
             "data": [
                 {
@@ -119,7 +123,7 @@ FusionCharts.ready(function () {
                 },
                 {
                     "id": "TX",
-                     "value": "97344000"
+                     "value": "97344000"                                        
                 },
                 {
                     "id": "MN",
@@ -147,7 +151,7 @@ FusionCharts.ready(function () {
                 },
                 {
                     "id": "IL",
-                    "value": "73202000" 
+                    "value": "73202000"                                        
                 },
                 {
                     "id": "KY",
@@ -235,6 +239,6 @@ FusionCharts.ready(function () {
                 }
             ]
         }
-    });
-    salesMap.render();
+    }).render();
+    
 });

@@ -1,1 +1,2 @@
 http://jsfiddle.net/fusioncharts/KM7V9/
+http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Gauge/Hover_Effects/Configuring_Charts_-_Changing_border_and_color_of_columns,_upon_hover/

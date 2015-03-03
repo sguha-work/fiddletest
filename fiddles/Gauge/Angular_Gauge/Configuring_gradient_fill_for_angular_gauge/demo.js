@@ -11,8 +11,8 @@ FusionCharts.ready(function () {
                 "subcaption": "Last week",
                 "lowerLimit": "0",
                 "upperLimit": "100",
-                "gaugeFillMix": "{dark-30},{light-60},{dark-10}",
-                "gaugeFillRatio": "15",
+                "gaugeFillMix": "{light-10},{light-20},{light-60},{dark-30},{dark-40}, {dark-40}",
+                "gaugeFillRatio": "",
                 "theme": "fint"
             },
             "colorRange": {

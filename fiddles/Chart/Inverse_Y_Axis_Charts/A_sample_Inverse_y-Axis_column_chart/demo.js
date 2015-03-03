@@ -1,8 +1,5 @@
 FusionCharts.ready(function(){
-    var radio = [],
-        radElem,
-        val,
-        loadingTimeChart = new FusionCharts({
+    var myChart = new FusionCharts({
         type: 'InverseMSColumn2D',
         dataFormat: 'json',
         renderAt: 'chart-container',
@@ -16,11 +13,35 @@ FusionCharts.ready(function(){
                 "xAxisName": "Day",
                 "yAxisName": "Time (In Sec)",
                 "numberSuffix": "s",
-                "placeValuesInside" :"0",
-                "valueFontColor" : "#333333",
-                "rotateValues" :"0",
-                "theme" :"fint"                            
-                
+                "baseFontColor" : "#333333",
+                "baseFont" : "Helvetica Neue,Arial",
+                "paletteColors" : "#0075c2",
+                "bgColor" : "#ffffff",
+                "canvasBgColor" : "#ffffff",                                 
+                "captionFontSize" : "14",
+                "subcaptionFontSize" : "14",
+                "subcaptionFontBold" : "0",
+                "showBorder" : "0",
+                "showPlotBorder": "0",
+                "showXAxisLine" : "1",
+                "showLegend": "0",
+                "showShadow" : "0",
+                "showCanvasBorder" : "0",
+                "showAlternateHGridColor" : "0",
+                "usePlotGradientColor" :"0",
+                "divlineColor" : "#999999",
+                "divlineThickness" : "1",
+                "divLineIsDashed" : "1",
+                "divLineDashLen" : "1",
+                "divLineGapLen" : "1",
+                "xAxisLineThickness" : "1",
+                "xAxisLineColor" : "#999999",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5"
             },
             "categories": [
                 {
@@ -52,14 +73,4 @@ FusionCharts.ready(function(){
             ]
         }
     }).render();
-    radio = document.getElementsByTagName('input');
-    for (i = 0; i < radio.length; i++) {
-        radElem = radio[i];
-        if (radElem.type === 'radio') {                        
-            radElem.onclick = function(){
-                val = this.getAttribute('value');
-                val && loadingTimeChart.chartType(val);                              
-            };
-        }
-    }   
 });

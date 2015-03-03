@@ -11,9 +11,7 @@ FusionCharts.ready(function () {
                 "theme": "fint",
                 "formatNumberScale":"0",
                 "numberSuffix":"M",
-                "showLabels": "1",
-                "includeNameInLabels":"1",
-                "useSNameInLabels" : "0"
+                "showLabels": "1"
             },
             "colorrange": {
                 "color": [

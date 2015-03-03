@@ -1,4 +1,18 @@
 FusionCharts.ready(function() {
+    var showBorderCheckBox = document.getElementById('showBorder');
+
+
+    
+    //Set event listener for radio button
+    if (showBorderCheckBox.addEventListener) {
+        showBorderCheckBox.addEventListener("click", changeBorder);
+    }
+    
+    function changeBorder(evt, obj) {        
+        //Set gradient fill for chart using usePlotGradientColor attribute
+        (showBorderCheckBox.checked) ?revenueChart.setChartAttribute('showPlotBorder', 1) : revenueChart.setChartAttribute('showPlotBorder', 0);
+    };
+    
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
@@ -13,33 +27,25 @@ FusionCharts.ready(function() {
                 "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
                 "theme": "fint",
-                //Plot border properties
-                "showPlotBorder": "1",
-                "plotBorderDashed": "1",
-                "plotBorderDashLen": "4",
-                "plotBorderDashGap": "4",
-                "plotBorderThickness": "1",
-                "plotBorderColor": "#000000"
+                //Hiding plot borders
+                "showPlotBorder": "1"
             },
             "data": [
                 {
                     "label": "Q1",
                     "value": "1950000"
-                }, 
-                {
+                }, {
                     "label": "Q2",
                     "value": "1450000"
-                }, 
-                {
+                }, {
                     "label": "Q3",
                     "value": "1730000"
-                }, 
-                {
+                }, {
                     "label": "Q4",
                     "value": "2120000"
                 }
             ]
         }
     }).render();
-    
+
 });

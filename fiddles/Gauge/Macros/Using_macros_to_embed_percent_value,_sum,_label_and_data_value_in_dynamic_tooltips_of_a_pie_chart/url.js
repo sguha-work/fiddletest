@@ -1,1 +1,2 @@
 http://jsfiddle.net/fusioncharts/HBMQ7/
+http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Gauge/Macros/Using_macros_to_embed_percent_value,_sum,_label_and_data_value_in_dynamic_tooltips_of_a_pie_chart/

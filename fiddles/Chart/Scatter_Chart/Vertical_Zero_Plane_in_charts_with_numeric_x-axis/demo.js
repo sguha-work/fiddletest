@@ -19,7 +19,7 @@ FusionCharts.ready(function () {
                 "ynumberprefix": "$",
                 
                 //Vertical zero plane          
-                "showVZeroPlane": "1",
+                "showVZeroPlane": "0",
                 "vZeroPlaneColor": "#cc3300",
                 "vZeroPlaneThickness": "3",
                 "vZeroPlaneAlpha": "90",

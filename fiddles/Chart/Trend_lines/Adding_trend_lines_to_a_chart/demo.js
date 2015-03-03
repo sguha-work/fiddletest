@@ -39,11 +39,7 @@ FusionCharts.ready(function () {
                         {
                             "startvalue": "175000",
                             "color": "#1aaf5d",
-                            "displayvalue": "Target - $175K",
-                            "dashed" : "1",
-                            "dashLen" : "4",
-                            "dashGap" : "2",
-                            "valueOnRight" : "1"
+                            "displayvalue": "Target - $175K"
                         }
                     ]
                 }

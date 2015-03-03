@@ -3,7 +3,7 @@ FusionCharts.ready(function () {
         type: 'boxandwhisker2d',
         renderAt: 'chart-container',
         width: '500',
-        height: '350',
+        height: '550',
         dataFormat: 'json',
         dataSource:
         {
@@ -14,7 +14,11 @@ FusionCharts.ready(function () {
                 "YAxisName": "Salaries (In USD)",                
                 "numberPrefix": "$",
                 "theme": "fint",
-                "showValues": "0"
+                "showValues": "1",
+                //To show or hide the lower quartile value
+                "showQ1Values": "0",	
+                //To show or hide the upper quartile value
+                "showQ3Values": "0"
             },
             "categories": [
                 {
@@ -36,8 +40,6 @@ FusionCharts.ready(function () {
                     "seriesname": "Male",
                     "lowerboxcolor": "#008ee4",
                     "upperboxcolor": "#6baa01",
-                    //showing the icon representing the mean value
-                    "showMean": "1",
                     "data": [
                         {
                             "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000"

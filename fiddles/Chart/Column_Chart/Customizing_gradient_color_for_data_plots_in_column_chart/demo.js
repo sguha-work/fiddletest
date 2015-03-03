@@ -11,30 +11,33 @@ FusionCharts.ready(function() {
                 "subCaption": "Last year",
                 "xAxisName": "Quarter",
                 "yAxisName": "Amount (In USD)",
-                "numberPrefix": "$",
                 "theme": "fint",
-                //Using plot gradient color
+                "numberPrefix": "$",
+                //Setting the usage of plot gradient
                 "usePlotGradientColor": "1",
-                //Applying plot gradient color
-                "plotGradientColor": "#1aaf5d",
-                //Applying fill angle for plots
-                "plotFillAngle": "45",
-                //Applying fill ratio for plots
-                "plotFillRatio": "50,0"
+                //Custom plot gradient color
+                "plotGradientColor": "#eeeeee"
             },
             "data": [
                 {
                     "label": "Q1",
-                    "value": "1950000"
-                }, {
+                    "value": "1950000",
+                    "color": "#008ee4"
+                }, 
+                {
                     "label": "Q2",
-                    "value": "1450000"
-                }, {
+                    "value": "1450000",
+                    "color": "#9b59b6"
+                }, 
+                {
                     "label": "Q3",
-                    "value": "1730000"
-                }, {
+                    "value": "1730000",
+                    "color": "#6baa01"
+                }, 
+                {
                     "label": "Q4",
-                    "value": "2120000"
+                    "value": "2120000",
+                    "color": "#e44a00"
                 }
             ]
         }

@@ -15,7 +15,8 @@ FusionCharts.ready(function () {
                 "numbersuffix": "%",
                 "showvalues": "0",
                 //Customizing anchor properties
-                "drawAnchors" : "1",
+                "anchorRadius": "4",
+                "anchorBorderThickness": "2",
                 //Theme
                 "theme" : "fint"
                 

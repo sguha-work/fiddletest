@@ -1,5 +1,5 @@
 FusionCharts.ready(function () {
-    var ratingsChart = new FusionCharts({
+    var BudgetChart = new FusionCharts({
         type: 'radar',
         renderAt: 'chart-container',
         width: '500',
@@ -7,51 +7,71 @@ FusionCharts.ready(function () {
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Store rating across parameters",
-                "subCaption": "Based on customer feedback survey",                                                                                               
+                "caption": "Budget Analysis",
+                "subCaption": "Current month",                                                    
                 "numberPreffix": "$",
                 "theme": "fint",
-                "radarfillcolor": "#ffffff",
+                "radarfillcolor": "#ffffff"
             },
             "categories": [
                 {
                     "category": [
                         {
-                            "label": "Ambience"
+                            "label": "Marketing"
                         }, 
                         {
-                            "label": "Product Assortment"
+                            "label": "Product Management"
                         },
                         {
-                            "label": "Price Competitiveness"
+                            "label": "Customer Service"
                         },
                         {
-                            "label": "Service"
+                            "label": "Human Resources"
                         },
                         {
-                            "label": "Recommend to others"
+                            "label": "Sales & Distribution"
                         }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "User Ratings",
+                    "seriesname": "Allocated Budget",
                     "data": [
                         {
-                            "value": "3.5"
+                            "value": "19000"
                         },
                         {
-                            "value": "4.8"
+                            "value": "16500"
                         },
                         {
-                            "value": "3.1"
+                            "value": "14300"
                         },
                         {
-                            "value": "4.0"
+                            "value": "10000"
                         },
                         {
-                            "value": "3.6"
+                            "value": "9800"
+                        }
+                    ]
+                },
+                {
+                    "seriesname": "Actual Cost",
+                    "data": [
+                        {
+                            "value": "6000"
+                        },
+                        {
+                            "value": "9500"
+                        },
+                        {
+                            "value": "11900"
+                        },
+                        {
+                            "value": "8000"
+                        },
+                        {
+                            "value": "9700"
                         }
                     ]
                 }

@@ -2,7 +2,7 @@ FusionCharts.ready(function () {
     var cSatScoreChart = new FusionCharts({
         type: 'angulargauge',
         renderAt: 'chart-container',
-        width: '400',
+        width: '450',
         height: '300',
         dataFormat: 'json',
         dataSource: {
@@ -13,9 +13,9 @@ FusionCharts.ready(function () {
                 "upperLimit": "100",                
                 "showValue": "1",
                 "valueBelowPivot": "1",
-                "gaugeOuterRadius": "180",
-                "gaugeInnerRadius": "75%",
                 "gaugeFillMix": "{dark-30},{light-60},{dark-10}",
+                "gaugeOuterRadius": "180",
+                "gaugeInnerRadius": "120",
                 "theme": "fint"
             },
             "colorRange": {

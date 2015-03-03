@@ -14,16 +14,24 @@ FusionCharts.ready(function () {
                 "YAxisName": "Salaries (In USD)",                
                 "numberPrefix": "$",
                 "theme": "fint",
+                "usePlotGradientColor": "",
                 "showValues": "0",
-                //Showing out of range outliers
-                "showAllOutliers ": "1"
+                //To show the icon representing the mean deviation
+                "showMD": "1",
+                "MDIconSides": "8"
             },
             "categories": [
                 {
                     "category": [
-                        { "label": "Grade 1" }, 
-                        { "label": "Grade 2" }, 
-                        { "label": "Grade 3" }
+                        {
+                            "label": "Grade 1"
+                        }, 
+                        {
+                            "label": "Grade 2"
+                        }, 
+                        {
+                            "label": "Grade 3"
+                        }
                     ]
                 }
             ],
@@ -34,17 +42,13 @@ FusionCharts.ready(function () {
                     "upperboxcolor": "#6baa01",
                     "data": [
                         {
-                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000",
-                            //specifying the outlier
-                            "outliers":"16900"
+                            "value": "2400,2000,2500,2800,3500,4000, 3700, 3750, 3880, 5000,5500,7500,8000,8200, 8400, 8500, 8550, 8800, 8700, 9000, 14000"
                         }, 
                         {
-                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500",
-                            "outliers":"23000"
+                            "value": "7500,9000,12000,13000,14000,16500,17000, 18000, 19000, 19500"
                         }, 
                         {
-                            "value": "15000,19000,25000,32000,50000,65000",
-                            "outliers":"72000"
+                            "value": "15000,19000,25000,32000,50000,65000"
                         }
                     ]
                 }, {
@@ -53,16 +57,13 @@ FusionCharts.ready(function () {
                     "upperboxcolor": "#f8bd19",
                     "data": [
                         {
-                            "value": "1900,2100,2300,2350,2400,2550,3000,3500,4000, 6000, 6500, 9000",
-                            "outliers":"12000"
+                            "value": "1900,2100,2300,2350,2400,2550,3000,3500,4000, 6000, 6500, 9000"
                         }, 
                         {
-                            "value": "7000,8000,8300,8700,9500,11000,15000, 17000, 21000",
-                            "outliers":"25000"
+                            "value": "7000,8000,8300,8700,9500,11000,15000, 17000, 21000"
                         }, 
                         {
-                            "value": "24000,32000,35000,37000,39000, 58000",
-                            "outliers":"71000"
+                            "value": "24000,32000,35000,37000,39000, 58000"
                         }
                     ]
                 }

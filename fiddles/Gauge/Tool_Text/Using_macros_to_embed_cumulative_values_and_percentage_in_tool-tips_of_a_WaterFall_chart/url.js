@@ -1,1 +1,2 @@
 http://jsfiddle.net/fusioncharts/xh4UG/
+http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Gauge/Tool_Text/Using_macros_to_embed_cumulative_values_and_percentage_in_tool-tips_of_a_WaterFall_chart/

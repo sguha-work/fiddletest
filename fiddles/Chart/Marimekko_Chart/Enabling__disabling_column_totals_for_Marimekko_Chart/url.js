@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/m02om320/
+http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Marimekko_Chart/Enabling__disabling_column_totals_for_Marimekko_Chart/

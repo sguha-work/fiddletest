@@ -15,7 +15,8 @@ FusionCharts.ready(function () {
                 "numberSuffix": "%",
                 "valueFontSize": "12",
                 "showhovereffect": "1",
-                "ledGap" : "0",
+                "ledSize" : "5",
+                "ledGap" : "1",
                 "ChartBottomMargin" : "20",
                 "theme" : "fint"
             },

@@ -11,7 +11,7 @@ FusionCharts.ready(function () {
                 "caption": "Social Media Optimization",
                 "subcaption": "Project Plan",
                 "theme": "fint",
-                "useVerticalScrolling" : "0",
+                "useVerticalScrolling" : "1",
                 "canvasBorderAlpha": "40"
             },
             "datatable": {

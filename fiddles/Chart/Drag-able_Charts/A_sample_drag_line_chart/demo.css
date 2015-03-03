@@ -27,17 +27,17 @@ tr:nth-child(1) > td:nth-child(1) {
     border-left: 1px solid #fff;
 }
 tr:nth-child(2) > td {
-    color: #008ee4;
+    color: #0075c2;
 }
 tr:nth-child(3) > td {
-    color: #6baa01;
+    color: #1aaf5d;
 }
 .row-header {
-    background-color: #6baa01;
+    background-color: #1aaf5d;
     color: #fff !important;
 }
 tr:nth-child(2) > td:nth-child(1) {
-    background-color: #008ee4;
+    background-color: #0075c2;
 }
 #tableCont {
     width: 100%;

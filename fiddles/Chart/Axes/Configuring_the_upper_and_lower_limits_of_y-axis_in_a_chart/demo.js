@@ -9,14 +9,15 @@ FusionCharts.ready(function () {
         dataSource: {
             "chart": {
                 "theme": "fint",
-                "caption": "Quarterly revenue for last year",
+                "caption": "Quarterly Revenue",
+                "subcaption": "Last year",
                 "xAxisName": "Quarter",
-                "yAxisName": "Amount",
+                "yAxisName": "Amount (In USD)",
                 "numberPrefix": "$",
-                //Changed to a lesser value deliberately to show automatic calculation of chart limits
-                "yAxisMaxValue": "2000000"
+                //Hiding the upper and lower limits of y-axis in chart
+                "showLimits": "1",
+                "showYAxisValues" : "0"
             },
-            
             "data": [
                 {
                     "label": "Q1",
@@ -32,7 +33,6 @@ FusionCharts.ready(function () {
                 }, 
                 {
                     "label": "Q4",
-                    //Maximum value. Chart automatically define chart limit based on max value.
                     "value": "2120000"
                 }
             ]
