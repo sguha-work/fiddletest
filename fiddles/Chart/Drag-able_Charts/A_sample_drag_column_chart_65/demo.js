@@ -1,124 +1,137 @@
 FusionCharts.ready(function () {
-    var salesPrediction = new FusionCharts({
-        type: 'dragarea',
+    var inventoryChart = new FusionCharts({
+        type: 'dragcolumn2d',
         renderAt: 'chart-container',
         width: '500',
         height: '350',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Quarterly Sales Projections",
-                "subCaption": "iPhone vs Samsung Galaxy",
-                "xAxisName": "Quarter",
+                "caption": "Inventory status - Bakersfield Central",                
+                "subCaption": "Top 5 Food items",
+                "xAxisName": "Food Item",
                 "yAxisName": "No. of Units",
                 "paletteColors": "#0075c2,#1aaf5d",
-                "showalternatehgridcolor": "0",
-                "bgAlpha": "0",
-                "borderAlpha": "20",
+                "bgColor": "#ffffff",
+                "showAlternateHGridColor": "0",
+                "showBorder": "0",
+                "showCanvasBorder": "0",
+                "baseFontColor": "#333333",
+                "baseFont": "Helvetica Neue,Arial",
+                "captionFontSize": "14",
+                "subcaptionFontSize": "14",
+                "subcaptionFontBold": "0",
                 "usePlotGradientColor": "0",
-                "canvasBorderAlpha": "0",
+                "toolTipColor": "#ffffff",
+                "toolTipBorderThickness": "0",
+                "toolTipBgColor": "#000000",
+                "toolTipBgAlpha": "80",
+                "toolTipBorderRadius": "2",
+                "toolTipPadding": "5",
+                "legendBgAlpha": "0",
                 "legendBorderAlpha": "0",
                 "legendShadow": "0",
-                "showXAxisLine": "1",
-                "axisLineAlpha": "25",
-                "divLineAlpha": "25",
-                "showBorder": "0"                
-            },            
+                "legendItemFontSize": "10",
+                "legendItemFontColor": "#666666",
+                "legendCaptionFontSize": "9",
+                "divlineAlpha": "100",
+                "divlineColor": "#999999",
+                "divlineThickness": "1",
+                "divLineIsDashed": "1",
+                "divLineDashLen": "1",
+                "divLineGapLen": "1",
+            },
             "categories": [
                 {
                     "category": [
                         {
-                            "label": "Q1"
+                            "label": "Poultry"
                         }, 
                         {
-                            "label": "Q2"
+                            "label": "Rice"
                         }, 
                         {
-                            "label": "Q3(E)"
+                            "label": "Peanut Butter"
                         }, 
                         {
-                            "label": "Q4(E)"
+                            "label": "Salmon"
+                        }, 
+                        {
+                            "label": "Cereal"
                         }
                     ]
                 }
             ],
             "dataset": [
                 {
-                    "seriesname": "Apple",
-                    "valuePosition": "ABOVE",
+                    "seriesname": "Available Stock",
                     "allowDrag": "0",
-                    "data": [
-                        {
-                            "value": "1200"
-                        }, 
-                        {
-                            "value": "1500",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "1300",
-                            "allowDrag": "1",
-                            "dashed": "1"
-                        }, 
-                        {
-                            "value": "900",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
-                        }
-                    ]
-                },
+                    "data": [{
+                        "value": "6000"
+                    }, 
+                             {
+                                 "value": "9500"
+                             }, 
+                             {
+                                 "value": "11900"
+                             }, 
+                             {
+                                 "value": "8000"
+                             }, 
+                             {
+                                 "value": "9700"
+                             }
+                            ]
+                }, 
                 {
-                    "seriesname": "Samsung",
-                    "allowDrag": "0",
+                    "seriesname": "Estimated Demand",
+                    "dashed": "1",
                     "data": [
                         {
-                            "value": "600"
+                            "value": "19000"
                         }, 
                         {
-                            "value": "850",
-                            "dashed": "1"
+                            "value": "16500"
                         }, 
                         {
-                            "value": "1000",
-                            "allowDrag": "1",
-                            "dashed": "1"
+                            "value": "14300"
                         }, 
                         {
-                            "value": "1200",
-                            "allowDrag": "1",
-                            "tooltext": "Predicted sales $value units"
+                            "value": "10000"
+                        }, 
+                        {
+                            "value": "9800"
                         }
                     ]
                 }
             ]
         },
-        events: {
-            'dataplotdragend': function(evt, arg){
-                var dsIndx = arg && arg.datasetIndex,
-                    dtIndx = arg && arg.dataIndex,
-                    val = arg && parseInt(arg.endValue, 10);
+        "events": {
+            "dataplotDragEnd": function (evt, arg) {
+                var dataIndex = arg && arg.dataIndex,
+                    prevVal = arg && arg.startValue,
+                    newVal = arg && parseInt(arg.endValue, 10),
+                    valuerow = document.getElementById("dragcolumn2d-sample-table")
+                .getElementsByTagName("tr")[1]
+                .getElementsByTagName('td');
                 
-                document.getElementById(dsIndx+'-'+dtIndx).innerHTML = val;
-                
+                valuerow[dataIndex].innerHTML = newVal;
             },
-            
-            'datarestored': function(evtObj){
-                var ds1Values = ["1200", "1500", "1300", "900"],
-                    ds2Values = ["600", "850", "1000", "1200"],
-                    
-                    update = function (arr, rowNum) {
-                        var i = 0,
-                            arrLen = arr.length;
-                        
-                        for (i; i < arrLen; i += 1) {
-                            val = arr[i];
-                            
-                            document.getElementById(rowNum+'-'+(i+1)).innerHTML = val;
-                        }
-                    };
+            "dataRestored": function (evtObj) {
+                var estimatedOrigValues = ["19000", "16500", "14300", "10000", "9800"],
+                    i = 0,
+                    numVals = estimatedOrigValues.length,
+                    val,
+                    valuerow = document.getElementById("dragcolumn2d-sample-table")
+                .getElementsByTagName("tr")[1]
+                .getElementsByTagName('td');
                 
-                update(ds1Values, 1);
-                update(ds2Values, 2);
+                for (i; i < numVals; i += 1) {
+                    val = estimatedOrigValues[i];
+                    
+                    //set the original values
+                    valuerow[i + 1].innerHTML = val;
+                }
             }
         }
     }).render();

@@ -1,29 +1,29 @@
 FusionCharts.ready(function () {
-    var salesChart = new FusionCharts({
-        type: 'area2d',
+    var topStores = new FusionCharts({
+        type: 'bar2d',
         renderAt: 'chart-container',
         width: '400',
         height: '300',
         dataFormat: 'json',
         dataSource: {
             "chart": {
-                "caption": "Sales of Liquor",
-                "subCaption": "Last week",
-                "xAxisName": "Day",
+                "caption": "Top 5 Stores by Sales",
+                "subCaption": "Last month",
                 "yAxisName": "Sales (In USD)",
                 "numberPrefix": "$",
                 "paletteColors": "#0075c2",
                 "bgColor": "#ffffff",
                 "showBorder": "0",
                 "showCanvasBorder": "0",
-                "plotBorderAlpha": "10",
                 "usePlotGradientColor": "0",
-                "plotFillAlpha": "50",
-                "showXAxisLine": "1",
+                "plotBorderAlpha": "10",
+                "placeValuesInside": "1",
+                "valueFontColor": "#ffffff",
+                "showAxisLines": "1",
                 "axisLineAlpha": "25",
                 "divLineAlpha": "10",
-                "showValues": "1",
-                "showAlternateHGridColor": "0",
+                "alignCaptionWithCanvas": "0",
+                "showAlternateVGridColor": "0",
                 "captionFontSize": "14",
                 "subcaptionFontSize": "14",
                 "subcaptionFontBold": "0",
@@ -37,32 +37,24 @@ FusionCharts.ready(function () {
             
             "data": [
                 {
-                    "label": "Mon",
-                    "value": "4123"
+                    "label": "Bakersfield Central",
+                    "value": "880000"
                 }, 
                 {
-                    "label": "Tue",
-                    "value": "4633"
+                    "label": "Garden Groove harbour",
+                    "value": "730000"
                 }, 
                 {
-                    "label": "Wed",
-                    "value": "5507"
+                    "label": "Los Angeles Topanga",
+                    "value": "590000"
                 }, 
                 {
-                    "label": "Thu",
-                    "value": "4910"
+                    "label": "Compton-Rancho Dom",
+                    "value": "520000"
                 }, 
                 {
-                    "label": "Fri",
-                    "value": "5529"
-                }, 
-                {
-                    "label": "Sat",
-                    "value": "5803"
-                }, 
-                {
-                    "label": "Sun",
-                    "value": "6202"
+                    "label": "Daly City Serramonte",
+                    "value": "330000"
                 }
             ]
         }
