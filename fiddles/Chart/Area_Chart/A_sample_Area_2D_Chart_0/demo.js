@@ -1,4 +1,4 @@
-FusionCharts.ready(function () {
+$(window).load(function(){FusionCharts.ready(function () {
     var salesChart = new FusionCharts({
         type: 'area2d',
         renderAt: 'chart-container',
@@ -68,4 +68,4 @@ FusionCharts.ready(function () {
         }
     })
     .render();
-});
+});});

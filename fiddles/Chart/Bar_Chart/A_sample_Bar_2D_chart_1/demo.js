@@ -1,4 +1,4 @@
-FusionCharts.ready(function () {
+$(window).load(function(){FusionCharts.ready(function () {
     var topStores = new FusionCharts({
         type: 'bar2d',
         renderAt: 'chart-container',
@@ -60,4 +60,4 @@ FusionCharts.ready(function () {
         }
     })
     .render();
-});
+});});

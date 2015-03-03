@@ -1,4 +1,4 @@
-FusionCharts.ready(function () {
+$(window).load(function(){FusionCharts.ready(function () {
     var revenueChart = new FusionCharts({
         type: 'column2d',
         renderAt: 'chart-container',
@@ -93,4 +93,4 @@ FusionCharts.ready(function () {
             ]
         }
     }).render();
-});
+});});

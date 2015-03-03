@@ -1,4 +1,4 @@
-FusionCharts.ready(function () {
+$(window).load(function(){FusionCharts.ready(function () {
     var conversionChart = new FusionCharts({
         type: 'bubble',
         renderAt: 'chart-container',
@@ -182,4 +182,4 @@ FusionCharts.ready(function () {
         }
     });
     conversionChart.render();
-});
+});});

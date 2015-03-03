@@ -1,4 +1,4 @@
-FusionCharts.ready(function () {
+$(window).load(function(){FusionCharts.ready(function () {
     var analysisChart = new FusionCharts({
         type: 'stackedColumn3DLine',
         renderAt: 'chart-container',
@@ -109,4 +109,4 @@ FusionCharts.ready(function () {
             ]
         }
     }).render();
-});
+});});
