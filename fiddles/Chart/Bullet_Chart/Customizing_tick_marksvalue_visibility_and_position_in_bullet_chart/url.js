@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/EZbvy/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Bullet_Chart/Customizing_tick_marksvalue_visibility_and_position_in_bullet_chart/

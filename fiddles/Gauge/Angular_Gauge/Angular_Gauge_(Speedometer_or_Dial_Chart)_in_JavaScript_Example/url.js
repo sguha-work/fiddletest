@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/Lxz2T/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Gauge/Angular_Gauge/Angular_Gauge_(Speedometer_or_Dial_Chart)_in_JavaScript_Example/

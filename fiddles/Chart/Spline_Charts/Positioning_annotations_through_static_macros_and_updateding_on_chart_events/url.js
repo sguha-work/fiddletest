@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/R4pEf/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Spline_Charts/Positioning_annotations_through_static_macros_and_updateding_on_chart_events/

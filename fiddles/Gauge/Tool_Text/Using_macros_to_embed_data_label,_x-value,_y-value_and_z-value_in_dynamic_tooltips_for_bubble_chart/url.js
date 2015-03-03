@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/wuM5q/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Gauge/Tool_Text/Using_macros_to_embed_data_label,_x-value,_y-value_and_z-value_in_dynamic_tooltips_for_bubble_chart/

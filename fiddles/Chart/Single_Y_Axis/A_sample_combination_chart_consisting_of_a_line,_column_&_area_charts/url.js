@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/6J5Tj/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Single_Y_Axis/A_sample_combination_chart_consisting_of_a_line,_column_&_area_charts/

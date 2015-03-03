@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/CB98Y/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Gauge/Tool_Text/Using_macros_to_embed_data_values_and_labels_in_dynamic_tool_tips/

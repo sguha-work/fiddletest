@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/Lz5tA/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Vertical_Lines/Configuring_border_and_background_cosmetics_of_labels_for_vertical_line/

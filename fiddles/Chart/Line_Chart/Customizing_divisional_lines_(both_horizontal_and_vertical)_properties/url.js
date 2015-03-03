@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/wGUtB/
-http://jsfiddle.net/gh/get/library/pure/sguha-work/fiddletest/tree/master/fiddles/Chart/Line_Chart/Customizing_divisional_lines_(both_horizontal_and_vertical)_properties/
