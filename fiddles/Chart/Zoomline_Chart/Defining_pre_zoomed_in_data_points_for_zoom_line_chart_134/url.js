@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/2fqud5w1/
+http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Zoomline_Chart/Defining_pre_zoomed_in_data_points_for_zoom_line_chart_134/

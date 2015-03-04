@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/jpyHU/
+http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Combination_Charts/Configuring_Charts_-_Synchronizing_axes_limits_in_dual_y-axis_chart_511/

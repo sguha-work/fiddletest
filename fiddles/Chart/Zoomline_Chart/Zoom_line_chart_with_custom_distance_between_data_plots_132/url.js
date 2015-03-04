@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/v60znb4c/
+http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Zoomline_Chart/Zoom_line_chart_with_custom_distance_between_data_plots_132/

@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/kTFn3/
+http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Annotations_in_charts/Using_annotations_to_add_static_information_to_a_chart_570/

@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/xh4UG/
+http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Pareto_Chart/Using_macros_to_embed_cumulative_values_and_percentage_in_tool-tips_of_a_WaterFall_chart_556/

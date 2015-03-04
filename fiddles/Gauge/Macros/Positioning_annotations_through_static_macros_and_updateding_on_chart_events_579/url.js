@@ -1,0 +1,2 @@
+http://jsfiddle.net/fusioncharts/R4pEf/
+http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Gauge/Macros/Positioning_annotations_through_static_macros_and_updateding_on_chart_events_579/
