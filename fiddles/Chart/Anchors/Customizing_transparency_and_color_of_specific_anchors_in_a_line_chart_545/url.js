@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/a4L5w/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Anchors/Customizing_transparency_and_color_of_specific_anchors_in_a_line_chart_545/

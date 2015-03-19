@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/dfdc2f9p/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Logarithmic_Charts/A_sample_logarithmic_column_chart_with_custom_log_base_417/

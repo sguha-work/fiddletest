@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/kY2rW/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Gauge/Cylinder_Gauge/Listening_to_real-time_update_events_in_cylinder_gauge_261/

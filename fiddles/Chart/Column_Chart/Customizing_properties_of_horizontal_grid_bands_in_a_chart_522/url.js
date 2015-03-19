@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/aNG43/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Column_Chart/Customizing_properties_of_horizontal_grid_bands_in_a_chart_522/

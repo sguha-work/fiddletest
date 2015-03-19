@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/Lsddw/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Gauge/Hover_Effects/Configuring_Charts_-_Plot_Hover_Gradient_Color_in_a_Column_Chart_666/

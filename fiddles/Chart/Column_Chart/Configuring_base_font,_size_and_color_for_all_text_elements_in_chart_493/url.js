@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/XXdYL/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Column_Chart/Configuring_base_font,_size_and_color_for_all_text_elements_in_chart_493/

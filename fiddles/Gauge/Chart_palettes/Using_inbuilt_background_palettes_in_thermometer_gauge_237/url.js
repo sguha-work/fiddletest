@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/zcwBS/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Gauge/Chart_palettes/Using_inbuilt_background_palettes_in_thermometer_gauge_237/

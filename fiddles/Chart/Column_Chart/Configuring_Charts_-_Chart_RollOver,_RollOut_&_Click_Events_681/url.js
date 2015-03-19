@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/d3X7x/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Column_Chart/Configuring_Charts_-_Chart_RollOver,_RollOut_&_Click_Events_681/

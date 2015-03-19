@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/PagLf/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Gauge/Real-time_Gauges/Updating_multiple_pointers_using_named_ID_in_real-time_linear_gauge_215/
