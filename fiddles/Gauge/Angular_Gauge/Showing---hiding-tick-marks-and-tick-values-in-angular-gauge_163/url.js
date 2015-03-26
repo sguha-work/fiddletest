@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/mT4uH/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Gauge/Angular_Gauge/Showing---hiding-tick-marks-and-tick-values-in-angular-gauge_163/

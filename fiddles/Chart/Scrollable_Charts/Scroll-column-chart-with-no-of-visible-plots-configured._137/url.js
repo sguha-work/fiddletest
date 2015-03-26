@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/tpe11v5c/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Scrollable_Charts/Scroll-column-chart-with-no-of-visible-plots-configured._137/

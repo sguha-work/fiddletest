@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/sq4RC/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Gauge/Tick_Marks/Configuring-number-of-major-and-minor-tick-marks-in-angular-gauge_167/

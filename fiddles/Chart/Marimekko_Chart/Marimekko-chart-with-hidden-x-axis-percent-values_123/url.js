@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/vvk1of9j/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Marimekko_Chart/Marimekko-chart-with-hidden-x-axis-percent-values_123/

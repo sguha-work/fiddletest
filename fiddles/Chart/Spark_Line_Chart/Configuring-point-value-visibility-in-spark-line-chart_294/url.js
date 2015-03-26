@@ -1,2 +1,0 @@
-http://jsfiddle.net/fusioncharts/LWhcS/
-http://jsfiddle.net/gh/get/jquery/1.9.1/sguha-work/fiddletest/tree/master/fiddles/Chart/Spark_Line_Chart/Configuring-point-value-visibility-in-spark-line-chart_294/
